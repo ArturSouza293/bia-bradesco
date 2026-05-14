@@ -4,9 +4,11 @@ import type {
   Objective,
   EducationTopic,
   CrossSellOpportunity,
+  ClientProfile,
 } from '@/types/objective';
 
 interface ObjectivesResponse {
+  client_profile: ClientProfile | null;
   objectives: Objective[];
   education_topics: EducationTopic[];
   cross_sell: CrossSellOpportunity[];
@@ -14,10 +16,10 @@ interface ObjectivesResponse {
 }
 
 /**
- * Sincroniza objetivos, conceitos de educação financeira, oportunidades
- * de cross-sell e notas fora de escopo com o servidor. Usado ao montar
- * a AppView para garantir consistência mesmo que algum evento SSE
- * tenha se perdido.
+ * Sincroniza perfil 360°, objetivos, conceitos de educação financeira,
+ * oportunidades de cross-sell e notas fora de escopo com o servidor.
+ * Usado ao montar a AppView para garantir consistência mesmo que algum
+ * evento SSE tenha se perdido.
  */
 export function useObjectivesSync() {
   const sessionId = useSessionStore((s) => s.sessionId);
@@ -36,6 +38,7 @@ export function useObjectivesSync() {
         const data = (await res.json()) as ObjectivesResponse;
         if (cancelled) return;
         hydrate({
+          clientProfile: data.client_profile ?? null,
           objectives: data.objectives ?? [],
           educationTopics: data.education_topics ?? [],
           crossSells: data.cross_sell ?? [],

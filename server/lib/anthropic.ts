@@ -4,6 +4,7 @@
 
 import { BIA_SYSTEM_PROMPT, TOOLS } from './bia.ts';
 import {
+  upsertClientProfile,
   upsertCrossSell,
   insertEducationTopic,
   insertOutOfScopeNote,
@@ -14,7 +15,11 @@ import type {
   RunConversationParams,
   SSEEvent,
 } from './engine.ts';
-import type { CrossSellInput, ObjectiveInput } from './types.ts';
+import type {
+  ClientProfileInput,
+  CrossSellInput,
+  ObjectiveInput,
+} from './types.ts';
 
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 const ANTHROPIC_VERSION = '2023-06-01';
@@ -261,6 +266,18 @@ function executeTool(
   emit: (e: SSEEvent) => void,
 ): { ok: boolean; [k: string]: unknown } {
   try {
+    if (name === 'register_client_profile') {
+      const profile = upsertClientProfile(
+        sessionId,
+        input as unknown as ClientProfileInput,
+      );
+      emit({ type: 'client_profile', profile });
+      return {
+        ok: true,
+        perfil_suitability: profile.perfil_suitability,
+        message: `Perfil registrado. Suitability derivado: ${profile.perfil_suitability}.`,
+      };
+    }
     if (name === 'register_objective') {
       const obj = upsertObjective(sessionId, input as unknown as ObjectiveInput);
       emit({ type: 'objective_registered', objective: obj });

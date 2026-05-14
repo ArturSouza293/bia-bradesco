@@ -10,6 +10,7 @@ function uid() {
 interface ChatEvent {
   type:
     | 'text'
+    | 'client_profile'
     | 'objective_registered'
     | 'education_note'
     | 'cross_sell'
@@ -17,6 +18,7 @@ interface ChatEvent {
     | 'error'
     | 'done';
   delta?: string;
+  profile?: unknown;
   objective?: unknown;
   topic?: unknown;
   opportunity?: unknown;
@@ -80,6 +82,8 @@ export function useChat() {
         const s = useSessionStore.getState();
         if (evt.type === 'text' && evt.delta) {
           s.appendToLastAssistant(evt.delta);
+        } else if (evt.type === 'client_profile' && evt.profile) {
+          s.setClientProfile(evt.profile as never);
         } else if (evt.type === 'objective_registered' && evt.objective) {
           s.upsertObjective(evt.objective as never);
         } else if (evt.type === 'education_note' && evt.topic) {

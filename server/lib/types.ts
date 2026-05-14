@@ -27,6 +27,54 @@ export type HorizonteClasse = 'curto' | 'medio' | 'longo';
 export type SessionStatus = 'active' | 'completed' | 'abandoned';
 export type Role = 'user' | 'assistant' | 'system';
 
+// ---- Perfil 360° do cliente (anamnese) ----
+export type EstadoCivil =
+  | 'solteiro'
+  | 'casado'
+  | 'uniao_estavel'
+  | 'divorciado'
+  | 'viuvo';
+export type RendaFaixa =
+  | 'ate_3k'
+  | 'de_3k_a_6k'
+  | 'de_6k_a_10k'
+  | 'de_10k_a_20k'
+  | 'acima_20k';
+export type ExperienciaInvestimentos =
+  | 'nenhuma'
+  | 'iniciante'
+  | 'intermediaria'
+  | 'experiente';
+export type ToleranciaRisco = 'baixa' | 'media' | 'alta';
+// Suitability — perfil de investidor do CLIENTE (≠ perfil de risco do objetivo)
+export type PerfilSuitability = 'conservador' | 'moderado' | 'arrojado';
+
+export interface ClientProfileInput {
+  idade: number;
+  estado_civil: EstadoCivil;
+  dependentes: number;
+  profissao: string;
+  renda_mensal_faixa: RendaFaixa;
+  experiencia_investimentos: ExperienciaInvestimentos;
+  tolerancia_risco: ToleranciaRisco;
+  observacoes?: string;
+}
+
+export interface ClientProfile {
+  session_id: string;
+  idade: number | null;
+  estado_civil: EstadoCivil | null;
+  dependentes: number | null;
+  profissao: string | null;
+  renda_mensal_faixa: RendaFaixa | null;
+  experiencia_investimentos: ExperienciaInvestimentos | null;
+  tolerancia_risco: ToleranciaRisco | null;
+  perfil_suitability: PerfilSuitability | null;
+  observacoes: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface CompletudeDetalhes {
   especifico: boolean;
   mensuravel: boolean;

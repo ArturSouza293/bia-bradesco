@@ -4,6 +4,7 @@ import type {
   Objective,
   EducationTopic,
   CrossSellOpportunity,
+  ClientProfile,
 } from '@/types/objective';
 
 export interface UIMessage {
@@ -24,6 +25,7 @@ interface SessionState {
   sessionStatus: 'idle' | 'active' | 'completed' | 'abandoned';
   startedAt: string | null;
   messages: UIMessage[];
+  clientProfile: ClientProfile | null;
   objectives: Objective[];
   educationTopics: EducationTopic[];
   crossSells: CrossSellOpportunity[];
@@ -39,11 +41,13 @@ interface SessionActions {
   setStatus: (s: SessionState['sessionStatus']) => void;
   addMessage: (m: UIMessage) => void;
   appendToLastAssistant: (delta: string) => void;
+  setClientProfile: (p: ClientProfile) => void;
   upsertObjective: (o: Objective) => void;
   upsertEducationTopic: (t: EducationTopic) => void;
   upsertCrossSell: (c: CrossSellOpportunity) => void;
   addOutOfScopeNote: (n: string) => void;
   hydrateFromServer: (data: {
+    clientProfile: ClientProfile | null;
     objectives: Objective[];
     educationTopics: EducationTopic[];
     crossSells: CrossSellOpportunity[];
@@ -61,6 +65,7 @@ const initialState: SessionState = {
   sessionStatus: 'idle',
   startedAt: null,
   messages: [],
+  clientProfile: null,
   objectives: [],
   educationTopics: [],
   crossSells: [],
@@ -104,6 +109,7 @@ export const useSessionStore = create<SessionState & SessionActions>()(
           }
           return { messages: msgs };
         }),
+      setClientProfile: (p) => set({ clientProfile: p }),
       upsertObjective: (o) =>
         set((state) => ({ objectives: upsertById(state.objectives, o) })),
       upsertEducationTopic: (t) =>
@@ -120,6 +126,7 @@ export const useSessionStore = create<SessionState & SessionActions>()(
         ),
       hydrateFromServer: (data) =>
         set({
+          clientProfile: data.clientProfile,
           objectives: data.objectives,
           educationTopics: data.educationTopics,
           crossSells: data.crossSells,
@@ -139,6 +146,7 @@ export const useSessionStore = create<SessionState & SessionActions>()(
         sessionStatus: s.sessionStatus,
         startedAt: s.startedAt,
         messages: s.messages,
+        clientProfile: s.clientProfile,
         objectives: s.objectives,
         educationTopics: s.educationTopics,
         crossSells: s.crossSells,

@@ -23,14 +23,23 @@ Você executa a ETAPA 2. As etapas 3 em diante são o "planejamento financeiro" 
 - Confidencialidade e respeito: trate os dados e as escolhas do cliente com cuidado, sem julgar.
 - Transparência: o cliente sempre sabe em que etapa está e o que vem depois.
 
-# A JORNADA — começo, meio e fim (3 fases)
+# A JORNADA — começo, meio e fim (4 fases)
 ## FASE 1 — BOAS-VINDAS (1 a 2 trocas)
-Você já enviou a abertura. Aguarde o aceite. Quando o cliente aceitar, faça UMA pergunta aberta de descoberta: "Quando você pensa nos próximos 5 a 10 anos, o que você gostaria de conquistar?"
+Você já enviou a abertura. Aguarde o aceite explícito do cliente. Quando ele aceitar, NÃO pule direto para os objetivos — comece pela anamnese (Fase 2).
 
-## FASE 2 — DESCOBERTA (o corpo da conversa)
+## FASE 2 — SEU PERFIL (anamnese rápida, 3 a 4 trocas)
+Antes de falar de objetivos, você precisa CONHECER o cliente — é a parte "dados pessoais e situação" da coleta CFP (Etapa 2). Faça uma anamnese rápida e leve, agrupando perguntas relacionadas numa mesma mensagem:
+  • idade + estado civil + nº de dependentes
+  • profissão + faixa de renda mensal
+  • experiência com investimentos + como você reage quando um investimento cai de valor (isso define o suitability — o perfil de investidor)
+Seja ágil e cordial: "rapidinho, só pra eu te conhecer melhor antes da gente sonhar junto". Quando tiver os dados, chame register_client_profile UMA vez — o sistema deriva o perfil de investidor (suitability). Depois transicione e faça a primeira pergunta aberta de descoberta: "Pronto, agora te conheço! Quando você pensa nos próximos 5 a 10 anos, o que você gostaria de conquistar?"
+Numa versão integrada, esses dados viriam do Open Finance e do cadastro do cliente — aqui você os coleta na conversa.
+
+## FASE 3 — DESCOBERTA DOS OBJETIVOS (o corpo da conversa)
 Explore um objetivo por vez, aplicando a METODOLOGIA CFP abaixo. Ao confirmar um objetivo, chame register_objective. Faça educação financeira pelo caminho. Use a lente de gerente de conta para anotar cross-sell em silêncio. Dê sensação de progresso.
+USE O PERFIL para DIRECIONAR e personalizar: referencie idade, dependentes, renda, profissão e suitability — "pensando nos seus 2 filhos...", "com 30 anos, a aposentadoria tem um horizonte longo a seu favor...", "como seu perfil é conservador, faz sentido priorizar a reserva...". A jornada deve parecer feita sob medida.
 
-## FASE 3 — FECHAMENTO (recapitulação explícita)
+## FASE 4 — FECHAMENTO (recapitulação explícita)
 Com 3 a 5 objetivos bem formados, feche nesta ordem:
   1. Recapitule os objetivos estruturados.
   2. Recapitule EXPLICITAMENTE os conceitos de educação financeira que ensinou.
@@ -102,6 +111,65 @@ REGRA DE OURO: você NÃO oferece nem menciona esses produtos ao cliente. É int
 // Definições de ferramentas (tool use)
 // ----------------------------------------------------------------
 export const TOOLS = [
+  {
+    name: 'register_client_profile',
+    description:
+      'Registra o perfil 360° do cliente após a anamnese rápida (Fase 2), antes de explorar os objetivos. Chame UMA vez quando tiver os dados. O sistema deriva o suitability (perfil de investidor).',
+    input_schema: {
+      type: 'object',
+      properties: {
+        idade: { type: 'integer' },
+        estado_civil: {
+          type: 'string',
+          enum: [
+            'solteiro',
+            'casado',
+            'uniao_estavel',
+            'divorciado',
+            'viuvo',
+          ],
+        },
+        dependentes: {
+          type: 'integer',
+          description: 'Número de dependentes financeiros (0 se não houver)',
+        },
+        profissao: { type: 'string' },
+        renda_mensal_faixa: {
+          type: 'string',
+          enum: [
+            'ate_3k',
+            'de_3k_a_6k',
+            'de_6k_a_10k',
+            'de_10k_a_20k',
+            'acima_20k',
+          ],
+        },
+        experiencia_investimentos: {
+          type: 'string',
+          enum: ['nenhuma', 'iniciante', 'intermediaria', 'experiente'],
+        },
+        tolerancia_risco: {
+          type: 'string',
+          enum: ['baixa', 'media', 'alta'],
+          description:
+            'Inferida de como o cliente reage à oscilação dos investimentos',
+        },
+        observacoes: {
+          type: 'string',
+          description: 'Algo relevante do contexto do cliente (opcional)',
+        },
+      },
+      required: [
+        'idade',
+        'estado_civil',
+        'dependentes',
+        'profissao',
+        'renda_mensal_faixa',
+        'experiencia_investimentos',
+        'tolerancia_risco',
+      ],
+    },
+  },
   {
     name: 'register_objective',
     description:
@@ -236,7 +304,7 @@ export const OPENING_MESSAGES = [
     delay_ms: 1400,
     text: `Sou planejadora financeira **CFP®** e vou te ajudar a **organizar seus objetivos de vida** numa conversa rápida (uns 10–15 minutinhos). 🎯
 
-Esta é a **2ª etapa** do planejamento financeiro: a gente descobre e estrutura seus objetivos juntos, eu te explico alguns conceitos pelo caminho, e no final monto um resumo pra você levar pra próxima etapa.
+Funciona assim: primeiro eu te conheço rapidinho (idade, família, renda...), depois a gente descobre seus objetivos juntos, com educação financeira pelo caminho. No final, monto um resumo pra você levar pra próxima etapa.
 
 **Podemos começar?**`,
   },

@@ -16,6 +16,28 @@ CREATE TABLE IF NOT EXISTS sessions (
   created_at       TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
+-- Perfil 360° do cliente — anamnese rápida feita pela Bia ANTES dos objetivos.
+-- Em produção, viria do Open Finance + dados cadastrais; aqui a Bia coleta
+-- numa conversa curta. Um perfil por sessão.
+CREATE TABLE IF NOT EXISTS client_profiles (
+  session_id                TEXT PRIMARY KEY REFERENCES sessions(id) ON DELETE CASCADE,
+  idade                     INTEGER,
+  estado_civil              TEXT CHECK (estado_civil IN
+                              ('solteiro', 'casado', 'uniao_estavel', 'divorciado', 'viuvo')),
+  dependentes               INTEGER,
+  profissao                 TEXT,
+  renda_mensal_faixa        TEXT CHECK (renda_mensal_faixa IN
+                              ('ate_3k', 'de_3k_a_6k', 'de_6k_a_10k', 'de_10k_a_20k', 'acima_20k')),
+  experiencia_investimentos TEXT CHECK (experiencia_investimentos IN
+                              ('nenhuma', 'iniciante', 'intermediaria', 'experiente')),
+  tolerancia_risco          TEXT CHECK (tolerancia_risco IN ('baixa', 'media', 'alta')),
+  perfil_suitability        TEXT CHECK (perfil_suitability IN
+                              ('conservador', 'moderado', 'arrojado')),
+  observacoes               TEXT,
+  created_at                TEXT NOT NULL DEFAULT (datetime('now')),
+  updated_at                TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
 -- Histórico de mensagens (auditoria do fluxo do agente)
 CREATE TABLE IF NOT EXISTS messages (
   id         TEXT PRIMARY KEY,

@@ -4,6 +4,7 @@
 
 import type {
   ChatMessage,
+  ClientProfile,
   CrossSellOpportunity,
   EducationTopic,
   Objective,
@@ -13,6 +14,7 @@ import { runMockConversation } from './mock.ts';
 
 export type SSEEvent =
   | { type: 'text'; delta: string }
+  | { type: 'client_profile'; profile: ClientProfile }
   | { type: 'objective_registered'; objective: Objective }
   | { type: 'education_note'; topic: EducationTopic }
   | { type: 'cross_sell'; opportunity: CrossSellOpportunity }

@@ -1,10 +1,12 @@
 // =================================================================
 // Motor mock — conversa scriptada para testar design + fluxo offline.
 // Sem internet, sem custo. Cada mensagem do usuário avança o roteiro.
-// O roteiro segue as 3 fases: Boas-vindas → Descoberta → Fechamento.
+// Roteiro segue as 4 fases: Boas-vindas → Seu Perfil (anamnese) →
+// Descoberta dos objetivos → Fechamento.
 // =================================================================
 
 import {
+  upsertClientProfile,
   upsertCrossSell,
   insertEducationTopic,
   upsertObjective,
@@ -14,23 +16,51 @@ import type {
   RunConversationParams,
   SSEEvent,
 } from './engine.ts';
-import type { CrossSellInput, ObjectiveInput } from './types.ts';
+import type {
+  ClientProfileInput,
+  CrossSellInput,
+  ObjectiveInput,
+} from './types.ts';
 
 interface MockStep {
   text: string;
+  clientProfile?: ClientProfileInput;
   education?: { topico: string; resumo: string }[];
   crossSells?: CrossSellInput[];
   objectives?: ObjectiveInput[];
 }
 
 const SCRIPT: MockStep[] = [
-  // ---- FASE 1 → 2 : aceite + primeira pergunta de descoberta ----
+  // ---- FASE 1→2 : aceite + início da anamnese ----
   {
-    text: 'Que bom que topou! 🎯\n\nVamos começar simples: quando você pensa nos próximos **5 a 10 anos**, o que você gostaria de conquistar?',
+    text: 'Combinado! 😊 Antes de sonhar junto com você, preciso te conhecer rapidinho.\n\nMe conta três coisinhas: **qual a sua idade**, seu **estado civil**, e se você tem **dependentes** (filhos, por exemplo)?',
   },
-  // ---- FASE 2 : explora 1º objetivo + educação (valor presente) ----
+  // ---- FASE 2 : anamnese — profissão + renda ----
   {
-    text: 'Adorei! 🏠 Antes de avançar, um conceito rápido: vou trabalhar sempre com **valor de hoje** — quanto custaria agora — pra não complicar com inflação nesta etapa.\n\nVocê tem ideia de quanto custaria esse imóvel hoje, e em quanto tempo gostaria de realizar?',
+    text: 'Anotado! 📝 Agora sobre o seu dia a dia: **qual é a sua profissão** e em que **faixa de renda mensal** você se encaixa? Pode ser por faixa, fica à vontade.',
+  },
+  // ---- FASE 2 : anamnese — experiência + tolerância (suitability) ----
+  {
+    text: 'Perfeito. Última pergunta pra eu te conhecer: você **já investe** hoje? E quando você imagina um investimento seu **caindo de valor** por alguns meses — você fica tranquilo ou isso te incomoda bastante?',
+  },
+  // ---- FASE 2→3 : registra perfil + transição para objetivos ----
+  {
+    text: 'Show, agora te conheço! 🎯 Já montei seu **perfil** aqui ao lado — dá uma olhada.\n\nVamos ao que interessa: quando você pensa nos próximos **5 a 10 anos**, o que você gostaria de conquistar?',
+    clientProfile: {
+      idade: 32,
+      estado_civil: 'casado',
+      dependentes: 2,
+      profissao: 'Analista de marketing',
+      renda_mensal_faixa: 'de_6k_a_10k',
+      experiencia_investimentos: 'iniciante',
+      tolerancia_risco: 'media',
+      observacoes:
+        'Casado, 2 filhos pequenos. Já investe pouco (poupança e um CDB). Reage com calma a oscilações moderadas.',
+    },
+  },
+  // ---- FASE 3 : explora 1º objetivo + educação (valor presente) ----
+  {
+    text: 'Adorei! 🏠 Pra uma família com 2 filhos, sair do aluguel costuma ser prioridade mesmo. Antes de avançar, um conceito rápido: vou trabalhar sempre com **valor de hoje** — quanto custaria agora — pra não complicar com inflação nesta etapa.\n\nVocê tem ideia de quanto custaria esse imóvel hoje, e em quanto tempo gostaria de realizar?',
     education: [
       {
         topico: 'Valor presente',
@@ -39,9 +69,9 @@ const SCRIPT: MockStep[] = [
       },
     ],
   },
-  // ---- FASE 2 : registra objetivo 1 + cross-sell silencioso ----
+  // ---- FASE 3 : registra objetivo 1 + cross-sell ----
   {
-    text: 'Perfeito, anotei. 📝 Pronto, **objetivo 1 estruturado**: casa própria, ~R$ 600 mil, em 7 anos. Já apareceu aqui no seu resumo.\n\nTem mais algum objetivo importante? Pode ser aposentadoria, uma viagem, um carro...',
+    text: 'Perfeito, anotei. 📝 Pronto, **objetivo 1 estruturado**: casa própria, ~R$ 600 mil, em 7 anos. Já apareceu no seu resumo.\n\nTem mais algum objetivo importante? Pode ser aposentadoria, uma viagem, um carro...',
     objectives: [
       {
         categoria: 'casa_propria',
@@ -77,9 +107,9 @@ const SCRIPT: MockStep[] = [
       },
     ],
   },
-  // ---- FASE 2 : explora 2º objetivo + educação (horizonte) ----
+  // ---- FASE 3 : explora 2º objetivo + educação (horizonte) ----
   {
-    text: 'Faz todo sentido pensar na aposentadoria. 👴 Outro conceito: o **horizonte** do objetivo — quanto mais longe a data, mais espaço pra estratégias de longo prazo.\n\nVocê imagina se aposentar com mais ou menos quantos anos, e que padrão de vida gostaria de manter?',
+    text: 'Faz todo sentido pensar na aposentadoria. 👴 E você tem o tempo a favor: aos 32, o **horizonte** é longo — quanto mais distante a data, mais espaço pra estratégias de longo prazo.\n\nVocê imagina se aposentar com mais ou menos quantos anos, e que padrão de vida gostaria de manter?',
     education: [
       {
         topico: 'Horizonte do objetivo',
@@ -88,7 +118,7 @@ const SCRIPT: MockStep[] = [
       },
     ],
   },
-  // ---- FASE 2 : registra objetivo 2 + cross-sell ----
+  // ---- FASE 3 : registra objetivo 2 + cross-sell ----
   {
     text: 'Ótimo, **objetivo 2 estruturado**: aposentadoria mantendo o padrão de vida, num horizonte longo. 👴\n\nDeixa eu te perguntar uma coisa importante antes de fecharmos...',
     objectives: [
@@ -119,9 +149,9 @@ const SCRIPT: MockStep[] = [
       },
     ],
   },
-  // ---- FASE 2 : reserva de emergência proativa + educação + cross-sell ----
+  // ---- FASE 3 : reserva de emergência proativa + educação + cross-sell ----
   {
-    text: 'Você me trouxe ótimos objetivos, mas faltou um que vem **antes** de todos: a **reserva de emergência**. 🛡️\n\nÉ um dinheiro guardado só pra imprevistos — sem ela, qualquer susto faz você sacar dos outros objetivos. Registrei como prioridade alta, sugerindo ~6 meses das suas despesas.',
+    text: 'Você me trouxe ótimos objetivos, mas faltou um que vem **antes** de todos: a **reserva de emergência**. 🛡️\n\nCom 2 filhos, ela é ainda mais essencial — é um dinheiro guardado só pra imprevistos, que protege todos os outros planos. Registrei como prioridade alta, sugerindo ~6 meses das suas despesas.',
     education: [
       {
         topico: 'Reserva de emergência',
@@ -160,7 +190,7 @@ const SCRIPT: MockStep[] = [
       },
     ],
   },
-  // ---- FASE 3 : recapitulação explícita + encaminhamento ----
+  // ---- FASE 4 : recapitulação explícita + encaminhamento ----
   {
     text:
       'Acho que já tenho um quadro bom dos seus objetivos. Deixa eu **recapitular** com você. 📋\n\n' +
@@ -203,6 +233,11 @@ export async function runMockConversation(
   await sleep(340);
   await streamText(step.text, emit);
 
+  if (step.clientProfile) {
+    const profile = upsertClientProfile(sessionId, step.clientProfile);
+    emit({ type: 'client_profile', profile });
+    await sleep(140);
+  }
   for (const ed of step.education ?? []) {
     const topic = insertEducationTopic(sessionId, ed.topico, ed.resumo);
     emit({ type: 'education_note', topic });

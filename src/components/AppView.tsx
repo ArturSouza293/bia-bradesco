@@ -1,9 +1,11 @@
 import {
+  Briefcase,
   ChevronLeft,
   Download,
   GraduationCap,
   RotateCcw,
   Sparkles,
+  Users,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { BiaAvatar } from '@/components/BiaAvatar';
@@ -14,6 +16,16 @@ import { useObjectivesSync } from '@/hooks/useObjectives';
 import { useSessionStore } from '@/store/sessionStore';
 import { deriveJourneyPhase } from '@/lib/journey';
 import { PRODUTO_ICONE, PRODUTO_LABEL, PRIORIDADE_BADGE } from '@/lib/cross-sell';
+import {
+  ESTADO_CIVIL_LABEL,
+  EXPERIENCIA_LABEL,
+  RENDA_FAIXA_LABEL,
+  SUITABILITY_EMOJI,
+  SUITABILITY_LABEL,
+  SUITABILITY_STYLE,
+} from '@/lib/profile';
+import { cn } from '@/lib/utils';
+import type { ClientProfile } from '@/types/objective';
 
 interface AppViewProps {
   /** Mobile: callback para voltar à conversa. Ausente no desktop. */
@@ -26,6 +38,7 @@ export function AppView({ onShowChat }: AppViewProps) {
   const sessionId = useSessionStore((s) => s.sessionId);
   const startedAt = useSessionStore((s) => s.startedAt);
   const messages = useSessionStore((s) => s.messages);
+  const clientProfile = useSessionStore((s) => s.clientProfile);
   const educationTopics = useSessionStore((s) => s.educationTopics);
   const crossSells = useSessionStore((s) => s.crossSells);
   const outOfScopeNotes = useSessionStore((s) => s.outOfScopeNotes);
@@ -33,7 +46,12 @@ export function AppView({ onShowChat }: AppViewProps) {
   const reset = useSessionStore((s) => s.reset);
   const objectives = useObjectivesSync();
 
-  const phase = deriveJourneyPhase({ messages, objectives, endedByBia });
+  const phase = deriveJourneyPhase({
+    messages,
+    objectives,
+    clientProfile,
+    endedByBia,
+  });
 
   const dateLabel = startedAt
     ? new Date(startedAt).toLocaleDateString('pt-BR', {
@@ -46,6 +64,7 @@ export function AppView({ onShowChat }: AppViewProps) {
     const payload = {
       session_id: sessionId,
       generated_at: new Date().toISOString(),
+      client_profile: clientProfile,
       objectives,
       education_topics: educationTopics,
       cross_sell_opportunities: crossSells,
@@ -110,6 +129,19 @@ export function AppView({ onShowChat }: AppViewProps) {
         <div className="bg-white rounded-2xl shadow-card border border-gray-100 p-3.5">
           <JourneyProgress phase={phase} />
         </div>
+
+        {/* Perfil 360° do cliente */}
+        {clientProfile ? (
+          <ProfileCard profile={clientProfile} />
+        ) : (
+          <div className="rounded-2xl border border-dashed border-gray-300 bg-white p-4 text-center shadow-card">
+            <Users className="h-5 w-5 text-gray-300 mx-auto mb-1" />
+            <p className="text-[12px] text-gray-500 leading-relaxed">
+              Seu <strong>perfil 360°</strong> aparece aqui assim que a Bia
+              fizer a anamnese rápida.
+            </p>
+          </div>
+        )}
 
         {/* Resumo numérico */}
         <div className="grid grid-cols-3 gap-2.5">
@@ -298,5 +330,94 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
     <h2 className="text-[12px] font-bold text-gray-500 uppercase tracking-wide px-0.5">
       {children}
     </h2>
+  );
+}
+
+function ProfileInfo({
+  label,
+  children,
+  full,
+}: {
+  label: string;
+  children: React.ReactNode;
+  full?: boolean;
+}) {
+  return (
+    <div className={full ? 'col-span-2' : ''}>
+      <div className="text-[10.5px] uppercase tracking-wide text-gray-400">
+        {label}
+      </div>
+      <div className="text-[13px] font-semibold text-bradesco-ink">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function ProfileCard({ profile }: { profile: ClientProfile }) {
+  const suit = profile.perfil_suitability;
+  return (
+    <section className="rounded-2xl bg-white shadow-card border border-gray-100 overflow-hidden">
+      <div className="bg-bradesco-surface px-3.5 py-2.5 flex items-center gap-1.5 border-b border-gray-100">
+        <Users className="h-4 w-4 text-bradesco-red" />
+        <h2 className="text-[13px] font-bold text-bradesco-ink">
+          Seu perfil 360°
+        </h2>
+      </div>
+      <div className="p-3.5 space-y-3">
+        <div className="grid grid-cols-2 gap-x-3 gap-y-2.5">
+          <ProfileInfo label="Idade">
+            {profile.idade != null ? `${profile.idade} anos` : '—'}
+          </ProfileInfo>
+          <ProfileInfo label="Estado civil">
+            {profile.estado_civil
+              ? ESTADO_CIVIL_LABEL[profile.estado_civil]
+              : '—'}
+          </ProfileInfo>
+          <ProfileInfo label="Dependentes">
+            {profile.dependentes ?? '—'}
+          </ProfileInfo>
+          <ProfileInfo label="Profissão">
+            {profile.profissao ?? '—'}
+          </ProfileInfo>
+          <ProfileInfo label="Renda mensal" full>
+            {profile.renda_mensal_faixa
+              ? RENDA_FAIXA_LABEL[profile.renda_mensal_faixa]
+              : '—'}
+          </ProfileInfo>
+        </div>
+
+        {/* Suitability — perfil de investidor */}
+        <div className="flex items-center justify-between rounded-xl bg-bradesco-surface px-3 py-2.5">
+          <div className="min-w-0">
+            <div className="flex items-center gap-1 text-[11px] text-gray-500">
+              <Briefcase className="h-3 w-3" />
+              Perfil de investidor
+            </div>
+            <div className="text-[10px] text-gray-400 mt-0.5 truncate">
+              {profile.experiencia_investimentos
+                ? `Experiência ${EXPERIENCIA_LABEL[profile.experiencia_investimentos].toLowerCase()}`
+                : ''}
+            </div>
+          </div>
+          {suit && (
+            <span
+              className={cn(
+                'px-2.5 py-1 rounded-full font-bold text-[12px] whitespace-nowrap',
+                SUITABILITY_STYLE[suit],
+              )}
+            >
+              {SUITABILITY_EMOJI[suit]} {SUITABILITY_LABEL[suit]}
+            </span>
+          )}
+        </div>
+
+        <p className="text-[10px] text-gray-400 leading-snug">
+          Numa versão integrada, estes dados viriam do <strong>Open
+          Finance</strong> e do seu cadastro Bradesco — aqui a Bia coletou na
+          conversa.
+        </p>
+      </div>
+    </section>
   );
 }

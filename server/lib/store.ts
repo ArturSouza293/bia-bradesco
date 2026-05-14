@@ -5,7 +5,10 @@
 import { getDb, uid, nowIso } from '../db.ts';
 import { calcularPerfilRisco, classificarHorizonte } from './risk-profile.ts';
 import { calcularSmartScore, CATEGORIA_ICONE } from './smart-score.ts';
+import { calcularSuitability } from './suitability.ts';
 import type {
+  ClientProfile,
+  ClientProfileInput,
   CrossSellInput,
   CrossSellOpportunity,
   EducationTopic,
@@ -379,4 +382,65 @@ export function getCrossSells(session_id: string): CrossSellOpportunity[] {
       'SELECT id, session_id, produto, gatilho, racional, prioridade, created_at FROM cross_sell_opportunities WHERE session_id = ? ORDER BY created_at ASC, rowid ASC',
     )
     .all(session_id) as unknown as CrossSellOpportunity[];
+}
+
+// ----------------------------------------------------------------
+// Perfil 360° do cliente (anamnese) — um por sessão.
+// O suitability (perfil de investidor) é derivado pelo servidor.
+// ----------------------------------------------------------------
+export function upsertClientProfile(
+  session_id: string,
+  input: ClientProfileInput,
+): ClientProfile {
+  const db = getDb();
+  const suitability = calcularSuitability({
+    experiencia_investimentos: input.experiencia_investimentos,
+    tolerancia_risco: input.tolerancia_risco,
+    idade: input.idade,
+  });
+  const now = nowIso();
+  const existing = db
+    .prepare('SELECT created_at FROM client_profiles WHERE session_id = ?')
+    .get(session_id) as { created_at: string } | undefined;
+
+  db.prepare(
+    `INSERT INTO client_profiles (
+      session_id, idade, estado_civil, dependentes, profissao,
+      renda_mensal_faixa, experiencia_investimentos, tolerancia_risco,
+      perfil_suitability, observacoes, created_at, updated_at
+    ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+    ON CONFLICT(session_id) DO UPDATE SET
+      idade = excluded.idade,
+      estado_civil = excluded.estado_civil,
+      dependentes = excluded.dependentes,
+      profissao = excluded.profissao,
+      renda_mensal_faixa = excluded.renda_mensal_faixa,
+      experiencia_investimentos = excluded.experiencia_investimentos,
+      tolerancia_risco = excluded.tolerancia_risco,
+      perfil_suitability = excluded.perfil_suitability,
+      observacoes = excluded.observacoes,
+      updated_at = excluded.updated_at`,
+  ).run(
+    session_id,
+    input.idade,
+    input.estado_civil,
+    input.dependentes,
+    input.profissao,
+    input.renda_mensal_faixa,
+    input.experiencia_investimentos,
+    input.tolerancia_risco,
+    suitability,
+    input.observacoes ?? null,
+    existing?.created_at ?? now,
+    now,
+  );
+
+  return getClientProfile(session_id) as ClientProfile;
+}
+
+export function getClientProfile(session_id: string): ClientProfile | null {
+  const row = getDb()
+    .prepare('SELECT * FROM client_profiles WHERE session_id = ?')
+    .get(session_id) as ClientProfile | undefined;
+  return row ?? null;
 }
