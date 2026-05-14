@@ -1,3 +1,5 @@
+// Tipos compartilhados do servidor (espelham src/types/objective.ts)
+
 export type Categoria =
   | 'casa_propria'
   | 'aposentadoria'
@@ -12,14 +14,14 @@ export type Categoria =
   | 'outro';
 
 export type Prioridade = 'alta' | 'media' | 'baixa';
-
 export type Flexibilidade = 'rigido' | 'flexivel';
-
 export type PerfilRisco =
   | 'conservador'
   | 'moderado'
   | 'moderado_arrojado'
   | 'arrojado';
+export type SessionStatus = 'active' | 'completed' | 'abandoned';
+export type Role = 'user' | 'assistant' | 'system';
 
 export interface CompletudeDetalhes {
   especifico: boolean;
@@ -27,6 +29,24 @@ export interface CompletudeDetalhes {
   alcancavel: boolean;
   relevante: boolean;
   temporal: boolean;
+}
+
+export interface ObjectiveInput {
+  categoria: Categoria;
+  icone?: string;
+  titulo_curto: string;
+  descricao: string;
+  valor_presente_brl: number;
+  horizonte_anos: number;
+  ano_alvo?: number;
+  prioridade: Prioridade;
+  modalidade?: string;
+  flexibilidade_prazo?: Flexibilidade;
+  flexibilidade_valor?: Flexibilidade;
+  trade_offs?: string;
+  observacoes_cliente?: string;
+  sinais_atencao?: string[];
+  proximo_passo_planejador?: string;
 }
 
 export interface Objective {
@@ -54,35 +74,24 @@ export interface Objective {
   updated_at: string;
 }
 
-export interface ObjectiveInput {
-  categoria: Categoria;
-  icone?: string;
-  titulo_curto: string;
-  descricao: string;
-  valor_presente_brl: number;
-  horizonte_anos: number;
-  ano_alvo?: number;
-  prioridade: Prioridade;
-  modalidade?: string;
-  flexibilidade_prazo?: Flexibilidade;
-  flexibilidade_valor?: Flexibilidade;
-  trade_offs?: string;
-  observacoes_cliente?: string;
-  sinais_atencao?: string[];
-  proximo_passo_planejador?: string;
-}
-
-export interface ChatMessage {
-  id: string;
-  role: 'user' | 'assistant';
-  content: string;
-  created_at: string;
-}
-
 export interface EducationTopic {
   id: string;
   session_id: string;
   topico: string;
   resumo: string | null;
   created_at: string;
+}
+
+export interface SessionRow {
+  id: string;
+  started_at: string;
+  ended_at: string | null;
+  status: SessionStatus;
+  duration_minutes: number | null;
+  created_at: string;
+}
+
+export interface ChatMessage {
+  role: 'user' | 'assistant';
+  content: string;
 }

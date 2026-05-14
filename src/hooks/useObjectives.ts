@@ -1,16 +1,22 @@
 import { useEffect } from 'react';
 import { useSessionStore } from '@/store/sessionStore';
-import type { Objective } from '@/types/objective';
+import type { Objective, EducationTopic } from '@/types/objective';
+
+interface ObjectivesResponse {
+  objectives: Objective[];
+  education_topics: EducationTopic[];
+  out_of_scope_notes: string[];
+}
 
 /**
- * Hook para garantir que os objetivos da sessão estão sincronizados
- * com o backend. Útil ao montar a tela de Dashboard caso o front
- * tenha perdido algum evento `objective_registered`.
+ * Sincroniza objetivos, conceitos de educação financeira e notas
+ * fora de escopo com o servidor. Usado ao montar o Dashboard para
+ * garantir consistência mesmo que algum evento SSE tenha se perdido.
  */
 export function useObjectivesSync() {
   const sessionId = useSessionStore((s) => s.sessionId);
   const objectives = useSessionStore((s) => s.objectives);
-  const upsert = useSessionStore((s) => s.upsertObjective);
+  const hydrate = useSessionStore((s) => s.hydrateFromServer);
 
   useEffect(() => {
     if (!sessionId) return;
@@ -21,18 +27,21 @@ export function useObjectivesSync() {
           `/api/objectives?session_id=${encodeURIComponent(sessionId)}`,
         );
         if (!res.ok) return;
-        const data = (await res.json()) as { objectives: Objective[] };
+        const data = (await res.json()) as ObjectivesResponse;
         if (cancelled) return;
-        for (const o of data.objectives) upsert(o);
+        hydrate({
+          objectives: data.objectives ?? [],
+          educationTopics: data.education_topics ?? [],
+          outOfScopeNotes: data.out_of_scope_notes ?? [],
+        });
       } catch {
-        // silencioso — front mantém o que tem
+        // silencioso — front mantém o que tem em memória
       }
     })();
     return () => {
       cancelled = true;
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sessionId]);
+  }, [sessionId, hydrate]);
 
   return objectives;
 }

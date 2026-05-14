@@ -1,18 +1,20 @@
 {
   "name": "bia-bradesco",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
+  "description": "Bia · Bradesco — demo offline: agente de IA para cadastro de objetivos de vida + educação financeira básica",
   "scripts": {
-    "dev": "vite",
-    "dev:netlify": "netlify dev",
+    "dev": "concurrently -n web,api -c blue,green \"vite\" \"npm:dev:server\"",
+    "dev:server": "tsx watch server/index.ts",
     "build": "tsc -b && vite build",
-    "preview": "vite preview",
-    "typecheck": "tsc -b --noEmit"
+    "start": "tsx server/index.ts",
+    "typecheck": "tsc -b --noEmit",
+    "db:reset": "tsx server/scripts/reset-db.ts"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.45.4",
     "clsx": "^2.1.1",
+    "express": "^4.21.2",
     "lucide-react": "^0.456.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -23,13 +25,16 @@
     "zustand": "^4.5.5"
   },
   "devDependencies": {
-    "@types/node": "^20.16.5",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.5",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
+    "tsx": "^4.19.2",
     "typescript": "^5.6.3",
     "vite": "^5.4.10"
   }

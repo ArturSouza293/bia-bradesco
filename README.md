@@ -1,177 +1,109 @@
-# Bia · Bradesco — Planejamento de Objetivos (Demo)
+# Bia · Bradesco — Demo offline
 
-Demo web que simula a jornada de um cliente Bradesco descobrindo e
-estruturando seus **objetivos de vida** via WhatsApp-like chat com a
-assistente virtual **Bia**.
+App **local e offline** que testa a **Bia**, um agente de IA que guia o cliente
+por uma jornada de **cadastro de objetivos de vida** + **educação financeira
+básica** — e ao final o encaminha para a próxima etapa: o **planejamento
+financeiro** (fluxo de caixa futuro), que é a fronteira final deste caso de uso.
 
-> ⚠️ **Demonstração técnica.** Não é o atendimento oficial do Bradesco.
+> ⚠️ Demonstração técnica. Não é o atendimento oficial do Bradesco.
 
 ---
 
-## 🎯 O que ele faz
+## 🎯 A jornada (fluxo de negócio)
+
+```
+[1] Landing  →  [2] Chat com a Bia  →  [3] Dashboard
+                      │
+                      ├─ descobre e estrutura objetivos de vida (metodologia SMART)
+                      ├─ dá educação financeira básica no contexto da conversa
+                      └─ ao final, encaminha para o PLANEJAMENTO FINANCEIRO
+                         (fluxo de caixa futuro) — fronteira final
+```
 
 | Fronteira | Definição |
 |---|---|
-| **Início** | Landing com botão "Conversar com a Bia". Sem login. |
-| **Conversa** | Apenas descoberta e estruturação de objetivos (metodologia CFP). |
-| **Fim** | Cards estruturados com target, prazo, prioridade, perfil de risco do objetivo, completude SMART. |
-
-Fora de escopo: fluxo de caixa, alocação, recomendação de produto, suitability.
-
----
-
-## 🧱 Stack
-
-- **Frontend**: React 18 + TypeScript + Vite + Tailwind + Zustand
-- **Backend**: Netlify Edge Functions (Deno) — proxy seguro para Anthropic
-- **Banco**: Supabase Postgres + RLS
-- **LLM**: Anthropic API (`claude-opus-4-7`) com streaming SSE + tool use
-
-`ANTHROPIC_API_KEY` e `SUPABASE_SERVICE_ROLE_KEY` ficam **apenas no servidor**.
+| **Entrada** | Landing com "Conversar com a Bia". Sem login. |
+| **Escopo** | Descoberta de objetivos (SMART) + educação financeira básica. |
+| **Fora de escopo** | Fluxo de caixa, alocação, produtos, suitability — anotados para a próxima etapa. |
+| **Saída** | 3–5 objetivos estruturados + conceitos explicados, prontos para o planejamento financeiro. |
 
 ---
 
-## 🚀 Setup local (Windows)
+## 🧱 Arquitetura — tudo local
 
-### 1. Pré-requisitos
-
-```powershell
-# Node.js LTS (22.x)
-winget install OpenJS.NodeJS.LTS
-
-# Netlify CLI (depois que o npm estiver disponível)
-npm install -g netlify-cli
+```
+┌─────────────────┐   /api/*    ┌──────────────────────┐
+│  Frontend        │ ──────────▶ │  Servidor Express     │
+│  React + Vite    │  (proxy)    │  (Node, porta 3001)   │
+│  iPhone mockup   │ ◀────────── │   ├─ motor real/mock  │
+└─────────────────┘   SSE        │   └─ SQLite (node:sqlite)
+                                 └──────────────────────┘
+                                            │
+                              internet só p/ o motor Claude real
 ```
 
-Feche e reabra o terminal depois do `winget install` para o PATH ser atualizado.
+- **Frontend**: React 18 + TypeScript + Vite + Tailwind + Zustand. UI estilo
+  WhatsApp dentro de um mockup de iPhone 17 Pro Max (no mobile vira fullscreen).
+- **Backend**: servidor Express local. **SQLite via `node:sqlite`** (embutido no
+  Node 22.5+, **zero dependências nativas** — roda offline sem build tools).
+- **Dois motores de conversa**:
+  - **mock** — conversa scriptada, **100% offline**, sem internet e sem custo.
+    Testa todo o design + fluxo + banco.
+  - **claude** — motor real (`claude-opus-4-7`) com streaming SSE e tool use.
+    Só este precisa de internet.
+  - A escolha é automática: sem `ANTHROPIC_API_KEY` válida (ou `MOCK_LLM=true`)
+    → mock. Com a key → Claude real.
 
-### 2. Instalar dependências
+Não há nada na nuvem. Não há deploy. É um projeto Git com banco que roda na
+sua máquina.
 
+---
+
+## 🚀 Como rodar
+
+### Pré-requisito
+- **Node.js 22.5+** (testado no 24). Nada mais — sem Postgres, sem Docker.
+
+### Instalar
 ```powershell
-cd C:\Users\artur\bia-bradesco
 npm install
 ```
 
-### 3. Configurar Supabase
-
-1. Crie um projeto em https://supabase.com (free tier serve).
-2. Em **SQL Editor**, abra `supabase/migrations/001_initial_schema.sql` deste repo e execute o conteúdo inteiro.
-3. Em **Settings → API**, copie:
-   - `Project URL` → `SUPABASE_URL` e `VITE_SUPABASE_URL`
-   - `anon public key` → `VITE_SUPABASE_ANON_KEY`
-   - `service_role key` → `SUPABASE_SERVICE_ROLE_KEY` (**nunca commitar**)
-
-### 4. Anthropic API key
-
-Em https://console.anthropic.com → API keys → create. Copie para `ANTHROPIC_API_KEY`.
-
-### 5. Variáveis de ambiente
-
-Copie o template e preencha:
-
+### Configurar
 ```powershell
 Copy-Item .env.example .env
-notepad .env
+# Edite .env:
+#  - deixe ANTHROPIC_API_KEY vazia (ou MOCK_LLM=true)  → roda 100% offline (mock)
+#  - preencha ANTHROPIC_API_KEY                         → usa o Claude real
 ```
 
-### 6. Rodar
-
+### Desenvolvimento (hot reload)
 ```powershell
-# Frontend isolado (sem Edge Functions)
 npm run dev
-# → http://localhost:5173 (chat não vai funcionar, pra checar UI apenas)
-
-# Stack completo (frontend + Edge Functions)
-npm run dev:netlify
-# → http://localhost:8888
+# Vite (frontend) em http://localhost:5173  + servidor em :3001
+# Abra http://localhost:5173
 ```
 
-`netlify dev` carrega o `.env` automaticamente e proxia `/api/*` para as Edge Functions.
-
----
-
-## 🌐 Deploy no Netlify
-
-1. Faça push deste repo pro GitHub.
-2. Em https://app.netlify.com, **Add new site → Import from Git**.
-3. Conecte o repo. Build command: `npm run build`. Publish: `dist`.
-4. Em **Site settings → Environment variables**, adicione todas as variáveis do `.env` (exceto `VITE_*` que viram públicas — adicione mesmo assim).
-5. Deploy.
-
-As Edge Functions em `netlify/edge-functions/` são detectadas automaticamente.
-
----
-
-## 🗺️ Fluxo
-
-```
-[1] Landing → POST /api/sessions
-[2] Chat   → POST /api/chat (SSE com text + tool_use events)
-[3] Dashboard → GET /api/objectives + PATCH /api/sessions/:id (completed)
+### App offline (processo único)
+```powershell
+npm run build
+npm start
+# Servidor serve o frontend + a API em http://localhost:3001
 ```
 
 ---
 
-## 🔌 API
+## ⚙️ Configuração (`.env`)
 
-### `POST /api/sessions`
-Cria sessão. Retorna `{ id, started_at, status, opening_messages: [...] }`.
-As mensagens de abertura são pré-inseridas em `messages` para auditoria.
+| Variável | Para quê |
+|---|---|
+| `ANTHROPIC_API_KEY` | Key do Claude. **Vazia = modo mock (offline).** |
+| `ANTHROPIC_MODEL` | Modelo (padrão `claude-opus-4-7`). |
+| `PORT` | Porta do servidor (padrão `3001`). |
+| `MOCK_LLM` | `true` força o mock mesmo com a key presente. |
 
-### `POST /api/chat`
-**Body**: `{ session_id, messages: [{role, content}, ...] }` — histórico completo da conversa.
-**Resposta**: stream SSE com eventos:
-- `{type:"text", delta:"..."}` — texto incremental do assistente
-- `{type:"objective_registered", objective:{...}}` — objetivo criado/atualizado via tool
-- `{type:"out_of_scope_note", nota:"..."}` — anotação fora de escopo
-- `{type:"error", message:"..."}` — erro
-- `{type:"done"}` — fim do stream
-
-A última mensagem do array deve ser `role:"user"`.
-
-### `GET /api/objectives?session_id=X`
-Retorna `{ objectives: [...] }`.
-
-### `PATCH /api/sessions/:id`
-**Body**: `{ status: "completed" | "abandoned" }`. Calcula `duration_minutes`.
-
----
-
-## 🚦 Rate limiting
-
-- **20 mensagens de usuário por sessão**
-- **5 sessões por IP nas últimas 24h**
-
-Implementado em `netlify/edge-functions/_shared.ts` via queries no Supabase.
-
----
-
-## 🎴 Lógica dos cards
-
-### Perfil de risco do objetivo
-Calculado server-side a cada `register_objective`. Reserva de emergência é
-sempre conservador. Tabela em `src/lib/risk-profile.ts` (espelhada em
-`netlify/edge-functions/_shared.ts`).
-
-| Horizonte | Flexibilidade | Perfil |
-|---|---|---|
-| < 2 anos | qualquer | 🟢 Conservador |
-| 2–5 anos | rígido / flexível | 🟢 / 🟡 |
-| 5–10 anos | rígido / flexível | 🟡 / 🟠 |
-| > 10 anos | qualquer | 🔴 Arrojado |
-
-### Completude SMART
-Checklist 0–100 (20 pontos cada): Específico, Mensurável, Alcançável, Relevante, Temporal.
-Card pronto para handoff: ≥ 80%.
-
----
-
-## 🔐 Segurança
-
-- `ANTHROPIC_API_KEY` e `SUPABASE_SERVICE_ROLE_KEY` **só ficam no servidor** (Edge Functions).
-- Front nunca chama Anthropic ou Supabase admin diretamente.
-- RLS habilitado em todas as tabelas com **policies vazias** (default-deny). Service role bypassa RLS.
-- v2: adicionar Supabase Auth + policies por `user_id`.
+O `.env` é lido pelo próprio servidor (com override) — funciona independente de
+como o processo é iniciado.
 
 ---
 
@@ -179,47 +111,80 @@ Card pronto para handoff: ≥ 80%.
 
 ```
 bia-bradesco/
-├── netlify/edge-functions/    ← backend (Deno)
-│   ├── _shared.ts             ← supabase admin, rate limit, business logic
-│   ├── chat.ts                ← streaming SSE + tool use
-│   ├── sessions.ts            ← POST/PATCH/GET de sessões
-│   └── objectives.ts          ← GET de objetivos
-├── src/
-│   ├── components/            ← chat, cards, BiaAvatar
-│   ├── hooks/                 ← useChat, useObjectivesSync
-│   ├── lib/                   ← risk-profile, smart-score, bia-prompt, utils
-│   ├── pages/                 ← Landing, Chat, Dashboard
-│   ├── store/                 ← Zustand store com persist
-│   └── types/                 ← Objective, etc.
-├── supabase/migrations/       ← schema SQL
-└── netlify.toml               ← config do Netlify
+├── server/                     ← backend local (Node + Express)
+│   ├── index.ts                ← entry: API + serve dist/ em produção
+│   ├── db.ts                   ← SQLite (node:sqlite)
+│   ├── schema.sql              ← schema do banco (aplicado no startup)
+│   ├── routes/
+│   │   ├── chat.ts             ← POST /api/chat — streaming SSE + tool use
+│   │   ├── sessions.ts         ← POST/GET/PATCH /api/sessions
+│   │   └── objectives.ts       ← GET /api/objectives
+│   ├── lib/
+│   │   ├── engine.ts           ← seletor motor real vs mock
+│   │   ├── anthropic.ts        ← motor real (Claude streaming + tools)
+│   │   ├── mock.ts             ← motor mock (conversa scriptada offline)
+│   │   ├── bia.ts              ← system prompt + ferramentas + openers
+│   │   ├── store.ts            ← persistência (todas as queries SQLite)
+│   │   ├── risk-profile.ts     ← perfil de risco do objetivo
+│   │   ├── smart-score.ts      ← completude SMART
+│   │   ├── env.ts              ← carregador de .env (com override)
+│   │   └── types.ts
+│   └── scripts/reset-db.ts     ← npm run db:reset
+├── src/                        ← frontend (React)
+│   ├── pages/                  ← Landing, Chat, Dashboard
+│   ├── components/             ← chat/, cards/, phone/ (mockup iPhone)
+│   ├── hooks/, store/, lib/, types/
+├── data/                       ← bia.db (SQLite) — criado no startup, fora do git
+└── dist/                       ← build do frontend (npm run build)
 ```
 
 ---
 
-## ✅ Critérios de aceite
+## 🔌 API
 
-- [x] 3 telas (Landing, Chat, Dashboard) com fluxo completo
-- [x] Mensagem de abertura em duas partes com delay (`opening_messages` + `setTyping`)
-- [x] Bia respeita escopo (system prompt + redirecionamento cordial + `register_out_of_scope_note`)
-- [x] Tool use `register_objective` com cálculo server-side de perfil/completude/ano_alvo
-- [x] Painel progressivo de mini-cards (lateral no desktop, drawer no mobile)
-- [x] Dashboard com cards expansíveis
-- [x] Exportar JSON + Reiniciar
-- [x] Reserva de emergência: o system prompt instrui a Bia a sugerir proativamente
-- [x] Histórico persistido em `messages` (openers + user + final assistant text)
-- [x] RLS habilitada (default-deny)
-- [x] Rate limiting (20 msg/sessão, 5 sessões/IP/dia)
-- [x] `ANTHROPIC_API_KEY` apenas server-side
-- [x] Responsivo (mobile 375px e desktop com side panel)
+| Rota | O que faz |
+|---|---|
+| `POST /api/sessions` | Cria sessão, semeia as mensagens de abertura. |
+| `GET /api/sessions/:id` | Estado da sessão. |
+| `PATCH /api/sessions/:id` | Atualiza status (`completed` / `abandoned`). |
+| `POST /api/chat` | Body `{ session_id, messages }`. Resposta: **stream SSE** com eventos `text`, `objective_registered`, `education_note`, `out_of_scope_note`, `error`, `done`. |
+| `GET /api/objectives?session_id=X` | Objetivos + conceitos de educação + notas fora de escopo. |
+| `GET /api/health` | `{ ok, mode: 'mock'|'claude', model }`. |
+
+### Ferramentas do agente (tool use)
+- `register_objective` — registra/atualiza um objetivo. O servidor calcula
+  perfil de risco, completude SMART e ano-alvo.
+- `register_education_note` — registra um conceito de educação financeira explicado.
+- `register_out_of_scope_note` — anota algo para a etapa de planejamento financeiro.
 
 ---
 
-## 🪛 Próximos passos / v2
+## 🗄️ Banco (SQLite)
 
-- Supabase Auth + RLS por `user_id`
-- Sentry para erros (variável já está no `.env.example`)
-- PostHog para funil de conversão (variável já está no `.env.example`)
-- A/B no roteiro de abertura
-- Suporte a anexos (foto da casa dos sonhos, etc.) — fora do escopo deste piloto
-- Integração com CRM Bradesco para handoff real ao planejador
+Tabelas: `sessions`, `messages`, `objectives`, `education_topics`,
+`out_of_scope_notes`. Schema completo em `server/schema.sql`, aplicado
+automaticamente no startup. Para zerar: `npm run db:reset`.
+
+---
+
+## 🎴 Lógica de negócio
+
+**Perfil de risco do objetivo** (não é suitability do cliente) — tabela
+horizonte × flexibilidade; reserva de emergência é sempre conservador.
+
+**Completude SMART** — checklist 0–100 (Específico, Mensurável, Alcançável,
+Relevante, Temporal). Objetivo "pronto" com ≥ 80%.
+
+Ambos calculados no servidor a cada `register_objective`.
+
+---
+
+## 📜 Scripts
+
+| Script | O que faz |
+|---|---|
+| `npm run dev` | Vite + servidor, hot reload. |
+| `npm run build` | Type-check (tsc) + build do frontend. |
+| `npm start` | Servidor único servindo frontend + API. |
+| `npm run typecheck` | Só o type-check. |
+| `npm run db:reset` | Apaga o banco SQLite local. |

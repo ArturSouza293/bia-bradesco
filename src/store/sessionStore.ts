@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import type { Objective } from '@/types/objective';
+import type { Objective, EducationTopic } from '@/types/objective';
 
 export interface UIMessage {
   id: string;
@@ -21,11 +21,12 @@ interface SessionState {
   startedAt: string | null;
   messages: UIMessage[];
   objectives: Objective[];
+  educationTopics: EducationTopic[];
   outOfScopeNotes: string[];
   isStreaming: boolean;
-  isTyping: boolean;        // controlado pelos openers (delay artificial)
+  isTyping: boolean; // controlado pelos openers (delay artificial)
   error: string | null;
-  endedByBia: boolean;       // Bia sinalizou encerramento
+  endedByBia: boolean; // Bia sinalizou encerramento
 }
 
 interface SessionActions {
@@ -34,7 +35,13 @@ interface SessionActions {
   addMessage: (m: UIMessage) => void;
   appendToLastAssistant: (delta: string) => void;
   upsertObjective: (o: Objective) => void;
+  upsertEducationTopic: (t: EducationTopic) => void;
   addOutOfScopeNote: (n: string) => void;
+  hydrateFromServer: (data: {
+    objectives: Objective[];
+    educationTopics: EducationTopic[];
+    outOfScopeNotes: string[];
+  }) => void;
   setStreaming: (v: boolean) => void;
   setTyping: (v: boolean) => void;
   setError: (e: string | null) => void;
@@ -48,6 +55,7 @@ const initialState: SessionState = {
   startedAt: null,
   messages: [],
   objectives: [],
+  educationTopics: [],
   outOfScopeNotes: [],
   isStreaming: false,
   isTyping: false,
@@ -62,8 +70,7 @@ export const useSessionStore = create<SessionState & SessionActions>()(
       setSession: ({ id, started_at }) =>
         set({ sessionId: id, startedAt: started_at, sessionStatus: 'active' }),
       setStatus: (s) => set({ sessionStatus: s }),
-      addMessage: (m) =>
-        set((state) => ({ messages: [...state.messages, m] })),
+      addMessage: (m) => set((state) => ({ messages: [...state.messages, m] })),
       appendToLastAssistant: (delta) =>
         set((state) => {
           const msgs = [...state.messages];
@@ -85,8 +92,28 @@ export const useSessionStore = create<SessionState & SessionActions>()(
           }
           return { objectives: [...state.objectives, o] };
         }),
+      upsertEducationTopic: (t) =>
+        set((state) => {
+          const idx = state.educationTopics.findIndex((x) => x.id === t.id);
+          if (idx >= 0) {
+            const copy = [...state.educationTopics];
+            copy[idx] = t;
+            return { educationTopics: copy };
+          }
+          return { educationTopics: [...state.educationTopics, t] };
+        }),
       addOutOfScopeNote: (n) =>
-        set((state) => ({ outOfScopeNotes: [...state.outOfScopeNotes, n] })),
+        set((state) =>
+          state.outOfScopeNotes.includes(n)
+            ? {}
+            : { outOfScopeNotes: [...state.outOfScopeNotes, n] },
+        ),
+      hydrateFromServer: (data) =>
+        set({
+          objectives: data.objectives,
+          educationTopics: data.educationTopics,
+          outOfScopeNotes: data.outOfScopeNotes,
+        }),
       setStreaming: (v) => set({ isStreaming: v }),
       setTyping: (v) => set({ isTyping: v }),
       setError: (e) => set({ error: e }),
@@ -94,7 +121,7 @@ export const useSessionStore = create<SessionState & SessionActions>()(
       reset: () => set(initialState),
     }),
     {
-      name: 'bia-bradesco-session-v1',
+      name: 'bia-bradesco-session-v2',
       storage: createJSONStorage(() => localStorage),
       partialize: (s) => ({
         sessionId: s.sessionId,
@@ -102,6 +129,7 @@ export const useSessionStore = create<SessionState & SessionActions>()(
         startedAt: s.startedAt,
         messages: s.messages,
         objectives: s.objectives,
+        educationTopics: s.educationTopics,
         outOfScopeNotes: s.outOfScopeNotes,
         endedByBia: s.endedByBia,
       }),

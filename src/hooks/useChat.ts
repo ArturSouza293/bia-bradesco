@@ -8,9 +8,16 @@ function uid() {
 }
 
 interface ChatEvent {
-  type: 'text' | 'objective_registered' | 'out_of_scope_note' | 'error' | 'done';
+  type:
+    | 'text'
+    | 'objective_registered'
+    | 'education_note'
+    | 'out_of_scope_note'
+    | 'error'
+    | 'done';
   delta?: string;
   objective?: unknown;
+  topic?: unknown;
   nota?: string;
   message?: string;
 }
@@ -73,6 +80,8 @@ export function useChat() {
           s.appendToLastAssistant(evt.delta);
         } else if (evt.type === 'objective_registered' && evt.objective) {
           s.upsertObjective(evt.objective as never);
+        } else if (evt.type === 'education_note' && evt.topic) {
+          s.upsertEducationTopic(evt.topic as never);
         } else if (evt.type === 'out_of_scope_note' && evt.nota) {
           s.addOutOfScopeNote(evt.nota);
         } else if (evt.type === 'error' && evt.message) {

@@ -2,8 +2,13 @@ node_modules
 dist
 dist-ssr
 *.tsbuildinfo
-deno.lock
-.netlify
+
+# Banco SQLite local — recriado pelo servidor no startup
+data/*.db
+data/*.db-wal
+data/*.db-shm
+data/*.db-journal
+
 .env
 .env.local
 .env.*.local

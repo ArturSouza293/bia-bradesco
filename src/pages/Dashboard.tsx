@@ -1,6 +1,12 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Download, RotateCcw, Sparkles } from 'lucide-react';
+import {
+  ArrowLeft,
+  Download,
+  GraduationCap,
+  RotateCcw,
+  Sparkles,
+} from 'lucide-react';
 import { BiaAvatar } from '@/components/BiaAvatar';
 import { ObjectiveCard } from '@/components/cards/ObjectiveCard';
 import { StatusBar } from '@/components/phone/StatusBar';
@@ -13,6 +19,7 @@ export function Dashboard() {
   const startedAt = useSessionStore((s) => s.startedAt);
   const reset = useSessionStore((s) => s.reset);
   const outOfScopeNotes = useSessionStore((s) => s.outOfScopeNotes);
+  const educationTopics = useSessionStore((s) => s.educationTopics);
   const objectives = useObjectivesSync();
 
   useEffect(() => {
@@ -32,6 +39,7 @@ export function Dashboard() {
       session_id: sessionId,
       generated_at: new Date().toISOString(),
       objectives,
+      education_topics: educationTopics,
       out_of_scope_notes: outOfScopeNotes,
     };
     const blob = new Blob([JSON.stringify(payload, null, 2)], {
@@ -87,13 +95,14 @@ export function Dashboard() {
 
       {/* Conteúdo scrollável */}
       <main className="flex-1 overflow-y-auto px-4 py-4 space-y-4 pb-10">
-        {/* Banner */}
+        {/* Banner de fronteira */}
         <div className="rounded-xl bg-blue-50 border border-blue-200 p-3 flex items-start gap-2.5">
           <Sparkles className="h-4 w-4 text-blue-700 flex-shrink-0 mt-0.5" />
           <p className="text-[12px] text-blue-900 leading-relaxed">
-            <strong>Esta é a entrega desta etapa.</strong> O próximo passo —
-            planejamento financeiro completo — será conduzido por um{' '}
-            <strong>planejador CFP</strong>.
+            <strong>Esta é a entrega desta etapa.</strong> O próximo passo é o{' '}
+            <strong>planejamento financeiro</strong> — montar seu fluxo de caixa
+            futuro para tornar estes objetivos viáveis. Essa é a fronteira final
+            deste atendimento.
           </p>
         </div>
 
@@ -117,11 +126,33 @@ export function Dashboard() {
           </div>
         )}
 
-        {/* Out-of-scope notes */}
+        {/* Educação financeira coberta na jornada */}
+        {educationTopics.length > 0 && (
+          <section className="rounded-xl bg-emerald-50 border border-emerald-200 p-3">
+            <h2 className="text-[12px] font-semibold text-emerald-900 mb-2 uppercase tracking-wide flex items-center gap-1.5">
+              <GraduationCap className="h-3.5 w-3.5" />
+              Conceitos que a Bia te explicou
+            </h2>
+            <ul className="space-y-2">
+              {educationTopics.map((t) => (
+                <li key={t.id} className="text-sm text-emerald-900">
+                  <span className="font-semibold">{t.topico}</span>
+                  {t.resumo && (
+                    <span className="block text-[12px] text-emerald-800 leading-snug mt-0.5">
+                      {t.resumo}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Notas fora de escopo — para a etapa de planejamento financeiro */}
         {outOfScopeNotes.length > 0 && (
           <section className="rounded-xl bg-yellow-50 border border-yellow-200 p-3">
             <h2 className="text-[12px] font-semibold text-yellow-900 mb-1.5 uppercase tracking-wide">
-              Para o planejador retomar
+              Para a etapa de planejamento financeiro
             </h2>
             <ul className="space-y-1 text-sm text-yellow-900">
               {outOfScopeNotes.map((n, i) => (
