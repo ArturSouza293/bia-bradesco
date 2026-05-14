@@ -21,7 +21,7 @@ import {
   handlePreflight,
   type NetlifyContext,
   type ObjectiveInput,
-} from './_shared.ts';
+} from './lib/shared.ts';
 
 // -----------------------------------------------------------------
 // System prompt e tool definitions (duplicado intencionalmente)

@@ -13,7 +13,7 @@ import {
   handlePreflight,
   jsonResponse,
   type NetlifyContext,
-} from './_shared.ts';
+} from './lib/shared.ts';
 
 export default async function handler(req: Request, context: NetlifyContext) {
   const pf = handlePreflight(req);

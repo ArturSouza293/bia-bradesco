@@ -4,7 +4,10 @@
 // Deno runtime — usar imports via npm:specifier ou https://esm.sh
 // =================================================================
 
-import { createClient, type SupabaseClient } from 'npm:@supabase/supabase-js@2';
+import {
+  createClient,
+  type SupabaseClient,
+} from 'https://esm.sh/@supabase/supabase-js@2.45.4';
 
 // -----------------------------------------------------------------
 // Netlify Edge Function context (subset que de fato usamos).

@@ -9,7 +9,7 @@ import {
   errorResponse,
   handlePreflight,
   jsonResponse,
-} from './_shared.ts';
+} from './lib/shared.ts';
 
 export default async function handler(req: Request) {
   const pf = handlePreflight(req);
