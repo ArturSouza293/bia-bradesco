@@ -45,6 +45,7 @@ const SCRIPT: MockStep[] = [
     objectives: [
       {
         categoria: 'casa_propria',
+        classe_objetivo: 'desejo',
         titulo_curto: 'Casa própria — apê 2 quartos zona sul SP',
         descricao:
           'Apartamento de 2 quartos na zona sul de São Paulo para morar com a família',
@@ -93,6 +94,7 @@ const SCRIPT: MockStep[] = [
     objectives: [
       {
         categoria: 'aposentadoria',
+        classe_objetivo: 'necessidade',
         titulo_curto: 'Aposentadoria — manter padrão de vida',
         descricao:
           'Aposentar-se mantendo o padrão de vida atual, com renda complementar à previdência pública',
@@ -130,6 +132,7 @@ const SCRIPT: MockStep[] = [
     objectives: [
       {
         categoria: 'reserva_emergencia',
+        classe_objetivo: 'necessidade',
         titulo_curto: 'Reserva de emergência',
         descricao:
           'Colchão de segurança equivalente a cerca de 6 meses de despesas para imprevistos',

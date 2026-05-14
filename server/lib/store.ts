@@ -3,7 +3,7 @@
 // =================================================================
 
 import { getDb, uid, nowIso } from '../db.ts';
-import { calcularPerfilRisco } from './risk-profile.ts';
+import { calcularPerfilRisco, classificarHorizonte } from './risk-profile.ts';
 import { calcularSmartScore, CATEGORIA_ICONE } from './smart-score.ts';
 import type {
   CrossSellInput,
@@ -111,6 +111,10 @@ function rowToObjective(r: Record<string, unknown>): Objective {
     id: r.id as string,
     session_id: r.session_id as string,
     categoria: r.categoria as Objective['categoria'],
+    classe_objetivo:
+      (r.classe_objetivo as Objective['classe_objetivo']) ?? null,
+    horizonte_classe:
+      (r.horizonte_classe as Objective['horizonte_classe']) ?? null,
     icone: (r.icone as string) ?? null,
     titulo_curto: r.titulo_curto as string,
     descricao: (r.descricao as string) ?? null,
@@ -170,6 +174,7 @@ export function upsertObjective(
     input.ano_alvo ?? new Date().getFullYear() + input.horizonte_anos;
   const icone = input.icone ?? CATEGORIA_ICONE[input.categoria] ?? '🎯';
   const sinais = input.sinais_atencao ?? [];
+  const horizonte_classe = classificarHorizonte(input.horizonte_anos);
 
   const existing = (
     input.categoria === 'outro'
@@ -188,7 +193,8 @@ export function upsertObjective(
   if (existing) {
     db.prepare(
       `UPDATE objectives SET
-        categoria = ?, icone = ?, descricao = ?, valor_presente_brl = ?,
+        categoria = ?, classe_objetivo = ?, horizonte_classe = ?, icone = ?,
+        descricao = ?, valor_presente_brl = ?,
         horizonte_anos = ?, ano_alvo = ?, prioridade = ?, modalidade = ?,
         flexibilidade_prazo = ?, flexibilidade_valor = ?, perfil_risco_sugerido = ?,
         completude_score = ?, completude_detalhes = ?, trade_offs = ?,
@@ -197,6 +203,8 @@ export function upsertObjective(
       WHERE id = ?`,
     ).run(
       input.categoria,
+      input.classe_objetivo,
+      horizonte_classe,
       icone,
       input.descricao,
       input.valor_presente_brl,
@@ -225,16 +233,19 @@ export function upsertObjective(
   const now = nowIso();
   db.prepare(
     `INSERT INTO objectives (
-      id, session_id, categoria, icone, titulo_curto, descricao,
+      id, session_id, categoria, classe_objetivo, horizonte_classe, icone,
+      titulo_curto, descricao,
       valor_presente_brl, horizonte_anos, ano_alvo, prioridade, modalidade,
       flexibilidade_prazo, flexibilidade_valor, perfil_risco_sugerido,
       completude_score, completude_detalhes, trade_offs, observacoes_cliente,
       sinais_atencao, proximo_passo_planejador, created_at, updated_at
-    ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+    ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
   ).run(
     id,
     session_id,
     input.categoria,
+    input.classe_objetivo,
+    horizonte_classe,
     icone,
     input.titulo_curto,
     input.descricao,

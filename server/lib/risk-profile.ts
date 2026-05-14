@@ -1,4 +1,9 @@
-import type { Categoria, Flexibilidade, PerfilRisco } from './types.ts';
+import type {
+  Categoria,
+  Flexibilidade,
+  HorizonteClasse,
+  PerfilRisco,
+} from './types.ts';
 
 /**
  * Perfil de risco que o OBJETIVO demanda (não o suitability do cliente).
@@ -21,4 +26,14 @@ export function calcularPerfilRisco(input: {
   if (h < 5) return rigido ? 'conservador' : 'moderado';
   if (h < 10) return rigido ? 'moderado' : 'moderado_arrojado';
   return 'arrojado';
+}
+
+/**
+ * Classificação CFP do horizonte temporal do objetivo:
+ * curto (< 2 anos) · médio (2 a 5 anos) · longo (> 5 anos).
+ */
+export function classificarHorizonte(horizonte_anos: number): HorizonteClasse {
+  if (horizonte_anos < 2) return 'curto';
+  if (horizonte_anos <= 5) return 'medio';
+  return 'longo';
 }

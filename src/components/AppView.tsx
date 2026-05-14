@@ -1,4 +1,10 @@
-import { ChevronLeft, Download, GraduationCap, RotateCcw } from 'lucide-react';
+import {
+  ChevronLeft,
+  Download,
+  GraduationCap,
+  RotateCcw,
+  Sparkles,
+} from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { BiaAvatar } from '@/components/BiaAvatar';
 import { ObjectiveCard } from '@/components/cards/ObjectiveCard';
@@ -14,7 +20,7 @@ interface AppViewProps {
   onShowChat?: () => void;
 }
 
-/** Visão "app nativo" — Meus Objetivos. Preenche ao vivo durante a conversa. */
+/** Visão "app Bradesco" — Meus Objetivos. Preenche ao vivo durante a conversa. */
 export function AppView({ onShowChat }: AppViewProps) {
   const navigate = useNavigate();
   const sessionId = useSessionStore((s) => s.sessionId);
@@ -64,12 +70,12 @@ export function AppView({ onShowChat }: AppViewProps) {
   }
 
   return (
-    <div className="flex flex-col h-full bg-gray-50">
-      {/* Status bar + header (vermelho Bradesco) */}
-      <div className="bg-gradient-to-r from-bradesco-red to-bradesco-red-dark flex-shrink-0">
+    <div className="flex flex-col h-full bg-bradesco-surface">
+      {/* Header estilo app Bradesco */}
+      <div className="bg-gradient-to-br from-bradesco-red via-bradesco-red to-bradesco-red-darker flex-shrink-0">
         <StatusBar variant="light" />
-        <header className="text-white px-3.5 pt-0.5 pb-3">
-          <div className="flex items-center gap-2.5">
+        <header className="text-white px-3.5 pt-0.5 pb-4">
+          <div className="flex items-center gap-2">
             {onShowChat && (
               <button
                 onClick={onShowChat}
@@ -79,13 +85,19 @@ export function AppView({ onShowChat }: AppViewProps) {
                 <ChevronLeft className="h-6 w-6" />
               </button>
             )}
-            <BiaAvatar size="md" ring />
-            <div className="flex-1 min-w-0">
-              <h1 className="text-[15px] font-semibold leading-tight">
+            <span className="text-[15px] font-bold tracking-tight">
+              Bradesco
+            </span>
+            <span className="flex-1" />
+            <BiaAvatar size="sm" ring />
+          </div>
+          <div className="mt-3 flex items-end justify-between">
+            <div>
+              <h1 className="text-[22px] font-bold leading-tight">
                 Meus Objetivos
               </h1>
-              <p className="text-white/75 text-[11.5px] leading-tight">
-                Sessão de {dateLabel}
+              <p className="text-white/70 text-[12px] leading-tight mt-0.5">
+                Sessão de {dateLabel} · com a Bia
               </p>
             </div>
           </div>
@@ -95,12 +107,12 @@ export function AppView({ onShowChat }: AppViewProps) {
       {/* Conteúdo scrollável */}
       <div className="flex-1 overflow-y-auto px-3.5 py-3.5 space-y-3.5 pb-9">
         {/* Progresso da jornada */}
-        <div className="bg-white rounded-xl border border-gray-200 p-3 shadow-sm">
+        <div className="bg-white rounded-2xl shadow-card border border-gray-100 p-3.5">
           <JourneyProgress phase={phase} />
         </div>
 
         {/* Resumo numérico */}
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-2.5">
           <StatChip emoji="🎯" n={objectives.length} label="objetivos" />
           <StatChip emoji="🎓" n={educationTopics.length} label="conceitos" />
           <StatChip emoji="💼" n={crossSells.length} label="oportun." />
@@ -108,11 +120,12 @@ export function AppView({ onShowChat }: AppViewProps) {
 
         {/* Objetivos */}
         {objectives.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-gray-300 bg-white p-6 text-center">
-            <div className="text-3xl mb-1">🎯</div>
-            <p className="text-sm text-gray-500 leading-relaxed">
-              Conforme você conversa com a Bia, seus objetivos vão aparecer
-              aqui, estruturados e prontos.
+          <div className="rounded-2xl border border-dashed border-gray-300 bg-white p-7 text-center shadow-card">
+            <div className="text-3xl mb-1.5">🎯</div>
+            <p className="text-[13px] text-gray-500 leading-relaxed">
+              Conforme você conversa com a Bia, seus objetivos aparecem aqui —
+              estruturados pelo método <strong>CFP</strong> e prontos para a
+              próxima etapa.
             </p>
           </div>
         ) : (
@@ -124,23 +137,27 @@ export function AppView({ onShowChat }: AppViewProps) {
           </section>
         )}
 
-        {/* Educação financeira — destaque (#6) */}
+        {/* Educação financeira — destaque */}
         {educationTopics.length > 0 && (
-          <section className="rounded-xl bg-emerald-50 border border-emerald-200 p-3.5">
-            <h2 className="text-[13px] font-bold text-emerald-900 mb-2.5 flex items-center gap-1.5">
-              <GraduationCap className="h-4 w-4" />
-              O que você aprendeu nesta jornada
-            </h2>
-            <ul className="space-y-2.5">
+          <section className="rounded-2xl bg-white shadow-card border border-emerald-100 overflow-hidden">
+            <div className="bg-emerald-50 px-3.5 py-2.5 flex items-center gap-1.5 border-b border-emerald-100">
+              <GraduationCap className="h-4 w-4 text-emerald-700" />
+              <h2 className="text-[13px] font-bold text-emerald-900">
+                O que você aprendeu nesta jornada
+              </h2>
+            </div>
+            <ul className="p-3.5 space-y-3">
               {educationTopics.map((t) => (
-                <li key={t.id} className="flex gap-2">
-                  <span className="text-emerald-500 mt-0.5">✓</span>
+                <li key={t.id} className="flex gap-2.5">
+                  <span className="h-5 w-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">
+                    ✓
+                  </span>
                   <div>
-                    <div className="text-[13px] font-semibold text-emerald-900">
+                    <div className="text-[13px] font-bold text-bradesco-ink">
                       {t.topico}
                     </div>
                     {t.resumo && (
-                      <div className="text-[12px] text-emerald-800 leading-snug">
+                      <div className="text-[12px] text-gray-600 leading-snug mt-0.5">
                         {t.resumo}
                       </div>
                     )}
@@ -153,19 +170,21 @@ export function AppView({ onShowChat }: AppViewProps) {
 
         {/* Cross-sell — inteligência comercial (gerente de conta) */}
         {crossSells.length > 0 && (
-          <section className="rounded-xl bg-slate-800 text-white p-3.5">
-            <h2 className="text-[13px] font-bold flex items-center gap-1.5">
-              💼 Oportunidades para o gerente
-            </h2>
-            <p className="text-[10.5px] text-slate-400 mt-0.5 mb-2.5">
-              Inteligência comercial detectada pela Bia — <strong>não</strong>{' '}
-              foi oferecida ao cliente na conversa.
-            </p>
-            <ul className="space-y-2">
+          <section className="rounded-2xl bg-bradesco-ink text-white shadow-card overflow-hidden">
+            <div className="px-3.5 py-2.5 border-b border-white/10">
+              <h2 className="text-[13px] font-bold flex items-center gap-1.5">
+                💼 Oportunidades para o gerente
+              </h2>
+              <p className="text-[10.5px] text-gray-400 mt-0.5">
+                Inteligência comercial detectada pela Bia — <strong>não</strong>{' '}
+                foi oferecida ao cliente na conversa.
+              </p>
+            </div>
+            <ul className="p-3 space-y-2">
               {crossSells.map((c) => (
                 <li
                   key={c.id}
-                  className="bg-slate-700/60 rounded-lg p-2.5 text-[12px]"
+                  className="bg-white/[0.06] rounded-xl p-2.5 text-[12px]"
                 >
                   <div className="flex items-center justify-between gap-2">
                     <span className="font-semibold flex items-center gap-1.5">
@@ -173,20 +192,20 @@ export function AppView({ onShowChat }: AppViewProps) {
                       {PRODUTO_LABEL[c.produto]}
                     </span>
                     {c.prioridade && (
-                      <span className="text-[10px] text-slate-300 whitespace-nowrap">
+                      <span className="text-[10px] text-gray-300 whitespace-nowrap">
                         {PRIORIDADE_BADGE[c.prioridade]}
                       </span>
                     )}
                   </div>
                   {c.gatilho && (
-                    <div className="text-slate-300 mt-1 leading-snug">
-                      <span className="text-slate-400">Gatilho:</span>{' '}
+                    <div className="text-gray-300 mt-1 leading-snug">
+                      <span className="text-gray-500">Gatilho:</span>{' '}
                       {c.gatilho}
                     </div>
                   )}
                   {c.racional && (
-                    <div className="text-slate-300 mt-0.5 leading-snug">
-                      <span className="text-slate-400">Racional:</span>{' '}
+                    <div className="text-gray-300 mt-0.5 leading-snug">
+                      <span className="text-gray-500">Racional:</span>{' '}
                       {c.racional}
                     </div>
                   )}
@@ -198,14 +217,16 @@ export function AppView({ onShowChat }: AppViewProps) {
 
         {/* Notas fora de escopo */}
         {outOfScopeNotes.length > 0 && (
-          <section className="rounded-xl bg-yellow-50 border border-yellow-200 p-3">
-            <h2 className="text-[12px] font-semibold text-yellow-900 mb-1.5 uppercase tracking-wide">
-              Para a etapa de planejamento financeiro
-            </h2>
-            <ul className="space-y-1 text-[13px] text-yellow-900">
+          <section className="rounded-2xl bg-white shadow-card border border-amber-100 overflow-hidden">
+            <div className="bg-amber-50 px-3.5 py-2.5 border-b border-amber-100">
+              <h2 className="text-[12px] font-bold text-amber-900 uppercase tracking-wide">
+                Para a etapa de planejamento financeiro
+              </h2>
+            </div>
+            <ul className="p-3.5 space-y-1.5 text-[13px] text-gray-700">
               {outOfScopeNotes.map((n, i) => (
                 <li key={i} className="flex gap-2">
-                  <span>•</span>
+                  <span className="text-amber-500">•</span>
                   <span>{n}</span>
                 </li>
               ))}
@@ -215,32 +236,33 @@ export function AppView({ onShowChat }: AppViewProps) {
 
         {/* Fechamento — fronteira final */}
         {endedByBia && (
-          <div className="rounded-xl bg-blue-600 text-white p-3.5">
-            <h2 className="text-[13px] font-bold mb-1">
-              ✅ Jornada concluída
+          <div className="rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 text-white p-3.5 shadow-card">
+            <h2 className="text-[13px] font-bold mb-1 flex items-center gap-1.5">
+              <Sparkles className="h-4 w-4" />
+              Jornada concluída
             </h2>
             <p className="text-[12px] text-blue-50 leading-relaxed">
-              Esta é a entrega desta etapa. O próximo passo é o{' '}
-              <strong>planejamento financeiro</strong> — montar seu fluxo de
-              caixa futuro para tornar estes objetivos viáveis. Essa é a
-              fronteira final do atendimento da Bia.
+              Esta é a entrega da <strong>Etapa 2</strong> do planejamento
+              financeiro. O próximo passo é a <strong>análise do fluxo de
+              caixa</strong> — ver como tornar estes objetivos viáveis. Essa é
+              a fronteira final do atendimento da Bia.
             </p>
           </div>
         )}
 
         {/* Ações */}
-        <footer className="flex gap-2 pt-1">
+        <footer className="flex gap-2.5 pt-1">
           <button
             onClick={exportJson}
             disabled={objectives.length === 0}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 bg-white border border-gray-300 text-gray-800 font-medium text-sm py-2.5 rounded-lg hover:bg-gray-50 disabled:opacity-50 transition"
+            className="flex-1 inline-flex items-center justify-center gap-1.5 bg-white border border-gray-200 text-bradesco-ink font-semibold text-[13px] py-2.5 rounded-xl shadow-card hover:bg-gray-50 disabled:opacity-50 transition"
           >
             <Download className="h-4 w-4" />
             Exportar JSON
           </button>
           <button
             onClick={restart}
-            className="flex-1 inline-flex items-center justify-center gap-1.5 bg-bradesco-red hover:bg-bradesco-red-dark text-white font-medium text-sm py-2.5 rounded-lg transition"
+            className="flex-1 inline-flex items-center justify-center gap-1.5 bg-bradesco-red hover:bg-bradesco-red-dark text-white font-semibold text-[13px] py-2.5 rounded-xl shadow-card transition"
           >
             <RotateCcw className="h-4 w-4" />
             Reiniciar
@@ -261,9 +283,9 @@ function StatChip({
   label: string;
 }) {
   return (
-    <div className="bg-white rounded-xl border border-gray-200 px-2 py-2.5 text-center shadow-sm">
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-card px-2 py-2.5 text-center">
       <div className="text-lg leading-none">{emoji}</div>
-      <div className="text-xl font-bold text-gray-900 mt-1 leading-none">
+      <div className="text-xl font-bold text-bradesco-ink mt-1 leading-none">
         {n}
       </div>
       <div className="text-[10.5px] text-gray-500 mt-0.5">{label}</div>

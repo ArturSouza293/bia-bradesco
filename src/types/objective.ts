@@ -21,6 +21,12 @@ export type PerfilRisco =
   | 'moderado_arrojado'
   | 'arrojado';
 
+// Classificação CFP: necessidade (essencial) vs desejo (importante, não essencial)
+export type ClasseObjetivo = 'necessidade' | 'desejo';
+
+// Classificação CFP por horizonte temporal
+export type HorizonteClasse = 'curto' | 'medio' | 'longo';
+
 export interface CompletudeDetalhes {
   especifico: boolean;
   mensuravel: boolean;
@@ -33,6 +39,8 @@ export interface Objective {
   id: string;
   session_id: string;
   categoria: Categoria;
+  classe_objetivo: ClasseObjetivo | null;
+  horizonte_classe: HorizonteClasse | null;
   icone: string | null;
   titulo_curto: string;
   descricao: string | null;
@@ -56,6 +64,7 @@ export interface Objective {
 
 export interface ObjectiveInput {
   categoria: Categoria;
+  classe_objetivo: ClasseObjetivo;
   icone?: string;
   titulo_curto: string;
   descricao: string;

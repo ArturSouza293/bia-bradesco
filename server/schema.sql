@@ -38,6 +38,8 @@ CREATE TABLE IF NOT EXISTS objectives (
   horizonte_anos           INTEGER,
   ano_alvo                 INTEGER,
   prioridade               TEXT CHECK (prioridade IN ('alta', 'media', 'baixa')),
+  classe_objetivo          TEXT CHECK (classe_objetivo IN ('necessidade', 'desejo')),
+  horizonte_classe         TEXT CHECK (horizonte_classe IN ('curto', 'medio', 'longo')),
   modalidade               TEXT,
   flexibilidade_prazo      TEXT CHECK (flexibilidade_prazo IN ('rigido', 'flexivel')),
   flexibilidade_valor      TEXT CHECK (flexibilidade_valor IN ('rigido', 'flexivel')),
