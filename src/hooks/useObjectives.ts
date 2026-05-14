@@ -1,17 +1,23 @@
 import { useEffect } from 'react';
 import { useSessionStore } from '@/store/sessionStore';
-import type { Objective, EducationTopic } from '@/types/objective';
+import type {
+  Objective,
+  EducationTopic,
+  CrossSellOpportunity,
+} from '@/types/objective';
 
 interface ObjectivesResponse {
   objectives: Objective[];
   education_topics: EducationTopic[];
+  cross_sell: CrossSellOpportunity[];
   out_of_scope_notes: string[];
 }
 
 /**
- * Sincroniza objetivos, conceitos de educação financeira e notas
- * fora de escopo com o servidor. Usado ao montar o Dashboard para
- * garantir consistência mesmo que algum evento SSE tenha se perdido.
+ * Sincroniza objetivos, conceitos de educação financeira, oportunidades
+ * de cross-sell e notas fora de escopo com o servidor. Usado ao montar
+ * a AppView para garantir consistência mesmo que algum evento SSE
+ * tenha se perdido.
  */
 export function useObjectivesSync() {
   const sessionId = useSessionStore((s) => s.sessionId);
@@ -32,6 +38,7 @@ export function useObjectivesSync() {
         hydrate({
           objectives: data.objectives ?? [],
           educationTopics: data.education_topics ?? [],
+          crossSells: data.cross_sell ?? [],
           outOfScopeNotes: data.out_of_scope_notes ?? [],
         });
       } catch {

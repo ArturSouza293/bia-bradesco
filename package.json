@@ -10,7 +10,8 @@
     "build": "tsc -b && vite build",
     "start": "tsx server/index.ts",
     "typecheck": "tsc -b --noEmit",
-    "db:reset": "tsx server/scripts/reset-db.ts"
+    "db:reset": "tsx server/scripts/reset-db.ts",
+    "analyze": "tsx server/scripts/analyze.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",

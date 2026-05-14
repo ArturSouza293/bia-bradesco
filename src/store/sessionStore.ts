@@ -1,6 +1,10 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
-import type { Objective, EducationTopic } from '@/types/objective';
+import type {
+  Objective,
+  EducationTopic,
+  CrossSellOpportunity,
+} from '@/types/objective';
 
 export interface UIMessage {
   id: string;
@@ -22,6 +26,7 @@ interface SessionState {
   messages: UIMessage[];
   objectives: Objective[];
   educationTopics: EducationTopic[];
+  crossSells: CrossSellOpportunity[];
   outOfScopeNotes: string[];
   isStreaming: boolean;
   isTyping: boolean; // controlado pelos openers (delay artificial)
@@ -36,10 +41,12 @@ interface SessionActions {
   appendToLastAssistant: (delta: string) => void;
   upsertObjective: (o: Objective) => void;
   upsertEducationTopic: (t: EducationTopic) => void;
+  upsertCrossSell: (c: CrossSellOpportunity) => void;
   addOutOfScopeNote: (n: string) => void;
   hydrateFromServer: (data: {
     objectives: Objective[];
     educationTopics: EducationTopic[];
+    crossSells: CrossSellOpportunity[];
     outOfScopeNotes: string[];
   }) => void;
   setStreaming: (v: boolean) => void;
@@ -56,12 +63,23 @@ const initialState: SessionState = {
   messages: [],
   objectives: [],
   educationTopics: [],
+  crossSells: [],
   outOfScopeNotes: [],
   isStreaming: false,
   isTyping: false,
   error: null,
   endedByBia: false,
 };
+
+function upsertById<T extends { id: string }>(list: T[], item: T): T[] {
+  const idx = list.findIndex((x) => x.id === item.id);
+  if (idx >= 0) {
+    const copy = [...list];
+    copy[idx] = item;
+    return copy;
+  }
+  return [...list, item];
+}
 
 export const useSessionStore = create<SessionState & SessionActions>()(
   persist(
@@ -76,32 +94,24 @@ export const useSessionStore = create<SessionState & SessionActions>()(
           const msgs = [...state.messages];
           for (let i = msgs.length - 1; i >= 0; i--) {
             if (msgs[i].role === 'assistant') {
-              msgs[i] = { ...msgs[i], content: msgs[i].content + delta };
+              msgs[i] = {
+                ...msgs[i],
+                content: msgs[i].content + delta,
+                pending: false,
+              };
               break;
             }
           }
           return { messages: msgs };
         }),
       upsertObjective: (o) =>
-        set((state) => {
-          const idx = state.objectives.findIndex((x) => x.id === o.id);
-          if (idx >= 0) {
-            const copy = [...state.objectives];
-            copy[idx] = o;
-            return { objectives: copy };
-          }
-          return { objectives: [...state.objectives, o] };
-        }),
+        set((state) => ({ objectives: upsertById(state.objectives, o) })),
       upsertEducationTopic: (t) =>
-        set((state) => {
-          const idx = state.educationTopics.findIndex((x) => x.id === t.id);
-          if (idx >= 0) {
-            const copy = [...state.educationTopics];
-            copy[idx] = t;
-            return { educationTopics: copy };
-          }
-          return { educationTopics: [...state.educationTopics, t] };
-        }),
+        set((state) => ({
+          educationTopics: upsertById(state.educationTopics, t),
+        })),
+      upsertCrossSell: (c) =>
+        set((state) => ({ crossSells: upsertById(state.crossSells, c) })),
       addOutOfScopeNote: (n) =>
         set((state) =>
           state.outOfScopeNotes.includes(n)
@@ -112,6 +122,7 @@ export const useSessionStore = create<SessionState & SessionActions>()(
         set({
           objectives: data.objectives,
           educationTopics: data.educationTopics,
+          crossSells: data.crossSells,
           outOfScopeNotes: data.outOfScopeNotes,
         }),
       setStreaming: (v) => set({ isStreaming: v }),
@@ -121,7 +132,7 @@ export const useSessionStore = create<SessionState & SessionActions>()(
       reset: () => set(initialState),
     }),
     {
-      name: 'bia-bradesco-session-v2',
+      name: 'bia-bradesco-session-v3',
       storage: createJSONStorage(() => localStorage),
       partialize: (s) => ({
         sessionId: s.sessionId,
@@ -130,6 +141,7 @@ export const useSessionStore = create<SessionState & SessionActions>()(
         messages: s.messages,
         objectives: s.objectives,
         educationTopics: s.educationTopics,
+        crossSells: s.crossSells,
         outOfScopeNotes: s.outOfScopeNotes,
         endedByBia: s.endedByBia,
       }),

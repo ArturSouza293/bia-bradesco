@@ -86,3 +86,27 @@ export interface EducationTopic {
   resumo: string | null;
   created_at: string;
 }
+
+export type ProdutoCrossSell =
+  | 'previdencia_privada'
+  | 'seguro_de_vida'
+  | 'seguro_residencial'
+  | 'seguro_auto'
+  | 'consorcio'
+  | 'financiamento_imobiliario'
+  | 'credito'
+  | 'investimentos'
+  | 'cartao'
+  | 'capitalizacao'
+  | 'conta_pj'
+  | 'outro';
+
+export interface CrossSellOpportunity {
+  id: string;
+  session_id: string;
+  produto: ProdutoCrossSell;
+  gatilho: string | null;
+  racional: string | null;
+  prioridade: Prioridade | null;
+  created_at: string;
+}

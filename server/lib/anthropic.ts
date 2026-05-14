@@ -4,6 +4,7 @@
 
 import { BIA_SYSTEM_PROMPT, TOOLS } from './bia.ts';
 import {
+  upsertCrossSell,
   insertEducationTopic,
   insertOutOfScopeNote,
   upsertObjective,
@@ -13,12 +14,14 @@ import type {
   RunConversationParams,
   SSEEvent,
 } from './engine.ts';
-import type { ObjectiveInput } from './types.ts';
+import type { CrossSellInput, ObjectiveInput } from './types.ts';
 
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 const ANTHROPIC_VERSION = '2023-06-01';
 const MAX_TOOL_ITERATIONS = 6;
-const MAX_TOKENS = 1024;
+// Folga para uma mensagem curta da Bia + várias tool calls no mesmo turno
+// (objetivo + cross-sells + educação). 1024 cortava as tools no meio.
+const MAX_TOKENS = 4096;
 
 type ContentBlock =
   | { type: 'text'; text: string }
@@ -76,7 +79,7 @@ export async function runRealConversation(
   let assistantText = '';
 
   for (let iter = 0; iter < MAX_TOOL_ITERATIONS; iter++) {
-    const { blocks, stopReason, text } = await streamTurn({
+    const { blocks, text } = await streamTurn({
       apiKey,
       model,
       messages,
@@ -85,12 +88,14 @@ export async function runRealConversation(
     assistantText += text;
     messages = [...messages, { role: 'assistant', content: blocks }];
 
-    if (stopReason !== 'tool_use') break;
-
     const toolUses = blocks.filter(
       (b): b is Extract<ContentBlock, { type: 'tool_use' }> =>
         b.type === 'tool_use',
     );
+    // Sem tools (stop_reason end_turn) → encerra. Com tools (stop_reason
+    // tool_use OU max_tokens com tools) → executa e continua o loop.
+    if (toolUses.length === 0) break;
+
     const results: ContentBlock[] = [];
     for (const tu of toolUses) {
       const result = executeTool(sessionId, tu.name, tu.input, emit);
@@ -220,6 +225,24 @@ async function streamTurn(params: {
     }
   }
 
+  // Finaliza tool_use cujo content_block_stop não chegou (ex.: corte por
+  // max_tokens) — tenta parsear o JSON parcial acumulado.
+  for (const key of Object.keys(partialJson)) {
+    const i = Number(key);
+    const b = blocks[i];
+    if (
+      b?.type === 'tool_use' &&
+      Object.keys(b.input).length === 0 &&
+      partialJson[i]
+    ) {
+      try {
+        b.input = JSON.parse(partialJson[i]) as Record<string, unknown>;
+      } catch {
+        // JSON incompleto — input fica {} e executeTool rejeita graciosamente
+      }
+    }
+  }
+
   const ordered = Object.keys(blocks)
     .map(Number)
     .sort((a, b) => a - b)
@@ -261,6 +284,16 @@ function executeTool(
         input.resumo ? String(input.resumo) : null,
       );
       emit({ type: 'education_note', topic });
+      return { ok: true };
+    }
+    if (name === 'register_cross_sell') {
+      const produto = String(input.produto ?? '').trim();
+      if (!produto) return { ok: false, error: 'produto vazio' };
+      const opportunity = upsertCrossSell(
+        sessionId,
+        input as unknown as CrossSellInput,
+      );
+      emit({ type: 'cross_sell', opportunity });
       return { ok: true };
     }
     if (name === 'register_out_of_scope_note') {

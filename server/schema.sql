@@ -71,3 +71,17 @@ CREATE TABLE IF NOT EXISTS out_of_scope_notes (
   nota       TEXT NOT NULL,
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
+
+-- Oportunidades comerciais (cross-sell) que a Bia detectou com sua
+-- "lente de gerente de conta". NÃO são oferecidas ao cliente na conversa —
+-- ficam para revisão comercial ao final do atendimento.
+CREATE TABLE IF NOT EXISTS cross_sell_opportunities (
+  id         TEXT PRIMARY KEY,
+  session_id TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
+  produto    TEXT NOT NULL,
+  gatilho    TEXT,
+  racional   TEXT,
+  prioridade TEXT CHECK (prioridade IN ('alta', 'media', 'baixa')),
+  created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS idx_crosssell_session ON cross_sell_opportunities(session_id);

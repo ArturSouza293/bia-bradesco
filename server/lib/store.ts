@@ -6,6 +6,8 @@ import { getDb, uid, nowIso } from '../db.ts';
 import { calcularPerfilRisco } from './risk-profile.ts';
 import { calcularSmartScore, CATEGORIA_ICONE } from './smart-score.ts';
 import type {
+  CrossSellInput,
+  CrossSellOpportunity,
   EducationTopic,
   Objective,
   ObjectiveInput,
@@ -145,7 +147,10 @@ export function getObjectives(session_id: string): Objective[] {
 }
 
 /**
- * Insere ou atualiza um objetivo (chave lógica: session_id + titulo_curto).
+ * Insere ou atualiza um objetivo. Chave lógica de deduplicação:
+ * - categoria 'outro'  → (session_id, titulo_curto)
+ * - demais categorias  → (session_id, categoria)  [1 objetivo por categoria]
+ * Isso evita duplicatas quando o LLM varia o título entre chamadas.
  * Calcula perfil de risco, completude SMART, ano_alvo e ícone derivados.
  */
 export function upsertObjective(
@@ -166,11 +171,19 @@ export function upsertObjective(
   const icone = input.icone ?? CATEGORIA_ICONE[input.categoria] ?? '🎯';
   const sinais = input.sinais_atencao ?? [];
 
-  const existing = db
-    .prepare(
-      'SELECT id FROM objectives WHERE session_id = ? AND titulo_curto = ?',
-    )
-    .get(session_id, input.titulo_curto) as { id: string } | undefined;
+  const existing = (
+    input.categoria === 'outro'
+      ? db
+          .prepare(
+            'SELECT id FROM objectives WHERE session_id = ? AND categoria = ? AND titulo_curto = ?',
+          )
+          .get(session_id, input.categoria, input.titulo_curto)
+      : db
+          .prepare(
+            'SELECT id FROM objectives WHERE session_id = ? AND categoria = ?',
+          )
+          .get(session_id, input.categoria)
+  ) as { id: string } | undefined;
 
   if (existing) {
     db.prepare(
@@ -290,4 +303,69 @@ export function getOutOfScopeNotes(session_id: string): string[] {
     )
     .all(session_id) as unknown as { nota: string }[];
   return rows.map((r) => r.nota);
+}
+
+// ----------------------------------------------------------------
+// Cross-sell — oportunidades comerciais (lente de gerente de conta)
+// Deduplicado por (session_id, produto): registrar o mesmo produto de
+// novo apenas atualiza a oportunidade, não cria duplicata.
+// ----------------------------------------------------------------
+export function upsertCrossSell(
+  session_id: string,
+  input: CrossSellInput,
+): CrossSellOpportunity {
+  const db = getDb();
+  const existing = db
+    .prepare(
+      'SELECT id, created_at FROM cross_sell_opportunities WHERE session_id = ? AND produto = ?',
+    )
+    .get(session_id, input.produto) as
+    | { id: string; created_at: string }
+    | undefined;
+
+  if (existing) {
+    db.prepare(
+      'UPDATE cross_sell_opportunities SET gatilho = ?, racional = ?, prioridade = ? WHERE id = ?',
+    ).run(input.gatilho, input.racional, input.prioridade, existing.id);
+    return {
+      id: existing.id,
+      session_id,
+      produto: input.produto,
+      gatilho: input.gatilho,
+      racional: input.racional,
+      prioridade: input.prioridade,
+      created_at: existing.created_at,
+    };
+  }
+
+  const id = uid();
+  const created_at = nowIso();
+  db.prepare(
+    'INSERT INTO cross_sell_opportunities (id, session_id, produto, gatilho, racional, prioridade, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
+  ).run(
+    id,
+    session_id,
+    input.produto,
+    input.gatilho,
+    input.racional,
+    input.prioridade,
+    created_at,
+  );
+  return {
+    id,
+    session_id,
+    produto: input.produto,
+    gatilho: input.gatilho,
+    racional: input.racional,
+    prioridade: input.prioridade,
+    created_at,
+  };
+}
+
+export function getCrossSells(session_id: string): CrossSellOpportunity[] {
+  return getDb()
+    .prepare(
+      'SELECT id, session_id, produto, gatilho, racional, prioridade, created_at FROM cross_sell_opportunities WHERE session_id = ? ORDER BY created_at ASC, rowid ASC',
+    )
+    .all(session_id) as unknown as CrossSellOpportunity[];
 }

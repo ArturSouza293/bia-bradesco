@@ -20,17 +20,18 @@ body {
 }
 
 /* =============================================================
-   iPhone 17 Pro Max mockup
-   - md+ (≥ 768px): moldura titânio com dynamic island e home bar
-   - < md: tela cheia sem moldura (usuário já está no celular)
+   Palco — fundo escuro que segura 1 ou 2 iPhones
+   - md+ (≥ 768px): iPhone(s) com moldura
+   - < md: tela cheia sem moldura
    ============================================================= */
 
-.phone-page {
+.phone-stage {
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 26px;
   background: radial-gradient(
     1200px 600px at 50% -10%,
     #2a2f3a 0%,
@@ -42,8 +43,8 @@ body {
 
 .phone-watermark {
   position: absolute;
-  top: 28px;
-  left: 32px;
+  top: 26px;
+  left: 30px;
   pointer-events: none;
   user-select: none;
 }
@@ -54,6 +55,7 @@ body {
   width: 100%;
   height: 100%;
   background: #fff;
+  flex-shrink: 0;
 }
 
 .phone-screen {
@@ -62,17 +64,23 @@ body {
   height: 100%;
   background: #fff;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-label {
+  display: none;
 }
 
 .phone-btn {
   display: none;
 }
 
-/* Desktop/tablet: moldura de iPhone */
+/* Desktop/tablet: moldura de iPhone 17 Pro Max */
 @media (min-width: 768px) {
   .phone-bezel {
-    width: min(430px, calc(94vh * 430 / 932));
-    height: min(932px, 94vh);
+    width: min(412px, calc(92vh * 412 / 892));
+    height: min(892px, 92vh);
     background: linear-gradient(
       135deg,
       #4a4e57 0%,
@@ -80,15 +88,28 @@ body {
       #1b1d22 70%,
       #3a3d44 100%
     );
-    border-radius: 58px;
-    padding: 12px;
+    border-radius: 56px;
+    padding: 11px;
     box-shadow:
       0 0 0 1.5px rgba(255, 255, 255, 0.06) inset,
       0 0 0 2px rgba(0, 0, 0, 0.6),
-      0 30px 80px rgba(0, 0, 0, 0.55);
+      0 28px 70px rgba(0, 0, 0, 0.55);
   }
   .phone-screen {
-    border-radius: 46px;
+    border-radius: 45px;
+  }
+  /* legenda acima de cada telefone (modo dois iPhones) */
+  .phone-label {
+    display: block;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.55);
   }
   .phone-btn {
     display: block;
@@ -96,28 +117,28 @@ body {
     background: linear-gradient(180deg, #2c2f35 0%, #1a1c20 100%);
     border-radius: 2px;
   }
-  .phone-btn-mute     { left: -2px;  top: 96px;  width: 3px; height: 26px; }
-  .phone-btn-vol-up   { left: -2px;  top: 150px; width: 3px; height: 50px; }
-  .phone-btn-vol-down { left: -2px;  top: 214px; width: 3px; height: 50px; }
-  .phone-btn-action   { right: -2px; top: 104px; width: 3px; height: 30px; }
-  .phone-btn-power    { right: -2px; top: 158px; width: 3px; height: 84px; }
+  .phone-btn-mute     { left: -2px;  top: 92px;  width: 3px; height: 24px; }
+  .phone-btn-vol-up   { left: -2px;  top: 142px; width: 3px; height: 48px; }
+  .phone-btn-vol-down { left: -2px;  top: 202px; width: 3px; height: 48px; }
+  .phone-btn-action   { right: -2px; top: 100px; width: 3px; height: 28px; }
+  .phone-btn-power    { right: -2px; top: 150px; width: 3px; height: 80px; }
 }
 
 /* Dynamic Island */
 .dynamic-island {
   position: absolute;
-  top: 11px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 122px;
-  height: 36px;
+  width: 116px;
+  height: 34px;
   background: #000;
   border-radius: 999px;
   z-index: 60;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 12px;
+  padding-right: 11px;
 }
 .dynamic-island-camera {
   width: 9px;
@@ -133,10 +154,10 @@ body {
 /* Home indicator */
 .home-indicator {
   position: absolute;
-  bottom: 8px;
+  bottom: 7px;
   left: 50%;
   transform: translateX(-50%);
-  width: 134px;
+  width: 128px;
   height: 5px;
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.4);
@@ -153,12 +174,12 @@ body {
 /* Status bar */
 .status-bar {
   position: relative;
-  height: 54px;
-  padding: 0 26px 0 32px;
+  height: 52px;
+  padding: 0 24px 0 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.01em;
   font-variant-numeric: tabular-nums;
@@ -166,10 +187,10 @@ body {
   flex-shrink: 0;
 }
 .status-bar-time {
-  padding-top: 16px;
+  padding-top: 15px;
 }
 .status-bar-right {
-  padding-top: 16px;
+  padding-top: 15px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -194,6 +215,6 @@ body {
 .bubble-md a { color: #1f6feb; text-decoration: underline; }
 
 /* Scrollbar discreta */
-*::-webkit-scrollbar { width: 6px; height: 6px; }
+*::-webkit-scrollbar { width: 5px; height: 5px; }
 *::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.18); border-radius: 3px; }
 *::-webkit-scrollbar-track { background: transparent; }

@@ -1,6 +1,7 @@
 import express from 'express';
 import type { Request, Response } from 'express';
 import {
+  getCrossSells,
   getEducationTopics,
   getObjectives,
   getOutOfScopeNotes,
@@ -10,7 +11,7 @@ export const objectivesRouter = express.Router();
 
 // GET /api/objectives?session_id=X
 // Retorna tudo que a sessão produziu: objetivos, conceitos de educação
-// financeira e notas fora de escopo.
+// financeira, oportunidades comerciais (cross-sell) e notas fora de escopo.
 objectivesRouter.get('/objectives', (req: Request, res: Response) => {
   const session_id = String(req.query.session_id ?? '');
   if (!session_id) {
@@ -20,6 +21,7 @@ objectivesRouter.get('/objectives', (req: Request, res: Response) => {
   res.json({
     objectives: getObjectives(session_id),
     education_topics: getEducationTopics(session_id),
+    cross_sell: getCrossSells(session_id),
     out_of_scope_notes: getOutOfScopeNotes(session_id),
   });
 });

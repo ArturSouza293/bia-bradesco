@@ -1,30 +1,36 @@
 // =================================================================
-// Motor mock — conversa scriptada para testar design + fluxo offline
+// Motor mock — conversa scriptada para testar design + fluxo offline.
 // Sem internet, sem custo. Cada mensagem do usuário avança o roteiro.
+// O roteiro segue as 3 fases: Boas-vindas → Descoberta → Fechamento.
 // =================================================================
 
-import { insertEducationTopic, upsertObjective } from './store.ts';
+import {
+  upsertCrossSell,
+  insertEducationTopic,
+  upsertObjective,
+} from './store.ts';
 import type {
   ConversationResult,
   RunConversationParams,
   SSEEvent,
 } from './engine.ts';
-import type { ObjectiveInput } from './types.ts';
+import type { CrossSellInput, ObjectiveInput } from './types.ts';
 
 interface MockStep {
   text: string;
   education?: { topico: string; resumo: string }[];
+  crossSells?: CrossSellInput[];
   objectives?: ObjectiveInput[];
 }
 
 const SCRIPT: MockStep[] = [
-  // Passo 1 — primeira pergunta de descoberta
+  // ---- FASE 1 → 2 : aceite + primeira pergunta de descoberta ----
   {
     text: 'Que bom que topou! 🎯\n\nVamos começar simples: quando você pensa nos próximos **5 a 10 anos**, o que você gostaria de conquistar?',
   },
-  // Passo 2 — explora 1º objetivo + educação (valor presente)
+  // ---- FASE 2 : explora 1º objetivo + educação (valor presente) ----
   {
-    text: 'Adorei! 🏠 Antes de avançar, um conceito importante: vou trabalhar sempre com **valor de hoje** — quanto custaria agora — pra não complicar com inflação nesta etapa.\n\nVocê tem ideia de quanto custaria esse imóvel hoje, e em quanto tempo gostaria de realizar?',
+    text: 'Adorei! 🏠 Antes de avançar, um conceito rápido: vou trabalhar sempre com **valor de hoje** — quanto custaria agora — pra não complicar com inflação nesta etapa.\n\nVocê tem ideia de quanto custaria esse imóvel hoje, e em quanto tempo gostaria de realizar?',
     education: [
       {
         topico: 'Valor presente',
@@ -33,9 +39,9 @@ const SCRIPT: MockStep[] = [
       },
     ],
   },
-  // Passo 3 — registra objetivo 1 (casa própria)
+  // ---- FASE 2 : registra objetivo 1 + cross-sell silencioso ----
   {
-    text: 'Perfeito, anotei. 📝 Então temos seu **primeiro objetivo** estruturado: casa própria, na faixa de R$ 600 mil, em uns 7 anos. Já deixei registrado aqui do lado.\n\nTem mais algum objetivo importante pra você? Pode ser aposentadoria, uma viagem, um carro...',
+    text: 'Perfeito, anotei. 📝 Pronto, **objetivo 1 estruturado**: casa própria, ~R$ 600 mil, em 7 anos. Já apareceu aqui no seu resumo.\n\nTem mais algum objetivo importante? Pode ser aposentadoria, uma viagem, um carro...',
     objectives: [
       {
         categoria: 'casa_propria',
@@ -53,10 +59,26 @@ const SCRIPT: MockStep[] = [
           'Avaliar capacidade de entrada vs. financiamento no fluxo de caixa',
       },
     ],
+    crossSells: [
+      {
+        produto: 'financiamento_imobiliario',
+        gatilho: 'Cliente quer comprar imóvel de ~R$ 600 mil em 7 anos',
+        racional:
+          'Objetivo de casa própria conecta diretamente com financiamento imobiliário e consórcio.',
+        prioridade: 'alta',
+      },
+      {
+        produto: 'seguro_residencial',
+        gatilho: 'Aquisição de imóvel para a família',
+        racional:
+          'Seguro residencial protege o principal patrimônio do cliente após a compra.',
+        prioridade: 'media',
+      },
+    ],
   },
-  // Passo 4 — explora 2º objetivo + educação (horizonte)
+  // ---- FASE 2 : explora 2º objetivo + educação (horizonte) ----
   {
-    text: 'Faz todo sentido pensar na aposentadoria. 👴 Aqui entra outro conceito: o **horizonte** do objetivo — quanto mais longe a data, mais espaço pra estratégias de longo prazo.\n\nVocê imagina se aposentar com mais ou menos quantos anos, e que padrão de vida gostaria de manter?',
+    text: 'Faz todo sentido pensar na aposentadoria. 👴 Outro conceito: o **horizonte** do objetivo — quanto mais longe a data, mais espaço pra estratégias de longo prazo.\n\nVocê imagina se aposentar com mais ou menos quantos anos, e que padrão de vida gostaria de manter?',
     education: [
       {
         topico: 'Horizonte do objetivo',
@@ -65,9 +87,9 @@ const SCRIPT: MockStep[] = [
       },
     ],
   },
-  // Passo 5 — registra objetivo 2 (aposentadoria)
+  // ---- FASE 2 : registra objetivo 2 + cross-sell ----
   {
-    text: 'Ótimo, registrei seu **segundo objetivo**: aposentadoria mantendo o padrão de vida, num horizonte longo. 👴\n\nDeixa eu te perguntar uma coisa importante antes de fecharmos...',
+    text: 'Ótimo, **objetivo 2 estruturado**: aposentadoria mantendo o padrão de vida, num horizonte longo. 👴\n\nDeixa eu te perguntar uma coisa importante antes de fecharmos...',
     objectives: [
       {
         categoria: 'aposentadoria',
@@ -85,10 +107,19 @@ const SCRIPT: MockStep[] = [
           'Dimensionar aporte mensal necessário no fluxo de caixa',
       },
     ],
+    crossSells: [
+      {
+        produto: 'previdencia_privada',
+        gatilho: 'Cliente quer renda complementar ao INSS na aposentadoria',
+        racional:
+          'Previdência privada (PGBL/VGBL) é o produto natural para o objetivo de aposentadoria, com benefício tributário.',
+        prioridade: 'alta',
+      },
+    ],
   },
-  // Passo 6 — sugere reserva de emergência proativamente + educação
+  // ---- FASE 2 : reserva de emergência proativa + educação + cross-sell ----
   {
-    text: 'Você me trouxe ótimos objetivos, mas faltou um que vem **antes** de todos: a **reserva de emergência**. 🛡️\n\nÉ um dinheiro guardado só pra imprevistos — sem ela, qualquer susto faz você sacar dos outros objetivos. Já registrei como prioridade alta, sugerindo algo em torno de 6 meses das suas despesas.',
+    text: 'Você me trouxe ótimos objetivos, mas faltou um que vem **antes** de todos: a **reserva de emergência**. 🛡️\n\nÉ um dinheiro guardado só pra imprevistos — sem ela, qualquer susto faz você sacar dos outros objetivos. Registrei como prioridade alta, sugerindo ~6 meses das suas despesas.',
     education: [
       {
         topico: 'Reserva de emergência',
@@ -116,10 +147,26 @@ const SCRIPT: MockStep[] = [
           'Levantar despesas mensais fixas para dimensionar a reserva com precisão',
       },
     ],
+    crossSells: [
+      {
+        produto: 'investimentos',
+        gatilho: 'Necessidade de montar reserva de emergência líquida',
+        racional:
+          'A reserva precisa ficar em produtos de alta liquidez e baixo risco — oportunidade de conta investimento / CDB liquidez diária.',
+        prioridade: 'media',
+      },
+    ],
   },
-  // Passo 7+ — encerramento (fronteira final)
+  // ---- FASE 3 : recapitulação explícita + encaminhamento ----
   {
-    text: 'Acho que já tenho um quadro bom dos seus objetivos. Vou organizar tudo num resumo visual pra você revisar. 😊\n\nO próximo passo é o **planejamento financeiro** — montar seu fluxo de caixa pra ver como tornar esses objetivos viáveis. Mas isso fica pra próxima conversa.\n\nPode olhar o resumo com calma e, se quiser ajustar algo, é só avisar!',
+    text:
+      'Acho que já tenho um quadro bom dos seus objetivos. Deixa eu **recapitular** com você. 📋\n\n' +
+      'Você estruturou **3 objetivos**:\n' +
+      '1. 🏠 Casa própria — R$ 600 mil, 7 anos\n' +
+      '2. 👴 Aposentadoria — manter o padrão de vida, 25 anos\n' +
+      '3. 🛡️ Reserva de emergência — R$ 36 mil, prioridade alta\n\n' +
+      'E pelo caminho você aprendeu sobre: **valor presente**, **horizonte do objetivo** e **reserva de emergência**.\n\n' +
+      'Vou organizar tudo num resumo visual pra você revisar. O próximo passo é o **planejamento financeiro** — montar seu fluxo de caixa pra ver como tornar esses objetivos viáveis. Mas isso fica pra próxima conversa. 😊',
   },
 ];
 
@@ -134,7 +181,7 @@ async function streamText(
   const chunks = text.match(/[\s\S]{1,4}/g) ?? [];
   for (const c of chunks) {
     emit({ type: 'text', delta: c });
-    await sleep(16);
+    await sleep(15);
   }
 }
 
@@ -150,18 +197,23 @@ export async function runMockConversation(
   const step = SCRIPT[stepIndex];
 
   // pequeno "pensando..." antes de responder
-  await sleep(380);
+  await sleep(340);
   await streamText(step.text, emit);
 
   for (const ed of step.education ?? []) {
     const topic = insertEducationTopic(sessionId, ed.topico, ed.resumo);
     emit({ type: 'education_note', topic });
-    await sleep(140);
+    await sleep(130);
   }
   for (const obj of step.objectives ?? []) {
     const saved = upsertObjective(sessionId, obj);
     emit({ type: 'objective_registered', objective: saved });
-    await sleep(140);
+    await sleep(130);
+  }
+  for (const cs of step.crossSells ?? []) {
+    const opportunity = upsertCrossSell(sessionId, cs);
+    emit({ type: 'cross_sell', opportunity });
+    await sleep(130);
   }
 
   return { assistantText: step.text };

@@ -2,7 +2,12 @@
 // Motor de conversa — interface comum + seletor real/mock
 // =================================================================
 
-import type { ChatMessage, EducationTopic, Objective } from './types.ts';
+import type {
+  ChatMessage,
+  CrossSellOpportunity,
+  EducationTopic,
+  Objective,
+} from './types.ts';
 import { runRealConversation } from './anthropic.ts';
 import { runMockConversation } from './mock.ts';
 
@@ -10,6 +15,7 @@ export type SSEEvent =
   | { type: 'text'; delta: string }
   | { type: 'objective_registered'; objective: Objective }
   | { type: 'education_note'; topic: EducationTopic }
+  | { type: 'cross_sell'; opportunity: CrossSellOpportunity }
   | { type: 'out_of_scope_note'; nota: string }
   | { type: 'error'; message: string }
   | { type: 'done' };
