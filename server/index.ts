@@ -13,6 +13,7 @@ import { isMockMode } from './lib/engine.ts';
 import { chatRouter } from './routes/chat.ts';
 import { sessionsRouter } from './routes/sessions.ts';
 import { objectivesRouter } from './routes/objectives.ts';
+import { insightsRouter } from './routes/insights.ts';
 
 // Carrega .env (com override) ANTES de qualquer coisa ler process.env
 loadEnv();
@@ -39,6 +40,7 @@ app.get('/api/health', (_req, res) => {
 app.use('/api', chatRouter);
 app.use('/api', sessionsRouter);
 app.use('/api', objectivesRouter);
+app.use('/api', insightsRouter);
 
 // Em produção (npm start, após npm run build): serve o frontend estático.
 // Em dev o frontend é servido pelo Vite, que faz proxy de /api pra cá.

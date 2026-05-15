@@ -37,6 +37,7 @@ export function AppView({ onShowChat }: AppViewProps) {
   const navigate = useNavigate();
   const sessionId = useSessionStore((s) => s.sessionId);
   const startedAt = useSessionStore((s) => s.startedAt);
+  const user = useSessionStore((s) => s.user);
   const messages = useSessionStore((s) => s.messages);
   const clientProfile = useSessionStore((s) => s.clientProfile);
   const educationTopics = useSessionStore((s) => s.educationTopics);
@@ -91,7 +92,7 @@ export function AppView({ onShowChat }: AppViewProps) {
   return (
     <div className="flex flex-col h-full bg-bradesco-surface">
       {/* Header estilo app Bradesco */}
-      <div className="bg-gradient-to-br from-bradesco-red via-bradesco-red to-bradesco-red-darker flex-shrink-0">
+      <div className="bg-gradient-to-br from-bradesco-red via-bradesco-red-dark to-bradesco-red-darker flex-shrink-0 rounded-b-2xl shadow-sm">
         <StatusBar variant="light" />
         <header className="text-white px-3.5 pt-0.5 pb-4">
           <div className="flex items-center gap-2">
@@ -112,11 +113,11 @@ export function AppView({ onShowChat }: AppViewProps) {
           </div>
           <div className="mt-3 flex items-end justify-between">
             <div>
-              <h1 className="text-[22px] font-bold leading-tight">
+              <h1 className="text-[22px] font-bold leading-tight tracking-tight">
                 Meus Objetivos
               </h1>
               <p className="text-white/70 text-[12px] leading-tight mt-0.5">
-                Sessão de {dateLabel} · com a Bia
+                {user ? `${user.nome} #${user.id} · ` : ''}Sessão de {dateLabel}
               </p>
             </div>
           </div>

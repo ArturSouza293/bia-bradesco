@@ -156,3 +156,10 @@ export interface CrossSellOpportunity {
   prioridade: Prioridade | null;
   created_at: string;
 }
+
+// ---- Usuário da demo (memória por pessoa) ----
+export interface User {
+  id: number;
+  nome: string;
+  created_at: string;
+}

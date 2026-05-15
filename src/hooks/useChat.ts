@@ -10,6 +10,7 @@ function uid() {
 interface ChatEvent {
   type:
     | 'text'
+    | 'user_identified'
     | 'client_profile'
     | 'objective_registered'
     | 'education_note'
@@ -18,6 +19,9 @@ interface ChatEvent {
     | 'error'
     | 'done';
   delta?: string;
+  user?: unknown;
+  display_tag?: string;
+  is_returning?: boolean;
   profile?: unknown;
   objective?: unknown;
   topic?: unknown;
@@ -82,6 +86,11 @@ export function useChat() {
         const s = useSessionStore.getState();
         if (evt.type === 'text' && evt.delta) {
           s.appendToLastAssistant(evt.delta);
+        } else if (evt.type === 'user_identified' && evt.user) {
+          s.setUser({
+            user: evt.user as never,
+            isReturning: Boolean(evt.is_returning),
+          });
         } else if (evt.type === 'client_profile' && evt.profile) {
           s.setClientProfile(evt.profile as never);
         } else if (evt.type === 'objective_registered' && evt.objective) {

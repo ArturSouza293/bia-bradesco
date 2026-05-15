@@ -22,8 +22,25 @@ export function getDb(): DatabaseSync {
   db.exec('PRAGMA journal_mode = WAL;');
   db.exec('PRAGMA foreign_keys = ON;');
   db.exec(readFileSync(SCHEMA_PATH, 'utf-8'));
+  runMigrations(db);
   _db = db;
   return db;
+}
+
+// Migrações idempotentes para bancos criados antes de uma mudança de
+// schema. O schema.sql cobre bancos novos; isto atualiza os já existentes.
+function runMigrations(db: DatabaseSync): void {
+  const sessionCols = db
+    .prepare('PRAGMA table_info(sessions)')
+    .all() as { name: string }[];
+  if (!sessionCols.some((c) => c.name === 'user_id')) {
+    db.exec('ALTER TABLE sessions ADD COLUMN user_id INTEGER');
+  }
+  // Índice depende de user_id existir; rodamos aqui (idempotente) pra
+  // funcionar tanto em bancos novos quanto em recém-migrados.
+  db.exec(
+    'CREATE INDEX IF NOT EXISTS idx_sessions_user ON sessions(user_id)',
+  );
 }
 
 export function closeDb(): void {

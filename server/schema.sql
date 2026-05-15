@@ -5,9 +5,22 @@
 
 PRAGMA foreign_keys = ON;
 
--- Sessões de conversa
+-- Usuários da demo — identificados pelo nome, com id sequencial que
+-- desambigua homônimos e serve de etiqueta pública (ex.: "Maria #7").
+-- A memória (perfil, objetivos) é recuperável por usuário entre sessões.
+CREATE TABLE IF NOT EXISTS users (
+  id         INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome       TEXT NOT NULL,
+  nome_lower TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS idx_users_nome_lower ON users(nome_lower);
+
+-- Sessões de conversa. user_id liga a sessão ao usuário (preenchido
+-- quando a Bia coleta o nome); fica NULL até a identificação.
 CREATE TABLE IF NOT EXISTS sessions (
   id               TEXT PRIMARY KEY,
+  user_id          INTEGER REFERENCES users(id) ON DELETE SET NULL,
   started_at       TEXT NOT NULL DEFAULT (datetime('now')),
   ended_at         TEXT,
   status           TEXT NOT NULL DEFAULT 'active'
@@ -15,6 +28,8 @@ CREATE TABLE IF NOT EXISTS sessions (
   duration_minutes INTEGER,
   created_at       TEXT NOT NULL DEFAULT (datetime('now'))
 );
+-- O índice em sessions(user_id) é criado em runMigrations (db.ts), depois
+-- que o ALTER garante a coluna em bancos pré-existentes.
 
 -- Perfil 360° do cliente — anamnese rápida feita pela Bia ANTES dos objetivos.
 -- Em produção, viria do Open Finance + dados cadastrais; aqui a Bia coleta

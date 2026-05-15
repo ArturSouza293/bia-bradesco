@@ -4,6 +4,7 @@
 
 import { BIA_SYSTEM_PROMPT, TOOLS } from './bia.ts';
 import {
+  registerUserForSession,
   upsertClientProfile,
   upsertCrossSell,
   insertEducationTopic,
@@ -266,6 +267,28 @@ function executeTool(
   emit: (e: SSEEvent) => void,
 ): { ok: boolean; [k: string]: unknown } {
   try {
+    if (name === 'register_user') {
+      const nome = String(input.nome ?? '').trim();
+      if (!nome) return { ok: false, error: 'nome vazio' };
+      const memory = registerUserForSession(sessionId, nome);
+      emit({
+        type: 'user_identified',
+        user: memory.user,
+        display_tag: memory.display_tag,
+        is_returning: memory.is_returning,
+      });
+      return {
+        ok: true,
+        display_tag: memory.display_tag,
+        is_returning: memory.is_returning,
+        past_sessions: memory.past_sessions,
+        past_objectives: memory.past_objectives,
+        last_profile: memory.last_profile,
+        message: memory.is_returning
+          ? `Cliente recorrente: ${memory.display_tag}, com ${memory.past_objectives.length} objetivo(s) de sessões anteriores. Cumprimente pelo nome e referencie o histórico com naturalidade.`
+          : `Novo cliente: ${memory.display_tag}. Use o primeiro nome ao longo da conversa.`,
+      };
+    }
     if (name === 'register_client_profile') {
       const profile = upsertClientProfile(
         sessionId,

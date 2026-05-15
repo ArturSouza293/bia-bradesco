@@ -6,6 +6,7 @@ import {
   getEducationTopics,
   getObjectives,
   getOutOfScopeNotes,
+  getUserForSession,
 } from '../lib/store.ts';
 
 export const objectivesRouter = express.Router();
@@ -20,6 +21,7 @@ objectivesRouter.get('/objectives', (req: Request, res: Response) => {
     return;
   }
   res.json({
+    user: getUserForSession(session_id),
     client_profile: getClientProfile(session_id),
     objectives: getObjectives(session_id),
     education_topics: getEducationTopics(session_id),

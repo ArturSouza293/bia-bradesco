@@ -170,11 +170,37 @@ export interface CrossSellOpportunity {
 
 export interface SessionRow {
   id: string;
+  user_id: number | null;
   started_at: string;
   ended_at: string | null;
   status: SessionStatus;
   duration_minutes: number | null;
   created_at: string;
+}
+
+// ---- Usuário da demo (memória por pessoa) ----
+export interface User {
+  id: number;
+  nome: string;
+  created_at: string;
+}
+
+// Resumo de um objetivo registrado numa sessão anterior do mesmo usuário
+export interface PastObjective {
+  titulo_curto: string;
+  categoria: Categoria;
+  valor_presente_brl: number | null;
+  horizonte_anos: number | null;
+}
+
+// O que register_user devolve: o usuário + a memória das sessões passadas
+export interface UserMemory {
+  user: User;
+  display_tag: string; // "Maria #7"
+  is_returning: boolean; // já existia antes desta sessão
+  past_sessions: number; // nº de sessões anteriores do mesmo usuário
+  past_objectives: PastObjective[];
+  last_profile: ClientProfile | null;
 }
 
 export interface ChatMessage {

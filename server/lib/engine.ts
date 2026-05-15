@@ -8,12 +8,19 @@ import type {
   CrossSellOpportunity,
   EducationTopic,
   Objective,
+  User,
 } from './types.ts';
 import { runRealConversation } from './anthropic.ts';
 import { runMockConversation } from './mock.ts';
 
 export type SSEEvent =
   | { type: 'text'; delta: string }
+  | {
+      type: 'user_identified';
+      user: User;
+      display_tag: string;
+      is_returning: boolean;
+    }
   | { type: 'client_profile'; profile: ClientProfile }
   | { type: 'objective_registered'; objective: Objective }
   | { type: 'education_note'; topic: EducationTopic }

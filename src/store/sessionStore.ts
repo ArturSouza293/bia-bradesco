@@ -5,6 +5,7 @@ import type {
   EducationTopic,
   CrossSellOpportunity,
   ClientProfile,
+  User,
 } from '@/types/objective';
 
 export interface UIMessage {
@@ -24,6 +25,8 @@ interface SessionState {
   sessionId: string | null;
   sessionStatus: 'idle' | 'active' | 'completed' | 'abandoned';
   startedAt: string | null;
+  user: User | null;
+  userIsReturning: boolean;
   messages: UIMessage[];
   clientProfile: ClientProfile | null;
   objectives: Objective[];
@@ -39,6 +42,7 @@ interface SessionState {
 interface SessionActions {
   setSession: (params: { id: string; started_at: string }) => void;
   setStatus: (s: SessionState['sessionStatus']) => void;
+  setUser: (params: { user: User; isReturning: boolean }) => void;
   addMessage: (m: UIMessage) => void;
   appendToLastAssistant: (delta: string) => void;
   setClientProfile: (p: ClientProfile) => void;
@@ -47,6 +51,7 @@ interface SessionActions {
   upsertCrossSell: (c: CrossSellOpportunity) => void;
   addOutOfScopeNote: (n: string) => void;
   hydrateFromServer: (data: {
+    user: User | null;
     clientProfile: ClientProfile | null;
     objectives: Objective[];
     educationTopics: EducationTopic[];
@@ -64,6 +69,8 @@ const initialState: SessionState = {
   sessionId: null,
   sessionStatus: 'idle',
   startedAt: null,
+  user: null,
+  userIsReturning: false,
   messages: [],
   clientProfile: null,
   objectives: [],
@@ -93,6 +100,8 @@ export const useSessionStore = create<SessionState & SessionActions>()(
       setSession: ({ id, started_at }) =>
         set({ sessionId: id, startedAt: started_at, sessionStatus: 'active' }),
       setStatus: (s) => set({ sessionStatus: s }),
+      setUser: ({ user, isReturning }) =>
+        set({ user, userIsReturning: isReturning }),
       addMessage: (m) => set((state) => ({ messages: [...state.messages, m] })),
       appendToLastAssistant: (delta) =>
         set((state) => {
@@ -126,6 +135,7 @@ export const useSessionStore = create<SessionState & SessionActions>()(
         ),
       hydrateFromServer: (data) =>
         set({
+          user: data.user,
           clientProfile: data.clientProfile,
           objectives: data.objectives,
           educationTopics: data.educationTopics,
@@ -139,12 +149,14 @@ export const useSessionStore = create<SessionState & SessionActions>()(
       reset: () => set(initialState),
     }),
     {
-      name: 'bia-bradesco-session-v3',
+      name: 'bia-bradesco-session-v4',
       storage: createJSONStorage(() => localStorage),
       partialize: (s) => ({
         sessionId: s.sessionId,
         sessionStatus: s.sessionStatus,
         startedAt: s.startedAt,
+        user: s.user,
+        userIsReturning: s.userIsReturning,
         messages: s.messages,
         clientProfile: s.clientProfile,
         objectives: s.objectives,

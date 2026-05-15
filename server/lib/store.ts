@@ -14,9 +14,12 @@ import type {
   EducationTopic,
   Objective,
   ObjectiveInput,
+  PastObjective,
   Role,
   SessionRow,
   SessionStatus,
+  User,
+  UserMemory,
 } from './types.ts';
 
 // ----------------------------------------------------------------
@@ -63,6 +66,97 @@ export function updateSessionStatus(
     'UPDATE sessions SET status = ?, ended_at = ?, duration_minutes = ? WHERE id = ?',
   ).run(status, ended_at, duration_minutes, id);
   return getSession(id) ?? null;
+}
+
+// ----------------------------------------------------------------
+// Users — memória por pessoa. Identificada pelo nome (case-insensitive);
+// o id sequencial desambigua homônimos e vira etiqueta pública ("Nome #id").
+// Numa demo, quem repete o mesmo nome é tratado como a mesma pessoa
+// voltando — homônimos compartilham memória (trade-off aceito).
+// ----------------------------------------------------------------
+export function displayTag(user: { id: number; nome: string }): string {
+  return `${user.nome} #${user.id}`;
+}
+
+export function registerUserForSession(
+  session_id: string,
+  nomeRaw: string,
+): UserMemory {
+  const db = getDb();
+  const nome = nomeRaw.trim().replace(/\s+/g, ' ');
+  const nome_lower = nome.toLowerCase();
+
+  let user = db
+    .prepare(
+      'SELECT id, nome, created_at FROM users WHERE nome_lower = ? ORDER BY id ASC LIMIT 1',
+    )
+    .get(nome_lower) as User | undefined;
+
+  const is_returning = Boolean(user);
+
+  if (!user) {
+    const created_at = nowIso();
+    const info = db
+      .prepare(
+        'INSERT INTO users (nome, nome_lower, created_at) VALUES (?, ?, ?)',
+      )
+      .run(nome, nome_lower, created_at);
+    user = { id: Number(info.lastInsertRowid), nome, created_at };
+  }
+
+  // Liga a sessão atual ao usuário
+  db.prepare('UPDATE sessions SET user_id = ? WHERE id = ?').run(
+    user.id,
+    session_id,
+  );
+
+  // Memória: o que esse usuário registrou em sessões ANTERIORES
+  const past_objectives = db
+    .prepare(
+      `SELECT o.titulo_curto, o.categoria, o.valor_presente_brl, o.horizonte_anos
+       FROM objectives o
+       JOIN sessions s ON s.id = o.session_id
+       WHERE s.user_id = ? AND o.session_id != ?
+       ORDER BY o.created_at ASC`,
+    )
+    .all(user.id, session_id) as unknown as PastObjective[];
+
+  const past_sessions = (
+    db
+      .prepare(
+        'SELECT COUNT(*) AS n FROM sessions WHERE user_id = ? AND id != ?',
+      )
+      .get(user.id, session_id) as { n: number }
+  ).n;
+
+  const last_profile =
+    (db
+      .prepare(
+        `SELECT cp.* FROM client_profiles cp
+         JOIN sessions s ON s.id = cp.session_id
+         WHERE s.user_id = ? AND cp.session_id != ?
+         ORDER BY cp.updated_at DESC LIMIT 1`,
+      )
+      .get(user.id, session_id) as unknown as ClientProfile | undefined) ?? null;
+
+  return {
+    user,
+    display_tag: displayTag(user),
+    is_returning,
+    past_sessions,
+    past_objectives,
+    last_profile,
+  };
+}
+
+export function getUserForSession(session_id: string): User | null {
+  const row = getDb()
+    .prepare(
+      `SELECT u.id, u.nome, u.created_at FROM users u
+       JOIN sessions s ON s.user_id = u.id WHERE s.id = ?`,
+    )
+    .get(session_id) as unknown as User | undefined;
+  return row ?? null;
 }
 
 // ----------------------------------------------------------------

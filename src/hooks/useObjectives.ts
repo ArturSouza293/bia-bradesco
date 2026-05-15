@@ -5,9 +5,11 @@ import type {
   EducationTopic,
   CrossSellOpportunity,
   ClientProfile,
+  User,
 } from '@/types/objective';
 
 interface ObjectivesResponse {
+  user: User | null;
   client_profile: ClientProfile | null;
   objectives: Objective[];
   education_topics: EducationTopic[];
@@ -38,6 +40,7 @@ export function useObjectivesSync() {
         const data = (await res.json()) as ObjectivesResponse;
         if (cancelled) return;
         hydrate({
+          user: data.user ?? null,
           clientProfile: data.client_profile ?? null,
           objectives: data.objectives ?? [],
           educationTopics: data.education_topics ?? [],

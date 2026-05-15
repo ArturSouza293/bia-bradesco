@@ -5,8 +5,11 @@ import { MessageBubble } from '@/components/chat/MessageBubble';
 import { TypingIndicator } from '@/components/chat/TypingIndicator';
 import { ChatInput } from '@/components/chat/ChatInput';
 import { StatusBar } from '@/components/phone/StatusBar';
+import { JourneyProgress } from '@/components/JourneyProgress';
 import { useChat } from '@/hooks/useChat';
 import { useSessionStore } from '@/store/sessionStore';
+import { deriveJourneyPhase } from '@/lib/journey';
+import { getSuggestions } from '@/lib/suggestions';
 
 interface ChatViewProps {
   /** Mobile: callback para alternar para a AppView. Ausente no desktop. */
@@ -17,10 +20,22 @@ interface ChatViewProps {
 export function ChatView({ onShowApp }: ChatViewProps) {
   const messages = useSessionStore((s) => s.messages);
   const objectives = useSessionStore((s) => s.objectives);
+  const clientProfile = useSessionStore((s) => s.clientProfile);
+  const endedByBia = useSessionStore((s) => s.endedByBia);
   const isStreaming = useSessionStore((s) => s.isStreaming);
   const isTyping = useSessionStore((s) => s.isTyping);
   const error = useSessionStore((s) => s.error);
   const { sendMessage } = useChat();
+
+  const phase = deriveJourneyPhase({
+    messages,
+    objectives,
+    clientProfile,
+    endedByBia,
+  });
+  const suggestions = getSuggestions(phase);
+  const showSuggestions =
+    suggestions.length > 0 && !isStreaming && !isTyping;
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,6 +63,11 @@ export function ChatView({ onShowApp }: ChatViewProps) {
       {/* Banner de demonstração */}
       <div className="bg-[#FFF4D6] text-[#8A6D00] text-[10.5px] text-center py-1 flex-shrink-0 border-b border-[#F0E3B0]">
         🟡 Demonstração — não é o atendimento oficial do Bradesco
+      </div>
+
+      {/* Progresso da jornada — dá sensação de avanço durante a conversa */}
+      <div className="flex-shrink-0 bg-white px-3 py-1.5 border-b border-gray-100">
+        <JourneyProgress phase={phase} />
       </div>
 
       {/* Mensagens */}
@@ -91,6 +111,21 @@ export function ChatView({ onShowApp }: ChatViewProps) {
               </span>
             )}
           </button>
+        </div>
+      )}
+
+      {/* Sugestões de resposta — para o cliente nunca ficar solto */}
+      {showSuggestions && (
+        <div className="flex-shrink-0 bg-white border-t border-gray-100 px-3 py-2 flex flex-wrap gap-1.5">
+          {suggestions.map((s) => (
+            <button
+              key={s.label}
+              onClick={() => sendMessage(s.text)}
+              className="text-[12px] px-3 py-1.5 rounded-full bg-bradesco-50 text-bradesco-red border border-bradesco-100 hover:bg-bradesco-100 transition"
+            >
+              {s.label}
+            </button>
+          ))}
         </div>
       )}
 

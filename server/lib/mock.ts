@@ -6,6 +6,7 @@
 // =================================================================
 
 import {
+  registerUserForSession,
   upsertClientProfile,
   upsertCrossSell,
   insertEducationTopic,
@@ -24,6 +25,7 @@ import type {
 
 interface MockStep {
   text: string;
+  user?: string; // nome do cliente — registra/recupera o usuário (memória por pessoa)
   clientProfile?: ClientProfileInput;
   education?: { topico: string; resumo: string }[];
   crossSells?: CrossSellInput[];
@@ -31,21 +33,26 @@ interface MockStep {
 }
 
 const SCRIPT: MockStep[] = [
-  // ---- FASE 1→2 : aceite + início da anamnese ----
+  // ---- FASE 1 : aceite → pergunta o nome ----
   {
-    text: 'Combinado! 😊 Antes de sonhar junto com você, preciso te conhecer rapidinho.\n\nMe conta três coisinhas: **qual a sua idade**, seu **estado civil**, e se você tem **dependentes** (filhos, por exemplo)?',
+    text: 'Combinado! 😊 Antes de começar, como você gostaria de ser chamado(a)?',
+  },
+  // ---- FASE 1→2 : registra o usuário + inicia a anamnese 360° ----
+  {
+    text: 'Prazer, João! 👋 Antes de sonhar junto com você, preciso te conhecer rapidinho.\n\nMe conta três coisinhas: **qual a sua idade**, seu **estado civil**, e se você tem **dependentes** (filhos, por exemplo)?',
+    user: 'João',
   },
   // ---- FASE 2 : anamnese — profissão + renda ----
   {
-    text: 'Anotado! 📝 Agora sobre o seu dia a dia: **qual é a sua profissão** e em que **faixa de renda mensal** você se encaixa? Pode ser por faixa, fica à vontade.',
+    text: 'Anotado, João! 📝 Agora sobre o seu dia a dia: **qual é a sua profissão** e em que **faixa de renda mensal** você se encaixa? Pode ser por faixa, fica à vontade.',
   },
   // ---- FASE 2 : anamnese — experiência + tolerância (suitability) ----
   {
-    text: 'Perfeito. Última pergunta pra eu te conhecer: você **já investe** hoje? E quando você imagina um investimento seu **caindo de valor** por alguns meses — você fica tranquilo ou isso te incomoda bastante?',
+    text: 'Perfeito. Última pergunta pra eu te conhecer, João: você **já investe** hoje? E quando você imagina um investimento seu **caindo de valor** por alguns meses — você fica tranquilo ou isso te incomoda bastante?',
   },
   // ---- FASE 2→3 : registra perfil + transição para objetivos ----
   {
-    text: 'Show, agora te conheço! 🎯 Já montei seu **perfil** aqui ao lado — dá uma olhada.\n\nVamos ao que interessa: quando você pensa nos próximos **5 a 10 anos**, o que você gostaria de conquistar?',
+    text: 'Show, João, agora te conheço! 🎯 Já montei seu **perfil 360°** aqui ao lado — dá uma olhada.\n\nVamos ao que interessa: quando você pensa nos próximos **5 a 10 anos**, o que você gostaria de conquistar?',
     clientProfile: {
       idade: 32,
       estado_civil: 'casado',
@@ -60,7 +67,7 @@ const SCRIPT: MockStep[] = [
   },
   // ---- FASE 3 : explora 1º objetivo + educação (valor presente) ----
   {
-    text: 'Adorei! 🏠 Pra uma família com 2 filhos, sair do aluguel costuma ser prioridade mesmo. Antes de avançar, um conceito rápido: vou trabalhar sempre com **valor de hoje** — quanto custaria agora — pra não complicar com inflação nesta etapa.\n\nVocê tem ideia de quanto custaria esse imóvel hoje, e em quanto tempo gostaria de realizar?',
+    text: 'Adorei, João! 🏠 Pra uma família com 2 filhos, sair do aluguel costuma ser prioridade mesmo. Antes de avançar, um conceito rápido: vou trabalhar sempre com **valor de hoje** — quanto custaria agora — pra não complicar com inflação nesta etapa.\n\nVocê tem ideia de quanto custaria esse imóvel hoje, e em quanto tempo gostaria de realizar?',
     education: [
       {
         topico: 'Valor presente',
@@ -71,7 +78,7 @@ const SCRIPT: MockStep[] = [
   },
   // ---- FASE 3 : registra objetivo 1 + cross-sell ----
   {
-    text: 'Perfeito, anotei. 📝 Pronto, **objetivo 1 estruturado**: casa própria, ~R$ 600 mil, em 7 anos. Já apareceu no seu resumo.\n\nTem mais algum objetivo importante? Pode ser aposentadoria, uma viagem, um carro...',
+    text: 'Perfeito, anotei. 📝 Pronto, João, **objetivo 1 estruturado**: casa própria, ~R$ 600 mil, em 7 anos. Já apareceu no seu resumo.\n\nTem mais algum objetivo importante? Pode ser aposentadoria, uma viagem, um carro...',
     objectives: [
       {
         categoria: 'casa_propria',
@@ -109,7 +116,7 @@ const SCRIPT: MockStep[] = [
   },
   // ---- FASE 3 : explora 2º objetivo + educação (horizonte) ----
   {
-    text: 'Faz todo sentido pensar na aposentadoria. 👴 E você tem o tempo a favor: aos 32, o **horizonte** é longo — quanto mais distante a data, mais espaço pra estratégias de longo prazo.\n\nVocê imagina se aposentar com mais ou menos quantos anos, e que padrão de vida gostaria de manter?',
+    text: 'Faz todo sentido pensar na aposentadoria, João. 👴 E você tem o tempo a favor: aos 32, o **horizonte** é longo — quanto mais distante a data, mais espaço pra estratégias de longo prazo.\n\nVocê imagina se aposentar com mais ou menos quantos anos, e que padrão de vida gostaria de manter?',
     education: [
       {
         topico: 'Horizonte do objetivo',
@@ -120,7 +127,7 @@ const SCRIPT: MockStep[] = [
   },
   // ---- FASE 3 : registra objetivo 2 + cross-sell ----
   {
-    text: 'Ótimo, **objetivo 2 estruturado**: aposentadoria mantendo o padrão de vida, num horizonte longo. 👴\n\nDeixa eu te perguntar uma coisa importante antes de fecharmos...',
+    text: 'Ótimo, João, **objetivo 2 estruturado**: aposentadoria mantendo o padrão de vida, num horizonte longo. 👴\n\nDeixa eu te perguntar uma coisa importante antes de fecharmos...',
     objectives: [
       {
         categoria: 'aposentadoria',
@@ -151,7 +158,7 @@ const SCRIPT: MockStep[] = [
   },
   // ---- FASE 3 : reserva de emergência proativa + educação + cross-sell ----
   {
-    text: 'Você me trouxe ótimos objetivos, mas faltou um que vem **antes** de todos: a **reserva de emergência**. 🛡️\n\nCom 2 filhos, ela é ainda mais essencial — é um dinheiro guardado só pra imprevistos, que protege todos os outros planos. Registrei como prioridade alta, sugerindo ~6 meses das suas despesas.',
+    text: 'Você me trouxe ótimos objetivos, João, mas faltou um que vem **antes** de todos: a **reserva de emergência**. 🛡️\n\nCom 2 filhos, ela é ainda mais essencial — é um dinheiro guardado só pra imprevistos, que protege todos os outros planos. Registrei como prioridade alta, sugerindo ~6 meses das suas despesas.',
     education: [
       {
         topico: 'Reserva de emergência',
@@ -193,12 +200,15 @@ const SCRIPT: MockStep[] = [
   // ---- FASE 4 : recapitulação explícita + encaminhamento ----
   {
     text:
-      'Acho que já tenho um quadro bom dos seus objetivos. Deixa eu **recapitular** com você. 📋\n\n' +
+      'Acho que já tenho um quadro bom dos seus objetivos, João. Deixa eu **recapitular** com você. 📋\n\n' +
       'Você estruturou **3 objetivos**:\n' +
       '1. 🏠 Casa própria — R$ 600 mil, 7 anos\n' +
       '2. 👴 Aposentadoria — manter o padrão de vida, 25 anos\n' +
       '3. 🛡️ Reserva de emergência — R$ 36 mil, prioridade alta\n\n' +
-      'E pelo caminho você aprendeu sobre: **valor presente**, **horizonte do objetivo** e **reserva de emergência**.\n\n' +
+      'E pelo caminho você aprendeu **3 conceitos de educação financeira**:\n' +
+      '• **Valor presente** — estimar objetivos em valores de hoje\n' +
+      '• **Horizonte do objetivo** — o prazo muda a estratégia de cada meta\n' +
+      '• **Reserva de emergência** — o colchão que protege todos os planos\n\n' +
       'Vou organizar tudo num resumo visual pra você revisar. O próximo passo é o **planejamento financeiro** — montar seu fluxo de caixa pra ver como tornar esses objetivos viáveis. Mas isso fica pra próxima conversa. 😊',
   },
 ];
@@ -233,6 +243,16 @@ export async function runMockConversation(
   await sleep(340);
   await streamText(step.text, emit);
 
+  if (step.user) {
+    const memory = registerUserForSession(sessionId, step.user);
+    emit({
+      type: 'user_identified',
+      user: memory.user,
+      display_tag: memory.display_tag,
+      is_returning: memory.is_returning,
+    });
+    await sleep(140);
+  }
   if (step.clientProfile) {
     const profile = upsertClientProfile(sessionId, step.clientProfile);
     emit({ type: 'client_profile', profile });
