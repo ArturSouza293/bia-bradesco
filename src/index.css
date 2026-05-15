@@ -20,8 +20,9 @@ body {
 }
 
 /* =============================================================
-   Palco — fundo escuro com SEMPRE 2 iPhones lado a lado.
-   A largura do bezel adapta pra caber 2 em qualquer viewport.
+   Palco — fundo escuro com 2 iPhones lado a lado.
+   A moldura tem dimensões iguais às do design original; o min()
+   na width apenas reduz proporcionalmente quando 2 não cabem.
    ============================================================= */
 
 .phone-stage {
@@ -30,8 +31,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  padding: 6px;
+  gap: 26px;
   background: radial-gradient(
     1200px 600px at 50% -10%,
     #2a2f3a 0%,
@@ -43,20 +43,19 @@ body {
 
 .phone-watermark {
   position: absolute;
-  top: 18px;
-  left: 22px;
+  top: 26px;
+  left: 30px;
   pointer-events: none;
   user-select: none;
 }
 
-/* Moldura iPhone — width responsiva: até 412px no ideal, ou metade
-   do viewport (descontando gap+padding), ou o que couber na altura
-   disponível, o que for menor. Aspect-ratio mantém a forma do iPhone. */
+/* Moldura iPhone 17 Pro Max — proporções e raios do design original;
+   width adapta pra caber 2 lado a lado em qualquer viewport. */
 .phone-bezel {
   position: relative;
   flex-shrink: 0;
-  width: min(412px, calc((100vw - 26px) / 2), calc(96vh * 412 / 892));
-  aspect-ratio: 412 / 892;
+  width: min(412px, calc((100vw - 36px) / 2), calc(92vh * 412 / 892));
+  height: min(892px, 92vh);
   background: linear-gradient(
     135deg,
     #4a4e57 0%,
@@ -64,12 +63,12 @@ body {
     #1b1d22 70%,
     #3a3d44 100%
   );
-  border-radius: clamp(28px, 13.5%, 56px);
-  padding: 2.7%;
+  border-radius: 56px;
+  padding: 11px;
   box-shadow:
     0 0 0 1.5px rgba(255, 255, 255, 0.06) inset,
     0 0 0 2px rgba(0, 0, 0, 0.6),
-    0 20px 50px rgba(0, 0, 0, 0.55);
+    0 28px 70px rgba(0, 0, 0, 0.55);
 }
 
 .phone-screen {
@@ -80,59 +79,51 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border-radius: clamp(22px, 11%, 45px);
+  border-radius: 45px;
 }
 
 /* Legenda acima de cada telefone */
 .phone-label {
   display: block;
   position: absolute;
-  top: -22px;
+  top: -30px;
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.55);
 }
-@media (max-width: 640px) {
-  .phone-label { display: none; }
-}
 
-/* Botões laterais decorativos — só em telas grandes */
-.phone-btn { display: none; }
-@media (min-width: 900px) {
-  .phone-btn {
-    display: block;
-    position: absolute;
-    background: linear-gradient(180deg, #2c2f35 0%, #1a1c20 100%);
-    border-radius: 2px;
-  }
-  .phone-btn-mute     { left: -2px;  top: 92px;  width: 3px; height: 24px; }
-  .phone-btn-vol-up   { left: -2px;  top: 142px; width: 3px; height: 48px; }
-  .phone-btn-vol-down { left: -2px;  top: 202px; width: 3px; height: 48px; }
-  .phone-btn-action   { right: -2px; top: 100px; width: 3px; height: 28px; }
-  .phone-btn-power    { right: -2px; top: 150px; width: 3px; height: 80px; }
+/* Botões laterais decorativos do iPhone */
+.phone-btn {
+  display: block;
+  position: absolute;
+  background: linear-gradient(180deg, #2c2f35 0%, #1a1c20 100%);
+  border-radius: 2px;
 }
+.phone-btn-mute     { left: -2px;  top: 92px;  width: 3px; height: 24px; }
+.phone-btn-vol-up   { left: -2px;  top: 142px; width: 3px; height: 48px; }
+.phone-btn-vol-down { left: -2px;  top: 202px; width: 3px; height: 48px; }
+.phone-btn-action   { right: -2px; top: 100px; width: 3px; height: 28px; }
+.phone-btn-power    { right: -2px; top: 150px; width: 3px; height: 80px; }
 
-/* Dynamic Island — escala com o phone via porcentagem */
+/* Dynamic Island */
 .dynamic-island {
   position: absolute;
-  top: 1.1%;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 28%;
-  max-width: 116px;
-  height: 3.8%;
-  max-height: 34px;
+  width: 116px;
+  height: 34px;
   background: #000;
   border-radius: 999px;
   z-index: 60;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 9px;
+  padding-right: 11px;
 }
 .dynamic-island-camera {
   width: 9px;
@@ -145,11 +136,10 @@ body {
 /* Home indicator */
 .home-indicator {
   position: absolute;
-  bottom: 0.7%;
+  bottom: 7px;
   left: 50%;
   transform: translateX(-50%);
-  width: 31%;
-  max-width: 128px;
+  width: 128px;
   height: 5px;
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.4);
@@ -160,15 +150,15 @@ body {
   background: rgba(255, 255, 255, 0.85);
 }
 
-/* Status bar — 2 tamanhos pra caber em telas pequenas */
+/* Status bar */
 .status-bar {
   position: relative;
-  height: 36px;
-  padding: 0 16px 0 22px;
+  height: 52px;
+  padding: 0 24px 0 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.01em;
   font-variant-numeric: tabular-nums;
@@ -176,22 +166,13 @@ body {
   flex-shrink: 0;
 }
 .status-bar-time {
-  padding-top: 9px;
+  padding-top: 15px;
 }
 .status-bar-right {
-  padding-top: 9px;
+  padding-top: 15px;
   display: flex;
   align-items: center;
-  gap: 5px;
-}
-@media (min-width: 900px) {
-  .status-bar {
-    height: 52px;
-    padding: 0 24px 0 30px;
-    font-size: 15px;
-  }
-  .status-bar-time { padding-top: 15px; }
-  .status-bar-right { padding-top: 15px; gap: 6px; }
+  gap: 6px;
 }
 
 /* =============================================================

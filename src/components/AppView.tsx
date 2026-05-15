@@ -92,7 +92,7 @@ export function AppView({ onShowChat }: AppViewProps) {
   return (
     <div className="flex flex-col h-full bg-bradesco-surface">
       {/* Header estilo app Bradesco */}
-      <div className="bg-gradient-to-br from-bradesco-red via-bradesco-red-dark to-bradesco-red-darker flex-shrink-0 rounded-b-2xl shadow-sm">
+      <div className="bg-gradient-to-br from-bradesco-red via-bradesco-red to-bradesco-red-darker flex-shrink-0">
         <StatusBar variant="light" />
         <header className="text-white px-3.5 pt-0.5 pb-4">
           <div className="flex items-center gap-2">
@@ -113,7 +113,7 @@ export function AppView({ onShowChat }: AppViewProps) {
           </div>
           <div className="mt-3 flex items-end justify-between">
             <div>
-              <h1 className="text-[22px] font-bold leading-tight tracking-tight">
+              <h1 className="text-[22px] font-bold leading-tight">
                 Meus Objetivos
               </h1>
               <p className="text-white/70 text-[12px] leading-tight mt-0.5">
