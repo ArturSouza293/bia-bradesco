@@ -197,10 +197,12 @@ body {
    Background "WhatsApp" e bolhas de mensagem
    ============================================================= */
 .whatsapp-bg {
-  /* Branco fixo — mantém-se branco mesmo em navegadores com tema escuro
-     forçado (o color-scheme: light no :root reforça). */
-  background-color: #ffffff;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='%23BFBFBF' fill-opacity='0.18'><circle cx='10' cy='10' r='1'/><circle cx='40' cy='30' r='1'/><circle cx='70' cy='20' r='1'/><circle cx='95' cy='55' r='1'/><circle cx='25' cy='85' r='1'/><circle cx='60' cy='100' r='1'/><circle cx='105' cy='90' r='1'/></g></svg>");
+  /* Fundo creme do WhatsApp claro + pattern de doodles (corações, estrelas,
+     círculos, faces, raios…) simulando o papel de parede oficial.
+     Fixo: o color-scheme: light no :root impede que navegadores em
+     dark forçado invertam essas cores. */
+  background-color: #efeae2;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><g fill='none' stroke='%23C7BEB1' stroke-width='1.1' stroke-opacity='0.6' stroke-linecap='round' stroke-linejoin='round'><path d='M16 22c0-3 4-5 6-2c2-3 6-1 6 2c0 4-6 9-6 9s-6-5-6-9z'/><polygon points='178,18 181,26 190,26 183,31 186,40 178,34 170,40 173,31 166,26 175,26'/><circle cx='60' cy='30' r='6'/><polygon points='108,20 116,36 100,36'/><rect x='140' y='40' width='12' height='12' rx='2'/><circle cx='95' cy='70' r='5'/><circle cx='95' cy='70' r='1.5' fill='%23C7BEB1'/><path d='M40 70l-3 6h6z'/><path d='M150 70q5 -5 10 0t10 0'/><line x1='10' y1='110' x2='24' y2='110'/><line x1='17' y1='103' x2='17' y2='117'/><circle cx='58' cy='110' r='4'/><path d='M90 100l-2 11 4 -1 -2 7 7 -9 -4 1 4 -9z'/><path d='M140 105c0 -3 4 -5 6 -2c2 -3 6 -1 6 2c0 4 -6 9 -6 9s -6 -5 -6 -9z'/><rect x='175' y='100' width='14' height='10' rx='1'/><path d='M175 100l7 7l7 -7'/><polygon points='18,148 25,140 32,148 25,156'/><circle cx='65' cy='148' r='5'/><line x1='60' y1='160' x2='70' y2='160'/><rect x='100' y='142' width='10' height='14' rx='2'/><polygon points='140,142 148,156 132,156'/><path d='M175 144l5 16l-3 -2l-2 4l-2 -4l-3 2z'/><circle cx='28' cy='185' r='4'/><line x1='28' y1='177' x2='28' y2='180'/><line x1='28' y1='190' x2='28' y2='193'/><line x1='20' y1='185' x2='23' y2='185'/><line x1='33' y1='185' x2='36' y2='185'/><polygon points='60,182 66,190 54,190'/><circle cx='100' cy='184' r='7'/><path d='M96 188q4 4 8 0'/><circle cx='98' cy='181' r='0.8' fill='%23C7BEB1'/><circle cx='102' cy='181' r='0.8' fill='%23C7BEB1'/><path d='M130 180c0 -3 4 -5 6 -2c2 -3 6 -1 6 2c0 4 -6 9 -6 9s -6 -5 -6 -9z'/><line x1='160' y1='184' x2='175' y2='184'/><polygon points='175,184 171,181 171,187'/></g></svg>");
 }
 
 .bubble-md p { margin: 0 0 0.35rem 0; line-height: 1.45; }
