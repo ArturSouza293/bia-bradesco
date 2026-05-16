@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 :root {
+  /* Força tema claro mesmo se o navegador estiver em dark mode.
+     Evita que widgets nativos (scrollbar, inputs) e auto-dark do
+     Chrome/Edge invertam as cores do app. */
+  color-scheme: light;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -193,8 +197,10 @@ body {
    Background "WhatsApp" e bolhas de mensagem
    ============================================================= */
 .whatsapp-bg {
-  background-color: #efeae2;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='%23D6CCC2' fill-opacity='0.25'><circle cx='10' cy='10' r='1'/><circle cx='40' cy='30' r='1'/><circle cx='70' cy='20' r='1'/><circle cx='95' cy='55' r='1'/><circle cx='25' cy='85' r='1'/><circle cx='60' cy='100' r='1'/><circle cx='105' cy='90' r='1'/></g></svg>");
+  /* Branco fixo — mantém-se branco mesmo em navegadores com tema escuro
+     forçado (o color-scheme: light no :root reforça). */
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><g fill='%23BFBFBF' fill-opacity='0.18'><circle cx='10' cy='10' r='1'/><circle cx='40' cy='30' r='1'/><circle cx='70' cy='20' r='1'/><circle cx='95' cy='55' r='1'/><circle cx='25' cy='85' r='1'/><circle cx='60' cy='100' r='1'/><circle cx='105' cy='90' r='1'/></g></svg>");
 }
 
 .bubble-md p { margin: 0 0 0.35rem 0; line-height: 1.45; }
