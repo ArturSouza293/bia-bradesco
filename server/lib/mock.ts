@@ -260,6 +260,11 @@ export async function runMockConversation(
   }
   for (const ed of step.education ?? []) {
     const topic = insertEducationTopic(sessionId, ed.topico, ed.resumo);
+    console.log(
+      `[learning] session=${sessionId.slice(0, 8)} topico="${ed.topico}"${
+        ed.resumo ? ` resumo="${ed.resumo}"` : ''
+      }`,
+    );
     emit({ type: 'education_note', topic });
     await sleep(130);
   }

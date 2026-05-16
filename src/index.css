@@ -41,6 +41,20 @@ body {
   overflow: hidden;
 }
 
+/* Mobile (Workspace): 1 celular com tabs em cima, layout em coluna */
+.phone-stage-mobile {
+  flex-direction: column;
+  gap: 10px;
+  padding: 6px 0;
+}
+@media (max-width: 899px) {
+  .phone-stage-mobile .phone-bezel {
+    /* sem precisar caber 2: o bezel pode usar mais espaço horizontal */
+    width: min(412px, calc(100vw - 20px), calc(85vh * 412 / 892));
+    height: min(892px, 85vh);
+  }
+}
+
 .phone-watermark {
   position: absolute;
   top: 26px;

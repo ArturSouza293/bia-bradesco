@@ -63,10 +63,14 @@ CREATE TABLE IF NOT EXISTS messages (
 );
 CREATE INDEX IF NOT EXISTS idx_messages_session ON messages(session_id, created_at);
 
--- Objetivos de vida estruturados (saída principal do agente)
+-- Objetivos de vida estruturados (saída principal do agente).
+-- Junto com `users` (clientes), são as duas tabelas centrais da demo.
+-- user_id é propagado pelo backend quando a sessão tem usuário ligado;
+-- permite acompanhar todos os objetivos de um cliente entre sessões.
 CREATE TABLE IF NOT EXISTS objectives (
   id                       TEXT PRIMARY KEY,
   session_id               TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
+  user_id                  INTEGER REFERENCES users(id) ON DELETE SET NULL,
   categoria                TEXT NOT NULL,
   icone                    TEXT,
   titulo_curto             TEXT NOT NULL,

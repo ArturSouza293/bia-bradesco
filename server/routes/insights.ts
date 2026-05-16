@@ -117,6 +117,32 @@ insightsRouter.get('/insights', (_req: Request, res: Response) => {
     )
     .all() as { produto: string; n: number }[];
 
+  // Aprendizados (educação financeira) — top conceitos e mais recentes
+  const topTopics = db
+    .prepare(
+      `SELECT topico,
+              COUNT(*) AS n,
+              MAX(resumo) AS exemplo_resumo
+       FROM education_topics
+       GROUP BY topico
+       ORDER BY n DESC
+       LIMIT 10`,
+    )
+    .all() as { topico: string; n: number; exemplo_resumo: string | null }[];
+  const recentLearnings = db
+    .prepare(
+      `SELECT topico, resumo, created_at, session_id
+       FROM education_topics
+       ORDER BY created_at DESC
+       LIMIT 20`,
+    )
+    .all() as {
+      topico: string;
+      resumo: string | null;
+      created_at: string;
+      session_id: string;
+    }[];
+
   // Sugestões automáticas
   const suggestions: string[] = [];
   const completionRate = completed / totalSessions;
@@ -178,6 +204,12 @@ insightsRouter.get('/insights', (_req: Request, res: Response) => {
       avg_smart_score: avgSmart,
       by_categoria: byCategoria,
       by_perfil_risco: byPerfil,
+    },
+    learnings: {
+      total: totalEdu,
+      avg_per_session: round1(totalEdu / totalSessions),
+      top_topics: topTopics,
+      recent: recentLearnings,
     },
     cross_sell_by_produto: byProduto,
     suggestions,

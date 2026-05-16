@@ -109,6 +109,11 @@ export function registerUserForSession(
     user.id,
     session_id,
   );
+  // Propaga pros objetivos já registrados nesta sessão (caso a Bia
+  // tenha registrado algum antes de coletar o nome).
+  db.prepare(
+    'UPDATE objectives SET user_id = ? WHERE session_id = ? AND user_id IS NULL',
+  ).run(user.id, session_id);
 
   // Memória: o que esse usuário registrou em sessões ANTERIORES
   const past_objectives = db
@@ -207,6 +212,7 @@ function rowToObjective(r: Record<string, unknown>): Objective {
   return {
     id: r.id as string,
     session_id: r.session_id as string,
+    user_id: (r.user_id as number) ?? null,
     categoria: r.categoria as Objective['categoria'],
     classe_objetivo:
       (r.classe_objetivo as Objective['classe_objetivo']) ?? null,
@@ -287,9 +293,18 @@ export function upsertObjective(
           .get(session_id, input.categoria)
   ) as { id: string } | undefined;
 
+  // Deriva user_id da sessão (link direto cliente↔objetivo). Se a
+  // sessão ainda não tem usuário, o objetivo fica null e é propagado
+  // depois pelo registerUserForSession.
+  const userIdRow = db
+    .prepare('SELECT user_id FROM sessions WHERE id = ?')
+    .get(session_id) as { user_id: number | null } | undefined;
+  const user_id = userIdRow?.user_id ?? null;
+
   if (existing) {
     db.prepare(
       `UPDATE objectives SET
+        user_id = ?,
         categoria = ?, classe_objetivo = ?, horizonte_classe = ?, icone = ?,
         descricao = ?, valor_presente_brl = ?,
         horizonte_anos = ?, ano_alvo = ?, prioridade = ?, modalidade = ?,
@@ -299,6 +314,7 @@ export function upsertObjective(
         updated_at = ?
       WHERE id = ?`,
     ).run(
+      user_id,
       input.categoria,
       input.classe_objetivo,
       horizonte_classe,
@@ -330,16 +346,17 @@ export function upsertObjective(
   const now = nowIso();
   db.prepare(
     `INSERT INTO objectives (
-      id, session_id, categoria, classe_objetivo, horizonte_classe, icone,
+      id, session_id, user_id, categoria, classe_objetivo, horizonte_classe, icone,
       titulo_curto, descricao,
       valor_presente_brl, horizonte_anos, ano_alvo, prioridade, modalidade,
       flexibilidade_prazo, flexibilidade_valor, perfil_risco_sugerido,
       completude_score, completude_detalhes, trade_offs, observacoes_cliente,
       sinais_atencao, proximo_passo_planejador, created_at, updated_at
-    ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+    ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
   ).run(
     id,
     session_id,
+    user_id,
     input.categoria,
     input.classe_objetivo,
     horizonte_classe,

@@ -105,6 +105,7 @@ export interface ObjectiveInput {
 export interface Objective {
   id: string;
   session_id: string;
+  user_id: number | null;
   categoria: Categoria;
   classe_objetivo: ClasseObjetivo | null;
   horizonte_classe: HorizonteClasse | null;

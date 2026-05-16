@@ -318,10 +318,13 @@ function executeTool(
     if (name === 'register_education_note') {
       const topico = String(input.topico ?? '').trim();
       if (!topico) return { ok: false, error: 'topico vazio' };
-      const topic = insertEducationTopic(
-        sessionId,
-        topico,
-        input.resumo ? String(input.resumo) : null,
+      const resumo = input.resumo ? String(input.resumo) : null;
+      const topic = insertEducationTopic(sessionId, topico, resumo);
+      // Metadado de aprendizado — também vai pros logs do servidor.
+      console.log(
+        `[learning] session=${sessionId.slice(0, 8)} topico="${topico}"${
+          resumo ? ` resumo="${resumo}"` : ''
+        }`,
       );
       emit({ type: 'education_note', topic });
       return { ok: true };

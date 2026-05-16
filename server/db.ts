@@ -30,16 +30,38 @@ export function getDb(): DatabaseSync {
 // Migrações idempotentes para bancos criados antes de uma mudança de
 // schema. O schema.sql cobre bancos novos; isto atualiza os já existentes.
 function runMigrations(db: DatabaseSync): void {
+  // 1) sessions.user_id
   const sessionCols = db
     .prepare('PRAGMA table_info(sessions)')
     .all() as { name: string }[];
   if (!sessionCols.some((c) => c.name === 'user_id')) {
     db.exec('ALTER TABLE sessions ADD COLUMN user_id INTEGER');
   }
-  // Índice depende de user_id existir; rodamos aqui (idempotente) pra
-  // funcionar tanto em bancos novos quanto em recém-migrados.
   db.exec(
     'CREATE INDEX IF NOT EXISTS idx_sessions_user ON sessions(user_id)',
+  );
+
+  // 2) objectives.user_id — link direto cliente↔objetivo
+  const objCols = db
+    .prepare('PRAGMA table_info(objectives)')
+    .all() as { name: string }[];
+  if (!objCols.some((c) => c.name === 'user_id')) {
+    db.exec('ALTER TABLE objectives ADD COLUMN user_id INTEGER');
+    // Back-fill: deriva user_id da sessão de cada objetivo já existente.
+    db.exec(
+      `UPDATE objectives
+       SET user_id = (SELECT user_id FROM sessions WHERE sessions.id = objectives.session_id)
+       WHERE user_id IS NULL`,
+    );
+  }
+  db.exec(
+    'CREATE INDEX IF NOT EXISTS idx_objectives_user ON objectives(user_id)',
+  );
+
+  // 3) VIEW clientes — alias semântico para `users`. Permite queries
+  //    como SELECT * FROM clientes sem renomear a tabela.
+  db.exec(
+    'CREATE VIEW IF NOT EXISTS clientes AS SELECT id, nome, created_at FROM users',
   );
 }
 
