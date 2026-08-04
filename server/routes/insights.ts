@@ -6,17 +6,20 @@
 
 import express from 'express';
 import type { Request, Response } from 'express';
-import { getDb } from '../db.ts';
+import { get, all } from '../db.ts';
 
 export const insightsRouter = express.Router();
 
-function count(sql: string, ...params: (string | number)[]): number {
-  const row = getDb().prepare(sql).get(...params) as { n: number } | undefined;
+async function count(
+  sql: string,
+  ...params: (string | number)[]
+): Promise<number> {
+  const row = await get<{ n: number }>(sql, params);
   return row?.n ?? 0;
 }
 
-function avg(sql: string): number {
-  const row = getDb().prepare(sql).get() as { v: number | null } | undefined;
+async function avg(sql: string): Promise<number> {
+  const row = await get<{ v: number | null }>(sql);
   return Math.round((row?.v ?? 0) * 10) / 10;
 }
 
@@ -24,38 +27,36 @@ function round1(n: number): number {
   return Math.round(n * 10) / 10;
 }
 
-insightsRouter.get('/insights', (_req: Request, res: Response) => {
-  const totalSessions = count('SELECT COUNT(*) AS n FROM sessions');
+insightsRouter.get('/insights', async (_req: Request, res: Response) => {
+  const totalSessions = await count('SELECT COUNT(*) AS n FROM sessions');
   if (totalSessions === 0) {
     res.json({ empty: true, totalSessions: 0 });
     return;
   }
 
-  const db = getDb();
-
   // Sessões
-  const completed = count(
+  const completed = await count(
     `SELECT COUNT(*) AS n FROM sessions WHERE status = 'completed'`,
   );
-  const active = count(
+  const active = await count(
     `SELECT COUNT(*) AS n FROM sessions WHERE status = 'active'`,
   );
-  const abandoned = count(
+  const abandoned = await count(
     `SELECT COUNT(*) AS n FROM sessions WHERE status = 'abandoned'`,
   );
-  const avgDurationMin = avg(
+  const avgDurationMin = await avg(
     'SELECT AVG(duration_minutes) AS v FROM sessions WHERE duration_minutes IS NOT NULL',
   );
 
   // Engajamento
-  const totalMsgs = count('SELECT COUNT(*) AS n FROM messages');
-  const userMsgs = count(
+  const totalMsgs = await count('SELECT COUNT(*) AS n FROM messages');
+  const userMsgs = await count(
     `SELECT COUNT(*) AS n FROM messages WHERE role = 'user'`,
   );
 
   // Usuários (memória por pessoa)
-  const totalUsers = count('SELECT COUNT(*) AS n FROM users');
-  const returningUsers = count(
+  const totalUsers = await count('SELECT COUNT(*) AS n FROM users');
+  const returningUsers = await count(
     `SELECT COUNT(*) AS n FROM (
       SELECT user_id FROM sessions
       WHERE user_id IS NOT NULL
@@ -65,41 +66,35 @@ insightsRouter.get('/insights', (_req: Request, res: Response) => {
   );
 
   // Saída estruturada
-  const totalObj = count('SELECT COUNT(*) AS n FROM objectives');
-  const totalEdu = count('SELECT COUNT(*) AS n FROM education_topics');
-  const totalCross = count(
+  const totalObj = await count('SELECT COUNT(*) AS n FROM objectives');
+  const totalEdu = await count('SELECT COUNT(*) AS n FROM education_topics');
+  const totalCross = await count(
     'SELECT COUNT(*) AS n FROM cross_sell_opportunities',
   );
-  const sessionsWith3 = count(
+  const sessionsWith3 = await count(
     'SELECT COUNT(*) AS n FROM (SELECT session_id FROM objectives GROUP BY session_id HAVING COUNT(*) >= 3)',
   );
 
   // Qualidade
-  const avgSmart = avg('SELECT AVG(completude_score) AS v FROM objectives');
-  const byCategoria = db
-    .prepare(
-      'SELECT categoria, COUNT(*) AS n FROM objectives GROUP BY categoria ORDER BY n DESC',
-    )
-    .all() as { categoria: string; n: number }[];
-  const byPerfil = db
-    .prepare(
-      `SELECT perfil_risco_sugerido AS p, COUNT(*) AS n FROM objectives
+  const avgSmart = await avg('SELECT AVG(completude_score) AS v FROM objectives');
+  const byCategoria = await all<{ categoria: string; n: number }>(
+    'SELECT categoria, COUNT(*) AS n FROM objectives GROUP BY categoria ORDER BY n DESC',
+  );
+  const byPerfil = await all<{ p: string; n: number }>(
+    `SELECT perfil_risco_sugerido AS p, COUNT(*) AS n FROM objectives
        WHERE perfil_risco_sugerido IS NOT NULL
        GROUP BY p ORDER BY n DESC`,
-    )
-    .all() as { p: string; n: number }[];
+  );
 
   // Eficiência — turnos até o 1º objetivo
-  const firstObjPerSession = db
-    .prepare(
-      `SELECT o.session_id AS sid, MIN(o.created_at) AS first_obj
+  const firstObjPerSession = await all<{ sid: string; first_obj: string }>(
+    `SELECT o.session_id AS sid, MIN(o.created_at) AS first_obj
        FROM objectives o GROUP BY o.session_id`,
-    )
-    .all() as { sid: string; first_obj: string }[];
+  );
   let turnsSum = 0;
   let turnsCounted = 0;
   for (const r of firstObjPerSession) {
-    const n = count(
+    const n = await count(
       `SELECT COUNT(*) AS n FROM messages WHERE session_id = ? AND role = 'user' AND created_at <= ?`,
       r.sid,
       r.first_obj,
@@ -111,37 +106,35 @@ insightsRouter.get('/insights', (_req: Request, res: Response) => {
     turnsCounted ? round1(turnsSum / turnsCounted) : null;
 
   // Cross-sell
-  const byProduto = db
-    .prepare(
-      'SELECT produto, COUNT(*) AS n FROM cross_sell_opportunities GROUP BY produto ORDER BY n DESC',
-    )
-    .all() as { produto: string; n: number }[];
+  const byProduto = await all<{ produto: string; n: number }>(
+    'SELECT produto, COUNT(*) AS n FROM cross_sell_opportunities GROUP BY produto ORDER BY n DESC',
+  );
 
   // Aprendizados (educação financeira) — top conceitos e mais recentes
-  const topTopics = db
-    .prepare(
-      `SELECT topico,
+  const topTopics = await all<{
+    topico: string;
+    n: number;
+    exemplo_resumo: string | null;
+  }>(
+    `SELECT topico,
               COUNT(*) AS n,
               MAX(resumo) AS exemplo_resumo
        FROM education_topics
        GROUP BY topico
        ORDER BY n DESC
        LIMIT 10`,
-    )
-    .all() as { topico: string; n: number; exemplo_resumo: string | null }[];
-  const recentLearnings = db
-    .prepare(
-      `SELECT topico, resumo, created_at, session_id
+  );
+  const recentLearnings = await all<{
+    topico: string;
+    resumo: string | null;
+    created_at: string;
+    session_id: string;
+  }>(
+    `SELECT topico, resumo, created_at, session_id
        FROM education_topics
        ORDER BY created_at DESC
        LIMIT 20`,
-    )
-    .all() as {
-      topico: string;
-      resumo: string | null;
-      created_at: string;
-      session_id: string;
-    }[];
+  );
 
   // Sugestões automáticas
   const suggestions: string[] = [];

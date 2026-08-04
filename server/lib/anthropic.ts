@@ -106,7 +106,7 @@ export async function runRealConversation(
 
     const results: ContentBlock[] = [];
     for (const tu of toolUses) {
-      const result = executeTool(sessionId, tu.name, tu.input, emit);
+      const result = await executeTool(sessionId, tu.name, tu.input, emit);
       results.push({
         type: 'tool_result',
         tool_use_id: tu.id,
@@ -260,19 +260,19 @@ async function streamTurn(params: {
 }
 
 // ----------------------------------------------------------------
-// Execução de ferramentas (síncrono — node:sqlite é síncrono)
+// Execução de ferramentas (assíncrono — o store fala com libSQL/Turso)
 // ----------------------------------------------------------------
-function executeTool(
+async function executeTool(
   sessionId: string,
   name: string,
   input: Record<string, unknown>,
   emit: (e: SSEEvent) => void,
-): { ok: boolean; [k: string]: unknown } {
+): Promise<{ ok: boolean; [k: string]: unknown }> {
   try {
     if (name === 'register_user') {
       const nome = String(input.nome ?? '').trim();
       if (!nome) return { ok: false, error: 'nome vazio' };
-      const memory = registerUserForSession(sessionId, nome);
+      const memory = await registerUserForSession(sessionId, nome);
       emit({
         type: 'user_identified',
         user: memory.user,
@@ -292,7 +292,7 @@ function executeTool(
       };
     }
     if (name === 'register_client_profile') {
-      const profile = upsertClientProfile(
+      const profile = await upsertClientProfile(
         sessionId,
         input as unknown as ClientProfileInput,
       );
@@ -304,7 +304,10 @@ function executeTool(
       };
     }
     if (name === 'register_objective') {
-      const obj = upsertObjective(sessionId, input as unknown as ObjectiveInput);
+      const obj = await upsertObjective(
+        sessionId,
+        input as unknown as ObjectiveInput,
+      );
       emit({ type: 'objective_registered', objective: obj });
       return {
         ok: true,
@@ -321,7 +324,7 @@ function executeTool(
       const topico = String(input.topico ?? '').trim();
       if (!topico) return { ok: false, error: 'topico vazio' };
       const resumo = input.resumo ? String(input.resumo) : null;
-      const topic = insertEducationTopic(sessionId, topico, resumo);
+      const topic = await insertEducationTopic(sessionId, topico, resumo);
       // Metadado de aprendizado — também vai pros logs do servidor.
       console.log(
         `[learning] session=${sessionId.slice(0, 8)} topico="${topico}"${
@@ -334,7 +337,7 @@ function executeTool(
     if (name === 'register_cross_sell') {
       const produto = String(input.produto ?? '').trim();
       if (!produto) return { ok: false, error: 'produto vazio' };
-      const opportunity = upsertCrossSell(
+      const opportunity = await upsertCrossSell(
         sessionId,
         input as unknown as CrossSellInput,
       );
@@ -344,7 +347,7 @@ function executeTool(
     if (name === 'register_out_of_scope_note') {
       const nota = String(input.nota ?? '').trim();
       if (!nota) return { ok: false, error: 'nota vazia' };
-      insertOutOfScopeNote(sessionId, nota);
+      await insertOutOfScopeNote(sessionId, nota);
       emit({ type: 'out_of_scope_note', nota });
       return { ok: true };
     }

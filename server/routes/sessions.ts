@@ -11,10 +11,10 @@ import { OPENING_MESSAGES } from '../lib/bia.ts';
 export const sessionsRouter = express.Router();
 
 // POST /api/sessions — cria sessão e semeia as mensagens de abertura
-sessionsRouter.post('/sessions', (_req: Request, res: Response) => {
-  const { id, started_at } = createSession();
+sessionsRouter.post('/sessions', async (_req: Request, res: Response) => {
+  const { id, started_at } = await createSession();
   for (const m of OPENING_MESSAGES) {
-    insertMessage(id, 'assistant', m.text);
+    await insertMessage(id, 'assistant', m.text);
   }
   res.status(201).json({
     id,
@@ -25,8 +25,8 @@ sessionsRouter.post('/sessions', (_req: Request, res: Response) => {
 });
 
 // GET /api/sessions/:id
-sessionsRouter.get('/sessions/:id', (req: Request, res: Response) => {
-  const session = getSession(req.params.id);
+sessionsRouter.get('/sessions/:id', async (req: Request, res: Response) => {
+  const session = await getSession(req.params.id);
   if (!session) {
     res.status(404).json({ error: 'Sessão não encontrada' });
     return;
@@ -35,7 +35,7 @@ sessionsRouter.get('/sessions/:id', (req: Request, res: Response) => {
 });
 
 // PATCH /api/sessions/:id — atualiza status (completed / abandoned)
-sessionsRouter.patch('/sessions/:id', (req: Request, res: Response) => {
+sessionsRouter.patch('/sessions/:id', async (req: Request, res: Response) => {
   const status = (req.body ?? {}).status as string | undefined;
   const allowed = ['active', 'completed', 'abandoned'];
   if (!status || !allowed.includes(status)) {
@@ -44,7 +44,7 @@ sessionsRouter.patch('/sessions/:id', (req: Request, res: Response) => {
       .json({ error: `status deve ser um de: ${allowed.join(', ')}` });
     return;
   }
-  const updated = updateSessionStatus(
+  const updated = await updateSessionStatus(
     req.params.id,
     status as 'active' | 'completed' | 'abandoned',
   );

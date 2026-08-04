@@ -7,17 +7,18 @@
 // quais oportunidades aparecem, etc.).
 // =================================================================
 
-import { getDb } from '../db.ts';
+import { get, all } from '../db.ts';
 
-const db = getDb();
-
-function count(sql: string, ...params: (string | number)[]): number {
-  const row = db.prepare(sql).get(...params) as { n: number } | undefined;
+async function count(
+  sql: string,
+  ...params: (string | number)[]
+): Promise<number> {
+  const row = await get<{ n: number }>(sql, params);
   return row?.n ?? 0;
 }
 
-function avg(sql: string): number {
-  const row = db.prepare(sql).get() as { v: number | null } | undefined;
+async function avg(sql: string): Promise<number> {
+  const row = await get<{ v: number | null }>(sql);
   return Math.round((row?.v ?? 0) * 10) / 10;
 }
 
@@ -33,7 +34,7 @@ line('  ║   Bia · Bradesco — análise de logs das conversas      ║');
 line('  ╚══════════════════════════════════════════════════════╝');
 
 // ---------------------------------------------------------------
-const totalSessions = count('SELECT COUNT(*) AS n FROM sessions');
+const totalSessions = await count('SELECT COUNT(*) AS n FROM sessions');
 if (totalSessions === 0) {
   line();
   line('  Nenhuma sessão no banco ainda. Rode algumas conversas e volte.');
@@ -44,20 +45,20 @@ if (totalSessions === 0) {
 h('Sessões');
 line(`  Total:        ${totalSessions}`);
 for (const status of ['active', 'completed', 'abandoned']) {
-  const n = count('SELECT COUNT(*) AS n FROM sessions WHERE status = ?', status);
+  const n = await count('SELECT COUNT(*) AS n FROM sessions WHERE status = ?', status);
   const pct = Math.round((n / totalSessions) * 100);
   line(`  ${status.padEnd(12)} ${String(n).padStart(3)}  (${pct}%)`);
 }
-const avgDuration = avg(
+const avgDuration = await avg(
   "SELECT AVG(duration_minutes) AS v FROM sessions WHERE duration_minutes IS NOT NULL",
 );
 line(`  Duração média (encerradas): ${avgDuration} min`);
 
 // ---------------------------------------------------------------
 h('Engajamento');
-const totalMsgs = count('SELECT COUNT(*) AS n FROM messages');
-const userMsgs = count("SELECT COUNT(*) AS n FROM messages WHERE role = 'user'");
-const asstMsgs = count(
+const totalMsgs = await count('SELECT COUNT(*) AS n FROM messages');
+const userMsgs = await count("SELECT COUNT(*) AS n FROM messages WHERE role = 'user'");
+const asstMsgs = await count(
   "SELECT COUNT(*) AS n FROM messages WHERE role = 'assistant'",
 );
 line(`  Mensagens totais:        ${totalMsgs}`);
@@ -71,10 +72,10 @@ line(`  Mensagens da Bia:        ${asstMsgs}`);
 
 // ---------------------------------------------------------------
 h('Saída estruturada (o que a jornada produziu)');
-const totalObj = count('SELECT COUNT(*) AS n FROM objectives');
-const totalEdu = count('SELECT COUNT(*) AS n FROM education_topics');
-const totalCross = count('SELECT COUNT(*) AS n FROM cross_sell_opportunities');
-const sessionsWith3 = count(
+const totalObj = await count('SELECT COUNT(*) AS n FROM objectives');
+const totalEdu = await count('SELECT COUNT(*) AS n FROM education_topics');
+const totalCross = await count('SELECT COUNT(*) AS n FROM cross_sell_opportunities');
+const sessionsWith3 = await count(
   'SELECT COUNT(*) AS n FROM (SELECT session_id FROM objectives GROUP BY session_id HAVING COUNT(*) >= 3)',
 );
 line(
@@ -92,35 +93,29 @@ line(
 
 // ---------------------------------------------------------------
 h('Qualidade dos objetivos');
-line(`  Completude SMART média:  ${avg('SELECT AVG(completude_score) AS v FROM objectives')}%`);
-const byCategoria = db
-  .prepare(
-    'SELECT categoria, COUNT(*) AS n FROM objectives GROUP BY categoria ORDER BY n DESC',
-  )
-  .all() as { categoria: string; n: number }[];
+line(`  Completude SMART média:  ${await avg('SELECT AVG(completude_score) AS v FROM objectives')}%`);
+const byCategoria = await all<{ categoria: string; n: number }>(
+  'SELECT categoria, COUNT(*) AS n FROM objectives GROUP BY categoria ORDER BY n DESC',
+);
 line('  Por categoria:');
 for (const r of byCategoria) line(`    ${r.categoria.padEnd(22)} ${r.n}`);
-const byPerfil = db
-  .prepare(
-    'SELECT perfil_risco_sugerido AS p, COUNT(*) AS n FROM objectives GROUP BY p ORDER BY n DESC',
-  )
-  .all() as { p: string; n: number }[];
+const byPerfil = await all<{ p: string; n: number }>(
+  'SELECT perfil_risco_sugerido AS p, COUNT(*) AS n FROM objectives GROUP BY p ORDER BY n DESC',
+);
 line('  Por perfil de risco:');
 for (const r of byPerfil) line(`    ${String(r.p).padEnd(22)} ${r.n}`);
 
 // ---------------------------------------------------------------
 h('Eficiência da conversa');
 // turnos do usuário até o 1º objetivo de cada sessão
-const firstObjPerSession = db
-  .prepare(
-    `SELECT o.session_id AS sid, MIN(o.created_at) AS first_obj
+const firstObjPerSession = await all<{ sid: string; first_obj: string }>(
+  `SELECT o.session_id AS sid, MIN(o.created_at) AS first_obj
      FROM objectives o GROUP BY o.session_id`,
-  )
-  .all() as { sid: string; first_obj: string }[];
+);
 let turnsSum = 0;
 let turnsCounted = 0;
 for (const r of firstObjPerSession) {
-  const n = count(
+  const n = await count(
     "SELECT COUNT(*) AS n FROM messages WHERE session_id = ? AND role = 'user' AND created_at <= ?",
     r.sid,
     r.first_obj,
@@ -135,14 +130,12 @@ line(
 );
 
 // drop-off: sessões abandonadas/ativas — em quantas mensagens pararam
-const stale = db
-  .prepare(
-    `SELECT s.id AS sid,
+const stale = await all<{ sid: string; user_turns: number; objs: number }>(
+  `SELECT s.id AS sid,
             (SELECT COUNT(*) FROM messages m WHERE m.session_id = s.id AND m.role='user') AS user_turns,
             (SELECT COUNT(*) FROM objectives o WHERE o.session_id = s.id) AS objs
      FROM sessions s WHERE s.status != 'completed'`,
-  )
-  .all() as { sid: string; user_turns: number; objs: number }[];
+);
 if (stale.length) {
   const avgTurns =
     Math.round(
@@ -158,11 +151,9 @@ if (stale.length) {
 
 // ---------------------------------------------------------------
 h('Inteligência comercial (cross-sell)');
-const byProduto = db
-  .prepare(
-    'SELECT produto, COUNT(*) AS n FROM cross_sell_opportunities GROUP BY produto ORDER BY n DESC',
-  )
-  .all() as { produto: string; n: number }[];
+const byProduto = await all<{ produto: string; n: number }>(
+  'SELECT produto, COUNT(*) AS n FROM cross_sell_opportunities GROUP BY produto ORDER BY n DESC',
+);
 if (byProduto.length === 0) {
   line('  Nenhuma oportunidade registrada ainda.');
 } else {
@@ -173,7 +164,7 @@ if (byProduto.length === 0) {
 h('Sugestões automáticas');
 const suggestions: string[] = [];
 const completionRate =
-  count("SELECT COUNT(*) AS n FROM sessions WHERE status = 'completed'") /
+  (await count("SELECT COUNT(*) AS n FROM sessions WHERE status = 'completed'")) /
   totalSessions;
 if (completionRate < 0.6) {
   suggestions.push(

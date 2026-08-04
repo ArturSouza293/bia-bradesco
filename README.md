@@ -42,7 +42,7 @@ detecta (em silêncio) oportunidades comerciais para o banco revisar depois.
 │  Frontend (React + Vite) │ ─────────▶ │  Servidor Express     │
 │  Dois iPhones lado a lado │  (proxy)   │  (Node, porta 3001)   │
 │   • conversa WhatsApp     │ ◀───────── │   ├─ motor real/mock  │
-│   • app "Meus Objetivos"  │    SSE     │   └─ SQLite (node:sqlite)
+│   • app "Meus Objetivos"  │    SSE     │   └─ libSQL (SQLite/Turso)
 └──────────────────────────┘            └──────────────────────┘
                                     internet só p/ o motor Claude real
 ```
@@ -52,15 +52,45 @@ detecta (em silêncio) oportunidades comerciais para o banco revisar depois.
     estilo WhatsApp à esquerda, o app "Meus Objetivos" à direita, preenchendo
     ao vivo conforme a Bia registra objetivos.
   - **Abaixo disso**: um iPhone, alternando entre conversa e app por um toggle.
-- **Backend**: servidor Express local. **SQLite via `node:sqlite`** (embutido no
-  Node 22.5+, **zero dependências nativas** — roda offline sem build tools).
+- **Backend**: servidor Express. Banco via **`@libsql/client`** — dialeto SQLite
+  nos dois modos: arquivo local em dev, Turso hospedado em produção.
 - **Dois motores de conversa**:
   - **mock** — conversa scriptada de 7 passos, **100% offline**, sem custo.
   - **claude** — motor real (`claude-sonnet-5`) com streaming SSE + tool use.
   - Escolha automática: sem `ANTHROPIC_API_KEY` válida (ou `MOCK_LLM=true`)
     → mock. Com a key → Claude real.
 
-Não há nada na nuvem. É um projeto Git com banco que roda na sua máquina.
+Por padrão não há nada na nuvem: rodando local, é um projeto Git com banco na
+sua máquina. O deploy na Vercel é opcional e reusa o **mesmo** app Express.
+
+---
+
+## ☁️ Deploy (Vercel)
+
+O mesmo app Express roda como uma função serverless — `api/[...path].ts` só
+importa `createApp()`. O nome do arquivo é um catch-all, então a Vercel roteia
+`/api/*` para lá nativamente (sem rewrite) e o Express recebe a URL original.
+
+O que muda em relação ao local: **o disco é efêmero**, então o SQLite em arquivo
+não serve — é obrigatório apontar para um Turso.
+
+```bash
+# 1) Crie o banco (uma vez)
+turso db create bia-bradesco
+turso db show bia-bradesco --url          # → TURSO_DATABASE_URL
+turso db tokens create bia-bradesco       # → TURSO_AUTH_TOKEN
+
+# 2) No painel da Vercel (Settings → Environment Variables):
+#    TURSO_DATABASE_URL, TURSO_AUTH_TOKEN  → obrigatórias
+#    ANTHROPIC_API_KEY                     → sem ela, o deploy roda em modo mock
+#    ANTHROPIC_MODEL                       → opcional (default claude-sonnet-5)
+```
+
+O schema é aplicado sozinho no primeiro cold start — não precisa rodar migração
+à mão. Confira em `/api/health`, que responde `db: "turso"` quando está ligado.
+
+> A demo **não tem autenticação**: quem tiver a URL entra. Para restringir, use
+> *Settings → Deployment Protection* na Vercel.
 
 ---
 
@@ -97,6 +127,8 @@ npm start            # serve frontend + API em http://localhost:3001
 |---|---|
 | `ANTHROPIC_API_KEY` | Key do Claude. **Vazia = modo mock (offline).** |
 | `ANTHROPIC_MODEL` | Modelo (padrão `claude-sonnet-5`). |
+| `TURSO_DATABASE_URL` | Banco. **Vazio = SQLite local em `data/bia.db`.** |
+| `TURSO_AUTH_TOKEN` | Token do Turso (só quando a URL é `libsql://`). |
 | `PORT` | Porta do servidor (padrão `3001`). |
 | `MOCK_LLM` | `true` força o motor mock mesmo com a key presente. |
 
@@ -109,15 +141,15 @@ O `.env` é lido pelo próprio servidor (com override).
 ```
 bia-bradesco/
 ├── server/                     ← backend local (Node + Express)
-│   ├── index.ts                ← entry: API + serve dist/ em produção
-│   ├── db.ts · schema.sql      ← SQLite (node:sqlite)
+│   ├── index.ts · app.ts       ← entry local + montagem do Express
+│   ├── db.ts · schema.ts       ← libSQL (arquivo local ou Turso)
 │   ├── routes/                 ← chat (SSE), sessions, objectives
 │   ├── lib/
 │   │   ├── engine.ts           ← seletor motor real vs mock
 │   │   ├── anthropic.ts        ← motor real (Claude streaming + tools)
 │   │   ├── mock.ts             ← motor mock (conversa scriptada offline)
 │   │   ├── bia.ts              ← system prompt (3 fases) + ferramentas
-│   │   ├── store.ts            ← persistência (SQLite, com dedup)
+│   │   ├── store.ts            ← persistência (assíncrona, com dedup)
 │   │   ├── risk-profile.ts · smart-score.ts · env.ts · types.ts
 │   └── scripts/
 │       ├── reset-db.ts         ← npm run db:reset
@@ -131,7 +163,8 @@ bia-bradesco/
 │   │   ├── BiaAvatar.tsx       ← avatar (headset, ref. logo BIA)
 │   │   ├── chat/ · cards/ · phone/
 │   ├── hooks/ · store/ · lib/ · types/
-├── data/                       ← bia.db (SQLite) — criado no startup, fora do git
+├── api/[...path].ts            ← entry serverless (Vercel) — mesmo app Express
+├── data/                       ← bia.db (SQLite local) — criado no startup, fora do git
 └── dist/                       ← build do frontend
 ```
 
@@ -146,7 +179,8 @@ bia-bradesco/
 | `PATCH /api/sessions/:id` | Atualiza status (`completed` / `abandoned`). |
 | `POST /api/chat` | Body `{ session_id, messages }`. Resposta: **stream SSE** — `text`, `objective_registered`, `education_note`, `cross_sell`, `out_of_scope_note`, `error`, `done`. |
 | `GET /api/objectives?session_id=X` | Objetivos + conceitos + cross-sell + notas fora de escopo. |
-| `GET /api/health` | `{ ok, mode: 'mock'|'claude', model }`. |
+| `GET /api/insights` | Métricas agregadas (espelha o `npm run analyze`). |
+| `GET /api/health` | `{ ok, mode: 'mock'|'claude', model, db: 'file'|'turso' }`. |
 
 ### Ferramentas do agente (tool use)
 - `register_objective` — registra/atualiza um objetivo (dedup por categoria).
@@ -156,11 +190,21 @@ bia-bradesco/
 
 ---
 
-## 🗄️ Banco (SQLite)
+## 🗄️ Banco (libSQL — SQLite local ou Turso)
 
-Tabelas: `sessions`, `messages`, `objectives`, `education_topics`,
-`cross_sell_opportunities`, `out_of_scope_notes`. Schema em `server/schema.sql`,
-aplicado automaticamente no startup. Para zerar: `npm run db:reset`.
+Tabelas: `users`, `sessions`, `client_profiles`, `messages`, `objectives`,
+`education_topics`, `cross_sell_opportunities`, `out_of_scope_notes`. Schema em
+`server/schema.ts`, aplicado automaticamente no startup (idempotente).
+
+O acesso é via `@libsql/client`, que fala o **mesmo dialeto do SQLite** nos dois
+modos — a troca entre eles é só de variável de ambiente, nenhuma query muda:
+
+| `TURSO_DATABASE_URL` | Modo |
+|---|---|
+| vazio | `data/bia.db` em disco. Offline, zero setup. É o default. |
+| `libsql://...turso.io` | Turso (banco hospedado). Necessário em serverless, onde o disco é efêmero. |
+
+Para zerar o banco **local**: `npm run db:reset` (não afeta o Turso).
 
 ---
 

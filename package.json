@@ -14,6 +14,7 @@
     "analyze": "tsx server/scripts/analyze.ts"
   },
   "dependencies": {
+    "@libsql/client": "^0.17.4",
     "clsx": "^2.1.1",
     "express": "^4.21.2",
     "lucide-react": "^0.456.0",

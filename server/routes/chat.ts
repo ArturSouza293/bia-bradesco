@@ -34,7 +34,7 @@ chatRouter.post('/chat', async (req: Request, res: Response) => {
     return;
   }
 
-  const session = getSession(session_id);
+  const session = await getSession(session_id);
   if (!session) {
     res.status(404).json({ error: 'Sessão não encontrada' });
     return;
@@ -43,7 +43,7 @@ chatRouter.post('/chat', async (req: Request, res: Response) => {
     res.status(409).json({ error: 'Sessão já encerrada' });
     return;
   }
-  if (countUserMessages(session_id) >= MAX_MESSAGES_PER_SESSION) {
+  if ((await countUserMessages(session_id)) >= MAX_MESSAGES_PER_SESSION) {
     res.status(429).json({
       error: `Limite de ${MAX_MESSAGES_PER_SESSION} mensagens por sessão. Reinicie para continuar.`,
     });
@@ -55,7 +55,7 @@ chatRouter.post('/chat', async (req: Request, res: Response) => {
     res.status(400).json({ error: 'A última mensagem precisa ser do usuário' });
     return;
   }
-  insertMessage(session_id, 'user', String(last.content));
+  await insertMessage(session_id, 'user', String(last.content));
 
   // Stream SSE
   res.setHeader('Content-Type', 'text/event-stream; charset=utf-8');
@@ -79,7 +79,7 @@ chatRouter.post('/chat', async (req: Request, res: Response) => {
       emit,
     });
     if (assistantText.trim().length > 0) {
-      insertMessage(session_id, 'assistant', assistantText);
+      await insertMessage(session_id, 'assistant', assistantText);
     }
   } catch (e) {
     emit({
