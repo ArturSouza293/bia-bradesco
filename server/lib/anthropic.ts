@@ -27,7 +27,9 @@ const ANTHROPIC_VERSION = '2023-06-01';
 const MAX_TOOL_ITERATIONS = 6;
 // Folga para uma mensagem curta da Bia + várias tool calls no mesmo turno
 // (objetivo + cross-sells + educação). 1024 cortava as tools no meio.
-const MAX_TOKENS = 4096;
+// No Sonnet 5 o thinking adaptativo vem ligado por padrão e consome deste
+// mesmo teto, então 4096 voltaria a cortar as tools — daí a folga extra.
+const MAX_TOKENS = 8192;
 
 type ContentBlock =
   | { type: 'text'; text: string }
@@ -53,7 +55,7 @@ export async function runRealConversation(
 ): Promise<ConversationResult> {
   const { sessionId, conversation, emit } = params;
   const apiKey = process.env.ANTHROPIC_API_KEY as string;
-  const model = process.env.ANTHROPIC_MODEL?.trim() || 'claude-opus-4-7';
+  const model = process.env.ANTHROPIC_MODEL?.trim() || 'claude-sonnet-5';
 
   // Normalização para a Anthropic:
   // 1) tira mensagens vazias

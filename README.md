@@ -56,7 +56,7 @@ detecta (em silêncio) oportunidades comerciais para o banco revisar depois.
   Node 22.5+, **zero dependências nativas** — roda offline sem build tools).
 - **Dois motores de conversa**:
   - **mock** — conversa scriptada de 7 passos, **100% offline**, sem custo.
-  - **claude** — motor real (`claude-opus-4-7`) com streaming SSE + tool use.
+  - **claude** — motor real (`claude-sonnet-5`) com streaming SSE + tool use.
   - Escolha automática: sem `ANTHROPIC_API_KEY` válida (ou `MOCK_LLM=true`)
     → mock. Com a key → Claude real.
 
@@ -96,7 +96,7 @@ npm start            # serve frontend + API em http://localhost:3001
 | Variável | Para quê |
 |---|---|
 | `ANTHROPIC_API_KEY` | Key do Claude. **Vazia = modo mock (offline).** |
-| `ANTHROPIC_MODEL` | Modelo (padrão `claude-opus-4-7`). |
+| `ANTHROPIC_MODEL` | Modelo (padrão `claude-sonnet-5`). |
 | `PORT` | Porta do servidor (padrão `3001`). |
 | `MOCK_LLM` | `true` força o motor mock mesmo com a key presente. |
 

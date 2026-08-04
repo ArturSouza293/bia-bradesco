@@ -14,7 +14,6 @@ import { chatRouter } from './routes/chat.ts';
 import { sessionsRouter } from './routes/sessions.ts';
 import { objectivesRouter } from './routes/objectives.ts';
 import { insightsRouter } from './routes/insights.ts';
-import { authRouter } from './routes/auth.ts';
 
 // Carrega .env (com override) ANTES de qualquer coisa ler process.env
 loadEnv();
@@ -34,11 +33,10 @@ app.get('/api/health', (_req, res) => {
   res.json({
     ok: true,
     mode: isMockMode() ? 'mock' : 'claude',
-    model: process.env.ANTHROPIC_MODEL ?? 'claude-opus-4-7',
+    model: process.env.ANTHROPIC_MODEL ?? 'claude-sonnet-5',
   });
 });
 
-app.use('/api', authRouter);
 app.use('/api', chatRouter);
 app.use('/api', sessionsRouter);
 app.use('/api', objectivesRouter);
@@ -56,7 +54,7 @@ if (existsSync(DIST)) {
 app.listen(PORT, () => {
   const mode = isMockMode()
     ? 'MOCK (offline, conversa scriptada)'
-    : `Claude (${process.env.ANTHROPIC_MODEL ?? 'claude-opus-4-7'})`;
+    : `Claude (${process.env.ANTHROPIC_MODEL ?? 'claude-sonnet-5'})`;
   console.log('');
   console.log('  Bia · Bradesco — servidor local');
   console.log(`  ➜  API:    http://localhost:${PORT}/api`);
