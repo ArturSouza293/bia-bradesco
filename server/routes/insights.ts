@@ -1,3 +1,4 @@
+import { asyncRoute } from '../lib/async-route.js';
 // =================================================================
 // /api/insights — métricas agregadas do banco para revisar a conversa.
 // Espelha o `npm run analyze`, mas em JSON para consumo pela web.
@@ -6,7 +7,7 @@
 
 import express from 'express';
 import type { Request, Response } from 'express';
-import { get, all } from '../db.ts';
+import { get, all } from '../db.js';
 
 export const insightsRouter = express.Router();
 
@@ -27,7 +28,7 @@ function round1(n: number): number {
   return Math.round(n * 10) / 10;
 }
 
-insightsRouter.get('/insights', async (_req: Request, res: Response) => {
+insightsRouter.get('/insights', asyncRoute(async (_req: Request, res: Response) => {
   const totalSessions = await count('SELECT COUNT(*) AS n FROM sessions');
   if (totalSessions === 0) {
     res.json({ empty: true, totalSessions: 0 });
@@ -207,4 +208,4 @@ insightsRouter.get('/insights', async (_req: Request, res: Response) => {
     cross_sell_by_produto: byProduto,
     suggestions,
   });
-});
+}));

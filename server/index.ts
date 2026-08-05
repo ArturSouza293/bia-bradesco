@@ -8,9 +8,9 @@ import express from 'express';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { existsSync } from 'node:fs';
-import { getDb } from './db.ts';
-import { isMockMode } from './lib/engine.ts';
-import { createApp, DEFAULT_MODEL } from './app.ts';
+import { getDb } from './db.js';
+import { isMockMode } from './lib/engine.js';
+import { createApp, DEFAULT_MODEL } from './app.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');

@@ -3,7 +3,7 @@ import type {
   Flexibilidade,
   HorizonteClasse,
   PerfilRisco,
-} from './types.ts';
+} from './types.js';
 
 /**
  * Perfil de risco que o OBJETIVO demanda (não o suitability do cliente).

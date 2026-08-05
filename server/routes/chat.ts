@@ -1,13 +1,14 @@
+import { asyncRoute } from '../lib/async-route.js';
 import express from 'express';
 import type { Request, Response } from 'express';
 import {
   countUserMessages,
   getSession,
   insertMessage,
-} from '../lib/store.ts';
-import { runConversation } from '../lib/engine.ts';
-import type { SSEEvent } from '../lib/engine.ts';
-import type { ChatMessage } from '../lib/types.ts';
+} from '../lib/store.js';
+import { runConversation } from '../lib/engine.js';
+import type { SSEEvent } from '../lib/engine.js';
+import type { ChatMessage } from '../lib/types.js';
 
 export const chatRouter = express.Router();
 
@@ -18,7 +19,7 @@ const MAX_MESSAGES_PER_SESSION = 60;
 // POST /api/chat — body { session_id, messages: [{role, content}] }
 // Resposta: stream SSE (text / objective_registered / education_note /
 // out_of_scope_note / error / done)
-chatRouter.post('/chat', async (req: Request, res: Response) => {
+chatRouter.post('/chat', asyncRoute(async (req: Request, res: Response) => {
   const body = req.body ?? {};
   const session_id = body.session_id as string | undefined;
   const messages = body.messages as
@@ -90,4 +91,4 @@ chatRouter.post('/chat', async (req: Request, res: Response) => {
     emit({ type: 'done' });
     res.end();
   }
-});
+}));

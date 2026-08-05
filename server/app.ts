@@ -9,12 +9,12 @@
 // =================================================================
 
 import express from 'express';
-import { loadEnv } from './lib/env.ts';
-import { isMockMode } from './lib/engine.ts';
-import { chatRouter } from './routes/chat.ts';
-import { sessionsRouter } from './routes/sessions.ts';
-import { objectivesRouter } from './routes/objectives.ts';
-import { insightsRouter } from './routes/insights.ts';
+import { loadEnv } from './lib/env.js';
+import { isMockMode } from './lib/engine.js';
+import { chatRouter } from './routes/chat.js';
+import { sessionsRouter } from './routes/sessions.js';
+import { objectivesRouter } from './routes/objectives.js';
+import { insightsRouter } from './routes/insights.js';
 
 // Carrega .env (com override) ANTES de qualquer coisa ler process.env.
 // Na Vercel não há .env e a função é um no-op — as vars vêm do painel.
@@ -39,6 +39,33 @@ export function createApp(): express.Express {
   app.use('/api', sessionsRouter);
   app.use('/api', objectivesRouter);
   app.use('/api', insightsRouter);
+
+  // Rede de segurança: qualquer erro que escape de um handler chega aqui
+  // (os handlers assíncronos o encaminham via asyncRoute). Sem isto, em
+  // serverless o processo morre e a Vercel devolve FUNCTION_INVOCATION_FAILED
+  // sem corpo — impossível de diagnosticar de fora.
+  app.use(
+    (
+      err: unknown,
+      _req: express.Request,
+      res: express.Response,
+      _next: express.NextFunction,
+    ) => {
+      const message =
+        err instanceof Error ? err.message : 'Erro inesperado no servidor';
+      console.error('[api] erro não tratado:', err);
+
+      // No /api/chat os headers do SSE já foram enviados: não dá para
+      // trocar por JSON. Emite um evento de erro e fecha o stream.
+      if (res.headersSent) {
+        res.write(`data: ${JSON.stringify({ type: 'error', message })}\n\n`);
+        res.write(`data: ${JSON.stringify({ type: 'done' })}\n\n`);
+        res.end();
+        return;
+      }
+      res.status(500).json({ error: message });
+    },
+  );
 
   return app;
 }

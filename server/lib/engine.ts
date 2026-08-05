@@ -9,9 +9,9 @@ import type {
   EducationTopic,
   Objective,
   User,
-} from './types.ts';
-import { runRealConversation } from './anthropic.ts';
-import { runMockConversation } from './mock.ts';
+} from './types.js';
+import { runRealConversation } from './anthropic.js';
+import { runMockConversation } from './mock.js';
 
 export type SSEEvent =
   | { type: 'text'; delta: string }

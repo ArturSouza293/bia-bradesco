@@ -11,6 +11,6 @@
 // schema do banco roda no cold start e não a cada request.
 // =================================================================
 
-import { createApp } from '../server/app.ts';
+import { createApp } from '../server/app.js';
 
 export default createApp();

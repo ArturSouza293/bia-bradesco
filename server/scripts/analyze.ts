@@ -7,7 +7,7 @@
 // quais oportunidades aparecem, etc.).
 // =================================================================
 
-import { get, all } from '../db.ts';
+import { get, all } from '../db.js';
 
 async function count(
   sql: string,

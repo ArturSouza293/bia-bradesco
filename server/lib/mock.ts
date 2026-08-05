@@ -11,17 +11,17 @@ import {
   upsertCrossSell,
   insertEducationTopic,
   upsertObjective,
-} from './store.ts';
+} from './store.js';
 import type {
   ConversationResult,
   RunConversationParams,
   SSEEvent,
-} from './engine.ts';
+} from './engine.js';
 import type {
   ClientProfileInput,
   CrossSellInput,
   ObjectiveInput,
-} from './types.ts';
+} from './types.js';
 
 interface MockStep {
   text: string;

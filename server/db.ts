@@ -14,7 +14,7 @@ import type { Client, InValue } from '@libsql/client';
 import { mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SCHEMA_SQL } from './schema.ts';
+import { SCHEMA_SQL } from './schema.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(__dirname, '..', 'data');
@@ -46,6 +46,17 @@ export function getDb(): Promise<Client> {
 async function init(): Promise<Client> {
   const url = resolveUrl();
   const onDisk = isFileUrl(url);
+
+  // Em serverless o disco é efêmero e read-only: o mkdir abaixo estouraria
+  // com um EROFS ilegível. Falha cedo dizendo o que fazer.
+  if (onDisk && process.env.VERCEL) {
+    throw new Error(
+      'TURSO_DATABASE_URL não está definida neste ambiente. Em serverless ' +
+        'não há disco gravável, então o SQLite em arquivo não serve. ' +
+        'Defina TURSO_DATABASE_URL e TURSO_AUTH_TOKEN no painel da Vercel ' +
+        '(marcando Production, Preview e Development) e refaça o deploy.',
+    );
+  }
 
   if (onDisk) {
     mkdirSync(DATA_DIR, { recursive: true });

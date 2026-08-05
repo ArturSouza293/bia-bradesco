@@ -2,7 +2,7 @@
 // Motor real — streaming da Anthropic API + tool use (multi-turn)
 // =================================================================
 
-import { BIA_SYSTEM_PROMPT, TOOLS } from './bia.ts';
+import { BIA_SYSTEM_PROMPT, TOOLS } from './bia.js';
 import {
   registerUserForSession,
   upsertClientProfile,
@@ -10,17 +10,17 @@ import {
   insertEducationTopic,
   insertOutOfScopeNote,
   upsertObjective,
-} from './store.ts';
+} from './store.js';
 import type {
   ConversationResult,
   RunConversationParams,
   SSEEvent,
-} from './engine.ts';
+} from './engine.js';
 import type {
   ClientProfileInput,
   CrossSellInput,
   ObjectiveInput,
-} from './types.ts';
+} from './types.js';
 
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 const ANTHROPIC_VERSION = '2023-06-01';

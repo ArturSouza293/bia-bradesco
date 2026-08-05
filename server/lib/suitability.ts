@@ -2,7 +2,7 @@ import type {
   ExperienciaInvestimentos,
   PerfilSuitability,
   ToleranciaRisco,
-} from './types.ts';
+} from './types.js';
 
 /**
  * Suitability — perfil de investidor do CLIENTE.

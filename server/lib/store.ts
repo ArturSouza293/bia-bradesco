@@ -5,10 +5,10 @@
 // tem equivalente síncrono ao node:sqlite.
 // =================================================================
 
-import { run, get, all, uid, nowIso } from '../db.ts';
-import { calcularPerfilRisco, classificarHorizonte } from './risk-profile.ts';
-import { calcularSmartScore, CATEGORIA_ICONE } from './smart-score.ts';
-import { calcularSuitability } from './suitability.ts';
+import { run, get, all, uid, nowIso } from '../db.js';
+import { calcularPerfilRisco, classificarHorizonte } from './risk-profile.js';
+import { calcularSmartScore, CATEGORIA_ICONE } from './smart-score.js';
+import { calcularSuitability } from './suitability.js';
 import type {
   ClientProfile,
   ClientProfileInput,
@@ -23,7 +23,7 @@ import type {
   SessionStatus,
   User,
   UserMemory,
-} from './types.ts';
+} from './types.js';
 
 // ----------------------------------------------------------------
 // Sessions
