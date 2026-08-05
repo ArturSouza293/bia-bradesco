@@ -1,4 +1,4 @@
-import type { CompletudeDetalhes, ObjectiveInput } from './types.ts';
+import type { CompletudeDetalhes, ObjectiveInput } from './types.js';
 
 export const HANDOFF_THRESHOLD = 80;
 

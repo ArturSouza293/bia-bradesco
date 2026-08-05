@@ -1,3 +1,4 @@
+import { asyncRoute } from '../lib/async-route.js';
 import express from 'express';
 import type { Request, Response } from 'express';
 import {
@@ -5,16 +6,16 @@ import {
   getSession,
   insertMessage,
   updateSessionStatus,
-} from '../lib/store.ts';
-import { OPENING_MESSAGES } from '../lib/bia.ts';
+} from '../lib/store.js';
+import { OPENING_MESSAGES } from '../lib/bia.js';
 
 export const sessionsRouter = express.Router();
 
 // POST /api/sessions — cria sessão e semeia as mensagens de abertura
-sessionsRouter.post('/sessions', (_req: Request, res: Response) => {
-  const { id, started_at } = createSession();
+sessionsRouter.post('/sessions', asyncRoute(async (_req: Request, res: Response) => {
+  const { id, started_at } = await createSession();
   for (const m of OPENING_MESSAGES) {
-    insertMessage(id, 'assistant', m.text);
+    await insertMessage(id, 'assistant', m.text);
   }
   res.status(201).json({
     id,
@@ -22,20 +23,20 @@ sessionsRouter.post('/sessions', (_req: Request, res: Response) => {
     status: 'active',
     opening_messages: OPENING_MESSAGES,
   });
-});
+}));
 
 // GET /api/sessions/:id
-sessionsRouter.get('/sessions/:id', (req: Request, res: Response) => {
-  const session = getSession(req.params.id);
+sessionsRouter.get('/sessions/:id', asyncRoute(async (req: Request, res: Response) => {
+  const session = await getSession(req.params.id);
   if (!session) {
     res.status(404).json({ error: 'Sessão não encontrada' });
     return;
   }
   res.json(session);
-});
+}));
 
 // PATCH /api/sessions/:id — atualiza status (completed / abandoned)
-sessionsRouter.patch('/sessions/:id', (req: Request, res: Response) => {
+sessionsRouter.patch('/sessions/:id', asyncRoute(async (req: Request, res: Response) => {
   const status = (req.body ?? {}).status as string | undefined;
   const allowed = ['active', 'completed', 'abandoned'];
   if (!status || !allowed.includes(status)) {
@@ -44,7 +45,7 @@ sessionsRouter.patch('/sessions/:id', (req: Request, res: Response) => {
       .json({ error: `status deve ser um de: ${allowed.join(', ')}` });
     return;
   }
-  const updated = updateSessionStatus(
+  const updated = await updateSessionStatus(
     req.params.id,
     status as 'active' | 'completed' | 'abandoned',
   );
@@ -53,4 +54,4 @@ sessionsRouter.patch('/sessions/:id', (req: Request, res: Response) => {
     return;
   }
   res.json(updated);
-});
+}));

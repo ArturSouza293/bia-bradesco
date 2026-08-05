@@ -1,4 +1,10 @@
--- ===============================================================
+// =================================================================
+// Schema do banco — fonte única da verdade.
+// Inlinado em TS (e não .sql) porque em runtime serverless não há
+// garantia de que um arquivo não-importado seja empacotado junto.
+// =================================================================
+
+export const SCHEMA_SQL = `-- ===============================================================
 -- Bia · Bradesco — schema SQLite (app local offline)
 -- Aplicado automaticamente pelo servidor no startup (idempotente).
 -- ===============================================================
@@ -64,7 +70,7 @@ CREATE TABLE IF NOT EXISTS messages (
 CREATE INDEX IF NOT EXISTS idx_messages_session ON messages(session_id, created_at);
 
 -- Objetivos de vida estruturados (saída principal do agente).
--- Junto com `users` (clientes), são as duas tabelas centrais da demo.
+-- Junto com \`users\` (clientes), são as duas tabelas centrais da demo.
 -- user_id é propagado pelo backend quando a sessão tem usuário ligado;
 -- permite acompanhar todos os objetivos de um cliente entre sessões.
 CREATE TABLE IF NOT EXISTS objectives (
@@ -128,3 +134,4 @@ CREATE TABLE IF NOT EXISTS cross_sell_opportunities (
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 CREATE INDEX IF NOT EXISTS idx_crosssell_session ON cross_sell_opportunities(session_id);
+`;

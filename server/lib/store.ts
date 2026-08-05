@@ -1,11 +1,14 @@
 // =================================================================
 // Camada de persistência — todas as operações de banco num lugar só
+//
+// Assíncrona desde a migração para libSQL/Turso: o driver remoto não
+// tem equivalente síncrono ao node:sqlite.
 // =================================================================
 
-import { getDb, uid, nowIso } from '../db.ts';
-import { calcularPerfilRisco, classificarHorizonte } from './risk-profile.ts';
-import { calcularSmartScore, CATEGORIA_ICONE } from './smart-score.ts';
-import { calcularSuitability } from './suitability.ts';
+import { run, get, all, uid, nowIso } from '../db.js';
+import { calcularPerfilRisco, classificarHorizonte } from './risk-profile.js';
+import { calcularSmartScore, CATEGORIA_ICONE } from './smart-score.js';
+import { calcularSuitability } from './suitability.js';
 import type {
   ClientProfile,
   ClientProfileInput,
@@ -20,33 +23,33 @@ import type {
   SessionStatus,
   User,
   UserMemory,
-} from './types.ts';
+} from './types.js';
 
 // ----------------------------------------------------------------
 // Sessions
 // ----------------------------------------------------------------
-export function createSession(): { id: string; started_at: string } {
-  const db = getDb();
+export async function createSession(): Promise<{
+  id: string;
+  started_at: string;
+}> {
   const id = uid();
   const started_at = nowIso();
-  db.prepare(
+  await run(
     'INSERT INTO sessions (id, started_at, status, created_at) VALUES (?, ?, ?, ?)',
-  ).run(id, started_at, 'active', started_at);
+    [id, started_at, 'active', started_at],
+  );
   return { id, started_at };
 }
 
-export function getSession(id: string): SessionRow | undefined {
-  return getDb()
-    .prepare('SELECT * FROM sessions WHERE id = ?')
-    .get(id) as SessionRow | undefined;
+export async function getSession(id: string): Promise<SessionRow | undefined> {
+  return get<SessionRow>('SELECT * FROM sessions WHERE id = ?', [id]);
 }
 
-export function updateSessionStatus(
+export async function updateSessionStatus(
   id: string,
   status: SessionStatus,
-): SessionRow | null {
-  const db = getDb();
-  const session = getSession(id);
+): Promise<SessionRow | null> {
+  const session = await getSession(id);
   if (!session) return null;
 
   const ended_at =
@@ -62,10 +65,11 @@ export function updateSessionStatus(
       ),
     );
   }
-  db.prepare(
+  await run(
     'UPDATE sessions SET status = ?, ended_at = ?, duration_minutes = ? WHERE id = ?',
-  ).run(status, ended_at, duration_minutes, id);
-  return getSession(id) ?? null;
+    [status, ended_at, duration_minutes, id],
+  );
+  return (await getSession(id)) ?? null;
 }
 
 // ----------------------------------------------------------------
@@ -78,71 +82,67 @@ export function displayTag(user: { id: number; nome: string }): string {
   return `${user.nome} #${user.id}`;
 }
 
-export function registerUserForSession(
+export async function registerUserForSession(
   session_id: string,
   nomeRaw: string,
-): UserMemory {
-  const db = getDb();
+): Promise<UserMemory> {
   const nome = nomeRaw.trim().replace(/\s+/g, ' ');
   const nome_lower = nome.toLowerCase();
 
-  let user = db
-    .prepare(
-      'SELECT id, nome, created_at FROM users WHERE nome_lower = ? ORDER BY id ASC LIMIT 1',
-    )
-    .get(nome_lower) as User | undefined;
+  let user = await get<User>(
+    'SELECT id, nome, created_at FROM users WHERE nome_lower = ? ORDER BY id ASC LIMIT 1',
+    [nome_lower],
+  );
 
   const is_returning = Boolean(user);
 
   if (!user) {
     const created_at = nowIso();
-    const info = db
-      .prepare(
-        'INSERT INTO users (nome, nome_lower, created_at) VALUES (?, ?, ?)',
-      )
-      .run(nome, nome_lower, created_at);
+    const info = await run(
+      'INSERT INTO users (nome, nome_lower, created_at) VALUES (?, ?, ?)',
+      [nome, nome_lower, created_at],
+    );
     user = { id: Number(info.lastInsertRowid), nome, created_at };
   }
 
   // Liga a sessão atual ao usuário
-  db.prepare('UPDATE sessions SET user_id = ? WHERE id = ?').run(
+  await run('UPDATE sessions SET user_id = ? WHERE id = ?', [
     user.id,
     session_id,
-  );
+  ]);
   // Propaga pros objetivos já registrados nesta sessão (caso a Bia
   // tenha registrado algum antes de coletar o nome).
-  db.prepare(
+  await run(
     'UPDATE objectives SET user_id = ? WHERE session_id = ? AND user_id IS NULL',
-  ).run(user.id, session_id);
+    [user.id, session_id],
+  );
 
   // Memória: o que esse usuário registrou em sessões ANTERIORES
-  const past_objectives = db
-    .prepare(
-      `SELECT o.titulo_curto, o.categoria, o.valor_presente_brl, o.horizonte_anos
+  const past_objectives = await all<PastObjective>(
+    `SELECT o.titulo_curto, o.categoria, o.valor_presente_brl, o.horizonte_anos
        FROM objectives o
        JOIN sessions s ON s.id = o.session_id
        WHERE s.user_id = ? AND o.session_id != ?
        ORDER BY o.created_at ASC`,
-    )
-    .all(user.id, session_id) as unknown as PastObjective[];
+    [user.id, session_id],
+  );
 
-  const past_sessions = (
-    db
-      .prepare(
+  const past_sessions =
+    (
+      await get<{ n: number }>(
         'SELECT COUNT(*) AS n FROM sessions WHERE user_id = ? AND id != ?',
+        [user.id, session_id],
       )
-      .get(user.id, session_id) as { n: number }
-  ).n;
+    )?.n ?? 0;
 
   const last_profile =
-    (db
-      .prepare(
-        `SELECT cp.* FROM client_profiles cp
+    (await get<ClientProfile>(
+      `SELECT cp.* FROM client_profiles cp
          JOIN sessions s ON s.id = cp.session_id
          WHERE s.user_id = ? AND cp.session_id != ?
          ORDER BY cp.updated_at DESC LIMIT 1`,
-      )
-      .get(user.id, session_id) as unknown as ClientProfile | undefined) ?? null;
+      [user.id, session_id],
+    )) ?? null;
 
   return {
     user,
@@ -154,55 +154,55 @@ export function registerUserForSession(
   };
 }
 
-export function getUserForSession(session_id: string): User | null {
-  const row = getDb()
-    .prepare(
-      `SELECT u.id, u.nome, u.created_at FROM users u
+export async function getUserForSession(
+  session_id: string,
+): Promise<User | null> {
+  const row = await get<User>(
+    `SELECT u.id, u.nome, u.created_at FROM users u
        JOIN sessions s ON s.user_id = u.id WHERE s.id = ?`,
-    )
-    .get(session_id) as unknown as User | undefined;
+    [session_id],
+  );
   return row ?? null;
 }
 
 // ----------------------------------------------------------------
 // Messages
 // ----------------------------------------------------------------
-export function insertMessage(
+export async function insertMessage(
   session_id: string,
   role: Role,
   content: string,
-): string {
+): Promise<string> {
   const id = uid();
-  getDb()
-    .prepare(
-      'INSERT INTO messages (id, session_id, role, content, created_at) VALUES (?, ?, ?, ?, ?)',
-    )
-    .run(id, session_id, role, content, nowIso());
+  await run(
+    'INSERT INTO messages (id, session_id, role, content, created_at) VALUES (?, ?, ?, ?, ?)',
+    [id, session_id, role, content, nowIso()],
+  );
   return id;
 }
 
-export function getMessages(
+export async function getMessages(
   session_id: string,
-): { id: string; role: Role; content: string; created_at: string }[] {
-  return getDb()
-    .prepare(
-      'SELECT id, role, content, created_at FROM messages WHERE session_id = ? ORDER BY created_at ASC, rowid ASC',
-    )
-    .all(session_id) as unknown as {
+): Promise<
+  { id: string; role: Role; content: string; created_at: string }[]
+> {
+  return all<{
     id: string;
     role: Role;
     content: string;
     created_at: string;
-  }[];
+  }>(
+    'SELECT id, role, content, created_at FROM messages WHERE session_id = ? ORDER BY created_at ASC, rowid ASC',
+    [session_id],
+  );
 }
 
-export function countUserMessages(session_id: string): number {
-  const row = getDb()
-    .prepare(
-      "SELECT COUNT(*) AS n FROM messages WHERE session_id = ? AND role = 'user'",
-    )
-    .get(session_id) as { n: number };
-  return row.n;
+export async function countUserMessages(session_id: string): Promise<number> {
+  const row = await get<{ n: number }>(
+    "SELECT COUNT(*) AS n FROM messages WHERE session_id = ? AND role = 'user'",
+    [session_id],
+  );
+  return row?.n ?? 0;
 }
 
 // ----------------------------------------------------------------
@@ -244,12 +244,11 @@ function rowToObjective(r: Record<string, unknown>): Objective {
   };
 }
 
-export function getObjectives(session_id: string): Objective[] {
-  const rows = getDb()
-    .prepare(
-      'SELECT * FROM objectives WHERE session_id = ? ORDER BY created_at ASC, rowid ASC',
-    )
-    .all(session_id) as Record<string, unknown>[];
+export async function getObjectives(session_id: string): Promise<Objective[]> {
+  const rows = await all<Record<string, unknown>>(
+    'SELECT * FROM objectives WHERE session_id = ? ORDER BY created_at ASC, rowid ASC',
+    [session_id],
+  );
   return rows.map(rowToObjective);
 }
 
@@ -260,12 +259,10 @@ export function getObjectives(session_id: string): Objective[] {
  * Isso evita duplicatas quando o LLM varia o título entre chamadas.
  * Calcula perfil de risco, completude SMART, ano_alvo e ícone derivados.
  */
-export function upsertObjective(
+export async function upsertObjective(
   session_id: string,
   input: ObjectiveInput,
-): Objective {
-  const db = getDb();
-
+): Promise<Objective> {
   const perfil = calcularPerfilRisco({
     categoria: input.categoria,
     horizonte_anos: input.horizonte_anos,
@@ -279,30 +276,28 @@ export function upsertObjective(
   const sinais = input.sinais_atencao ?? [];
   const horizonte_classe = classificarHorizonte(input.horizonte_anos);
 
-  const existing = (
+  const existing =
     input.categoria === 'outro'
-      ? db
-          .prepare(
-            'SELECT id FROM objectives WHERE session_id = ? AND categoria = ? AND titulo_curto = ?',
-          )
-          .get(session_id, input.categoria, input.titulo_curto)
-      : db
-          .prepare(
-            'SELECT id FROM objectives WHERE session_id = ? AND categoria = ?',
-          )
-          .get(session_id, input.categoria)
-  ) as { id: string } | undefined;
+      ? await get<{ id: string }>(
+          'SELECT id FROM objectives WHERE session_id = ? AND categoria = ? AND titulo_curto = ?',
+          [session_id, input.categoria, input.titulo_curto],
+        )
+      : await get<{ id: string }>(
+          'SELECT id FROM objectives WHERE session_id = ? AND categoria = ?',
+          [session_id, input.categoria],
+        );
 
   // Deriva user_id da sessão (link direto cliente↔objetivo). Se a
   // sessão ainda não tem usuário, o objetivo fica null e é propagado
   // depois pelo registerUserForSession.
-  const userIdRow = db
-    .prepare('SELECT user_id FROM sessions WHERE id = ?')
-    .get(session_id) as { user_id: number | null } | undefined;
+  const userIdRow = await get<{ user_id: number | null }>(
+    'SELECT user_id FROM sessions WHERE id = ?',
+    [session_id],
+  );
   const user_id = userIdRow?.user_id ?? null;
 
   if (existing) {
-    db.prepare(
+    await run(
       `UPDATE objectives SET
         user_id = ?,
         categoria = ?, classe_objetivo = ?, horizonte_classe = ?, icone = ?,
@@ -313,12 +308,59 @@ export function upsertObjective(
         observacoes_cliente = ?, sinais_atencao = ?, proximo_passo_planejador = ?,
         updated_at = ?
       WHERE id = ?`,
-    ).run(
+      [
+        user_id,
+        input.categoria,
+        input.classe_objetivo,
+        horizonte_classe,
+        icone,
+        input.descricao,
+        input.valor_presente_brl,
+        input.horizonte_anos,
+        ano_alvo,
+        input.prioridade,
+        input.modalidade ?? null,
+        input.flexibilidade_prazo ?? null,
+        input.flexibilidade_valor ?? null,
+        perfil,
+        score,
+        JSON.stringify(detalhes),
+        input.trade_offs ?? null,
+        input.observacoes_cliente ?? null,
+        JSON.stringify(sinais),
+        input.proximo_passo_planejador ?? null,
+        nowIso(),
+        existing.id,
+      ],
+    );
+    return rowToObjective(
+      (await get<Record<string, unknown>>(
+        'SELECT * FROM objectives WHERE id = ?',
+        [existing.id],
+      ))!,
+    );
+  }
+
+  const id = uid();
+  const now = nowIso();
+  await run(
+    `INSERT INTO objectives (
+      id, session_id, user_id, categoria, classe_objetivo, horizonte_classe, icone,
+      titulo_curto, descricao,
+      valor_presente_brl, horizonte_anos, ano_alvo, prioridade, modalidade,
+      flexibilidade_prazo, flexibilidade_valor, perfil_risco_sugerido,
+      completude_score, completude_detalhes, trade_offs, observacoes_cliente,
+      sinais_atencao, proximo_passo_planejador, created_at, updated_at
+    ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+    [
+      id,
+      session_id,
       user_id,
       input.categoria,
       input.classe_objetivo,
       horizonte_classe,
       icone,
+      input.titulo_curto,
       input.descricao,
       input.valor_presente_brl,
       input.horizonte_anos,
@@ -334,99 +376,64 @@ export function upsertObjective(
       input.observacoes_cliente ?? null,
       JSON.stringify(sinais),
       input.proximo_passo_planejador ?? null,
-      nowIso(),
-      existing.id,
-    );
-    return rowToObjective(
-      db.prepare('SELECT * FROM objectives WHERE id = ?').get(existing.id) as Record<string, unknown>,
-    );
-  }
-
-  const id = uid();
-  const now = nowIso();
-  db.prepare(
-    `INSERT INTO objectives (
-      id, session_id, user_id, categoria, classe_objetivo, horizonte_classe, icone,
-      titulo_curto, descricao,
-      valor_presente_brl, horizonte_anos, ano_alvo, prioridade, modalidade,
-      flexibilidade_prazo, flexibilidade_valor, perfil_risco_sugerido,
-      completude_score, completude_detalhes, trade_offs, observacoes_cliente,
-      sinais_atencao, proximo_passo_planejador, created_at, updated_at
-    ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-  ).run(
-    id,
-    session_id,
-    user_id,
-    input.categoria,
-    input.classe_objetivo,
-    horizonte_classe,
-    icone,
-    input.titulo_curto,
-    input.descricao,
-    input.valor_presente_brl,
-    input.horizonte_anos,
-    ano_alvo,
-    input.prioridade,
-    input.modalidade ?? null,
-    input.flexibilidade_prazo ?? null,
-    input.flexibilidade_valor ?? null,
-    perfil,
-    score,
-    JSON.stringify(detalhes),
-    input.trade_offs ?? null,
-    input.observacoes_cliente ?? null,
-    JSON.stringify(sinais),
-    input.proximo_passo_planejador ?? null,
-    now,
-    now,
+      now,
+      now,
+    ],
   );
   return rowToObjective(
-    db.prepare('SELECT * FROM objectives WHERE id = ?').get(id) as Record<string, unknown>,
+    (await get<Record<string, unknown>>(
+      'SELECT * FROM objectives WHERE id = ?',
+      [id],
+    ))!,
   );
 }
 
 // ----------------------------------------------------------------
 // Education topics
 // ----------------------------------------------------------------
-export function insertEducationTopic(
+export async function insertEducationTopic(
   session_id: string,
   topico: string,
   resumo: string | null,
-): EducationTopic {
-  const db = getDb();
+): Promise<EducationTopic> {
   const id = uid();
   const created_at = nowIso();
-  db.prepare(
+  await run(
     'INSERT INTO education_topics (id, session_id, topico, resumo, created_at) VALUES (?, ?, ?, ?, ?)',
-  ).run(id, session_id, topico, resumo, created_at);
+    [id, session_id, topico, resumo, created_at],
+  );
   return { id, session_id, topico, resumo, created_at };
 }
 
-export function getEducationTopics(session_id: string): EducationTopic[] {
-  return getDb()
-    .prepare(
-      'SELECT id, session_id, topico, resumo, created_at FROM education_topics WHERE session_id = ? ORDER BY created_at ASC, rowid ASC',
-    )
-    .all(session_id) as unknown as EducationTopic[];
+export async function getEducationTopics(
+  session_id: string,
+): Promise<EducationTopic[]> {
+  return all<EducationTopic>(
+    'SELECT id, session_id, topico, resumo, created_at FROM education_topics WHERE session_id = ? ORDER BY created_at ASC, rowid ASC',
+    [session_id],
+  );
 }
 
 // ----------------------------------------------------------------
 // Out-of-scope notes
 // ----------------------------------------------------------------
-export function insertOutOfScopeNote(session_id: string, nota: string): void {
-  getDb()
-    .prepare(
-      'INSERT INTO out_of_scope_notes (id, session_id, nota, created_at) VALUES (?, ?, ?, ?)',
-    )
-    .run(uid(), session_id, nota, nowIso());
+export async function insertOutOfScopeNote(
+  session_id: string,
+  nota: string,
+): Promise<void> {
+  await run(
+    'INSERT INTO out_of_scope_notes (id, session_id, nota, created_at) VALUES (?, ?, ?, ?)',
+    [uid(), session_id, nota, nowIso()],
+  );
 }
 
-export function getOutOfScopeNotes(session_id: string): string[] {
-  const rows = getDb()
-    .prepare(
-      'SELECT nota FROM out_of_scope_notes WHERE session_id = ? ORDER BY created_at ASC, rowid ASC',
-    )
-    .all(session_id) as unknown as { nota: string }[];
+export async function getOutOfScopeNotes(
+  session_id: string,
+): Promise<string[]> {
+  const rows = await all<{ nota: string }>(
+    'SELECT nota FROM out_of_scope_notes WHERE session_id = ? ORDER BY created_at ASC, rowid ASC',
+    [session_id],
+  );
   return rows.map((r) => r.nota);
 }
 
@@ -435,23 +442,20 @@ export function getOutOfScopeNotes(session_id: string): string[] {
 // Deduplicado por (session_id, produto): registrar o mesmo produto de
 // novo apenas atualiza a oportunidade, não cria duplicata.
 // ----------------------------------------------------------------
-export function upsertCrossSell(
+export async function upsertCrossSell(
   session_id: string,
   input: CrossSellInput,
-): CrossSellOpportunity {
-  const db = getDb();
-  const existing = db
-    .prepare(
-      'SELECT id, created_at FROM cross_sell_opportunities WHERE session_id = ? AND produto = ?',
-    )
-    .get(session_id, input.produto) as
-    | { id: string; created_at: string }
-    | undefined;
+): Promise<CrossSellOpportunity> {
+  const existing = await get<{ id: string; created_at: string }>(
+    'SELECT id, created_at FROM cross_sell_opportunities WHERE session_id = ? AND produto = ?',
+    [session_id, input.produto],
+  );
 
   if (existing) {
-    db.prepare(
+    await run(
       'UPDATE cross_sell_opportunities SET gatilho = ?, racional = ?, prioridade = ? WHERE id = ?',
-    ).run(input.gatilho, input.racional, input.prioridade, existing.id);
+      [input.gatilho, input.racional, input.prioridade, existing.id],
+    );
     return {
       id: existing.id,
       session_id,
@@ -465,16 +469,17 @@ export function upsertCrossSell(
 
   const id = uid();
   const created_at = nowIso();
-  db.prepare(
+  await run(
     'INSERT INTO cross_sell_opportunities (id, session_id, produto, gatilho, racional, prioridade, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
-  ).run(
-    id,
-    session_id,
-    input.produto,
-    input.gatilho,
-    input.racional,
-    input.prioridade,
-    created_at,
+    [
+      id,
+      session_id,
+      input.produto,
+      input.gatilho,
+      input.racional,
+      input.prioridade,
+      created_at,
+    ],
   );
   return {
     id,
@@ -487,34 +492,35 @@ export function upsertCrossSell(
   };
 }
 
-export function getCrossSells(session_id: string): CrossSellOpportunity[] {
-  return getDb()
-    .prepare(
-      'SELECT id, session_id, produto, gatilho, racional, prioridade, created_at FROM cross_sell_opportunities WHERE session_id = ? ORDER BY created_at ASC, rowid ASC',
-    )
-    .all(session_id) as unknown as CrossSellOpportunity[];
+export async function getCrossSells(
+  session_id: string,
+): Promise<CrossSellOpportunity[]> {
+  return all<CrossSellOpportunity>(
+    'SELECT id, session_id, produto, gatilho, racional, prioridade, created_at FROM cross_sell_opportunities WHERE session_id = ? ORDER BY created_at ASC, rowid ASC',
+    [session_id],
+  );
 }
 
 // ----------------------------------------------------------------
 // Perfil 360° do cliente (anamnese) — um por sessão.
 // O suitability (perfil de investidor) é derivado pelo servidor.
 // ----------------------------------------------------------------
-export function upsertClientProfile(
+export async function upsertClientProfile(
   session_id: string,
   input: ClientProfileInput,
-): ClientProfile {
-  const db = getDb();
+): Promise<ClientProfile> {
   const suitability = calcularSuitability({
     experiencia_investimentos: input.experiencia_investimentos,
     tolerancia_risco: input.tolerancia_risco,
     idade: input.idade,
   });
   const now = nowIso();
-  const existing = db
-    .prepare('SELECT created_at FROM client_profiles WHERE session_id = ?')
-    .get(session_id) as { created_at: string } | undefined;
+  const existing = await get<{ created_at: string }>(
+    'SELECT created_at FROM client_profiles WHERE session_id = ?',
+    [session_id],
+  );
 
-  db.prepare(
+  await run(
     `INSERT INTO client_profiles (
       session_id, idade, estado_civil, dependentes, profissao,
       renda_mensal_faixa, experiencia_investimentos, tolerancia_risco,
@@ -531,27 +537,31 @@ export function upsertClientProfile(
       perfil_suitability = excluded.perfil_suitability,
       observacoes = excluded.observacoes,
       updated_at = excluded.updated_at`,
-  ).run(
-    session_id,
-    input.idade,
-    input.estado_civil,
-    input.dependentes,
-    input.profissao,
-    input.renda_mensal_faixa,
-    input.experiencia_investimentos,
-    input.tolerancia_risco,
-    suitability,
-    input.observacoes ?? null,
-    existing?.created_at ?? now,
-    now,
+    [
+      session_id,
+      input.idade,
+      input.estado_civil,
+      input.dependentes,
+      input.profissao,
+      input.renda_mensal_faixa,
+      input.experiencia_investimentos,
+      input.tolerancia_risco,
+      suitability,
+      input.observacoes ?? null,
+      existing?.created_at ?? now,
+      now,
+    ],
   );
 
-  return getClientProfile(session_id) as ClientProfile;
+  return (await getClientProfile(session_id)) as ClientProfile;
 }
 
-export function getClientProfile(session_id: string): ClientProfile | null {
-  const row = getDb()
-    .prepare('SELECT * FROM client_profiles WHERE session_id = ?')
-    .get(session_id) as ClientProfile | undefined;
+export async function getClientProfile(
+  session_id: string,
+): Promise<ClientProfile | null> {
+  const row = await get<ClientProfile>(
+    'SELECT * FROM client_profiles WHERE session_id = ?',
+    [session_id],
+  );
   return row ?? null;
 }

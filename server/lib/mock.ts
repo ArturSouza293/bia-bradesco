@@ -11,17 +11,17 @@ import {
   upsertCrossSell,
   insertEducationTopic,
   upsertObjective,
-} from './store.ts';
+} from './store.js';
 import type {
   ConversationResult,
   RunConversationParams,
   SSEEvent,
-} from './engine.ts';
+} from './engine.js';
 import type {
   ClientProfileInput,
   CrossSellInput,
   ObjectiveInput,
-} from './types.ts';
+} from './types.js';
 
 interface MockStep {
   text: string;
@@ -244,7 +244,7 @@ export async function runMockConversation(
   await streamText(step.text, emit);
 
   if (step.user) {
-    const memory = registerUserForSession(sessionId, step.user);
+    const memory = await registerUserForSession(sessionId, step.user);
     emit({
       type: 'user_identified',
       user: memory.user,
@@ -254,12 +254,12 @@ export async function runMockConversation(
     await sleep(140);
   }
   if (step.clientProfile) {
-    const profile = upsertClientProfile(sessionId, step.clientProfile);
+    const profile = await upsertClientProfile(sessionId, step.clientProfile);
     emit({ type: 'client_profile', profile });
     await sleep(140);
   }
   for (const ed of step.education ?? []) {
-    const topic = insertEducationTopic(sessionId, ed.topico, ed.resumo);
+    const topic = await insertEducationTopic(sessionId, ed.topico, ed.resumo);
     console.log(
       `[learning] session=${sessionId.slice(0, 8)} topico="${ed.topico}"${
         ed.resumo ? ` resumo="${ed.resumo}"` : ''
@@ -269,12 +269,12 @@ export async function runMockConversation(
     await sleep(130);
   }
   for (const obj of step.objectives ?? []) {
-    const saved = upsertObjective(sessionId, obj);
+    const saved = await upsertObjective(sessionId, obj);
     emit({ type: 'objective_registered', objective: saved });
     await sleep(130);
   }
   for (const cs of step.crossSells ?? []) {
-    const opportunity = upsertCrossSell(sessionId, cs);
+    const opportunity = await upsertCrossSell(sessionId, cs);
     emit({ type: 'cross_sell', opportunity });
     await sleep(130);
   }
