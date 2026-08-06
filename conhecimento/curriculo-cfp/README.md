@@ -20,12 +20,15 @@ na fonte, sem "corrigir".*
 
 ## O que já existe vs. o que falta
 
-- **Existe**: `ementa.md` por módulo (o mapa oficial de tópicos, 1.501 itens),
-  `00-processo-6-etapas.md` e `conceitos-fundamentais.md` (notas educáveis ao cliente).
-- **Falta (fase seguinte)**: as **notas de estudo por tópico** — um arquivo por tópico
-  `N.N`, autoral (~150–300 palavras), com fonte primária (lei, CVM, SUSEP, Previc, RFB),
-  `fase_bia` e tags. Produção prevista por workflow multi-agente com auditoria
-  adversarial contra a ementa (padrão do projeto Vision).
+- **Existe**: `ementa.md` por módulo (o mapa oficial de tópicos, 1.501 itens);
+  `00-processo-6-etapas.md` e `conceitos-fundamentais.md` (notas educáveis ao cliente);
+  e as **notas de estudo por tópico `N.N` dos 8 módulos** (57 arquivos, produzidos por
+  workflow multi-agente com auditoria adversarial de 3 lentes em 06/08/2026 [F1.4]).
+  Convenção de tamanho: cada seção `###` é um chunk de 200–600 tokens; um arquivo cobre
+  a subárvore inteira do seu tópico (várias seções).
+- **Falta**: conferência das normas citadas contra fonte primária (tudo `status: review`
+  com incertezas marcadas `[A CONFIRMAR]` — ver a lista consolidada nas incertezas dos
+  redatores no PR); revisão humana de conteúdo por um CFP.
 
 ## Regras deste diretório
 

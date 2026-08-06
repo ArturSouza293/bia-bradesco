@@ -121,6 +121,21 @@ CREATE TABLE IF NOT EXISTS out_of_scope_notes (
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
+-- Consultas ao cérebro (RAG): telemetria de uso do conhecimento.
+-- Alimenta o npm run analyze — quais trechos a Bia consulta, quantas
+-- buscas voltam vazias (lacunas do corpus) e o uso da lente interna.
+CREATE TABLE IF NOT EXISTS kb_queries (
+  id            TEXT PRIMARY KEY,
+  session_id    TEXT NOT NULL REFERENCES sessions(id) ON DELETE CASCADE,
+  ferramenta    TEXT NOT NULL CHECK (ferramenta IN
+                  ('consultar_conhecimento', 'consultar_produto')),
+  consulta      TEXT NOT NULL,
+  n_resultados  INTEGER NOT NULL,
+  top_id        TEXT,
+  created_at    TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS idx_kbqueries_session ON kb_queries(session_id);
+
 -- Oportunidades comerciais (cross-sell) que a Bia detectou com sua
 -- "lente de gerente de conta". NÃO são oferecidas ao cliente na conversa —
 -- ficam para revisão comercial ao final do atendimento.

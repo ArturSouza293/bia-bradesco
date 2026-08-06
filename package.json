@@ -14,7 +14,8 @@
     "analyze": "tsx server/scripts/analyze.ts",
     "kb:extract": "node scripts/kb/extract-matriz.mjs",
     "kb:build": "node scripts/kb/build-kb.mjs",
-    "kb:check": "node scripts/kb/check-kb.mjs"
+    "kb:check": "node scripts/kb/check-kb.mjs",
+    "eval:kb": "tsx scripts/kb/eval-kb.mts"
   },
   "dependencies": {
     "@libsql/client": "^0.17.4",

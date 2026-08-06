@@ -21,6 +21,12 @@ vive AQUI, versionado em git — nunca hard-coded no código. O runtime consome 
    afirmação numérica no corpo cita a fonte. Sem fonte → não entra.
 2. **Flags nunca são removidas para embelezar**: `[FONTE INTERNA]`, `[A CONFIRMAR]`,
    `[FONTE ÚNICA]`, `DADOS ILUSTRATIVOS`. Elas viajam com o conteúdo até o runtime.
+   Critério para normas: **toda citação de número de norma** (lei, decreto, resolução,
+   circular, instrução, EC) **não conferida contra a fonte primária carrega
+   `[A CONFIRMAR]` inline** — mesmo quando o redator tem alta confiança. A flag de
+   front-matter `"A CONFIRMAR — normas citadas..."` acompanha só arquivos que citam
+   normas ou têm marcações inline; arquivo sem norma citada usa `flags: []` (o
+   `status: review` já cobre a revisão geral).
 3. **Nada se apaga**: revisão substitui com registro (o arquivo antigo ganha aviso de
    superado no topo e o novo o referencia), histórico fica no git.
 4. **Direito autoral**: a ementa da Planejar é o mapa factual; apostilas/livros de

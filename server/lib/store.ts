@@ -438,6 +438,22 @@ export async function getOutOfScopeNotes(
 }
 
 // ----------------------------------------------------------------
+// Telemetria do cérebro (RAG) — consultas às ferramentas de conhecimento
+// ----------------------------------------------------------------
+export async function insertKbQuery(
+  session_id: string,
+  ferramenta: 'consultar_conhecimento' | 'consultar_produto',
+  consulta: string,
+  n_resultados: number,
+  top_id: string | null,
+): Promise<void> {
+  await run(
+    'INSERT INTO kb_queries (id, session_id, ferramenta, consulta, n_resultados, top_id, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)',
+    [uid(), session_id, ferramenta, consulta, n_resultados, top_id, nowIso()],
+  );
+}
+
+// ----------------------------------------------------------------
 // Cross-sell — oportunidades comerciais (lente de gerente de conta)
 // Deduplicado por (session_id, produto): registrar o mesmo produto de
 // novo apenas atualiza a oportunidade, não cria duplicata.

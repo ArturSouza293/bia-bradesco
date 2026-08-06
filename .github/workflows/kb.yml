@@ -19,3 +19,5 @@ jobs:
         run: npm run kb:check
       - name: Typecheck
         run: npm run typecheck
+      - name: Eval do retrieval (golden set, gate hit@4 ≥ 60%)
+        run: npm run eval:kb

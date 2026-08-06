@@ -1,0 +1,352 @@
+[
+ {
+  "pergunta": "Qual a diferença entre um planejador financeiro e alguém que só vende produto de banco?",
+  "arquivo_id": "m1-1-1-profissao-e-processo",
+  "secao_titulo": "O que é planejamento financeiro e o papel do planejador"
+ },
+ {
+  "pergunta": "Como funciona o processo de vocês, quais são as etapas até eu ter um plano pronto?",
+  "arquivo_id": "m1-1-1-profissao-e-processo",
+  "secao_titulo": "O processo de planejamento financeiro em seis etapas"
+ },
+ {
+  "pergunta": "O que é 'suitability' e por que vocês me perguntam tanto sobre mim antes de recomendar algo?",
+  "arquivo_id": "m1-1-4-ambiente-regulatorio-economico",
+  "secao_titulo": "Dever fiduciário, melhor interesse do cliente e suitability"
+ },
+ {
+  "pergunta": "Por que a Selic e o IPCA afetam meu planejamento financeiro?",
+  "arquivo_id": "m1-1-4-ambiente-regulatorio-economico",
+  "secao_titulo": "Como a economia entra no planejamento financeiro: micro, macro e indicadores"
+ },
+ {
+  "pergunta": "Por que R$ 1.000 hoje valem mais do que R$ 1.000 daqui a 5 anos?",
+  "arquivo_id": "m1-1-6-valor-do-dinheiro-no-tempo",
+  "secao_titulo": "Valor presente e valor futuro: a mesma quantia em momentos diferentes"
+ },
+ {
+  "pergunta": "Qual a diferença entre SAC e Price no financiamento do meu imóvel?",
+  "arquivo_id": "m1-1-6-valor-do-dinheiro-no-tempo",
+  "secao_titulo": "Séries de pagamentos e anuidades: quando o dinheiro entra ou sai várias vezes"
+ },
+ {
+  "pergunta": "Minha esposa e eu pensamos muito diferente sobre dinheiro, isso é normal e afeta o planejamento?",
+  "arquivo_id": "m1-1-7-caracteristicas-do-cliente",
+  "secao_titulo": "Objetivos do cliente e a estrutura familiar por trás deles"
+ },
+ {
+  "pergunta": "Sou de uma família não tradicional, meu planejamento financeiro muda por causa disso?",
+  "arquivo_id": "m1-1-7-caracteristicas-do-cliente",
+  "secao_titulo": "Famílias não tradicionais e diferenças entre gerações"
+ },
+ {
+  "pergunta": "Qual a diferença entre tolerância ao risco e capacidade de assumir risco?",
+  "arquivo_id": "m1-1-8-perfil-de-risco-do-cliente",
+  "secao_titulo": "Habilidade, tolerância, necessidade e capacidade de risco: quatro ângulos diferentes"
+ },
+ {
+  "pergunta": "Já perdi dinheiro numa crise antes e fico com medo de investir, isso tem a ver com o meu perfil de risco hoje?",
+  "arquivo_id": "m1-1-8-perfil-de-risco-do-cliente",
+  "secao_titulo": "Personalidade e experiências passadas moldam a relação com risco"
+ },
+ {
+  "pergunta": "O que é balanço patrimonial e como eu calculo meu patrimônio líquido?",
+  "arquivo_id": "m2-2-3-balanco-patrimonial-pessoal",
+  "secao_titulo": "Ativos, passivos e patrimônio líquido: a equação do balanço pessoal"
+ },
+ {
+  "pergunta": "Quanto eu preciso ter guardado no meu fundo de emergência?",
+  "arquivo_id": "m2-2-7-fundo-de-emergencia",
+  "secao_titulo": "Importância do fundo de emergência e quanto é suficiente"
+ },
+ {
+  "pergunta": "Posso usar o cartão de crédito pra cobrir uma emergência se eu não tiver reserva?",
+  "arquivo_id": "m2-2-7-fundo-de-emergencia",
+  "secao_titulo": "Cartão de crédito, crédito rotativo e a importância de ter sempre ativos líquidos"
+ },
+ {
+  "pergunta": "Como eu monto um orçamento do zero, olhando minhas receitas e meus gastos?",
+  "arquivo_id": "m2-2-2-objetivos-gestao-financeira",
+  "secao_titulo": "Como elaborar um orçamento pessoal: analisando receitas e gastos"
+ },
+ {
+  "pergunta": "Qual a diferença entre IPCA e IGP-M e por que isso importa pro meu planejamento?",
+  "arquivo_id": "m2-2-4-planejamento-fluxo-de-caixa",
+  "secao_titulo": "Efeitos da inflação: causas, deflação e os principais índices"
+ },
+ {
+  "pergunta": "Qual a diferença entre cheque especial e cair no rotativo do cartão de crédito?",
+  "arquivo_id": "m2-2-8-gestao-debitos-creditos",
+  "secao_titulo": "Crédito rotativo: cheque especial e cartão de crédito"
+ },
+ {
+  "pergunta": "O que o banco olha antes de aprovar um empréstimo pra mim?",
+  "arquivo_id": "m2-2-8-gestao-debitos-creditos",
+  "secao_titulo": "O que os credores avaliam: histórico, renda, endividamento e garantias"
+ },
+ {
+  "pergunta": "É melhor eu quitar primeiro a dívida com juro mais alto ou a de menor saldo?",
+  "arquivo_id": "m2-2-8-gestao-debitos-creditos",
+  "secao_titulo": "Uso do crédito, níveis de dívida e abordagens para a gestão de dívidas"
+ },
+ {
+  "pergunta": "Como eu sei se estou poupando o suficiente todo mês?",
+  "arquivo_id": "m2-2-9-coeficientes-financeiros",
+  "secao_titulo": "Poupança, investimento e patrimônio líquido pessoal"
+ },
+ {
+  "pergunta": "Por que eu preciso comparar o que planejei gastar com o que realmente gastei no mês?",
+  "arquivo_id": "m2-2-5-planejamento-orcamento",
+  "secao_titulo": "Conciliação orçamentária: importância e uso"
+ },
+ {
+  "pergunta": "Por que preciso começar a pensar em aposentadoria já, se ainda faltam muitos anos?",
+  "arquivo_id": "m4-4-1-principios",
+  "secao_titulo": "Por que começar a planejar a aposentadoria o quanto antes"
+ },
+ {
+  "pergunta": "Quando eu me aposentar, é melhor eu olhar para o valor total que juntei ou para quanto isso vai me pagar por mês?",
+  "arquivo_id": "m4-4-1-principios",
+  "secao_titulo": "Fluxo de caixa real e regular: o que realmente importa na aposentadoria"
+ },
+ {
+  "pergunta": "Faz tanta diferença assim começar a guardar dinheiro 5 anos mais cedo?",
+  "arquivo_id": "m4-4-1-principios",
+  "secao_titulo": "O poder dos juros compostos na renda futura"
+ },
+ {
+  "pergunta": "Antigamente eu ouvia que a aposentadoria era garantida pelo governo. Isso mudou? Por que agora sobra tanta responsabilidade pra mim?",
+  "arquivo_id": "m4-4-1-principios",
+  "secao_titulo": "Da repartição para a quotização: os riscos que passaram para você"
+ },
+ {
+  "pergunta": "Posso deixar meus investimentos de aposentadoria parados na mesma carteira a vida toda, sem mexer?",
+  "arquivo_id": "m4-4-1-principios",
+  "secao_titulo": "Carteiras de longo prazo e a relação entre risco e retorno"
+ },
+ {
+  "pergunta": "Como eu calculo quanto preciso ter guardado para me aposentar?",
+  "arquivo_id": "m4-4-2-objetivos",
+  "secao_titulo": "Pensar a aposentadoria em dinheiro de hoje: o capital necessário"
+ },
+ {
+  "pergunta": "Como faço para transformar o sonho de me aposentar em uma meta de verdade, e não só uma ideia solta?",
+  "arquivo_id": "m4-4-2-objetivos",
+  "secao_titulo": "Metas SMART aplicadas à aposentadoria"
+ },
+ {
+  "pergunta": "E se o governo mudar as regras da aposentadoria antes de eu me aposentar, meu plano fica furado?",
+  "arquivo_id": "m4-4-2-objetivos",
+  "secao_titulo": "Metas de renda diante de mudanças políticas e econômicas"
+ },
+ {
+  "pergunta": "Aposentadoria é só sobre ter dinheiro guardado ou tem mais coisa pra planejar, tipo o que eu vou fazer do meu tempo?",
+  "arquivo_id": "m4-4-2-objetivos",
+  "secao_titulo": "Objetivos de estilo de vida: atividades e saúde na aposentadoria"
+ },
+ {
+  "pergunta": "O plano de saúde vai pesar muito no meu orçamento quando eu estiver mais velho? Preciso considerar isso já no meu planejamento?",
+  "arquivo_id": "m4-4-2-objetivos",
+  "secao_titulo": "Objetivos de estilo de vida: atividades e saúde na aposentadoria"
+ },
+ {
+  "pergunta": "Por que preciso aceitar mais risco pra ter mais retorno?",
+  "arquivo_id": "m3-educacao-conceitos-base",
+  "secao_titulo": "Risco e retorno andam juntos"
+ },
+ {
+  "pergunta": "Investir com risco mais alto garante que eu vou ganhar mais no final?",
+  "arquivo_id": "m3-educacao-conceitos-base",
+  "secao_titulo": "Risco e retorno andam juntos"
+ },
+ {
+  "pergunta": "Por que não devo colocar todo meu dinheiro em um investimento só?",
+  "arquivo_id": "m3-educacao-conceitos-base",
+  "secao_titulo": "Diversificação: não colocar todos os ovos na mesma cesta"
+ },
+ {
+  "pergunta": "O que significa diversificar minha carteira?",
+  "arquivo_id": "m3-educacao-conceitos-base",
+  "secao_titulo": "Diversificação: não colocar todos os ovos na mesma cesta"
+ },
+ {
+  "pergunta": "O que são juros compostos e por que todo mundo fala tanto neles?",
+  "arquivo_id": "m3-educacao-conceitos-base",
+  "secao_titulo": "Juros compostos: o tempo trabalhando a seu favor"
+ },
+ {
+  "pergunta": "Vale mais a pena começar a investir cedo com pouco dinheiro ou esperar juntar um valor maior?",
+  "arquivo_id": "m3-educacao-conceitos-base",
+  "secao_titulo": "Juros compostos: o tempo trabalhando a seu favor"
+ },
+ {
+  "pergunta": "O que é liquidez de um investimento?",
+  "arquivo_id": "m3-educacao-conceitos-base",
+  "secao_titulo": "Liquidez: o quanto seu dinheiro está disponível"
+ },
+ {
+  "pergunta": "Posso resgatar meu dinheiro investido a qualquer momento sem perder valor?",
+  "arquivo_id": "m3-educacao-conceitos-base",
+  "secao_titulo": "Liquidez: o quanto seu dinheiro está disponível"
+ },
+ {
+  "pergunta": "Por que o prazo do meu objetivo muda o tipo de investimento que eu devo escolher?",
+  "arquivo_id": "m3-educacao-conceitos-base",
+  "secao_titulo": "Horizonte: o prazo muda a estratégia"
+ },
+ {
+  "pergunta": "Dá pra usar a mesma estratégia pra guardar dinheiro de uma viagem e para minha aposentadoria?",
+  "arquivo_id": "m3-educacao-conceitos-base",
+  "secao_titulo": "Horizonte: o prazo muda a estratégia"
+ },
+ {
+  "pergunta": "O que significa 'gerenciar risco' quando não tem nada a ver com investimento?",
+  "arquivo_id": "m5-5-1-principios-gestao-risco",
+  "secao_titulo": "Gerenciamento de risco além dos investimentos: processo e técnicas"
+ },
+ {
+  "pergunta": "Quais são as formas de lidar com um risco — dá pra evitar, ou só resta contratar um seguro?",
+  "arquivo_id": "m5-5-1-principios-gestao-risco",
+  "secao_titulo": "Gerenciamento de risco além dos investimentos: processo e técnicas"
+ },
+ {
+  "pergunta": "Por que eu tenho medo de coisas que quase nunca acontecem e não me preocupo com riscos mais prováveis?",
+  "arquivo_id": "m5-5-1-principios-gestao-risco",
+  "secao_titulo": "Percepções, vieses e tolerância pessoal ao risco"
+ },
+ {
+  "pergunta": "Qual a diferença entre o risco de investir na bolsa e o risco que um seguro cobre?",
+  "arquivo_id": "m5-5-1-principios-gestao-risco",
+  "secao_titulo": "O que é risco: risco puro e risco especulativo"
+ },
+ {
+  "pergunta": "O que é 'risco puro' no seguro?",
+  "arquivo_id": "m5-5-1-principios-gestao-risco",
+  "secao_titulo": "O que é risco: risco puro e risco especulativo"
+ },
+ {
+  "pergunta": "O que é franquia e carência num seguro? Não entendo essa parte da apólice.",
+  "arquivo_id": "m5-5-1-principios-gestao-risco",
+  "secao_titulo": "Como se mede a cobertura de um seguro"
+ },
+ {
+  "pergunta": "Qual a diferença entre capital segurado e limite máximo de indenização?",
+  "arquivo_id": "m5-5-1-principios-gestao-risco",
+  "secao_titulo": "Como se mede a cobertura de um seguro"
+ },
+ {
+  "pergunta": "Como a seguradora consegue calcular o preço do seguro sem saber se vai acontecer alguma coisa comigo?",
+  "arquivo_id": "m5-5-1-principios-gestao-risco",
+  "secao_titulo": "Os alicerces técnicos e éticos do seguro"
+ },
+ {
+  "pergunta": "Por que vocês falam de seguro logo no começo do meu planejamento, antes de investimentos?",
+  "arquivo_id": "m5-5-2-objetivos-planejamento",
+  "secao_titulo": "Seguro e risco: por que essa etapa vem antes das demais"
+ },
+ {
+  "pergunta": "Quais informações vocês precisam saber sobre mim para pensar na minha proteção?",
+  "arquivo_id": "m5-5-2-objetivos-planejamento",
+  "secao_titulo": "Coleta de informações do cliente"
+ },
+ {
+  "pergunta": "O que exatamente conta como meu patrimônio? Só os bens ou as dívidas também entram?",
+  "arquivo_id": "m7-7-1-principios-de-planejamento",
+  "secao_titulo": "O que é patrimônio e por que a jurisdição importa"
+ },
+ {
+  "pergunta": "Tenho um imóvel de férias em Portugal, isso muda alguma coisa no meu planejamento sucessório?",
+  "arquivo_id": "m7-7-1-principios-de-planejamento",
+  "secao_titulo": "O que é patrimônio e por que a jurisdição importa"
+ },
+ {
+  "pergunta": "Planejamento patrimonial é uma coisa que eu faço uma vez só e pronto, ou preciso revisar depois?",
+  "arquivo_id": "m7-7-1-principios-de-planejamento",
+  "secao_titulo": "O processo de planejamento patrimonial e a equipe multidisciplinar"
+ },
+ {
+  "pergunta": "Só um advogado resolve meu planejamento sucessório ou preciso de mais gente envolvida?",
+  "arquivo_id": "m7-7-1-principios-de-planejamento",
+  "secao_titulo": "O processo de planejamento patrimonial e a equipe multidisciplinar"
+ },
+ {
+  "pergunta": "Tenho um filho com deficiência, isso muda como eu devo pensar meu planejamento patrimonial?",
+  "arquivo_id": "m7-7-2-objetivos-de-planejamento",
+  "secao_titulo": "Identificando objetivos patrimoniais e sucessórios"
+ },
+ {
+  "pergunta": "Preciso deixar tudo em partes iguais para os meus filhos ou posso pensar diferente por causa da nossa situação de família?",
+  "arquivo_id": "m7-7-2-objetivos-de-planejamento",
+  "secao_titulo": "Identificando objetivos patrimoniais e sucessórios"
+ },
+ {
+  "pergunta": "Posso deixar parte da minha herança para uma instituição de caridade em vez de só para a família?",
+  "arquivo_id": "m7-7-2-objetivos-de-planejamento",
+  "secao_titulo": "Escolher beneficiários e o papel da filantropia e da eficiência fiscal nos objetivos"
+ },
+ {
+  "pergunta": "Dá para organizar o patrimônio pensando também em pagar menos imposto no futuro?",
+  "arquivo_id": "m7-7-2-objetivos-de-planejamento",
+  "secao_titulo": "Escolher beneficiários e o papel da filantropia e da eficiência fiscal nos objetivos"
+ },
+ {
+  "pergunta": "Tenho uma empresa de família, como penso a sucessão dela separado do resto do patrimônio?",
+  "arquivo_id": "m7-7-2-objetivos-de-planejamento",
+  "secao_titulo": "Sucessão empresarial como objetivo de planejamento"
+ },
+ {
+  "pergunta": "Meu filho mais velho toca o negócio da família, mas os outros também são herdeiros — como equilibro isso?",
+  "arquivo_id": "m7-7-2-objetivos-de-planejamento",
+  "secao_titulo": "Sucessão empresarial como objetivo de planejamento"
+ },
+ {
+  "pergunta": "Por que às vezes eu tomo uma decisão financeira meio no impulso, mesmo sabendo que não é a mais lógica?",
+  "arquivo_id": "m8-8-1-financas-comportamentais",
+  "secao_titulo": "Vieses e heurísticas: os atalhos que a mente usa com dinheiro"
+ },
+ {
+  "pergunta": "É normal meu cérebro reagir com medo quando vejo meu investimento caindo, como se fosse um perigo de verdade?",
+  "arquivo_id": "m8-8-1-financas-comportamentais",
+  "secao_titulo": "Racionalidade limitada, neurofinanças e arquitetura de escolha"
+ },
+ {
+  "pergunta": "Eu tendo a fazer o que todo mundo está fazendo com o dinheiro, tipo entrar numa moda de investimento. Isso tem nome?",
+  "arquivo_id": "m8-8-2-atitudes-valores-vieses",
+  "secao_titulo": "O efeito manada: decidir junto com a multidão"
+ },
+ {
+  "pergunta": "Qual a diferença entre eu achar que um investimento é arriscado e ele ser arriscado de verdade?",
+  "arquivo_id": "m8-8-2-atitudes-valores-vieses",
+  "secao_titulo": "Os elementos psicológicos do plano e a percepção de risco do cliente"
+ },
+ {
+  "pergunta": "Como faço pra saber se realmente entendi o que você me explicou, e não só concordei com a cabeça?",
+  "arquivo_id": "m8-8-3-cognicao-e-educacao-financeira",
+  "secao_titulo": "Confirmar que o cliente realmente entendeu"
+ },
+ {
+  "pergunta": "Meu pai está ficando mais velho e sempre foi muito seguro com dinheiro. Preciso me preocupar com isso mudando com o tempo?",
+  "arquivo_id": "m8-8-3-cognicao-e-educacao-financeira",
+  "secao_titulo": "Longevidade e a percepção de declínio cognitivo"
+ },
+ {
+  "pergunta": "Eu sempre tenho muita certeza de que sei pra onde um investimento vai. Isso pode ser um problema?",
+  "arquivo_id": "m8-8-5-crencas-e-decisao",
+  "secao_titulo": "Viés de excesso de confiança: achar que se sabe mais do que se sabe"
+ },
+ {
+  "pergunta": "Por que eu simplesmente não consigo mudar minha forma de lidar com dinheiro, mesmo sabendo que deveria?",
+  "arquivo_id": "m8-8-5-crencas-e-decisao",
+  "secao_titulo": "Viés de status quo: a força de deixar como está"
+ },
+ {
+  "pergunta": "Acabei de perder o emprego, devo mexer em tudo agora ou é melhor esperar um pouco pra decidir?",
+  "arquivo_id": "m8-8-7-eventos-criticos",
+  "secao_titulo": "Eventos críticos: impactos possíveis e como responder"
+ },
+ {
+  "pergunta": "Fico comparando tudo com o valor que eu tinha antes de uma crise. Isso atrapalha minhas decisões agora?",
+  "arquivo_id": "m8-8-7-eventos-criticos",
+  "secao_titulo": "Enquadramento, ancoragem e adaptação"
+ }
+]

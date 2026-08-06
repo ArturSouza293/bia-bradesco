@@ -9,6 +9,7 @@ import {
   upsertClientProfile,
   upsertCrossSell,
   insertEducationTopic,
+  insertKbQuery,
   insertOutOfScopeNote,
   upsertObjective,
 } from './store.js';
@@ -350,6 +351,13 @@ async function executeTool(
       const pergunta = String(input.pergunta ?? '').trim();
       if (!pergunta) return { ok: false, error: 'pergunta vazia' };
       const trechos = searchConhecimento(pergunta);
+      await insertKbQuery(
+        sessionId,
+        'consultar_conhecimento',
+        pergunta,
+        trechos.length,
+        trechos[0]?.id ?? null,
+      ).catch(() => {});
       if (trechos.length === 0) {
         return {
           ok: true,
@@ -367,6 +375,13 @@ async function executeTool(
         regime: input.regime ? String(input.regime) : undefined,
         segmento: input.segmento ? String(input.segmento) : undefined,
       });
+      await insertKbQuery(
+        sessionId,
+        'consultar_produto',
+        JSON.stringify(input),
+        resultado.total,
+        resultado.produtos[0]?.id ?? null,
+      ).catch(() => {});
       return { ok: true, ...resultado };
     }
     if (name === 'register_out_of_scope_note') {
