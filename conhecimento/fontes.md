@@ -1,0 +1,9 @@
+# Registro de fontes do cérebro da Bia
+
+> Numeração citável: `[F1.n]`. Toda entrada nova ganha o próximo `n`; nada é renumerado.
+
+| ID | Fonte | Origem | Data | O que foi extraído | Confiança / flags |
+|---|---|---|---|---|---|
+| F1.1 | `vision_tax_duration_matrix.jsx` v0.3 (matriz Produto × Duração × Tributação, 66 linhas) | Acervo do projeto Vision (`vision-agents`, `acervo/produto/matrizes-engine/`) — cópia com proveniência em `matriz-produtos/fonte/` | jul/2026 | Os 66 produtos com tipo, classe, duração, horizonte, liquidez, regime tributário, alíquota LP, risco M/C/L/X, piso de suitability, segmentos, base legal e notas de planejamento; âncoras legais do sanity check jurídico | **FONTE INTERNA · DADOS ILUSTRATIVOS** — a própria fonte manda ratificar com o Tributário antes de uso com cliente |
+| F1.2 | System prompt da Bia v0.2.0 (`server/lib/bia.ts` antes deste RAG) | Este repositório | ago/2026 | Persona, jornada de 4 fases, metodologia SMART/necessidade-desejo/pirâmide, conceitos de educação financeira, regras de conduta e da lente de cross-sell | Interna — conteúdo operacional já em produção na demo |
+| F1.3 | Programa Detalhado do Exame da Certificação CFP® — Planejar (Associação Brasileira de Planejamento Financeiro), edição mai/2026, 47 págs. | PDF oficial fornecido pelo usuário (obtido no site da Planejar); **o binário não é commitado** — redistribuição é da Planejar; ver `curriculo-cfp/fonte-ementa.json` para a extração | mai/2026 | A ementa completa: 8 módulos, pesos (13/14/17/12/12/12/12/7% — soma impressa 99%) e a hierarquia de 1.501 tópicos/itens/subitens | Alta (documento oficial da certificadora). A ementa é mapa factual; o texto introdutório não foi copiado |

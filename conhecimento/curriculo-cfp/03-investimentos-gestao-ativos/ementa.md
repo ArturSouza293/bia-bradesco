@@ -1,0 +1,468 @@
+---
+id: ementa-m3
+modulo: curriculo
+topico: "Ementa do Módulo 3 — Planejamento de Investimentos e Gestão de Ativos"
+tags: [ementa, cfp, modulo-3]
+fase_bia: interna
+fonte: F1.3
+flags: []
+status: base
+---
+
+# Módulo 3 — Planejamento de Investimentos e Gestão de Ativos
+
+> **Peso no exame: 17%** · Fonte: Programa Detalhado do Exame da Certificação
+> CFP® (Planejar, edição mai/2026) [F1.3]. Esta ementa é o MAPA do módulo — a lista oficial
+> de tópicos. As notas de estudo por tópico (fase seguinte) entram como arquivos irmãos
+> neste diretório, um por tópico `N.N`, citando esta numeração.
+
+
+## 3.1 Princípios de Planejamento de Investimento
+- **3.1.1** Princípios de risco e retorno:
+  - **3.1.1.1** Conceito de risco
+  - **3.1.1.2** Conceito de retorno
+  - **3.1.1.3** Trade-off risco x retorno
+  - **3.1.1.4** Diversificação
+  - **3.1.1.5** Alocação de Ativos
+  - **3.1.1.6** Tipos de Alocação de Ativos
+    - • Alocação Estratégica
+    - • Alocação Tática
+    - • Alocação Dinâmica
+- **3.1.2** Critérios qualitativos e pessoais do investidor (por exemplo: investimentos ESG)
+  - **3.1.2.1** Tolerância ao risco
+  - **3.1.2.2** Ciclo de vida do investidor
+  - **3.1.2.3** Liquidez desejada
+  - **3.1.2.4** No perfil do investidor, valores individuais e investimentos ESG, podem influenciar
+- **3.1.3** Horizonte de tempo de investimento
+  - **3.1.3.1** Curto, médio e longo prazos.
+  - **3.1.3.2** Medições históricas de risco e retorno para várias classes de ativos relacionadas ao período de investimento do cliente.
+
+## 3.2 Objetivos, restrições e adequação do planejamento de investimentos
+- **3.2.1** Objetivos:
+  - **3.2.1.1** Rendimento real vs. crescimento do capital
+  - **3.2.1.2** Preservação do capital
+- **3.2.2** Restrições:
+  - • Gerir as restrições entre os objetivos de investimento
+  - • Liquidez
+  - • Tolerância ao risco e capacidade de assumir riscos
+  - • Alocação dos ativos
+  - • Escolhas restritas de investimento
+- **3.2.3** Suitability
+  - **3.2.3.1** Adequação aos investidores de varejo, qualificados e profissionais.
+  - **3.2.3.2** Benefícios Esperados após feito Suitability
+- **3.2.4** Risco e rentabilidade (crescimento do capital comparado com preservação)
+  - **3.2.4.1** Rentabilidade
+    - **3.2.4.1.1** Rentabilidade Observada
+    - **3.2.4.1.2** Rentabilidade Esperada
+  - **3.2.4.2** Riscos
+    - **3.2.4.2.1** Classificação e Tipos de risco
+      - **3.2.4.2.1.1** Risco de crédito
+        - • Risco País
+        - • Risco de Inadimplência do Emissor
+        - • Risco de Contraparte
+        - • Risco de Liquidação Financeira
+        - • Risco de Intermediação
+        - • Risco de Atraso
+      - **3.2.4.2.1.2** Risco de mercado: sistemático e não sistemático
+      - **3.2.4.2.1.3** Risco de liquidez
+        - • Implicações na precificação do risco de liquidez
+        - • Estratégias de controle do risco de liquidez
+
+## 3.3 Classes de ativos Instrumentos de Renda Fixa
+- **3.3.1** Tradicionais: conceito e riscos inerentes
+  - **3.3.1.1** Equivalentes a caixa (curto prazo, alta liquidez, baixíssimo risco de crédito)
+  - **3.3.1.2** Títulos representativos de dívida (títulos públicos e privados) Públicos: LFT, LTN, NTN-B, NTN-B Principal, NTN-F A - Títulos Prefixados - Letra do Tesouro Nacional (ou Tesouro Prefixado)
+    - **3.3.1.2.2** Tesouro Direto: Tesouro Prefixado, Tesouro Selic, Tesouro IPCA+ (com e sem cupom), Tesouro Renda+ e Tesouro Educa+
+      - **3.3.1.2.2.1** Tesouro Direto: Conceito, características, custos
+        - • Considerações Técnicas e Estratégicas
+        - • Estrutura, formas de negociação e custos para o Investidor
+        - • Custos transacionais
+        - ◦ Taxa cobrada pela B3
+        - ◦ Taxa cobrada pela instituição financeira
+        - • Limites de compra e venda
+        - • Horário de Funcionamento
+    - **3.3.1.2.3** Privados emitidos por instituições financeiras:
+      - • Poupança
+      - • Certificado de Depósito Bancário (CDB
+      - • Recibo de Depósito Bancário (RDB)
+      - • Depósito a Prazo com Garantia Especial (DPGE)
+      - • Letra de Crédito Imobiliário (LCI)
+      - • Letra Imobiliária Garantida (LIG)
+      - • Letra de Crédito do Agronegócio (LCA)
+      - • Letra de Câmbio (LC)
+      - • Letra Financeira (LF)
+      - • Operação Compromissada
+    - **3.3.1.2.4** FGC – Fundo Garantidor de Crédito
+      - • Limites de cobertura
+      - • Limitação da garantia até R$ 1 milhão
+      - • Garantia especial
+    - **3.3.1.2.5** Privados emitidos por instituições não financeiras:
+      - **3.3.1.2.5.1** Debêntures simples, debêntures conversíveis, debêntures permutáveis, debêntures de infraestrutura.
+        - **3.3.1.2.5.1.1** Conceito e características
+        - **3.3.1.2.5.1.2** Características da emissão e dos títulos
+        - **3.3.1.2.5.1.3** Taxas, Formas de Remuneração e de Negociação
+        - **3.3.1.2.5.1.4** Cláusulas da escritura das debêntures
+          - • Repactuação
+          - • Vencimento antecipado
+          - • Covenant
+          - • Cross default
+          - • Resgate Antecipado
+          - • Aquisição facultativa
+          - • Opção de compra (call)
+        - **3.3.1.2.5.1.5** Hierarquia das espécies de debêntures de acordo com as garantias
+          - • Garantia Real
+          - • Garantia Flutuante
+          - • Quirografária
+          - • Subordinada
+        - **3.3.1.2.5.1.6** Assembleia de debenturistas
+        - **3.3.1.2.5.1.7** Deveres do Agente Fiduciário
+      - **3.3.1.2.5.2** Nota promissória
+        - • Prazo de emissão
+        - • Forma de Emissão
+        - • Colocação/Negociação no Mercado
+        - • Registro
+        - • Remuneração
+        - • Resgate
+      - **3.3.1.2.5.3** Certificado de Recebíveis Imobiliários (CRI)
+      - **3.3.1.2.5.4** Certificado de Recebíveis do Agronegócio (CRA)
+  - **3.3.1.3** Títulos representativos de participação acionária (ações):
+    - **3.3.1.3.1** Ações
+      - **3.3.1.3.1.1** Conceito
+      - **3.3.1.3.1.2** Tipos de ações
+        - • Ações Ordinárias (ON)
+        - • Ações Preferenciais (PN)
+      - **3.3.1.3.1.3** Classes
+      - **3.3.1.3.1.4** Units
+    - **3.3.1.3.2** BDR (Brazilian Depositary Receipt): conceito e tipos (patrocinado e não patrocinado)
+      - **3.3.1.3.2.1** Categorias de BDRs
+        - • Patrocinados (Níveis I, II ou III)
+        - • Não patrocinados (apenas Nível I)
+    - **3.3.1.3.3** Proventos dos acionistas
+      - • Dividendos
+      - • Juros sobre Capital Próprio
+      - • Subscrição
+      - • Bônus de Subscrição
+      - • Bonificação
+      - • Desdobramento (split)
+      - • Grupamento (inplit)
+    - **3.3.1.3.4** Estratégia de Investimentos em ações
+      - • Compra à vista,
+      - • Compra a termo o Proteger preços o Diversificar riscos o Obter recursos (operação caixa)
+      - • Compra com uso de margem
+      - • Venda à vista,
+      - • Venda a termo,
+      - • Venda descoberta,
+      - • Aluguel de ações,
+      - • Long and short
+    - **3.3.1.3.5** Ambientes de negociação
+      - • Bolsa
+      - • Balcão organizado
+    - **3.3.1.3.6** Segmentos de listagem da B3
+      - **3.3.1.3.6.1** Características
+        - **3.3.1.3.6.1.1** Direito dos acionistas minoritários
+          - • Direito de voto
+          - • Participação nos lucros
+          - • Direito de participação no acervo em caso de liquidação
+          - • Fiscalização
+          - • Preferência de Subscrição
+          - • Direito de recesso
+      - **3.3.1.3.6.2** Proteção do minoritário no fechamento do capital
+        - • Previsão legal
+        - • Direito ao tag along na alienação do controle
+      - **3.3.1.3.6.3** Níveis de governança, critérios de adesão e listagem
+        - • Companhia Nível 1
+        - • Companhia Nível 2
+        - • Novo Mercado
+  - **3.3.1.4** Oferta Pública de Valores Mobiliários (renda fixa e variável)
+    - **3.3.1.4.1** Mercado primário e secundário: conceito, funções econômicas e formas de negociação
+      - • Oferta Primária (Underwriting)
+      - • Oferta Secundária (Block Trade)
+    - **3.3.1.4.2** Initial Public Offering – IPO. Conceito, características, operacionalidade
+      - **3.3.1.4.2.1** Papel dos principais agentes no processo da Oferta Pública:
+        - • Comissão de Valores Mobiliários
+        - • Instituições Intermediárias (Pool de Distribuição)
+        - • Banco Coordenador
+        - • Agência de Rating
+        - • Agente Fiduciário ou Agente de Notas
+        - • Banco Escriturador
+        - • Banco Mandatário
+        - • Banco Custodiante
+        - • Formador de Mercado (Market Maker) – Mercado de ações
+        - • Escritório de Advocacia
+        - • ANBIMA – Associação Brasileira das Entidades dos Mercados Financeiro e de Capitais.
+    - **3.3.1.4.3** Tipos de Subscrição
+      - • Garantia Firme ou Underwriting Firm
+      - • Melhores Esforços ou Best Effort Underwriting
+      - • Residual ou Stand-By Underwriting
+    - **3.3.1.4.4** Formação de preço nas ofertas
+      - • Preço Fixo
+      - • Bookbuilding
+      - • Leilão em Bolsa
+    - **3.3.1.4.5** Sobre a Distribuição
+      - • Lote Suplementar (green shoe) até 15%
+      - • Lote Adicional (Hot Issue) até 20%
+      - • Rateio
+    - **3.3.1.4.6** Não concretização
+    - **3.3.1.4.7** Follow On
+    - **3.3.1.4.8** Oferta Pública de Aquisição (OPA): conceito, características, operacionalidade
+  - **3.3.1.5** Fundos de Investimento
+    - **3.3.1.5.1** Definições gerais
+      - • Condomínio
+      - • Patrimônio líquido
+      - • Cota e cotista
+    - **3.3.1.5.2** Responsabilidades dos prestadores de serviços
+      - • Administrador
+      - • Gestor
+      - • Distribuidor
+      - • Custodiante
+      - • Auditor Independente
+      - • Consultoria de Investimentos
+    - **3.3.1.5.3** Direitos e deveres dos cotistas
+    - **3.3.1.5.4** Fundos de investimento (Fl) e Fundos de Investimento em Cotas (FIC)
+    - **3.3.1.5.5** Tipos de fundos
+      - • Fundos Abertos
+      - • Fundos Fechados
+      - • Fundos Abertos com carência
+      - • Fundos Abertos sem carência
+      - • Fundo de Investimento com Único Investidor
+    - **3.3.1.5.6** Dinâmica de aplicação e resgate
+      - • Regras de conversão das cotas (aplicação e resgate)
+    - **3.3.1.5.7** Cotas de abertura e cota de fechamento
+    - **3.3.1.5.8** Fechamento do Fundo para novas aplicações
+    - **3.3.1.5.9** Fechamento do fundo para resgates
+    - **3.3.1.5.10** Objetivo e política de investimento do fundo
+      - • Limites por emissor
+      - • Limites por modalidade de ativo financeiro
+    - **3.3.1.5.11** Informações comerciais na distribuição de fundos
+      - • Regulamento
+      - • Termo de adesão e de ciência de risco
+      - • Lâmina (de informações básicas)
+    - **3.3.1.5.12** Prestação de contas aos cotistas - Divulgação de cotas e rentabilidade
+    - **3.3.1.5.13** Assembleia Geral
+    - **3.3.1.5.14** Disclaimers e avisos obrigatórios
+    - **3.3.1.5.15** Classificação dos fundos quanto ao prazo médio da carteira
+    - **3.3.1.5.16** Tipos de fundos quanto à estratégia de gestão das carteiras
+      - • Renda Fixa - Gestão Passiva
+      - • Renda Variável - Gestão Passiva
+      - **3.3.1.5.16.1** Estratégias para manter aderência aos índices de referência e as respectivas limitações
+        - • Renda Fixa - Gestão Passiva
+        - • Renda Variável - Gestão Passiva
+      - **3.3.1.5.16.2** Estratégias de gestão: posicionamento, hedge e alavancagem.
+    - **3.3.1.5.17** Instrução CVM 175
+      - **3.3.1.5.17.1** Classes dos fundos segundo classificação da CVM.
+        - • Fundos Renda Fixa
+        - • Fundos Ações
+        - • Fundos Cambial
+        - • Fundo de Renda Fixa – Curto Prazo
+        - • Fundo Renda Fixa – Referenciado
+        - • Fundo Renda Fixa – Simples
+        - • Fundo Renda Fixa – Dívida Externa
+        - • Fundo de Crédito Privado
+        - • Fundo de Ações – Mercado de Acesso
+        - • Fundos de Investimento Multimercado
+    - **3.3.1.5.18** Outros fundos
+      - **3.3.1.5.18.1** Fundo de Investimento Imobiliário (FII)
+      - **3.3.1.5.18.2** Fundo de Investimento com Único Investidor (ou de Classes Exclusivas)
+      - **3.3.1.5.18.3** Fundo destinado a investidor qualificado e profissional
+        - • Investidores profissionais – Definição
+        - • Investidores qualificados – Definição
+      - **3.3.1.5.18.4** Fundos de Índice e ETF - Exchange Traded Funds
+    - **3.3.1.5.19** Custos do cotista
+      - • Taxa de administração: finalidade, base de cálculo e forma de cobrança
+      - • Taxa de performance: finalidade, base de cálculo e conceito de linha d’águaTaxa de Ingresso
+      - • Taxa de Saída
+      - • Regras de alteração
+      - • Outras despesas autorizadas
+    - **3.3.1.5.20** Fatores que afetam o valor da cota
+      - • Marcação a Mercado dos ativos da carteira
+      - ◦ Efeitos da não marcação a mercado no carregamento de ativos até o vencimento
+      - **3.3.1.5.20.2** Taxa de administração, taxa de performance e outras despesas
+    - **3.3.1.5.21** Clube de investimento
+    - **3.3.1.5.22** Carteira administrada: conceito e principais características
+    - **3.3.1.5.23** Ativos imobiliários
+      - • Tipos: imóveis residenciais, comerciais e terras
+      - • Riscos: liquidez, vacância, lei do Inquilinato, contrato de aluguel ou arrendamento, proteção da inflação
+      - • Custos: Manutenção, condomínio, IPTU e ITR
+      - • Estratégias: geração de renda, ganho de capital
+      - • Índices do mercado imobiliário: IFIX, FIPE ZAP, IVAR
+- **3.3.2** Não Tradicionais/Alternativos: conceito e riscos inerentes
+  - **3.3.2.1** Fundos multimercado Subclassificações
+  - **3.3.2.2** Private Equity
+  - **3.3.2.3** Criptoativos (bitcoin e ethereum) e blockchain
+  - **3.3.2.4** Investimentos no Exterior
+    - **3.3.2.4.1** Títulos públicos norte-americanos:
+      - • Treasury /K Bills (ou T-bills)
+      - • Treasury Notes (T-Notes)
+      - • Treasury Bonds (T-Bonds)
+      - • TIPS - Treasury Inflation-Protected Securities
+    - **3.3.2.4.2** Títulos privados
+      - • Certificates of Deposit (CD)
+      - • Commercial Papers (CP)
+      - • Eurobonds High Yield Bonds
+      - • High Yield Bonds
+      - ◦ Bonds com opção de call (Callable Bonds)
+      - ◦ Bonds com opção de put (Putable Bonds)
+      - • Repo – Repurchase Agreements
+    - **3.3.2.4.3** Ações: preferred e commom
+      - • Preferred Stock (Ações Preferenciais)
+      - • Common Stock (Ações Ordinárias)ADRS - American Depositary Receipts
+    - **3.3.2.4.4** Fundos de Investimento: Principais classes
+      - • Money Market Funds
+      - • Bond Funds (Fixed Income Funds)
+      - • Equity Funds (Stocks)
+      - • Peculiaridade: classes e tipos de cotas
+    - **3.3.2.4.5** Investimentos Alternativos: Hedge Funds
+      - • Real Estate Investment Trusts (REIT)
+    - **3.3.2.4.6** Indicadores e índices de referência:
+      - • LIBOR (London Interbank Offered Rate)
+      - • HFR15 (Hedge Fund Research Index)
+      - • Event Driven
+      - • DJIA (Dow Jones)
+      - • NASDAQ
+      - • S&P500
+      - • VIX (Chicago Board Options Exchange Market Volatility Index)
+    - **3.3.2.4.7** ETF – Exchange Traded Funds
+  - **3.3.2.5** Fundos Estruturados
+  - **3.3.2.6** Fundos de Investimento em Participações (FIP)
+  - **3.3.2.7** FIDC – Fundo de Investimento em Direitos Creditórios
+  - **3.3.2.8** COE – Certificado de Operações Estruturadas
+- **3.3.3** Instrumentos e estratégias de proteção e alavancagem
+  - **3.3.3.1** Instrumentos de Derivativos
+    - **3.3.3.1.1** Conceito e ambientes de negociação. B3 e Balcão
+      - • Principais características das negociações em Bolsa
+      - • Vantagens e Problemas
+      - • Ajuste Diário
+      - **3.3.3.1.1.2** Principais características do mercado de Balcão
+        - • Vantagens e Problemas
+    - **3.3.3.1.2** Modalidades:
+      - **3.3.3.1.2.1** Termo: ações e dólar Características do termo de ações na B3
+        - • Formação de preço do NDF
+        - • Futuro: DI, cupom cambial, Ibovespa, FRA
+        - • Características operacionais e funcionais
+        - • Margem de garantia e sua função
+        - • Cupom cambial
+        - • Ibovespa futuro
+        - • Forward Rate Agreement de Cupom Cambial (FRA de cupom, FRC)
+      - **3.3.3.1.2.3** Swap: juros, moeda, índice de preços
+        - • Os swaps mais comuns no mercado brasileiro
+        - ◦ Swap de taxa de juros
+        - ◦ Swap de índices de preços IGP-M, IGP-DI, IPCA
+      - **3.3.3.1.2.4** Opções: compra e venda de call e put, opções com barreira, análise de gráficos, fatores que determinam o preço da call
+        - • Participantes do Mercado de OpçõesCompra e venda de call e put
+        - • Combinando opções: principais estratégias Financiamento (Lançamento Coberto)
+        - • Box de quatro pontas
+        - • Opções com barreira
+        - • Modelo Binomial – Conceito (John Cox e Mark Rubinstein)
+        - • Modelo de Black & Scholes – Conceito
+      - **3.3.3.1.2.5** Estratégias e riscos potenciais
+        - • Hedge (proteção)
+        - • Especulação
+        - • Alavancagem e Alavancagem Sintética Arbitragem
+
+## 3.4 Técnicas de gestão de portifólio
+- **3.4.1** Teoria de carteiras
+  - • Eficiência de mercado fraca, semiforte e forte
+  - • Hipótese de Eficiência dos Mercados (HEM)
+  - • Teoria da Utilidade Esperada
+  - • Função utilidade
+- **3.4.2** Fronteiras eficientes de Markowitz (Teoria Moderna de Portfólio)
+  - **3.4.2.1** Fronteira Eficiente
+  - **3.4.2.2** Diversificação, risco e retorno
+    - • Risco diversificável
+    - • Risco sistemático
+    - • Diversificação
+    - • Ativo livre de risco – Conceito
+    - • Retorno esperado de uma carteira
+  - **3.4.2.3** Risco e Covariância. Diversificação do Risco e o Modelo de Markowitz.
+    - • A covariância é indicada por cov (X, Y). Coeficiente de correlação Carteira de variância mínima
+    - • Escolha da carteira ótima
+- **3.4.3** Modelo de Precificação de Ativos (CAPM)
+  - **3.4.3.1** Técnicas de gestão de portfólio
+    - • Beta e a reta característica
+    - • Coeficiente Beta – Risco Sistemático
+    - • Coeficiente Alfa ou Alfa de Jensen
+    - • A reta do mercado de capitais (Capital Market Line - CML)
+    - • Modelos de precificação
+    - ◦ Capital Asset Pricing Model (CAPM)
+    - ◦ Arbitrage Pricing Theory (APT)
+    - ◦ Modelo de três fatores de Fama-French
+
+## 3.5 Medição de desempenho e risco
+- **3.5.1** Questões relativas à avaliação de desempenho e risco
+- **3.5.2** Implicações das comissões e encargos
+- **3.5.3** Retorno ponderado pelo tempo e moeda (valor)
+- **3.5.4** Medição de desempenho ajustado ao risco
+  - • Índice de Sharpe
+  - • Índice de Treynor
+  - • Índice de Sortino
+  - **3.5.4.1** Gestão e mensuração de retorno
+    - • Índice de Sharpe
+    - • Índice de Treynor
+- **3.5.5** Expectativas do mercado de capitais (previsões para diferentes classes de ativos, prêmio de mercado)
+  - **3.5.5.1** Beta
+  - **3.5.5.2** Gestão e mensuração de risco
+    - • Value at Risk (VaR)
+    - • Stress Test
+    - • Stop loss
+    - • Risco de reinvestimento, risco de resgate antecipado (liquidez)
+    - • Duration e Duration Modificada
+    - • Imunização da carteira
+  - **3.5.5.3** Principais índices de referência
+    - **3.5.5.3.1** Índices de Renda Fixa
+      - • Prefixados (IRF-M)
+      - • Indexados ao IPCA (IMA-B)
+      - • Indexados ao IGP-M (IMA-C)
+      - • Pós-fixados, que respondem à taxa Selic (IMA-S)
+      - • Carteiras Teóricas
+    - **3.5.5.3.2** Índices de Renda Variável
+      - • Ibovespa
+      - • IBrX – Índice Brasil
+      - • IbrX-50 - Índice Brasil 50
+      - • Índice Small Cap – SMLL
+      - • Índice de Dividendos – IDIV
+
+## 3.6 Alocação de ativos e tipos de investimentos
+- **3.6.1** Alocação estratégica de ativos
+  - **3.6.1.1** Seleção de ativos de renda variável
+    - **3.6.1.1.1** Modelos de precificação de ações
+      - **3.6.1.1.1.1** Capital Asset Pricing Model – CAPM
+        - • Premissas do CAPM
+        - • Prêmio pelo risco e Aversão ao Risco
+        - • Prêmio pelo risco de ativos particulares
+      - **3.6.1.1.1.2** Dividend discount model – Modelo de Gordon
+      - **3.6.1.1.1.3** Free Cash Flow
+        - • Esqueleto de Fluxo de Caixa da Empresa (FCDE) (+) Receitas
+        - • Esqueleto do Fluxo de Caixa do Acionista (+) Receitas
+  - **3.6.1.2** Múltiplos
+    - • Lucro por ação (LPA)
+    - • Preço/Lucro (P/L)
+    - • Preço/ Valor Patrimonial (P/ VP)
+    - • Dividend Yield
+    - • EV (Enterprise Value)/ EBITDA (Earnings before interest, taxes, depreciation and amortization)
+- **3.6.2** Alocação tática de ativos
+  - **3.6.2.1** Análise técnica (ou grafista) e fundamentalista: premissas e diferenças
+    - • Premissas da análise fundamentalista
+    - • Premissas da análise técnica
+    - ◦ Principais características da análise técnica
+    - ◦ Suporte e resistência na análise técnica
+- **3.6.3** Investimento ativo
+  - **3.6.3.1** Seleção de ativos de renda fixa
+    - • Rating
+    - • Yield to Maturity (YTM), Current Yield (CY)
+  - **3.6.3.2** Alocação de ativos
+    - • Alocação Estratégica (fixa)
+    - • Alocação Tática (flexível)
+    - • Alocação dinâmicaAlocação Estática
+- **3.6.4** Investimento passivo
+- **3.6.5** Declaração de Política de Investimento
+- **3.6.6** Estratégias de rebalanceamento de portfólio
+  - **3.6.6.1** Rebalanceamento
+    - • Alterações das circunstâncias do investidor
+    - • Desvios da alocação estratégica
+  - **3.6.6.2** Rebalanceamento regular versus percentual da carteira
+    - • Balanceamento regular (período definido)
+    - • Desvio Percentual
+  - **3.6.6.3** Estratégias dinâmicas de rebalanceamento
+    - • Buy-and-Hold
+    - • Constant Mix
+    - • Constant Proportion Portfolio Insurance – CPPI

@@ -184,9 +184,31 @@ bia-bradesco/
 
 ### Ferramentas do agente (tool use)
 - `register_objective` — registra/atualiza um objetivo (dedup por categoria).
-- `register_education_note` — registra um conceito de educação financeira.
+- `register_education_note` — registra um conceito de educação financeira (com fonte `kb:` quando veio do cérebro).
 - `register_cross_sell` — registra (em silêncio) uma oportunidade comercial (dedup por produto).
 - `register_out_of_scope_note` — anota algo para a etapa de planejamento financeiro.
+- `consultar_conhecimento` — RAG: busca (BM25) nos trechos de educação financeira do cérebro, com id de fonte.
+- `consultar_produto` — lookup na matriz de 66 produtos × tributação (**uso interno**: lente de gerente; nunca citado ao cliente).
+
+---
+
+## 🧠 Cérebro (`conhecimento/`) — o RAG da Bia
+
+Todo o conhecimento da Bia vive versionado em **`conhecimento/`** (currículo CFP da
+Planejar em 8 módulos, matriz de 66 produtos do projeto Vision, e a própria persona) —
+nada de conteúdo hard-codado no código. Ver `conhecimento/AGENTS.md` (constituição) e
+`conhecimento/INDEX.md` (catálogo).
+
+- `npm run kb:build` — gera `server/kb/*.generated.ts` (chunks + prompt + matriz),
+  que são **commitados** e embarcam no bundle serverless. Roda dentro do `npm run build`.
+- `npm run kb:check` — checkup de integridade (front-matter, fontes, guardrail de fase,
+  gerados em dia). Roda no CI (`.github/workflows/kb.yml`).
+- `npm run kb:extract` — re-extrai a matriz do JSX-fonte quando a origem (Vision) evoluir.
+- Sem vector DB: busca BM25 em processo sobre um corpus pequeno e fechado; o próprio
+  modelo reformula a query (RAG agentic).
+- **Guardrail**: só chunks `fase_bia: cliente` são recuperáveis para a conversa; a matriz
+  tributária é `interna` (cross-sell silencioso e notas fora de escopo) e nunca é citada
+  ao cliente na Etapa 2.
 
 ---
 

@@ -3,6 +3,7 @@
 // =================================================================
 
 import { BIA_SYSTEM_PROMPT, TOOLS } from './bia.js';
+import { consultarProduto, searchConhecimento } from './kb.js';
 import {
   registerUserForSession,
   upsertClientProfile,
@@ -24,7 +25,8 @@ import type {
 
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 const ANTHROPIC_VERSION = '2023-06-01';
-const MAX_TOOL_ITERATIONS = 6;
+// Consultas ao cérebro (RAG) adicionam iterações antes dos registers.
+const MAX_TOOL_ITERATIONS = 8;
 // Folga para uma mensagem curta da Bia + várias tool calls no mesmo turno
 // (objetivo + cross-sells + educação). 1024 cortava as tools no meio.
 // No Sonnet 5 o thinking adaptativo vem ligado por padrão e consome deste
@@ -343,6 +345,29 @@ async function executeTool(
       );
       emit({ type: 'cross_sell', opportunity });
       return { ok: true };
+    }
+    if (name === 'consultar_conhecimento') {
+      const pergunta = String(input.pergunta ?? '').trim();
+      if (!pergunta) return { ok: false, error: 'pergunta vazia' };
+      const trechos = searchConhecimento(pergunta);
+      if (trechos.length === 0) {
+        return {
+          ok: true,
+          trechos: [],
+          message:
+            'Nada encontrado na base. NÃO invente: explique só o que o método CFP básico sustenta ou registre com register_out_of_scope_note.',
+        };
+      }
+      return { ok: true, trechos };
+    }
+    if (name === 'consultar_produto') {
+      const resultado = consultarProduto({
+        busca: input.busca ? String(input.busca) : undefined,
+        objetivo_3l: input.objetivo_3l ? String(input.objetivo_3l) : undefined,
+        regime: input.regime ? String(input.regime) : undefined,
+        segmento: input.segmento ? String(input.segmento) : undefined,
+      });
+      return { ok: true, ...resultado };
     }
     if (name === 'register_out_of_scope_note') {
       const nota = String(input.nota ?? '').trim();

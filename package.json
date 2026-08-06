@@ -7,11 +7,14 @@
   "scripts": {
     "dev": "concurrently -n web,api -c blue,green \"vite\" \"npm:dev:server\"",
     "dev:server": "tsx watch server/index.ts",
-    "build": "tsc -b && vite build",
+    "build": "npm run kb:build && tsc -b && vite build",
     "start": "tsx server/index.ts",
     "typecheck": "tsc -b --noEmit",
     "db:reset": "tsx server/scripts/reset-db.ts",
-    "analyze": "tsx server/scripts/analyze.ts"
+    "analyze": "tsx server/scripts/analyze.ts",
+    "kb:extract": "node scripts/kb/extract-matriz.mjs",
+    "kb:build": "node scripts/kb/build-kb.mjs",
+    "kb:check": "node scripts/kb/check-kb.mjs"
   },
   "dependencies": {
     "@libsql/client": "^0.17.4",

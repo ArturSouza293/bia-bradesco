@@ -1,0 +1,472 @@
+---
+id: ementa-m1
+modulo: curriculo
+topico: "Ementa do Módulo 1 — Planejamento Financeiro: Princípios, Processos e Habilidades"
+tags: [ementa, cfp, modulo-1]
+fase_bia: interna
+fonte: F1.3
+flags: []
+status: base
+---
+
+# Módulo 1 — Planejamento Financeiro: Princípios, Processos e Habilidades
+
+> **Peso no exame: 13%** · Fonte: Programa Detalhado do Exame da Certificação
+> CFP® (Planejar, edição mai/2026) [F1.3]. Esta ementa é o MAPA do módulo — a lista oficial
+> de tópicos. As notas de estudo por tópico (fase seguinte) entram como arquivos irmãos
+> neste diretório, um por tópico `N.N`, citando esta numeração.
+
+
+## 1.1 Planejamento Financeiro: a profissão e o processo
+- **1.1.1** Introdução ao planejamento financeiro pessoal
+- **1.1.2** Funções do planejador financeiro ao realizar o planejamento financeiro integrado
+- **1.1.3** Diferença entre planejadores financeiros e consultores de produtos financeiros
+- **1.1.4** Processo de Planejamento Financeiro
+  - **1.1.4.1** Etapas do processo de planejamento financeiro
+    - **1.1.4.1.1** ETAPA 1 - Definir e estabelecer o relacionamento com o cliente
+    - **1.1.4.1.2** ETAPA 2 - Coleta das informações do cliente
+      - **1.1.4.1.2.1** Como se dá a coleta de informações na prática?
+      - **1.1.4.1.2.2** Informações quantitativas
+      - **1.1.4.1.2.3** Informações qualitativas
+    - **1.1.4.1.3** ETAPA 3 - Análise dos objetivos, necessidades, valores e informações do cliente
+    - **1.1.4.1.4** ETAPA 4 - Desenvolvimento de recomendações e apresentação ao cliente
+      - **1.1.4.1.4.1** Política de investimentos (Investment Policy Statement - IPS)
+    - **1.1.4.1.5** ETAPA 5 - Implementação das recomendações de planejamento financeiro
+      - **1.1.4.1.5.1** Responsabilidade pela implementação
+    - **1.1.4.1.6** ETAPA 6 - Monitoramento da situação do cliente
+
+## 1.2 Prática e Ética em Planejamento Financeiro
+- **1.2.1** Práticas Essenciais de Planejamento Financeiro
+  - **1.2.1.1** Estabelecer e definir a relação com o cliente
+  - **1.2.1.2** Coletar as informações cliente
+  - **1.2.1.3** Analisar e assessorar o status financeiro do cliente
+  - **1.2.1.4** Desenvolver as recomendações de planejamento financeiro e apresentá-las ao cliente
+  - **1.2.1.5** Implementar as recomendações do planejamento financeiro ao cliente
+  - **1.2.1.6** Revisar a situação do cliente
+- **1.2.2** Estrutura e função das Normas de Práticas de Planejamento Financeiro
+- **1.2.3** O Código de Ética e da Responsabilidade Profissional na prática profissional dos planejadores financeiros
+  - **1.2.3.1** Aplicabilidade e cumprimento
+  - **1.2.3.2** Termos e expressões (seção I)
+  - **1.2.3.3** Princípios (seção II)
+    - **1.2.3.3.1** Cliente em Primeiro Lugar
+    - **1.2.3.3.2** Integridade
+    - **1.2.3.3.3** Objetividade
+    - **1.2.3.3.4** Imparcialidade
+    - **1.2.3.3.5** Profissionalismo
+    - **1.2.3.3.6** Competência
+    - **1.2.3.3.7** Confidencialidade
+    - **1.2.3.3.8** Diligência
+  - **1.2.3.4** Regra (seção III) – 25 regras
+  - **1.2.3.5** Procedimentos disciplinares
+  - **1.2.3.6** Melhores práticas de relacionamento entre o planejador e clientes
+  - **1.2.3.7** Normas disciplinares e procedimentos para apuração de descumprimento às regras do Código de Conduta Ética e Responsabilidade Profissional
+    - **1.2.3.7.1** Procedimentos
+    - **1.2.3.7.2** Direitos do denunciado
+    - **1.2.3.7.3** Penalidades por descumprimento das normas
+- **1.2.4** Implementação na prática das Normas de Práticas de Planejamento Financeiro, das Práticas Essenciais de Planejamento Financeiro e do Código de Ética do Planejador Financeiro
+- **1.2.5** Gerenciamento de um negócio de planejamento financeiro
+  - **1.2.5.1** Plano de Negócios
+    - **1.2.5.1.1** Planejamento Financeiro Empresarial
+    - **1.2.5.1.2** Estrutura de um Plano de Negócios para uma Empresa de Planejamento Financeiro
+    - **1.2.5.1.3** Sumário Executivo
+    - **1.2.5.1.4** Análise de Mercado
+    - **1.2.5.1.5** Plano de Marketing
+    - **1.2.5.1.6** Plano Operacional
+    - **1.2.5.1.7** Plano Financeiro
+    - **1.2.5.1.8** Estratégias Específicas para o Negócio de Planejamento Financeiro
+      - **1.2.5.1.8.1** Manutenção de Registros
+      - **1.2.5.1.8.2** Proteção de Dados e LGPD
+  - **1.2.5.2** Estratégias de Marketing
+    - **1.2.5.2.1** Principais Estratégias
+    - **1.2.5.2.2** Ética na Publicidade
+    - **1.2.5.2.3** Manutenção de Registros
+  - **1.2.5.3** Proteção das informações do cliente
+  - **1.2.5.4** Má conduta ética e regulatória
+
+## 1.3 Habilidades Profissionais do Planejador Financeiro
+- **1.3.1** Habilidades que fazem parte da matriz de Competências Profissionais do Planejador Financeiro:
+  - **1.3.1.1** Criar confiança
+    - **1.3.1.1.1** Pilares da Confiança com Clientes
+      - **1.3.1.1.1.1** Honestidade
+      - **1.3.1.1.1.2** Transparência
+      - **1.3.1.1.1.3** Consistência
+      - **1.3.1.1.1.4** Empatia
+      - **1.3.1.1.1.5** Competência
+      - **1.3.1.1.1.6** Proatividade
+      - **1.3.1.1.1.7** Vulnerabilidade
+  - **1.3.1.2** Engajamento com o cliente
+  - **1.3.1.3** Comunicação eficaz
+    - **1.3.1.3.1** Os elementos da Comunicação
+    - **1.3.1.3.2** Os princípios da comunicação
+    - **1.3.1.3.3** Formas de comunicação Verbal e Não Verbal
+    - **1.3.1.3.4** Comunicação Assertiva
+  - **1.3.1.4** Coaching
+    - **1.3.1.4.1** Fundamentos Científicos do Coaching
+    - **1.3.1.4.2** Habilidades Essenciais do Coach
+    - **1.3.1.4.3** Estabelecimento de Metas
+    - **1.3.1.4.4** Feedback Construtivo
+    - **1.3.1.4.5** Desenvolvimento da Autonomia
+    - **1.3.1.4.6** Empatia e Presença
+    - **1.3.1.4.7** Benefícios do Coaching com Base em Evidências
+    - **1.3.1.4.8** Ética e Papel do Coach
+  - **1.3.1.5** Defesa do Cliente
+    - **1.3.1.5.1** Compreensão Profunda das Necessidades
+    - **1.3.1.5.2** Formulação de Soluções Relevantes
+    - **1.3.1.5.3** Ação com Autonomia e Iniciativa
+    - **1.3.1.5.4** Monitoramento Contínuo
+  - **1.3.1.6** Pensamento crítico
+    - **1.3.1.6.1** Importância no Planejamento Financeiro
+    - **1.3.1.6.2** Componentes do Pensamento Crítico
+    - **1.3.1.6.3** Etapas para aplicar o Pensamento Crítico
+    - **1.3.1.6.4** Ferramentas e Estratégias
+    - **1.3.1.6.5** Barreiras e Como Superá-las
+  - **1.3.1.7** Solução de problemas
+    - **1.3.1.7.1** A Importância da Solução de Problemas no Planejamento Financeiro
+    - **1.3.1.7.2** Etapas do Processo de Solução de Problemas
+    - **1.3.1.7.3** Aplicando Matemática Financeira na Solução de Problemas
+    - **1.3.1.7.4** Conduzindo Pesquisas e Análises
+  - **1.3.1.8** Tomada de decisões
+    - **1.3.1.8.1** A Relevância da Tomada de Decisão no Planejamento Financeiro
+    - **1.3.1.8.2** Fundamentos Cognitivos e Comportamentais
+      - **1.3.1.8.2.1** Raciocínio Lógico
+      - **1.3.1.8.2.2** Heurísticas e Vieses Cognitivos
+      - **1.3.1.8.2.3** Processo de Tomada de Decisão
+      - **1.3.1.8.2.4** Tomando Decisões com Informações Incompletas
+      - **1.3.1.8.2.5** Avaliação de Alternativas e Julgamento Crítico
+      - **1.3.1.8.2.6** Ferramentas para Tomada de Decisão
+  - **1.3.1.9** Experiência em tecnologia
+    - **1.3.1.9.1** Ferramentas e Softwares de Uso Comum
+    - **1.3.1.9.2** Engajamento do Cliente Através da Tecnologia
+    - **1.3.1.9.3** Boas Práticas no Uso de Ferramentas Digitais
+    - **1.3.1.9.4** Tendências Tecnológicas no Setor Financeiro
+  - **1.3.1.10** Inteligência emocional
+    - **1.3.1.10.1** A Importância da IE no Planejamento Financeiro
+    - **1.3.1.10.2** Componentes da Inteligência Emocional
+      - **1.3.1.10.2.1** Autoconhecimento e Autogestão Emocional
+      - **1.3.1.10.2.2** Empatia e Consciência Social
+    - **1.3.1.10.3** Gerenciamento de Relacionamentos
+    - **1.3.1.10.4** IE na Prática: Situações Comuns
+    - **1.3.1.10.5** Desenvolvimento Contínuo da IE
+
+## 1.4 Ambientes regulatório, político e econômico que impactam o planejamento financeiro
+- **1.4.1** Introdução ao ambiente regulatório:
+  - **1.4.1.1** Reguladores
+    - **1.4.1.1.1** O Sistema Financeiro Nacional - SFN
+      - **1.4.1.1.1.1** Órgãos Normativos
+        - **1.4.1.1.1.1.1** Conselho Monetário Nacional - CMN
+        - **1.4.1.1.1.1.2** Conselho Nacional de Seguros Privados - CNSP
+        - **1.4.1.1.1.1.3** Conselho Nacional de Previdência Complementar - CNPC
+      - **1.4.1.1.1.2** Entidades Supervisoras
+        - **1.4.1.1.1.2.1** Banco Central do Brasil – BACEN
+        - **1.4.1.1.1.2.2** Comissão de Valores Mobiliários – CVM
+        - **1.4.1.1.1.2.3** Superintendência de Seguros Privados – SUSEP
+        - **1.4.1.1.1.2.4** Superintendência Nacional de Previdência Complementar – PREVIC
+        - **1.4.1.1.1.2.5** Agência Nacional de Saúde Suplementar – ANS
+      - **1.4.1.1.1.3** Operadores (Intermediários Financeiros)
+        - **1.4.1.1.1.3.1** Instituições que atuam na intermediação dos recursos.
+          - **1.4.1.1.1.3.1.1** Banco Múltiplo
+          - **1.4.1.1.1.3.1.2** Banco Comercial
+          - **1.4.1.1.1.3.1.3** Banco de Investimento
+          - **1.4.1.1.1.3.1.4** Sociedades Corretoras de Títulos e Valores Mobiliários (CTVM) e Sociedades Distribuidoras de Títulos e Valores Mobiliários (DTVM)
+          - **1.4.1.1.1.3.1.5** Sociedades Corretoras de Câmbio
+        - **1.4.1.1.1.3.2** Entidades Auxiliares
+          - **1.4.1.1.1.3.2.1** B3 – Brasil, Bolsa, Balcão
+          - **1.4.1.1.1.3.2.2** SELIC – Sistema Especial de Liquidação e Custódia
+  - **1.4.1.2** Legislação e regulação
+      - **1.4.1.2.1.1** CVM – Comissão de Valores Mobiliários
+      - **1.4.1.2.1.2** BACEN – Banco Central do Brasil
+      - **1.4.1.2.1.3** ANBIMA – Associação Brasileira das Entidades dos Mercados Financeiro e de Capitais
+      - **1.4.1.2.1.4** PLANEJAR – Associação Brasileira de Planejadores Financeiros
+      - **1.4.1.2.1.5** LGPD – Lei Geral de Proteção de Dados (Lei 13.709/2018)
+    - **1.4.1.2.2** Boas Práticas no Planejamento Financeiro Pessoal
+      - **1.4.1.2.2.1** Dever Fiduciário
+      - **1.4.1.2.2.2** Transparência
+      - **1.4.1.2.2.3** Educação Financeira
+      - **1.4.1.2.2.4** Documentação e Compliance
+      - **1.4.1.2.2.5** Atualização Profissional
+- **1.4.2** Dever fiduciário: Conduta ética e profissional
+- **1.4.3** Exigências legais de atuar ‘no melhor interesse do cliente’
+  - **1.4.3.1** Leis e Regulamentações Aplicáveis
+- **1.4.4** Suitability
+  - **1.4.4.1** Benefícios Esperados
+  - **1.4.4.2** Objetivos do investidor: preservação do capital, crescimento do capital
+  - **1.4.4.3** Horizonte de tempo
+  - **1.4.4.4** Tolerância ao risco
+  - **1.4.4.5** Restrições do investidor
+- **1.4.5** Introdução ao ambiente econômico:
+  - **1.4.5.1** Microeconomia
+    - **1.4.5.1.1** Princípios Básicos
+      - **1.4.5.1.1.1** Oferta e Demanda
+      - **1.4.5.1.1.2** Elasticidade
+      - **1.4.5.1.1.3** Maximização de Utilidade
+      - **1.4.5.1.1.4** Custo de Oportunidade
+    - **1.4.5.1.2** Aplicações Financeiras
+      - **1.4.5.1.2.1** Decisões de Consumo
+      - **1.4.5.1.2.2** Poupança e Investimento
+      - **1.4.5.1.2.3** Eficiência de Mercado
+    - **1.4.5.1.3** Análise Microeconômica
+      - **1.4.5.1.3.1** Elasticidade e Finanças
+      - **1.4.5.1.3.2** Comparativo de Cenários
+      - **1.4.5.1.3.3** Planejamento Financeiro do Cliente
+      - **1.4.5.1.3.4** Escassez
+    - **1.4.5.1.4** O fluxo circular
+  - **1.4.5.2** Macroeconomia – Princípios Básicos
+    - **1.4.5.2.1** Princípios
+    - **1.4.5.2.2** Política Monetária, Fiscal e Eventos Globais
+    - **1.4.5.2.3** Impacto no Planejamento Financeiro Pessoal
+      - **1.4.5.2.1.2** Aplicação ao Portfólio de Investimentos
+        - • Como fatores macroeconômicos influenciam os investimentos
+    - **1.4.5.2.4** Análise de Indicadores Macroeconômicos e Ciclos Econômicos
+      - **1.4.5.2.4.1** Comparação de Cenários Econômicos
+      - **1.4.5.2.4.2** Ajustes de Estratégia Financeira em Mudanças Macroeconômicas
+- **1.4.6** Ambiente econômico e planejamento financeiro:
+  - **1.4.6.1** Políticas Monetária
+  - **1.4.6.2** Políticas Fiscal
+    - **1.4.6.2.1** Aplicações Práticas no Planejamento Financeiro
+  - **1.4.6.3** Ciclo de negócios (ou Ciclos econômicos)
+  - **1.4.6.4** Principais Indicadores econômicos
+    - **1.4.6.4.1** PIB – Produto Interno Bruto
+    - **1.4.6.4.2** Inflação e Deflação – Conceito
+      - **1.4.6.4.2.1** Índices de Inflação
+        - **1.4.6.4.2.1.1** IGP-M – Índice Geral de Preços de Mercado
+        - **1.4.6.4.2.1.2** IPCA – Índice Nacional de Preços ao Consumidor Amplo
+    - **1.4.6.4.3** Taxa de juros - SELIC Meta
+    - **1.4.6.4.4** Taxa de juros - SELIC Over
+    - **1.4.6.4.5** Taxa DI - Depósito Interfinanceiro
+    - **1.4.6.4.6** TLP - Taxa de Longo Prazo
+    - **1.4.6.4.7** TR - Taxa Referencial
+    - **1.4.6.4.8** Taxa de câmbio
+      - **1.4.6.4.8.1** Câmbio comercial e câmbio turismo
+      - **1.4.6.4.8.2** Spot
+      - **1.4.6.4.8.3** Ptax
+  - **1.4.6.5** Análise de ciclos econômicos e seus impactos no emprego, renda, preços dos ativos, oferta de crédito e taxas de juros
+    - **1.4.6.5.1** Compra e Venda de Títulos Públicos
+    - **1.4.6.5.2** Redesconto
+    - **1.4.6.5.3** Depósito Compulsório
+    - **1.4.6.5.4** Política Monetária
+    - **1.4.6.5.5** Sistema de metas de inflação
+    - **1.4.6.5.6** COPOM - Comitê de Política Monetária
+      - **1.4.6.5.6.1** Impacto nos investimentos e nas linhas de crédito
+    - **1.4.6.5.7** Política fiscal
+      - **1.4.6.5.7.1** Necessidade de financiamento do setor público. Implicações sobre a Dívida Pública.
+    - **1.4.6.5.8** Política cambial
+      - **1.4.6.5.8.1** Regimes mais usuais de taxa de câmbio
+        - **1.4.6.5.8.1.1** Câmbio fixo/ Câmbio flutuante / Flutuação suja (Dirty float) / Bandas cambiais
+      - **1.4.6.5.8.2** Relações entre taxa de câmbio, regime de câmbio e reservas internacionais
+        - **1.4.6.5.8.2.1** Cupom cambial
+- **1.4.7** Introdução aos ambientes social e político:
+  - • O Papel do Governo Local na Economia
+  - **1.4.7.1** Sentimento em relação ao governo local
+    - **1.4.7.1.1** Confiança x Desconfiança e Indicadores de Sentimento
+    - **1.4.7.1.2** Impactos no Mercado e no Comportamento Econômico
+    - **1.4.7.1.3** Estratégias Baseadas na Percepção Pública
+    - **1.4.7.1.4** Planejamento Financeiro e Governança Local
+  - **1.4.7.2** Políticas sociais
+    - **1.4.7.2.1** Principais Políticas Sociais que influenciam o Planejamento Financeiro
+      - **1.4.7.2.1.1** Saúde Pública/ Educação/ Habitação/ Assistência Social
+      - **1.4.7.2.1.2** Aplicando o Conhecimento ao Planejamento Financeiro/ Auxiliando o Cliente com Políticas Públicas
+      - **1.4.7.2.1.3** Impacto das Políticas Sociais na Economia e no Mercado
+  - **1.4.7.3** Política fiscal e o Planejamento Financeiro
+    - **1.4.7.3.1** Instrumentos principais e Objetivos da política fiscal
+    - **1.4.7.3.2** Como a Política Fiscal Influencia a Economia
+      - **1.4.7.3.2.1** Política Fiscal Expansiva e Política Fiscal Contracionista
+    - **1.4.7.3.3** Aplicando o Conhecimento Fiscal ao Planejamento Financeiro
+      - **1.4.7.3.3.1** Como adaptar as recomendações financeiras diante de mudanças fiscais
+      - **1.4.7.3.3.2** Antecipando o Impacto de Novas Medidas Fiscais
+      - **1.4.7.3.3.3** Avaliação de Oportunidades e Riscos
+      - **1.4.7.3.3.4** Estratégias para Mitigação de Riscos Fiscais
+  - **1.4.7.4** Política de aposentadoria
+    - **1.4.7.4.1** Previdência Pública no Brasil (RGPS) - Regime Geral de Previdência Social (INSS)
+    - **1.4.7.4.2** Previdência Complementar
+      - **1.4.7.4.2.1** Previdência Privada (Aberta)
+      - **1.4.7.4.2.2** Previdência Fechada (Fundos de Pensão)
+- **1.4.8** Utilização indevida de informações privilegiadas e práticas fraudulentas Legislação e Normas Aplicáveis / Consequências Legais e Éticas
+  - **1.4.8.1** – Insider trading, insider information
+  - **1.4.8.2** Front Running
+  - **1.4.8.3** Market Spoofing
+  - **1.4.8.4** Layering
+
+## 1.5 Lei e conformidade (Compliance)
+- **1.5.1** Definir conformidade e suas implicações no Planejamento Financeiro
+  - **1.5.1.1** Princípios de Conformidade no Planejamento Financeiro
+- **1.5.2** Divulgação de documentos em linha com a jurisdição
+  - **1.5.2.1** Requisitos Legais e Regulatórios
+    - **1.5.2.1.1** CVM – Comissão de Valores Mobiliários
+    - **1.5.2.1.2** LGPD – Lei Geral de Proteção de Dados (Lei nº 13.709/2018)
+    - **1.5.2.1.3** COAF – Prevenção à Lavagem de Dinheiro
+- **1.5.3** Potenciais conflitos de interesse no Planejamento Financeiro
+  - **1.5.3.1** Princípios Éticos para Lidar com Conflitos
+- **1.5.4** Direito privado aplicável no contexto do planejamento financeiro
+  - **1.5.4.1** Princípios Éticos para Lidar com Conflitos
+  - **1.5.4.2** Direito Sucessório
+  - **1.5.4.3** Direito de Família
+  - **1.5.4.4** Direito de Propriedade
+- **1.5.5** Leis relativas a contratos e negócios aplicáveis ao contexto do planejamento financeiro
+  - **1.5.5.1** Princípios das leis relativas a contratos e negócios jurídicos
+  - **1.5.5.2** Exigências para a validade dos contratos
+  - **1.5.5.3** Proteção dos interesses do cliente em acordos financeiros
+
+## 1.6 Valor do dinheiro no tempo
+- **1.6.1** Valor futuro de um montante
+  - **1.6.1.1** Capitalização de Juros
+  - **1.6.1.2** Análise do Impacto das Taxas de Juros e Prazos
+- **1.6.2** Valor presente de um montante
+  - **1.6.2.1** Comparação de Cenários e Tomada de Decisões
+- **1.6.3** Número de períodos de capitalização e taxa de juros por período
+  - **1.6.3.1** Conceito de Períodos de Capitalização
+  - **1.6.3.2** Relação entre Taxa Nominal e Taxa Efetiva
+  - **1.6.3.3** Regime de capitalização simples. Proporcionalidade de taxas
+  - **1.6.3.4** Regime de capitalização composto. Equivalência de taxas
+  - **1.6.3.5** Taxa de juros nominal x juro real
+  - **1.6.3.6** Estrutura a termo da taxa de juros em moeda local e moeda estrangeira
+  - **1.6.3.7** Desconto bancário e desconto comercial
+    - **1.6.3.7.1** Desconto racional (ou por dentro) – Juros simples
+    - **1.6.3.7.2** Desconto bancário ou comercial (ou “por fora”)
+  - **1.6.3.8** Perpetuidade
+  - **1.6.3.9** Séries de pagamento: SAC, Price e SAA
+  - **1.6.3.10** Série uniforme postecipada (END)
+  - **1.6.3.11** Série uniforme antecipada (BEGIN)
+  - **1.6.3.12** Série de pagamentos com carência
+  - **1.6.3.13** Sistemas de amortização: SAC, Price e SAA
+- **1.6.4** Valor presente de uma anuidade (Anuidade Ordinária e Anuidade Vencida)
+- **1.6.5** Valor futuro de uma anuidade/anuidade devida
+- **1.6.6** Pagamentos ou recebimentos periódicos
+- **1.6.7** Fluxos de caixa irregulares – Avaliação, Modelagem e Estratégia Financeira
+  - **1.6.7.1** Conceito e Importância dos Fluxos de Caixa Irregulares
+  - **1.6.7.2** Cálculo do Valor Presente e Valor Futuro de Fluxos Irregulares
+  - **1.6.7.3** Modelagem de Cenários com Ferramentas de Planejamento
+- **1.6.8** Taxa interna de retorno (TIR) – Conceito, Aplicações e Limitações
+  - **1.6.8.1** Conceito de Taxa Interna de Retorno (TIR)
+  - **1.6.8.2** TIR Modificada (TIRM)
+  - **1.6.8.3** Taxa mínima de atratividade e custo de oportunidade
+  - **1.6.8.4** Taxa de desconto em ativos financeiros
+- **1.6.9** Payback e PaybackModificado (descontado)
+- **1.6.10** Custo Médio Ponderado de Capital (CMPC)
+- **1.6.11** Medida de fluxo de caixa incluindo lucro antes de juros, impostos, depreciação e amortização (LAJIDA ou EBITDA)
+- **1.6.12** Valor presente líquido (VPL)
+  - **1.6.12.1** Variáveis Envolvidas no Cálculo do VPL
+
+## 1.7 Características do cliente
+- **1.7.1** Objetivos do cliente
+  - **1.7.1.1** Importância de identificar os objetivos financeiros do cliente
+  - **1.7.1.2** Tipos de objetivos financeiros
+  - **1.7.1.3** Análise dos objetivos financeiros em relação à situação financeira atual do cliente
+  - **1.7.1.4** Avaliação da viabilidade dos objetivos financeiros e ajustes no plano
+- **1.7.2** Valores e status da família
+  - **1.7.2.1** Diferenças entre os cônjuges
+  - **1.7.2.2** Influência dos valores e do status familiar nas decisões financeiras
+  - **1.7.2.3** Diferenças entre as dinâmicas familiares e seus impactos
+  - **1.7.2.4** Impactos na alocação de recursos e sucessão
+  - **1.7.2.5** Ajuste das recomendações financeiras com base na estrutura familiar
+  - **1.7.2.6** Análise das interações familiares e seus efeitos nas finanças
+  - **1.7.2.7** Desenvolvimento de estratégias financeiras alinhadas aos valores familiares
+- **1.7.3** Considerações sobre famílias não tradicionais no Planejamento Financeiro
+  - **1.7.3.1** Particularidades das famílias não tradicionais e impactos no planejamento financeiro
+  - **1.7.3.2** Necessidades financeiras específicas de famílias não tradicionais
+  - **1.7.3.3** Implicações legais e financeiras das decisões de planejamento para famílias não tradicionais
+  - **1.7.3.4** Avaliação e ajuste das estratégias financeiras para famílias não tradicionais
+- **1.7.4** Grupos geracionais no Planejamento Financeiro
+  - **1.7.4.1** Influência das diferenças geracionais nas atitudes financeiras e comportamento de consumo
+    - **1.7.4.1.1** Características financeiras e comportamentais por geração
+  - **1.7.4.2** Impacto das diferenças geracionais nas decisões financeiras e planejamen to patrimonial
+  - **1.7.4.3** Avaliação e ajuste das estratégias financeiras conforme características geracionais
+  - **1.7.4.4** Desenvolvimento de estratégias financeiras personalizadas por geração
+- **1.7.5** Comunicação no Planejamento Financeiro
+  - **1.7.5.1** Métodos de comunicação e seu impacto na relação com o cliente
+  - **1.7.5.2** Preferências individuais de comunicação
+  - **1.7.5.3** Ações e reações psicológicas do cliente
+  - **1.7.5.4** Aplicação de técnicas de comunicação adaptadas às necessidades do cliente
+  - **1.7.5.5** Utilização de ferramentas de comunicação para gestão das reações psicológicas
+  - **1.7.5.6** Análise das preferências do cliente e identificação de barreiras
+
+## 1.8 Perfil de risco do cliente
+- **1.8.1** Habilidade em Assumir Riscos
+  - **1.8.1.1** Fatores que influenciam a habilidade do cliente em assumir riscos
+  - **1.8.1.2** Ferramentas de avaliação da habilidade de risco
+  - **1.8.1.3** Impacto da habilidade de risco nas decisões financeiras
+  - **1.8.1.4** Aplicação prática no planejamento financeiro
+- **1.8.2** Desejos e Preferências no Planejamento Financeiro
+  - **1.8.2.1** Fatores que moldam os desejos e preferências do cliente
+  - **1.8.2.2** Utilização das informações para ajuste do plano financeiro
+  - **1.8.2.3** Análise das preferências quanto ao risco e retorno esperado
+  - **1.8.2.4** Avaliação e ajuste das estratégias financeiras
+- **1.8.3** Tolerância ao Risco no Planejamento Financeiro
+  - **1.8.3.1** Fatores que afetam a tolerância ao risco
+  - **1.8.3.2** Aplicação de questionários e ferramentas de avaliação
+  - **1.8.3.3** Ajuste das estratégias financeiras conforme a tolerância ao risco
+  - **1.8.3.4** Análise do perfil de tolerância em relação ao portfólio atual
+- **1.8.4** Necessidade de Risco no Planejamento Financeiro
+  - **1.8.4.1** Fatores que determinam a necessidade de risco
+  - **1.8.4.2** Ferramentas para avaliação da necessidade de risco
+  - **1.8.4.3** Ajuste das estratégias de investimento conforme necessidade de risco
+  - **1.8.4.4** Análise da necessidade de risco em relação ao portfólio atual
+  - **1.8.4.5** Avaliação contínua e ajustes
+- **1.8.5** Capacidade de Risco no Planejamento Financeiro
+  - **1.8.5.1** Fatores que influenciam a capacidade de risco
+  - **1.8.5.2** Técnicas de avaliação da capacidade de risco
+  - **1.8.5.3** Ajuste das recomendações de investimento
+  - **1.8.5.4** Análise da capacidade de risco em relação ao portfólio
+  - **1.8.5.5** Avaliação e ajustes das estratégias financeiras
+- **1.8.6** Experiências e traços da personalidade que impactam o perfil de risco
+  - **1.8.6.1** Traços de personalidade que influenciam o comportamento financeiro
+  - **1.8.6.2** Técnicas para descobrir e analisar o perfil de risco
+  - **1.8.6.3** Influência das experiências passadas e traços de personalidade nas decisões f inanceiras
+  - **1.8.6.4** Avaliação e ajuste das estratégias financeiras
+
+## 1.9 Engajamento com o cliente e comunicação
+- **1.9.1** Ouvir - Escuta Ativa
+  - **1.9.1.1** Importância da escuta ativa no engajamento com o cliente
+  - **1.9.1.2** Técnicas de escuta ativa
+  - **1.9.1.3** Aplicação da escuta ativa durante reuniões
+  - **1.9.1.4** Análise das informações obtidas
+- **1.9.2** Processo de descoberta
+  - **1.9.2.1** Etapas do processo de descoberta
+  - **1.9.2.2** Aplicação do processo de descoberta
+  - **1.9.2.3** Análise das informações coletadas
+  - **1.9.2.4** Avaliação da profundidade e precisão
+- **1.9.3** Investigação apreciativa
+  - **1.9.3.1** Conceito de investigação apreciativa
+  - **1.9.3.2** Etapas da investigação apreciativa
+  - **1.9.3.3** Aplicação da investigação apreciativa nas interações com o cliente
+  - **1.9.3.4** Análise dos resultados da investigação apreciativa
+- **1.9.4** Perguntas abertas e fechadas
+  - **1.9.4.1** Diferença entre perguntas abertas e fechadas
+  - **1.9.4.2** Aplicação prática de perguntas abertas
+  - **1.9.4.3** Análise das respostas
+
+## 1.10 Processo Diligente Na Seleção De Produtos E Serviços E Fornecedores e Comunicação
+- **1.10.1** Processo diligente para avaliar produtos e serviços financeiros
+  - **1.10.1.1** Critérios para avaliar produtos e serviços financeiros
+  - **1.10.1.2** Técnicas de análise de produtos e serviços financeiros
+  - **1.10.1.3** Análise e seleção considerando necessidades específicas
+  - **1.10.1.4** Avaliação final e ajustes
+- **1.10.2** Escolha de um produto ou serviço financeiro
+  - **1.10.2.1** Critérios de Escolha de Produtos e Serviços Financeiros
+    - **1.10.2.1.1** Adequação ao Perfil do Cliente
+    - **1.10.2.1.2** Custos
+    - **1.10.2.1.3** Riscos
+    - **1.10.2.1.4** Prazos
+  - **1.10.2.2** Regulamentações e Suitability
+  - **1.10.2.3** Aplicação dos Critérios de Adequação
+  - **1.10.2.4** Análise Comparativa dos Produtos Financeiros
+- **1.10.3** Avaliação e seleção do fornecedor de produtos ou serviços financeiros
+  - **1.10.3.1** Critérios de Avaliação de Fornecedores Financeiros
+    - **1.10.3.1.1** Reputação no Mercado
+    - **1.10.3.1.2** Histórico e Experiência
+    - **1.10.3.1.3** Solidez Financeira
+    - **1.10.3.1.4** Conformidade Regulatória
+  - **1.10.3.2** Métodos de Análise de Fornecedores
+    - **1.10.3.2.1** Análise Quantitativa
+    - **1.10.3.2.2** Análise Qualitativa
+    - **1.10.3.2.3** Análise Comparativa (Benchmarking)
+    - **1.10.3.2.4** Avaliação de Desempenho e Ajuste
+- **1.10.4** Plano financeiro amplo e integrado
+  - **1.10.4.1** Importância de um Plano Financeiro Integrado
+  - **1.10.4.2** Técnicas de Planejamento Integrado
+    - **1.10.4.2.1** Levantamento e Diagnóstico Financeiro
+    - **1.10.4.2.2** Análise das Necessidades e Objetivos
+    - **1.10.4.2.3** Elaboração do Plano Unificado
+  - **1.10.4.3** Alinhamento com os Objetivos do Cliente
+    - **1.10.4.3.1** Personalização
+    - **1.10.4.3.2** Revisão e Ajustes
+    - **1.10.4.3.3** Desenvolvimento do Plano Integrado
