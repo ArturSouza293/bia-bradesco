@@ -137,6 +137,30 @@ insightsRouter.get('/insights', asyncRoute(async (_req: Request, res: Response) 
        LIMIT 20`,
   );
 
+  // Uso do cérebro (RAG)
+  const kbConhecimento = await count(
+    `SELECT COUNT(*) AS n FROM kb_queries WHERE ferramenta = 'consultar_conhecimento'`,
+  );
+  const kbProduto = await count(
+    `SELECT COUNT(*) AS n FROM kb_queries WHERE ferramenta = 'consultar_produto'`,
+  );
+  const kbVazias = await count(
+    `SELECT COUNT(*) AS n FROM kb_queries WHERE ferramenta = 'consultar_conhecimento' AND n_resultados = 0`,
+  );
+  const kbTopChunks = await all<{ top_id: string; n: number }>(
+    `SELECT top_id, COUNT(*) AS n FROM kb_queries
+       WHERE top_id IS NOT NULL AND ferramenta = 'consultar_conhecimento'
+       GROUP BY top_id ORDER BY n DESC LIMIT 8`,
+  );
+  const kbBuscasVazias = await all<{ consulta: string; created_at: string }>(
+    `SELECT consulta, created_at FROM kb_queries
+       WHERE ferramenta = 'consultar_conhecimento' AND n_resultados = 0
+       ORDER BY created_at DESC LIMIT 10`,
+  );
+  const eduComFonte = await count(
+    `SELECT COUNT(*) AS n FROM education_topics WHERE resumo LIKE '%(fonte: kb:%'`,
+  );
+
   // Sugestões automáticas
   const suggestions: string[] = [];
   const completionRate = completed / totalSessions;
@@ -159,6 +183,16 @@ insightsRouter.get('/insights', asyncRoute(async (_req: Request, res: Response) 
   if (totalEdu / totalSessions < 2) {
     suggestions.push(
       'Pouca educação financeira por sessão (alvo: 2-4). Reforce a instrução de explicar conceitos pelo caminho.',
+    );
+  }
+  if (kbConhecimento > 0 && kbVazias / kbConhecimento > 0.3) {
+    suggestions.push(
+      `${Math.round((kbVazias / kbConhecimento) * 100)}% das buscas de educação voltam vazias — o corpus tem lacunas; veja kb.buscas_vazias e escreva as notas que faltam.`,
+    );
+  }
+  if (totalEdu > 0 && kbConhecimento === 0) {
+    suggestions.push(
+      'A Bia ensinou conceitos sem consultar o cérebro nenhuma vez — reforce o guardrail de consultar antes de ensinar.',
     );
   }
   if (suggestions.length === 0) {
@@ -206,6 +240,14 @@ insightsRouter.get('/insights', asyncRoute(async (_req: Request, res: Response) 
       recent: recentLearnings,
     },
     cross_sell_by_produto: byProduto,
+    kb: {
+      consultas_educacao: kbConhecimento,
+      consultas_matriz: kbProduto,
+      buscas_sem_resultado: kbVazias,
+      trechos_mais_usados: kbTopChunks,
+      buscas_vazias: kbBuscasVazias,
+      educacao_com_fonte_kb: eduComFonte,
+    },
     suggestions,
   });
 }));

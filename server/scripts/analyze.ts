@@ -161,6 +161,51 @@ if (byProduto.length === 0) {
 }
 
 // ---------------------------------------------------------------
+h('Uso do cérebro (RAG)');
+const totalKb = await count('SELECT COUNT(*) AS n FROM kb_queries');
+if (totalKb === 0) {
+  line('  Nenhuma consulta ao conhecimento ainda.');
+} else {
+  const kbConhecimento = await count(
+    "SELECT COUNT(*) AS n FROM kb_queries WHERE ferramenta = 'consultar_conhecimento'",
+  );
+  const kbProduto = await count(
+    "SELECT COUNT(*) AS n FROM kb_queries WHERE ferramenta = 'consultar_produto'",
+  );
+  const kbVazias = await count(
+    "SELECT COUNT(*) AS n FROM kb_queries WHERE ferramenta = 'consultar_conhecimento' AND n_resultados = 0",
+  );
+  line(`  Consultas de educação:   ${kbConhecimento}  (média ${Math.round((kbConhecimento / totalSessions) * 10) / 10}/sessão)`);
+  line(`  Consultas à matriz:      ${kbProduto}`);
+  line(
+    `  Buscas sem resultado:    ${kbVazias}${kbConhecimento ? ` (${Math.round((kbVazias / kbConhecimento) * 100)}% — lacunas do corpus)` : ''}`,
+  );
+  const topChunks = await all<{ top_id: string; n: number }>(
+    "SELECT top_id, COUNT(*) AS n FROM kb_queries WHERE top_id IS NOT NULL AND ferramenta = 'consultar_conhecimento' GROUP BY top_id ORDER BY n DESC LIMIT 8",
+  );
+  if (topChunks.length) {
+    line('  Trechos mais usados:');
+    for (const r of topChunks) line(`    ${r.top_id.padEnd(52)} ${r.n}`);
+  }
+  const vazias = await all<{ consulta: string }>(
+    "SELECT consulta FROM kb_queries WHERE ferramenta = 'consultar_conhecimento' AND n_resultados = 0 ORDER BY created_at DESC LIMIT 5",
+  );
+  if (vazias.length) {
+    line('  Últimas buscas vazias (candidatas a nota nova no cérebro):');
+    for (const r of vazias) line(`    "${r.consulta.slice(0, 70)}"`);
+  }
+  const eduComFonte = await count(
+    "SELECT COUNT(*) AS n FROM education_topics WHERE resumo LIKE '%(fonte: kb:%'",
+  );
+  const totalEduNotes = await count('SELECT COUNT(*) AS n FROM education_topics');
+  if (totalEduNotes > 0) {
+    line(
+      `  Educação com fonte kb:   ${eduComFonte}/${totalEduNotes} (${Math.round((eduComFonte / totalEduNotes) * 100)}%)`,
+    );
+  }
+}
+
+// ---------------------------------------------------------------
 h('Sugestões automáticas');
 const suggestions: string[] = [];
 const completionRate =
@@ -186,6 +231,24 @@ if (totalEdu / totalSessions < 2) {
   suggestions.push(
     'Pouca educação financeira por sessão (alvo: 2-4). Reforce a instrução de explicar conceitos pelo caminho.',
   );
+}
+if (totalKb > 0) {
+  const kbC = await count(
+    "SELECT COUNT(*) AS n FROM kb_queries WHERE ferramenta = 'consultar_conhecimento'",
+  );
+  const kbV = await count(
+    "SELECT COUNT(*) AS n FROM kb_queries WHERE ferramenta = 'consultar_conhecimento' AND n_resultados = 0",
+  );
+  if (kbC > 0 && kbV / kbC > 0.3) {
+    suggestions.push(
+      `${Math.round((kbV / kbC) * 100)}% das buscas de educação voltam vazias — o corpus tem lacunas; veja as "últimas buscas vazias" acima e escreva as notas que faltam.`,
+    );
+  }
+  if (totalEdu > 0 && kbC === 0) {
+    suggestions.push(
+      'A Bia ensinou conceitos sem consultar o cérebro nenhuma vez — reforce o guardrail de consultar antes de ensinar.',
+    );
+  }
 }
 if (suggestions.length === 0) {
   suggestions.push('Métricas dentro do esperado. 👍');

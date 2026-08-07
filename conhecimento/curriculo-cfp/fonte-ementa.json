@@ -1,0 +1,7563 @@
+[
+ {
+  "modulo": 1,
+  "titulo": "Planejamento Financeiro: Princípios, Processos e Habilidades",
+  "peso_pct": 13,
+  "itens": [
+   {
+    "num": "1.1",
+    "nivel": 1,
+    "titulo": "Planejamento Financeiro: a profissão e o processo"
+   },
+   {
+    "num": "1.1.1",
+    "nivel": 2,
+    "titulo": "Introdução ao planejamento financeiro pessoal"
+   },
+   {
+    "num": "1.1.2",
+    "nivel": 2,
+    "titulo": "Funções do planejador financeiro ao realizar o planejamento financeiro integrado"
+   },
+   {
+    "num": "1.1.3",
+    "nivel": 2,
+    "titulo": "Diferença entre planejadores financeiros e consultores de produtos financeiros"
+   },
+   {
+    "num": "1.1.4",
+    "nivel": 2,
+    "titulo": "Processo de Planejamento Financeiro"
+   },
+   {
+    "num": "1.1.4.1",
+    "nivel": 3,
+    "titulo": "Etapas do processo de planejamento financeiro"
+   },
+   {
+    "num": "1.1.4.1.1",
+    "nivel": 4,
+    "titulo": "ETAPA 1 - Definir e estabelecer o relacionamento com o cliente"
+   },
+   {
+    "num": "1.1.4.1.2",
+    "nivel": 4,
+    "titulo": "ETAPA 2 - Coleta das informações do cliente"
+   },
+   {
+    "num": "1.1.4.1.2.1",
+    "nivel": 5,
+    "titulo": "Como se dá a coleta de informações na prática?"
+   },
+   {
+    "num": "1.1.4.1.2.2",
+    "nivel": 5,
+    "titulo": "Informações quantitativas"
+   },
+   {
+    "num": "1.1.4.1.2.3",
+    "nivel": 5,
+    "titulo": "Informações qualitativas"
+   },
+   {
+    "num": "1.1.4.1.3",
+    "nivel": 4,
+    "titulo": "ETAPA 3 - Análise dos objetivos, necessidades, valores e informações do cliente"
+   },
+   {
+    "num": "1.1.4.1.4",
+    "nivel": 4,
+    "titulo": "ETAPA 4 - Desenvolvimento de recomendações e apresentação ao cliente"
+   },
+   {
+    "num": "1.1.4.1.4.1",
+    "nivel": 5,
+    "titulo": "Política de investimentos (Investment Policy Statement - IPS)"
+   },
+   {
+    "num": "1.1.4.1.5",
+    "nivel": 4,
+    "titulo": "ETAPA 5 - Implementação das recomendações de planejamento financeiro"
+   },
+   {
+    "num": "1.1.4.1.5.1",
+    "nivel": 5,
+    "titulo": "Responsabilidade pela implementação"
+   },
+   {
+    "num": "1.1.4.1.6",
+    "nivel": 4,
+    "titulo": "ETAPA 6 - Monitoramento da situação do cliente"
+   },
+   {
+    "num": "1.2",
+    "nivel": 1,
+    "titulo": "Prática e Ética em Planejamento Financeiro"
+   },
+   {
+    "num": "1.2.1",
+    "nivel": 2,
+    "titulo": "Práticas Essenciais de Planejamento Financeiro"
+   },
+   {
+    "num": "1.2.1.1",
+    "nivel": 3,
+    "titulo": "Estabelecer e definir a relação com o cliente"
+   },
+   {
+    "num": "1.2.1.2",
+    "nivel": 3,
+    "titulo": "Coletar as informações cliente"
+   },
+   {
+    "num": "1.2.1.3",
+    "nivel": 3,
+    "titulo": "Analisar e assessorar o status financeiro do cliente"
+   },
+   {
+    "num": "1.2.1.4",
+    "nivel": 3,
+    "titulo": "Desenvolver as recomendações de planejamento financeiro e apresentá-las ao cliente"
+   },
+   {
+    "num": "1.2.1.5",
+    "nivel": 3,
+    "titulo": "Implementar as recomendações do planejamento financeiro ao cliente"
+   },
+   {
+    "num": "1.2.1.6",
+    "nivel": 3,
+    "titulo": "Revisar a situação do cliente"
+   },
+   {
+    "num": "1.2.2",
+    "nivel": 2,
+    "titulo": "Estrutura e função das Normas de Práticas de Planejamento Financeiro"
+   },
+   {
+    "num": "1.2.3",
+    "nivel": 2,
+    "titulo": "O Código de Ética e da Responsabilidade Profissional na prática profissional dos planejadores financeiros"
+   },
+   {
+    "num": "1.2.3.1",
+    "nivel": 3,
+    "titulo": "Aplicabilidade e cumprimento"
+   },
+   {
+    "num": "1.2.3.2",
+    "nivel": 3,
+    "titulo": "Termos e expressões (seção I)"
+   },
+   {
+    "num": "1.2.3.3",
+    "nivel": 3,
+    "titulo": "Princípios (seção II)"
+   },
+   {
+    "num": "1.2.3.3.1",
+    "nivel": 4,
+    "titulo": "Cliente em Primeiro Lugar"
+   },
+   {
+    "num": "1.2.3.3.2",
+    "nivel": 4,
+    "titulo": "Integridade"
+   },
+   {
+    "num": "1.2.3.3.3",
+    "nivel": 4,
+    "titulo": "Objetividade"
+   },
+   {
+    "num": "1.2.3.3.4",
+    "nivel": 4,
+    "titulo": "Imparcialidade"
+   },
+   {
+    "num": "1.2.3.3.5",
+    "nivel": 4,
+    "titulo": "Profissionalismo"
+   },
+   {
+    "num": "1.2.3.3.6",
+    "nivel": 4,
+    "titulo": "Competência"
+   },
+   {
+    "num": "1.2.3.3.7",
+    "nivel": 4,
+    "titulo": "Confidencialidade"
+   },
+   {
+    "num": "1.2.3.3.8",
+    "nivel": 4,
+    "titulo": "Diligência"
+   },
+   {
+    "num": "1.2.3.4",
+    "nivel": 3,
+    "titulo": "Regra (seção III) – 25 regras"
+   },
+   {
+    "num": "1.2.3.5",
+    "nivel": 3,
+    "titulo": "Procedimentos disciplinares"
+   },
+   {
+    "num": "1.2.3.6",
+    "nivel": 3,
+    "titulo": "Melhores práticas de relacionamento entre o planejador e clientes"
+   },
+   {
+    "num": "1.2.3.7",
+    "nivel": 3,
+    "titulo": "Normas disciplinares e procedimentos para apuração de descumprimento às regras do Código de Conduta Ética e Responsabilidade Profissional"
+   },
+   {
+    "num": "1.2.3.7.1",
+    "nivel": 4,
+    "titulo": "Procedimentos"
+   },
+   {
+    "num": "1.2.3.7.2",
+    "nivel": 4,
+    "titulo": "Direitos do denunciado"
+   },
+   {
+    "num": "1.2.3.7.3",
+    "nivel": 4,
+    "titulo": "Penalidades por descumprimento das normas"
+   },
+   {
+    "num": "1.2.4",
+    "nivel": 2,
+    "titulo": "Implementação na prática das Normas de Práticas de Planejamento Financeiro, das Práticas Essenciais de Planejamento Financeiro e do Código de Ética do Planejador Financeiro"
+   },
+   {
+    "num": "1.2.5",
+    "nivel": 2,
+    "titulo": "Gerenciamento de um negócio de planejamento financeiro"
+   },
+   {
+    "num": "1.2.5.1",
+    "nivel": 3,
+    "titulo": "Plano de Negócios"
+   },
+   {
+    "num": "1.2.5.1.1",
+    "nivel": 4,
+    "titulo": "Planejamento Financeiro Empresarial"
+   },
+   {
+    "num": "1.2.5.1.2",
+    "nivel": 4,
+    "titulo": "Estrutura de um Plano de Negócios para uma Empresa de Planejamento Financeiro"
+   },
+   {
+    "num": "1.2.5.1.3",
+    "nivel": 4,
+    "titulo": "Sumário Executivo"
+   },
+   {
+    "num": "1.2.5.1.4",
+    "nivel": 4,
+    "titulo": "Análise de Mercado"
+   },
+   {
+    "num": "1.2.5.1.5",
+    "nivel": 4,
+    "titulo": "Plano de Marketing"
+   },
+   {
+    "num": "1.2.5.1.6",
+    "nivel": 4,
+    "titulo": "Plano Operacional"
+   },
+   {
+    "num": "1.2.5.1.7",
+    "nivel": 4,
+    "titulo": "Plano Financeiro"
+   },
+   {
+    "num": "1.2.5.1.8",
+    "nivel": 4,
+    "titulo": "Estratégias Específicas para o Negócio de Planejamento Financeiro"
+   },
+   {
+    "num": "1.2.5.1.8.1",
+    "nivel": 5,
+    "titulo": "Manutenção de Registros"
+   },
+   {
+    "num": "1.2.5.1.8.2",
+    "nivel": 5,
+    "titulo": "Proteção de Dados e LGPD"
+   },
+   {
+    "num": "1.2.5.2",
+    "nivel": 3,
+    "titulo": "Estratégias de Marketing"
+   },
+   {
+    "num": "1.2.5.2.1",
+    "nivel": 4,
+    "titulo": "Principais Estratégias"
+   },
+   {
+    "num": "1.2.5.2.2",
+    "nivel": 4,
+    "titulo": "Ética na Publicidade"
+   },
+   {
+    "num": "1.2.5.2.3",
+    "nivel": 4,
+    "titulo": "Manutenção de Registros"
+   },
+   {
+    "num": "1.2.5.3",
+    "nivel": 3,
+    "titulo": "Proteção das informações do cliente"
+   },
+   {
+    "num": "1.2.5.4",
+    "nivel": 3,
+    "titulo": "Má conduta ética e regulatória"
+   },
+   {
+    "num": "1.3",
+    "nivel": 1,
+    "titulo": "Habilidades Profissionais do Planejador Financeiro"
+   },
+   {
+    "num": "1.3.1",
+    "nivel": 2,
+    "titulo": "Habilidades que fazem parte da matriz de Competências Profissionais do Planejador Financeiro:"
+   },
+   {
+    "num": "1.3.1.1",
+    "nivel": 3,
+    "titulo": "Criar confiança"
+   },
+   {
+    "num": "1.3.1.1.1",
+    "nivel": 4,
+    "titulo": "Pilares da Confiança com Clientes"
+   },
+   {
+    "num": "1.3.1.1.1.1",
+    "nivel": 5,
+    "titulo": "Honestidade"
+   },
+   {
+    "num": "1.3.1.1.1.2",
+    "nivel": 5,
+    "titulo": "Transparência"
+   },
+   {
+    "num": "1.3.1.1.1.3",
+    "nivel": 5,
+    "titulo": "Consistência"
+   },
+   {
+    "num": "1.3.1.1.1.4",
+    "nivel": 5,
+    "titulo": "Empatia"
+   },
+   {
+    "num": "1.3.1.1.1.5",
+    "nivel": 5,
+    "titulo": "Competência"
+   },
+   {
+    "num": "1.3.1.1.1.6",
+    "nivel": 5,
+    "titulo": "Proatividade"
+   },
+   {
+    "num": "1.3.1.1.1.7",
+    "nivel": 5,
+    "titulo": "Vulnerabilidade"
+   },
+   {
+    "num": "1.3.1.2",
+    "nivel": 3,
+    "titulo": "Engajamento com o cliente"
+   },
+   {
+    "num": "1.3.1.3",
+    "nivel": 3,
+    "titulo": "Comunicação eficaz"
+   },
+   {
+    "num": "1.3.1.3.1",
+    "nivel": 4,
+    "titulo": "Os elementos da Comunicação"
+   },
+   {
+    "num": "1.3.1.3.2",
+    "nivel": 4,
+    "titulo": "Os princípios da comunicação"
+   },
+   {
+    "num": "1.3.1.3.3",
+    "nivel": 4,
+    "titulo": "Formas de comunicação Verbal e Não Verbal"
+   },
+   {
+    "num": "1.3.1.3.4",
+    "nivel": 4,
+    "titulo": "Comunicação Assertiva"
+   },
+   {
+    "num": "1.3.1.4",
+    "nivel": 3,
+    "titulo": "Coaching"
+   },
+   {
+    "num": "1.3.1.4.1",
+    "nivel": 4,
+    "titulo": "Fundamentos Científicos do Coaching"
+   },
+   {
+    "num": "1.3.1.4.2",
+    "nivel": 4,
+    "titulo": "Habilidades Essenciais do Coach"
+   },
+   {
+    "num": "1.3.1.4.3",
+    "nivel": 4,
+    "titulo": "Estabelecimento de Metas"
+   },
+   {
+    "num": "1.3.1.4.4",
+    "nivel": 4,
+    "titulo": "Feedback Construtivo"
+   },
+   {
+    "num": "1.3.1.4.5",
+    "nivel": 4,
+    "titulo": "Desenvolvimento da Autonomia"
+   },
+   {
+    "num": "1.3.1.4.6",
+    "nivel": 4,
+    "titulo": "Empatia e Presença"
+   },
+   {
+    "num": "1.3.1.4.7",
+    "nivel": 4,
+    "titulo": "Benefícios do Coaching com Base em Evidências"
+   },
+   {
+    "num": "1.3.1.4.8",
+    "nivel": 4,
+    "titulo": "Ética e Papel do Coach"
+   },
+   {
+    "num": "1.3.1.5",
+    "nivel": 3,
+    "titulo": "Defesa do Cliente"
+   },
+   {
+    "num": "1.3.1.5.1",
+    "nivel": 4,
+    "titulo": "Compreensão Profunda das Necessidades"
+   },
+   {
+    "num": "1.3.1.5.2",
+    "nivel": 4,
+    "titulo": "Formulação de Soluções Relevantes"
+   },
+   {
+    "num": "1.3.1.5.3",
+    "nivel": 4,
+    "titulo": "Ação com Autonomia e Iniciativa"
+   },
+   {
+    "num": "1.3.1.5.4",
+    "nivel": 4,
+    "titulo": "Monitoramento Contínuo"
+   },
+   {
+    "num": "1.3.1.6",
+    "nivel": 3,
+    "titulo": "Pensamento crítico"
+   },
+   {
+    "num": "1.3.1.6.1",
+    "nivel": 4,
+    "titulo": "Importância no Planejamento Financeiro"
+   },
+   {
+    "num": "1.3.1.6.2",
+    "nivel": 4,
+    "titulo": "Componentes do Pensamento Crítico"
+   },
+   {
+    "num": "1.3.1.6.3",
+    "nivel": 4,
+    "titulo": "Etapas para aplicar o Pensamento Crítico"
+   },
+   {
+    "num": "1.3.1.6.4",
+    "nivel": 4,
+    "titulo": "Ferramentas e Estratégias"
+   },
+   {
+    "num": "1.3.1.6.5",
+    "nivel": 4,
+    "titulo": "Barreiras e Como Superá-las"
+   },
+   {
+    "num": "1.3.1.7",
+    "nivel": 3,
+    "titulo": "Solução de problemas"
+   },
+   {
+    "num": "1.3.1.7.1",
+    "nivel": 4,
+    "titulo": "A Importância da Solução de Problemas no Planejamento Financeiro"
+   },
+   {
+    "num": "1.3.1.7.2",
+    "nivel": 4,
+    "titulo": "Etapas do Processo de Solução de Problemas"
+   },
+   {
+    "num": "1.3.1.7.3",
+    "nivel": 4,
+    "titulo": "Aplicando Matemática Financeira na Solução de Problemas"
+   },
+   {
+    "num": "1.3.1.7.4",
+    "nivel": 4,
+    "titulo": "Conduzindo Pesquisas e Análises"
+   },
+   {
+    "num": "1.3.1.8",
+    "nivel": 3,
+    "titulo": "Tomada de decisões"
+   },
+   {
+    "num": "1.3.1.8.1",
+    "nivel": 4,
+    "titulo": "A Relevância da Tomada de Decisão no Planejamento Financeiro"
+   },
+   {
+    "num": "1.3.1.8.2",
+    "nivel": 4,
+    "titulo": "Fundamentos Cognitivos e Comportamentais"
+   },
+   {
+    "num": "1.3.1.8.2.1",
+    "nivel": 5,
+    "titulo": "Raciocínio Lógico"
+   },
+   {
+    "num": "1.3.1.8.2.2",
+    "nivel": 5,
+    "titulo": "Heurísticas e Vieses Cognitivos"
+   },
+   {
+    "num": "1.3.1.8.2.3",
+    "nivel": 5,
+    "titulo": "Processo de Tomada de Decisão"
+   },
+   {
+    "num": "1.3.1.8.2.4",
+    "nivel": 5,
+    "titulo": "Tomando Decisões com Informações Incompletas"
+   },
+   {
+    "num": "1.3.1.8.2.5",
+    "nivel": 5,
+    "titulo": "Avaliação de Alternativas e Julgamento Crítico"
+   },
+   {
+    "num": "1.3.1.8.2.6",
+    "nivel": 5,
+    "titulo": "Ferramentas para Tomada de Decisão"
+   },
+   {
+    "num": "1.3.1.9",
+    "nivel": 3,
+    "titulo": "Experiência em tecnologia"
+   },
+   {
+    "num": "1.3.1.9.1",
+    "nivel": 4,
+    "titulo": "Ferramentas e Softwares de Uso Comum"
+   },
+   {
+    "num": "1.3.1.9.2",
+    "nivel": 4,
+    "titulo": "Engajamento do Cliente Através da Tecnologia"
+   },
+   {
+    "num": "1.3.1.9.3",
+    "nivel": 4,
+    "titulo": "Boas Práticas no Uso de Ferramentas Digitais"
+   },
+   {
+    "num": "1.3.1.9.4",
+    "nivel": 4,
+    "titulo": "Tendências Tecnológicas no Setor Financeiro"
+   },
+   {
+    "num": "1.3.1.10",
+    "nivel": 3,
+    "titulo": "Inteligência emocional"
+   },
+   {
+    "num": "1.3.1.10.1",
+    "nivel": 4,
+    "titulo": "A Importância da IE no Planejamento Financeiro"
+   },
+   {
+    "num": "1.3.1.10.2",
+    "nivel": 4,
+    "titulo": "Componentes da Inteligência Emocional"
+   },
+   {
+    "num": "1.3.1.10.2.1",
+    "nivel": 5,
+    "titulo": "Autoconhecimento e Autogestão Emocional"
+   },
+   {
+    "num": "1.3.1.10.2.2",
+    "nivel": 5,
+    "titulo": "Empatia e Consciência Social"
+   },
+   {
+    "num": "1.3.1.10.3",
+    "nivel": 4,
+    "titulo": "Gerenciamento de Relacionamentos"
+   },
+   {
+    "num": "1.3.1.10.4",
+    "nivel": 4,
+    "titulo": "IE na Prática: Situações Comuns"
+   },
+   {
+    "num": "1.3.1.10.5",
+    "nivel": 4,
+    "titulo": "Desenvolvimento Contínuo da IE"
+   },
+   {
+    "num": "1.4",
+    "nivel": 1,
+    "titulo": "Ambientes regulatório, político e econômico que impactam o planejamento financeiro"
+   },
+   {
+    "num": "1.4.1",
+    "nivel": 2,
+    "titulo": "Introdução ao ambiente regulatório:"
+   },
+   {
+    "num": "1.4.1.1",
+    "nivel": 3,
+    "titulo": "Reguladores"
+   },
+   {
+    "num": "1.4.1.1.1",
+    "nivel": 4,
+    "titulo": "O Sistema Financeiro Nacional - SFN"
+   },
+   {
+    "num": "1.4.1.1.1.1",
+    "nivel": 5,
+    "titulo": "Órgãos Normativos"
+   },
+   {
+    "num": "1.4.1.1.1.1.1",
+    "nivel": 6,
+    "titulo": "Conselho Monetário Nacional - CMN"
+   },
+   {
+    "num": "1.4.1.1.1.1.2",
+    "nivel": 6,
+    "titulo": "Conselho Nacional de Seguros Privados - CNSP"
+   },
+   {
+    "num": "1.4.1.1.1.1.3",
+    "nivel": 6,
+    "titulo": "Conselho Nacional de Previdência Complementar - CNPC"
+   },
+   {
+    "num": "1.4.1.1.1.2",
+    "nivel": 5,
+    "titulo": "Entidades Supervisoras"
+   },
+   {
+    "num": "1.4.1.1.1.2.1",
+    "nivel": 6,
+    "titulo": "Banco Central do Brasil – BACEN"
+   },
+   {
+    "num": "1.4.1.1.1.2.2",
+    "nivel": 6,
+    "titulo": "Comissão de Valores Mobiliários – CVM"
+   },
+   {
+    "num": "1.4.1.1.1.2.3",
+    "nivel": 6,
+    "titulo": "Superintendência de Seguros Privados – SUSEP"
+   },
+   {
+    "num": "1.4.1.1.1.2.4",
+    "nivel": 6,
+    "titulo": "Superintendência Nacional de Previdência Complementar – PREVIC"
+   },
+   {
+    "num": "1.4.1.1.1.2.5",
+    "nivel": 6,
+    "titulo": "Agência Nacional de Saúde Suplementar – ANS"
+   },
+   {
+    "num": "1.4.1.1.1.3",
+    "nivel": 5,
+    "titulo": "Operadores (Intermediários Financeiros)"
+   },
+   {
+    "num": "1.4.1.1.1.3.1",
+    "nivel": 6,
+    "titulo": "Instituições que atuam na intermediação dos recursos."
+   },
+   {
+    "num": "1.4.1.1.1.3.1.1",
+    "nivel": 7,
+    "titulo": "Banco Múltiplo"
+   },
+   {
+    "num": "1.4.1.1.1.3.1.2",
+    "nivel": 7,
+    "titulo": "Banco Comercial"
+   },
+   {
+    "num": "1.4.1.1.1.3.1.3",
+    "nivel": 7,
+    "titulo": "Banco de Investimento"
+   },
+   {
+    "num": "1.4.1.1.1.3.1.4",
+    "nivel": 7,
+    "titulo": "Sociedades Corretoras de Títulos e Valores Mobiliários (CTVM) e Sociedades Distribuidoras de Títulos e Valores Mobiliários (DTVM)"
+   },
+   {
+    "num": "1.4.1.1.1.3.1.5",
+    "nivel": 7,
+    "titulo": "Sociedades Corretoras de Câmbio"
+   },
+   {
+    "num": "1.4.1.1.1.3.2",
+    "nivel": 6,
+    "titulo": "Entidades Auxiliares"
+   },
+   {
+    "num": "1.4.1.1.1.3.2.1",
+    "nivel": 7,
+    "titulo": "B3 – Brasil, Bolsa, Balcão"
+   },
+   {
+    "num": "1.4.1.1.1.3.2.2",
+    "nivel": 7,
+    "titulo": "SELIC – Sistema Especial de Liquidação e Custódia"
+   },
+   {
+    "num": "1.4.1.2",
+    "nivel": 3,
+    "titulo": "Legislação e regulação"
+   },
+   {
+    "num": "1.4.1.2.1.1",
+    "nivel": 5,
+    "titulo": "CVM – Comissão de Valores Mobiliários"
+   },
+   {
+    "num": "1.4.1.2.1.2",
+    "nivel": 5,
+    "titulo": "BACEN – Banco Central do Brasil"
+   },
+   {
+    "num": "1.4.1.2.1.3",
+    "nivel": 5,
+    "titulo": "ANBIMA – Associação Brasileira das Entidades dos Mercados Financeiro e de Capitais"
+   },
+   {
+    "num": "1.4.1.2.1.4",
+    "nivel": 5,
+    "titulo": "PLANEJAR – Associação Brasileira de Planejadores Financeiros"
+   },
+   {
+    "num": "1.4.1.2.1.5",
+    "nivel": 5,
+    "titulo": "LGPD – Lei Geral de Proteção de Dados (Lei 13.709/2018)"
+   },
+   {
+    "num": "1.4.1.2.2",
+    "nivel": 4,
+    "titulo": "Boas Práticas no Planejamento Financeiro Pessoal"
+   },
+   {
+    "num": "1.4.1.2.2.1",
+    "nivel": 5,
+    "titulo": "Dever Fiduciário"
+   },
+   {
+    "num": "1.4.1.2.2.2",
+    "nivel": 5,
+    "titulo": "Transparência"
+   },
+   {
+    "num": "1.4.1.2.2.3",
+    "nivel": 5,
+    "titulo": "Educação Financeira"
+   },
+   {
+    "num": "1.4.1.2.2.4",
+    "nivel": 5,
+    "titulo": "Documentação e Compliance"
+   },
+   {
+    "num": "1.4.1.2.2.5",
+    "nivel": 5,
+    "titulo": "Atualização Profissional"
+   },
+   {
+    "num": "1.4.2",
+    "nivel": 2,
+    "titulo": "Dever fiduciário: Conduta ética e profissional"
+   },
+   {
+    "num": "1.4.3",
+    "nivel": 2,
+    "titulo": "Exigências legais de atuar ‘no melhor interesse do cliente’"
+   },
+   {
+    "num": "1.4.3.1",
+    "nivel": 3,
+    "titulo": "Leis e Regulamentações Aplicáveis"
+   },
+   {
+    "num": "1.4.4",
+    "nivel": 2,
+    "titulo": "Suitability"
+   },
+   {
+    "num": "1.4.4.1",
+    "nivel": 3,
+    "titulo": "Benefícios Esperados"
+   },
+   {
+    "num": "1.4.4.2",
+    "nivel": 3,
+    "titulo": "Objetivos do investidor: preservação do capital, crescimento do capital"
+   },
+   {
+    "num": "1.4.4.3",
+    "nivel": 3,
+    "titulo": "Horizonte de tempo"
+   },
+   {
+    "num": "1.4.4.4",
+    "nivel": 3,
+    "titulo": "Tolerância ao risco"
+   },
+   {
+    "num": "1.4.4.5",
+    "nivel": 3,
+    "titulo": "Restrições do investidor"
+   },
+   {
+    "num": "1.4.5",
+    "nivel": 2,
+    "titulo": "Introdução ao ambiente econômico:"
+   },
+   {
+    "num": "1.4.5.1",
+    "nivel": 3,
+    "titulo": "Microeconomia"
+   },
+   {
+    "num": "1.4.5.1.1",
+    "nivel": 4,
+    "titulo": "Princípios Básicos"
+   },
+   {
+    "num": "1.4.5.1.1.1",
+    "nivel": 5,
+    "titulo": "Oferta e Demanda"
+   },
+   {
+    "num": "1.4.5.1.1.2",
+    "nivel": 5,
+    "titulo": "Elasticidade"
+   },
+   {
+    "num": "1.4.5.1.1.3",
+    "nivel": 5,
+    "titulo": "Maximização de Utilidade"
+   },
+   {
+    "num": "1.4.5.1.1.4",
+    "nivel": 5,
+    "titulo": "Custo de Oportunidade"
+   },
+   {
+    "num": "1.4.5.1.2",
+    "nivel": 4,
+    "titulo": "Aplicações Financeiras"
+   },
+   {
+    "num": "1.4.5.1.2.1",
+    "nivel": 5,
+    "titulo": "Decisões de Consumo"
+   },
+   {
+    "num": "1.4.5.1.2.2",
+    "nivel": 5,
+    "titulo": "Poupança e Investimento"
+   },
+   {
+    "num": "1.4.5.1.2.3",
+    "nivel": 5,
+    "titulo": "Eficiência de Mercado"
+   },
+   {
+    "num": "1.4.5.1.3",
+    "nivel": 4,
+    "titulo": "Análise Microeconômica"
+   },
+   {
+    "num": "1.4.5.1.3.1",
+    "nivel": 5,
+    "titulo": "Elasticidade e Finanças"
+   },
+   {
+    "num": "1.4.5.1.3.2",
+    "nivel": 5,
+    "titulo": "Comparativo de Cenários"
+   },
+   {
+    "num": "1.4.5.1.3.3",
+    "nivel": 5,
+    "titulo": "Planejamento Financeiro do Cliente"
+   },
+   {
+    "num": "1.4.5.1.3.4",
+    "nivel": 5,
+    "titulo": "Escassez"
+   },
+   {
+    "num": "1.4.5.1.4",
+    "nivel": 4,
+    "titulo": "O fluxo circular"
+   },
+   {
+    "num": "1.4.5.2",
+    "nivel": 3,
+    "titulo": "Macroeconomia – Princípios Básicos"
+   },
+   {
+    "num": "1.4.5.2.1",
+    "nivel": 4,
+    "titulo": "Princípios"
+   },
+   {
+    "num": "1.4.5.2.2",
+    "nivel": 4,
+    "titulo": "Política Monetária, Fiscal e Eventos Globais"
+   },
+   {
+    "num": "1.4.5.2.3",
+    "nivel": 4,
+    "titulo": "Impacto no Planejamento Financeiro Pessoal"
+   },
+   {
+    "num": "1.4.5.2.1.2",
+    "nivel": 5,
+    "titulo": "Aplicação ao Portfólio de Investimentos"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Como fatores macroeconômicos influenciam os investimentos"
+   },
+   {
+    "num": "1.4.5.2.4",
+    "nivel": 4,
+    "titulo": "Análise de Indicadores Macroeconômicos e Ciclos Econômicos"
+   },
+   {
+    "num": "1.4.5.2.4.1",
+    "nivel": 5,
+    "titulo": "Comparação de Cenários Econômicos"
+   },
+   {
+    "num": "1.4.5.2.4.2",
+    "nivel": 5,
+    "titulo": "Ajustes de Estratégia Financeira em Mudanças Macroeconômicas"
+   },
+   {
+    "num": "1.4.6",
+    "nivel": 2,
+    "titulo": "Ambiente econômico e planejamento financeiro:"
+   },
+   {
+    "num": "1.4.6.1",
+    "nivel": 3,
+    "titulo": "Políticas Monetária"
+   },
+   {
+    "num": "1.4.6.2",
+    "nivel": 3,
+    "titulo": "Políticas Fiscal"
+   },
+   {
+    "num": "1.4.6.2.1",
+    "nivel": 4,
+    "titulo": "Aplicações Práticas no Planejamento Financeiro"
+   },
+   {
+    "num": "1.4.6.3",
+    "nivel": 3,
+    "titulo": "Ciclo de negócios (ou Ciclos econômicos)"
+   },
+   {
+    "num": "1.4.6.4",
+    "nivel": 3,
+    "titulo": "Principais Indicadores econômicos"
+   },
+   {
+    "num": "1.4.6.4.1",
+    "nivel": 4,
+    "titulo": "PIB – Produto Interno Bruto"
+   },
+   {
+    "num": "1.4.6.4.2",
+    "nivel": 4,
+    "titulo": "Inflação e Deflação – Conceito"
+   },
+   {
+    "num": "1.4.6.4.2.1",
+    "nivel": 5,
+    "titulo": "Índices de Inflação"
+   },
+   {
+    "num": "1.4.6.4.2.1.1",
+    "nivel": 6,
+    "titulo": "IGP-M – Índice Geral de Preços de Mercado"
+   },
+   {
+    "num": "1.4.6.4.2.1.2",
+    "nivel": 6,
+    "titulo": "IPCA – Índice Nacional de Preços ao Consumidor Amplo"
+   },
+   {
+    "num": "1.4.6.4.3",
+    "nivel": 4,
+    "titulo": "Taxa de juros - SELIC Meta"
+   },
+   {
+    "num": "1.4.6.4.4",
+    "nivel": 4,
+    "titulo": "Taxa de juros - SELIC Over"
+   },
+   {
+    "num": "1.4.6.4.5",
+    "nivel": 4,
+    "titulo": "Taxa DI - Depósito Interfinanceiro"
+   },
+   {
+    "num": "1.4.6.4.6",
+    "nivel": 4,
+    "titulo": "TLP - Taxa de Longo Prazo"
+   },
+   {
+    "num": "1.4.6.4.7",
+    "nivel": 4,
+    "titulo": "TR - Taxa Referencial"
+   },
+   {
+    "num": "1.4.6.4.8",
+    "nivel": 4,
+    "titulo": "Taxa de câmbio"
+   },
+   {
+    "num": "1.4.6.4.8.1",
+    "nivel": 5,
+    "titulo": "Câmbio comercial e câmbio turismo"
+   },
+   {
+    "num": "1.4.6.4.8.2",
+    "nivel": 5,
+    "titulo": "Spot"
+   },
+   {
+    "num": "1.4.6.4.8.3",
+    "nivel": 5,
+    "titulo": "Ptax"
+   },
+   {
+    "num": "1.4.6.5",
+    "nivel": 3,
+    "titulo": "Análise de ciclos econômicos e seus impactos no emprego, renda, preços dos ativos, oferta de crédito e taxas de juros"
+   },
+   {
+    "num": "1.4.6.5.1",
+    "nivel": 4,
+    "titulo": "Compra e Venda de Títulos Públicos"
+   },
+   {
+    "num": "1.4.6.5.2",
+    "nivel": 4,
+    "titulo": "Redesconto"
+   },
+   {
+    "num": "1.4.6.5.3",
+    "nivel": 4,
+    "titulo": "Depósito Compulsório"
+   },
+   {
+    "num": "1.4.6.5.4",
+    "nivel": 4,
+    "titulo": "Política Monetária"
+   },
+   {
+    "num": "1.4.6.5.5",
+    "nivel": 4,
+    "titulo": "Sistema de metas de inflação"
+   },
+   {
+    "num": "1.4.6.5.6",
+    "nivel": 4,
+    "titulo": "COPOM - Comitê de Política Monetária"
+   },
+   {
+    "num": "1.4.6.5.6.1",
+    "nivel": 5,
+    "titulo": "Impacto nos investimentos e nas linhas de crédito"
+   },
+   {
+    "num": "1.4.6.5.7",
+    "nivel": 4,
+    "titulo": "Política fiscal"
+   },
+   {
+    "num": "1.4.6.5.7.1",
+    "nivel": 5,
+    "titulo": "Necessidade de financiamento do setor público. Implicações sobre a Dívida Pública."
+   },
+   {
+    "num": "1.4.6.5.8",
+    "nivel": 4,
+    "titulo": "Política cambial"
+   },
+   {
+    "num": "1.4.6.5.8.1",
+    "nivel": 5,
+    "titulo": "Regimes mais usuais de taxa de câmbio"
+   },
+   {
+    "num": "1.4.6.5.8.1.1",
+    "nivel": 6,
+    "titulo": "Câmbio fixo/ Câmbio flutuante / Flutuação suja (Dirty float) / Bandas cambiais"
+   },
+   {
+    "num": "1.4.6.5.8.2",
+    "nivel": 5,
+    "titulo": "Relações entre taxa de câmbio, regime de câmbio e reservas internacionais"
+   },
+   {
+    "num": "1.4.6.5.8.2.1",
+    "nivel": 6,
+    "titulo": "Cupom cambial"
+   },
+   {
+    "num": "1.4.7",
+    "nivel": 2,
+    "titulo": "Introdução aos ambientes social e político:"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• O Papel do Governo Local na Economia"
+   },
+   {
+    "num": "1.4.7.1",
+    "nivel": 3,
+    "titulo": "Sentimento em relação ao governo local"
+   },
+   {
+    "num": "1.4.7.1.1",
+    "nivel": 4,
+    "titulo": "Confiança x Desconfiança e Indicadores de Sentimento"
+   },
+   {
+    "num": "1.4.7.1.2",
+    "nivel": 4,
+    "titulo": "Impactos no Mercado e no Comportamento Econômico"
+   },
+   {
+    "num": "1.4.7.1.3",
+    "nivel": 4,
+    "titulo": "Estratégias Baseadas na Percepção Pública"
+   },
+   {
+    "num": "1.4.7.1.4",
+    "nivel": 4,
+    "titulo": "Planejamento Financeiro e Governança Local"
+   },
+   {
+    "num": "1.4.7.2",
+    "nivel": 3,
+    "titulo": "Políticas sociais"
+   },
+   {
+    "num": "1.4.7.2.1",
+    "nivel": 4,
+    "titulo": "Principais Políticas Sociais que influenciam o Planejamento Financeiro"
+   },
+   {
+    "num": "1.4.7.2.1.1",
+    "nivel": 5,
+    "titulo": "Saúde Pública/ Educação/ Habitação/ Assistência Social"
+   },
+   {
+    "num": "1.4.7.2.1.2",
+    "nivel": 5,
+    "titulo": "Aplicando o Conhecimento ao Planejamento Financeiro/ Auxiliando o Cliente com Políticas Públicas"
+   },
+   {
+    "num": "1.4.7.2.1.3",
+    "nivel": 5,
+    "titulo": "Impacto das Políticas Sociais na Economia e no Mercado"
+   },
+   {
+    "num": "1.4.7.3",
+    "nivel": 3,
+    "titulo": "Política fiscal e o Planejamento Financeiro"
+   },
+   {
+    "num": "1.4.7.3.1",
+    "nivel": 4,
+    "titulo": "Instrumentos principais e Objetivos da política fiscal"
+   },
+   {
+    "num": "1.4.7.3.2",
+    "nivel": 4,
+    "titulo": "Como a Política Fiscal Influencia a Economia"
+   },
+   {
+    "num": "1.4.7.3.2.1",
+    "nivel": 5,
+    "titulo": "Política Fiscal Expansiva e Política Fiscal Contracionista"
+   },
+   {
+    "num": "1.4.7.3.3",
+    "nivel": 4,
+    "titulo": "Aplicando o Conhecimento Fiscal ao Planejamento Financeiro"
+   },
+   {
+    "num": "1.4.7.3.3.1",
+    "nivel": 5,
+    "titulo": "Como adaptar as recomendações financeiras diante de mudanças fiscais"
+   },
+   {
+    "num": "1.4.7.3.3.2",
+    "nivel": 5,
+    "titulo": "Antecipando o Impacto de Novas Medidas Fiscais"
+   },
+   {
+    "num": "1.4.7.3.3.3",
+    "nivel": 5,
+    "titulo": "Avaliação de Oportunidades e Riscos"
+   },
+   {
+    "num": "1.4.7.3.3.4",
+    "nivel": 5,
+    "titulo": "Estratégias para Mitigação de Riscos Fiscais"
+   },
+   {
+    "num": "1.4.7.4",
+    "nivel": 3,
+    "titulo": "Política de aposentadoria"
+   },
+   {
+    "num": "1.4.7.4.1",
+    "nivel": 4,
+    "titulo": "Previdência Pública no Brasil (RGPS) - Regime Geral de Previdência Social (INSS)"
+   },
+   {
+    "num": "1.4.7.4.2",
+    "nivel": 4,
+    "titulo": "Previdência Complementar"
+   },
+   {
+    "num": "1.4.7.4.2.1",
+    "nivel": 5,
+    "titulo": "Previdência Privada (Aberta)"
+   },
+   {
+    "num": "1.4.7.4.2.2",
+    "nivel": 5,
+    "titulo": "Previdência Fechada (Fundos de Pensão)"
+   },
+   {
+    "num": "1.4.8",
+    "nivel": 2,
+    "titulo": "Utilização indevida de informações privilegiadas e práticas fraudulentas Legislação e Normas Aplicáveis / Consequências Legais e Éticas"
+   },
+   {
+    "num": "1.4.8.1",
+    "nivel": 3,
+    "titulo": "– Insider trading, insider information"
+   },
+   {
+    "num": "1.4.8.2",
+    "nivel": 3,
+    "titulo": "Front Running"
+   },
+   {
+    "num": "1.4.8.3",
+    "nivel": 3,
+    "titulo": "Market Spoofing"
+   },
+   {
+    "num": "1.4.8.4",
+    "nivel": 3,
+    "titulo": "Layering"
+   },
+   {
+    "num": "1.5",
+    "nivel": 1,
+    "titulo": "Lei e conformidade (Compliance)"
+   },
+   {
+    "num": "1.5.1",
+    "nivel": 2,
+    "titulo": "Definir conformidade e suas implicações no Planejamento Financeiro"
+   },
+   {
+    "num": "1.5.1.1",
+    "nivel": 3,
+    "titulo": "Princípios de Conformidade no Planejamento Financeiro"
+   },
+   {
+    "num": "1.5.2",
+    "nivel": 2,
+    "titulo": "Divulgação de documentos em linha com a jurisdição"
+   },
+   {
+    "num": "1.5.2.1",
+    "nivel": 3,
+    "titulo": "Requisitos Legais e Regulatórios"
+   },
+   {
+    "num": "1.5.2.1.1",
+    "nivel": 4,
+    "titulo": "CVM – Comissão de Valores Mobiliários"
+   },
+   {
+    "num": "1.5.2.1.2",
+    "nivel": 4,
+    "titulo": "LGPD – Lei Geral de Proteção de Dados (Lei nº 13.709/2018)"
+   },
+   {
+    "num": "1.5.2.1.3",
+    "nivel": 4,
+    "titulo": "COAF – Prevenção à Lavagem de Dinheiro"
+   },
+   {
+    "num": "1.5.3",
+    "nivel": 2,
+    "titulo": "Potenciais conflitos de interesse no Planejamento Financeiro"
+   },
+   {
+    "num": "1.5.3.1",
+    "nivel": 3,
+    "titulo": "Princípios Éticos para Lidar com Conflitos"
+   },
+   {
+    "num": "1.5.4",
+    "nivel": 2,
+    "titulo": "Direito privado aplicável no contexto do planejamento financeiro"
+   },
+   {
+    "num": "1.5.4.1",
+    "nivel": 3,
+    "titulo": "Princípios Éticos para Lidar com Conflitos"
+   },
+   {
+    "num": "1.5.4.2",
+    "nivel": 3,
+    "titulo": "Direito Sucessório"
+   },
+   {
+    "num": "1.5.4.3",
+    "nivel": 3,
+    "titulo": "Direito de Família"
+   },
+   {
+    "num": "1.5.4.4",
+    "nivel": 3,
+    "titulo": "Direito de Propriedade"
+   },
+   {
+    "num": "1.5.5",
+    "nivel": 2,
+    "titulo": "Leis relativas a contratos e negócios aplicáveis ao contexto do planejamento financeiro"
+   },
+   {
+    "num": "1.5.5.1",
+    "nivel": 3,
+    "titulo": "Princípios das leis relativas a contratos e negócios jurídicos"
+   },
+   {
+    "num": "1.5.5.2",
+    "nivel": 3,
+    "titulo": "Exigências para a validade dos contratos"
+   },
+   {
+    "num": "1.5.5.3",
+    "nivel": 3,
+    "titulo": "Proteção dos interesses do cliente em acordos financeiros"
+   },
+   {
+    "num": "1.6",
+    "nivel": 1,
+    "titulo": "Valor do dinheiro no tempo"
+   },
+   {
+    "num": "1.6.1",
+    "nivel": 2,
+    "titulo": "Valor futuro de um montante"
+   },
+   {
+    "num": "1.6.1.1",
+    "nivel": 3,
+    "titulo": "Capitalização de Juros"
+   },
+   {
+    "num": "1.6.1.2",
+    "nivel": 3,
+    "titulo": "Análise do Impacto das Taxas de Juros e Prazos"
+   },
+   {
+    "num": "1.6.2",
+    "nivel": 2,
+    "titulo": "Valor presente de um montante"
+   },
+   {
+    "num": "1.6.2.1",
+    "nivel": 3,
+    "titulo": "Comparação de Cenários e Tomada de Decisões"
+   },
+   {
+    "num": "1.6.3",
+    "nivel": 2,
+    "titulo": "Número de períodos de capitalização e taxa de juros por período"
+   },
+   {
+    "num": "1.6.3.1",
+    "nivel": 3,
+    "titulo": "Conceito de Períodos de Capitalização"
+   },
+   {
+    "num": "1.6.3.2",
+    "nivel": 3,
+    "titulo": "Relação entre Taxa Nominal e Taxa Efetiva"
+   },
+   {
+    "num": "1.6.3.3",
+    "nivel": 3,
+    "titulo": "Regime de capitalização simples. Proporcionalidade de taxas"
+   },
+   {
+    "num": "1.6.3.4",
+    "nivel": 3,
+    "titulo": "Regime de capitalização composto. Equivalência de taxas"
+   },
+   {
+    "num": "1.6.3.5",
+    "nivel": 3,
+    "titulo": "Taxa de juros nominal x juro real"
+   },
+   {
+    "num": "1.6.3.6",
+    "nivel": 3,
+    "titulo": "Estrutura a termo da taxa de juros em moeda local e moeda estrangeira"
+   },
+   {
+    "num": "1.6.3.7",
+    "nivel": 3,
+    "titulo": "Desconto bancário e desconto comercial"
+   },
+   {
+    "num": "1.6.3.7.1",
+    "nivel": 4,
+    "titulo": "Desconto racional (ou por dentro) – Juros simples"
+   },
+   {
+    "num": "1.6.3.7.2",
+    "nivel": 4,
+    "titulo": "Desconto bancário ou comercial (ou “por fora”)"
+   },
+   {
+    "num": "1.6.3.8",
+    "nivel": 3,
+    "titulo": "Perpetuidade"
+   },
+   {
+    "num": "1.6.3.9",
+    "nivel": 3,
+    "titulo": "Séries de pagamento: SAC, Price e SAA"
+   },
+   {
+    "num": "1.6.3.10",
+    "nivel": 3,
+    "titulo": "Série uniforme postecipada (END)"
+   },
+   {
+    "num": "1.6.3.11",
+    "nivel": 3,
+    "titulo": "Série uniforme antecipada (BEGIN)"
+   },
+   {
+    "num": "1.6.3.12",
+    "nivel": 3,
+    "titulo": "Série de pagamentos com carência"
+   },
+   {
+    "num": "1.6.3.13",
+    "nivel": 3,
+    "titulo": "Sistemas de amortização: SAC, Price e SAA"
+   },
+   {
+    "num": "1.6.4",
+    "nivel": 2,
+    "titulo": "Valor presente de uma anuidade (Anuidade Ordinária e Anuidade Vencida)"
+   },
+   {
+    "num": "1.6.5",
+    "nivel": 2,
+    "titulo": "Valor futuro de uma anuidade/anuidade devida"
+   },
+   {
+    "num": "1.6.6",
+    "nivel": 2,
+    "titulo": "Pagamentos ou recebimentos periódicos"
+   },
+   {
+    "num": "1.6.7",
+    "nivel": 2,
+    "titulo": "Fluxos de caixa irregulares – Avaliação, Modelagem e Estratégia Financeira"
+   },
+   {
+    "num": "1.6.7.1",
+    "nivel": 3,
+    "titulo": "Conceito e Importância dos Fluxos de Caixa Irregulares"
+   },
+   {
+    "num": "1.6.7.2",
+    "nivel": 3,
+    "titulo": "Cálculo do Valor Presente e Valor Futuro de Fluxos Irregulares"
+   },
+   {
+    "num": "1.6.7.3",
+    "nivel": 3,
+    "titulo": "Modelagem de Cenários com Ferramentas de Planejamento"
+   },
+   {
+    "num": "1.6.8",
+    "nivel": 2,
+    "titulo": "Taxa interna de retorno (TIR) – Conceito, Aplicações e Limitações"
+   },
+   {
+    "num": "1.6.8.1",
+    "nivel": 3,
+    "titulo": "Conceito de Taxa Interna de Retorno (TIR)"
+   },
+   {
+    "num": "1.6.8.2",
+    "nivel": 3,
+    "titulo": "TIR Modificada (TIRM)"
+   },
+   {
+    "num": "1.6.8.3",
+    "nivel": 3,
+    "titulo": "Taxa mínima de atratividade e custo de oportunidade"
+   },
+   {
+    "num": "1.6.8.4",
+    "nivel": 3,
+    "titulo": "Taxa de desconto em ativos financeiros"
+   },
+   {
+    "num": "1.6.9",
+    "nivel": 2,
+    "titulo": "Payback e PaybackModificado (descontado)"
+   },
+   {
+    "num": "1.6.10",
+    "nivel": 2,
+    "titulo": "Custo Médio Ponderado de Capital (CMPC)"
+   },
+   {
+    "num": "1.6.11",
+    "nivel": 2,
+    "titulo": "Medida de fluxo de caixa incluindo lucro antes de juros, impostos, depreciação e amortização (LAJIDA ou EBITDA)"
+   },
+   {
+    "num": "1.6.12",
+    "nivel": 2,
+    "titulo": "Valor presente líquido (VPL)"
+   },
+   {
+    "num": "1.6.12.1",
+    "nivel": 3,
+    "titulo": "Variáveis Envolvidas no Cálculo do VPL"
+   },
+   {
+    "num": "1.7",
+    "nivel": 1,
+    "titulo": "Características do cliente"
+   },
+   {
+    "num": "1.7.1",
+    "nivel": 2,
+    "titulo": "Objetivos do cliente"
+   },
+   {
+    "num": "1.7.1.1",
+    "nivel": 3,
+    "titulo": "Importância de identificar os objetivos financeiros do cliente"
+   },
+   {
+    "num": "1.7.1.2",
+    "nivel": 3,
+    "titulo": "Tipos de objetivos financeiros"
+   },
+   {
+    "num": "1.7.1.3",
+    "nivel": 3,
+    "titulo": "Análise dos objetivos financeiros em relação à situação financeira atual do cliente"
+   },
+   {
+    "num": "1.7.1.4",
+    "nivel": 3,
+    "titulo": "Avaliação da viabilidade dos objetivos financeiros e ajustes no plano"
+   },
+   {
+    "num": "1.7.2",
+    "nivel": 2,
+    "titulo": "Valores e status da família"
+   },
+   {
+    "num": "1.7.2.1",
+    "nivel": 3,
+    "titulo": "Diferenças entre os cônjuges"
+   },
+   {
+    "num": "1.7.2.2",
+    "nivel": 3,
+    "titulo": "Influência dos valores e do status familiar nas decisões financeiras"
+   },
+   {
+    "num": "1.7.2.3",
+    "nivel": 3,
+    "titulo": "Diferenças entre as dinâmicas familiares e seus impactos"
+   },
+   {
+    "num": "1.7.2.4",
+    "nivel": 3,
+    "titulo": "Impactos na alocação de recursos e sucessão"
+   },
+   {
+    "num": "1.7.2.5",
+    "nivel": 3,
+    "titulo": "Ajuste das recomendações financeiras com base na estrutura familiar"
+   },
+   {
+    "num": "1.7.2.6",
+    "nivel": 3,
+    "titulo": "Análise das interações familiares e seus efeitos nas finanças"
+   },
+   {
+    "num": "1.7.2.7",
+    "nivel": 3,
+    "titulo": "Desenvolvimento de estratégias financeiras alinhadas aos valores familiares"
+   },
+   {
+    "num": "1.7.3",
+    "nivel": 2,
+    "titulo": "Considerações sobre famílias não tradicionais no Planejamento Financeiro"
+   },
+   {
+    "num": "1.7.3.1",
+    "nivel": 3,
+    "titulo": "Particularidades das famílias não tradicionais e impactos no planejamento financeiro"
+   },
+   {
+    "num": "1.7.3.2",
+    "nivel": 3,
+    "titulo": "Necessidades financeiras específicas de famílias não tradicionais"
+   },
+   {
+    "num": "1.7.3.3",
+    "nivel": 3,
+    "titulo": "Implicações legais e financeiras das decisões de planejamento para famílias não tradicionais"
+   },
+   {
+    "num": "1.7.3.4",
+    "nivel": 3,
+    "titulo": "Avaliação e ajuste das estratégias financeiras para famílias não tradicionais"
+   },
+   {
+    "num": "1.7.4",
+    "nivel": 2,
+    "titulo": "Grupos geracionais no Planejamento Financeiro"
+   },
+   {
+    "num": "1.7.4.1",
+    "nivel": 3,
+    "titulo": "Influência das diferenças geracionais nas atitudes financeiras e comportamento de consumo"
+   },
+   {
+    "num": "1.7.4.1.1",
+    "nivel": 4,
+    "titulo": "Características financeiras e comportamentais por geração"
+   },
+   {
+    "num": "1.7.4.2",
+    "nivel": 3,
+    "titulo": "Impacto das diferenças geracionais nas decisões financeiras e planejamen to patrimonial"
+   },
+   {
+    "num": "1.7.4.3",
+    "nivel": 3,
+    "titulo": "Avaliação e ajuste das estratégias financeiras conforme características geracionais"
+   },
+   {
+    "num": "1.7.4.4",
+    "nivel": 3,
+    "titulo": "Desenvolvimento de estratégias financeiras personalizadas por geração"
+   },
+   {
+    "num": "1.7.5",
+    "nivel": 2,
+    "titulo": "Comunicação no Planejamento Financeiro"
+   },
+   {
+    "num": "1.7.5.1",
+    "nivel": 3,
+    "titulo": "Métodos de comunicação e seu impacto na relação com o cliente"
+   },
+   {
+    "num": "1.7.5.2",
+    "nivel": 3,
+    "titulo": "Preferências individuais de comunicação"
+   },
+   {
+    "num": "1.7.5.3",
+    "nivel": 3,
+    "titulo": "Ações e reações psicológicas do cliente"
+   },
+   {
+    "num": "1.7.5.4",
+    "nivel": 3,
+    "titulo": "Aplicação de técnicas de comunicação adaptadas às necessidades do cliente"
+   },
+   {
+    "num": "1.7.5.5",
+    "nivel": 3,
+    "titulo": "Utilização de ferramentas de comunicação para gestão das reações psicológicas"
+   },
+   {
+    "num": "1.7.5.6",
+    "nivel": 3,
+    "titulo": "Análise das preferências do cliente e identificação de barreiras"
+   },
+   {
+    "num": "1.8",
+    "nivel": 1,
+    "titulo": "Perfil de risco do cliente"
+   },
+   {
+    "num": "1.8.1",
+    "nivel": 2,
+    "titulo": "Habilidade em Assumir Riscos"
+   },
+   {
+    "num": "1.8.1.1",
+    "nivel": 3,
+    "titulo": "Fatores que influenciam a habilidade do cliente em assumir riscos"
+   },
+   {
+    "num": "1.8.1.2",
+    "nivel": 3,
+    "titulo": "Ferramentas de avaliação da habilidade de risco"
+   },
+   {
+    "num": "1.8.1.3",
+    "nivel": 3,
+    "titulo": "Impacto da habilidade de risco nas decisões financeiras"
+   },
+   {
+    "num": "1.8.1.4",
+    "nivel": 3,
+    "titulo": "Aplicação prática no planejamento financeiro"
+   },
+   {
+    "num": "1.8.2",
+    "nivel": 2,
+    "titulo": "Desejos e Preferências no Planejamento Financeiro"
+   },
+   {
+    "num": "1.8.2.1",
+    "nivel": 3,
+    "titulo": "Fatores que moldam os desejos e preferências do cliente"
+   },
+   {
+    "num": "1.8.2.2",
+    "nivel": 3,
+    "titulo": "Utilização das informações para ajuste do plano financeiro"
+   },
+   {
+    "num": "1.8.2.3",
+    "nivel": 3,
+    "titulo": "Análise das preferências quanto ao risco e retorno esperado"
+   },
+   {
+    "num": "1.8.2.4",
+    "nivel": 3,
+    "titulo": "Avaliação e ajuste das estratégias financeiras"
+   },
+   {
+    "num": "1.8.3",
+    "nivel": 2,
+    "titulo": "Tolerância ao Risco no Planejamento Financeiro"
+   },
+   {
+    "num": "1.8.3.1",
+    "nivel": 3,
+    "titulo": "Fatores que afetam a tolerância ao risco"
+   },
+   {
+    "num": "1.8.3.2",
+    "nivel": 3,
+    "titulo": "Aplicação de questionários e ferramentas de avaliação"
+   },
+   {
+    "num": "1.8.3.3",
+    "nivel": 3,
+    "titulo": "Ajuste das estratégias financeiras conforme a tolerância ao risco"
+   },
+   {
+    "num": "1.8.3.4",
+    "nivel": 3,
+    "titulo": "Análise do perfil de tolerância em relação ao portfólio atual"
+   },
+   {
+    "num": "1.8.4",
+    "nivel": 2,
+    "titulo": "Necessidade de Risco no Planejamento Financeiro"
+   },
+   {
+    "num": "1.8.4.1",
+    "nivel": 3,
+    "titulo": "Fatores que determinam a necessidade de risco"
+   },
+   {
+    "num": "1.8.4.2",
+    "nivel": 3,
+    "titulo": "Ferramentas para avaliação da necessidade de risco"
+   },
+   {
+    "num": "1.8.4.3",
+    "nivel": 3,
+    "titulo": "Ajuste das estratégias de investimento conforme necessidade de risco"
+   },
+   {
+    "num": "1.8.4.4",
+    "nivel": 3,
+    "titulo": "Análise da necessidade de risco em relação ao portfólio atual"
+   },
+   {
+    "num": "1.8.4.5",
+    "nivel": 3,
+    "titulo": "Avaliação contínua e ajustes"
+   },
+   {
+    "num": "1.8.5",
+    "nivel": 2,
+    "titulo": "Capacidade de Risco no Planejamento Financeiro"
+   },
+   {
+    "num": "1.8.5.1",
+    "nivel": 3,
+    "titulo": "Fatores que influenciam a capacidade de risco"
+   },
+   {
+    "num": "1.8.5.2",
+    "nivel": 3,
+    "titulo": "Técnicas de avaliação da capacidade de risco"
+   },
+   {
+    "num": "1.8.5.3",
+    "nivel": 3,
+    "titulo": "Ajuste das recomendações de investimento"
+   },
+   {
+    "num": "1.8.5.4",
+    "nivel": 3,
+    "titulo": "Análise da capacidade de risco em relação ao portfólio"
+   },
+   {
+    "num": "1.8.5.5",
+    "nivel": 3,
+    "titulo": "Avaliação e ajustes das estratégias financeiras"
+   },
+   {
+    "num": "1.8.6",
+    "nivel": 2,
+    "titulo": "Experiências e traços da personalidade que impactam o perfil de risco"
+   },
+   {
+    "num": "1.8.6.1",
+    "nivel": 3,
+    "titulo": "Traços de personalidade que influenciam o comportamento financeiro"
+   },
+   {
+    "num": "1.8.6.2",
+    "nivel": 3,
+    "titulo": "Técnicas para descobrir e analisar o perfil de risco"
+   },
+   {
+    "num": "1.8.6.3",
+    "nivel": 3,
+    "titulo": "Influência das experiências passadas e traços de personalidade nas decisões f inanceiras"
+   },
+   {
+    "num": "1.8.6.4",
+    "nivel": 3,
+    "titulo": "Avaliação e ajuste das estratégias financeiras"
+   },
+   {
+    "num": "1.9",
+    "nivel": 1,
+    "titulo": "Engajamento com o cliente e comunicação"
+   },
+   {
+    "num": "1.9.1",
+    "nivel": 2,
+    "titulo": "Ouvir - Escuta Ativa"
+   },
+   {
+    "num": "1.9.1.1",
+    "nivel": 3,
+    "titulo": "Importância da escuta ativa no engajamento com o cliente"
+   },
+   {
+    "num": "1.9.1.2",
+    "nivel": 3,
+    "titulo": "Técnicas de escuta ativa"
+   },
+   {
+    "num": "1.9.1.3",
+    "nivel": 3,
+    "titulo": "Aplicação da escuta ativa durante reuniões"
+   },
+   {
+    "num": "1.9.1.4",
+    "nivel": 3,
+    "titulo": "Análise das informações obtidas"
+   },
+   {
+    "num": "1.9.2",
+    "nivel": 2,
+    "titulo": "Processo de descoberta"
+   },
+   {
+    "num": "1.9.2.1",
+    "nivel": 3,
+    "titulo": "Etapas do processo de descoberta"
+   },
+   {
+    "num": "1.9.2.2",
+    "nivel": 3,
+    "titulo": "Aplicação do processo de descoberta"
+   },
+   {
+    "num": "1.9.2.3",
+    "nivel": 3,
+    "titulo": "Análise das informações coletadas"
+   },
+   {
+    "num": "1.9.2.4",
+    "nivel": 3,
+    "titulo": "Avaliação da profundidade e precisão"
+   },
+   {
+    "num": "1.9.3",
+    "nivel": 2,
+    "titulo": "Investigação apreciativa"
+   },
+   {
+    "num": "1.9.3.1",
+    "nivel": 3,
+    "titulo": "Conceito de investigação apreciativa"
+   },
+   {
+    "num": "1.9.3.2",
+    "nivel": 3,
+    "titulo": "Etapas da investigação apreciativa"
+   },
+   {
+    "num": "1.9.3.3",
+    "nivel": 3,
+    "titulo": "Aplicação da investigação apreciativa nas interações com o cliente"
+   },
+   {
+    "num": "1.9.3.4",
+    "nivel": 3,
+    "titulo": "Análise dos resultados da investigação apreciativa"
+   },
+   {
+    "num": "1.9.4",
+    "nivel": 2,
+    "titulo": "Perguntas abertas e fechadas"
+   },
+   {
+    "num": "1.9.4.1",
+    "nivel": 3,
+    "titulo": "Diferença entre perguntas abertas e fechadas"
+   },
+   {
+    "num": "1.9.4.2",
+    "nivel": 3,
+    "titulo": "Aplicação prática de perguntas abertas"
+   },
+   {
+    "num": "1.9.4.3",
+    "nivel": 3,
+    "titulo": "Análise das respostas"
+   },
+   {
+    "num": "1.10",
+    "nivel": 1,
+    "titulo": "Processo Diligente Na Seleção De Produtos E Serviços E Fornecedores e Comunicação"
+   },
+   {
+    "num": "1.10.1",
+    "nivel": 2,
+    "titulo": "Processo diligente para avaliar produtos e serviços financeiros"
+   },
+   {
+    "num": "1.10.1.1",
+    "nivel": 3,
+    "titulo": "Critérios para avaliar produtos e serviços financeiros"
+   },
+   {
+    "num": "1.10.1.2",
+    "nivel": 3,
+    "titulo": "Técnicas de análise de produtos e serviços financeiros"
+   },
+   {
+    "num": "1.10.1.3",
+    "nivel": 3,
+    "titulo": "Análise e seleção considerando necessidades específicas"
+   },
+   {
+    "num": "1.10.1.4",
+    "nivel": 3,
+    "titulo": "Avaliação final e ajustes"
+   },
+   {
+    "num": "1.10.2",
+    "nivel": 2,
+    "titulo": "Escolha de um produto ou serviço financeiro"
+   },
+   {
+    "num": "1.10.2.1",
+    "nivel": 3,
+    "titulo": "Critérios de Escolha de Produtos e Serviços Financeiros"
+   },
+   {
+    "num": "1.10.2.1.1",
+    "nivel": 4,
+    "titulo": "Adequação ao Perfil do Cliente"
+   },
+   {
+    "num": "1.10.2.1.2",
+    "nivel": 4,
+    "titulo": "Custos"
+   },
+   {
+    "num": "1.10.2.1.3",
+    "nivel": 4,
+    "titulo": "Riscos"
+   },
+   {
+    "num": "1.10.2.1.4",
+    "nivel": 4,
+    "titulo": "Prazos"
+   },
+   {
+    "num": "1.10.2.2",
+    "nivel": 3,
+    "titulo": "Regulamentações e Suitability"
+   },
+   {
+    "num": "1.10.2.3",
+    "nivel": 3,
+    "titulo": "Aplicação dos Critérios de Adequação"
+   },
+   {
+    "num": "1.10.2.4",
+    "nivel": 3,
+    "titulo": "Análise Comparativa dos Produtos Financeiros"
+   },
+   {
+    "num": "1.10.3",
+    "nivel": 2,
+    "titulo": "Avaliação e seleção do fornecedor de produtos ou serviços financeiros"
+   },
+   {
+    "num": "1.10.3.1",
+    "nivel": 3,
+    "titulo": "Critérios de Avaliação de Fornecedores Financeiros"
+   },
+   {
+    "num": "1.10.3.1.1",
+    "nivel": 4,
+    "titulo": "Reputação no Mercado"
+   },
+   {
+    "num": "1.10.3.1.2",
+    "nivel": 4,
+    "titulo": "Histórico e Experiência"
+   },
+   {
+    "num": "1.10.3.1.3",
+    "nivel": 4,
+    "titulo": "Solidez Financeira"
+   },
+   {
+    "num": "1.10.3.1.4",
+    "nivel": 4,
+    "titulo": "Conformidade Regulatória"
+   },
+   {
+    "num": "1.10.3.2",
+    "nivel": 3,
+    "titulo": "Métodos de Análise de Fornecedores"
+   },
+   {
+    "num": "1.10.3.2.1",
+    "nivel": 4,
+    "titulo": "Análise Quantitativa"
+   },
+   {
+    "num": "1.10.3.2.2",
+    "nivel": 4,
+    "titulo": "Análise Qualitativa"
+   },
+   {
+    "num": "1.10.3.2.3",
+    "nivel": 4,
+    "titulo": "Análise Comparativa (Benchmarking)"
+   },
+   {
+    "num": "1.10.3.2.4",
+    "nivel": 4,
+    "titulo": "Avaliação de Desempenho e Ajuste"
+   },
+   {
+    "num": "1.10.4",
+    "nivel": 2,
+    "titulo": "Plano financeiro amplo e integrado"
+   },
+   {
+    "num": "1.10.4.1",
+    "nivel": 3,
+    "titulo": "Importância de um Plano Financeiro Integrado"
+   },
+   {
+    "num": "1.10.4.2",
+    "nivel": 3,
+    "titulo": "Técnicas de Planejamento Integrado"
+   },
+   {
+    "num": "1.10.4.2.1",
+    "nivel": 4,
+    "titulo": "Levantamento e Diagnóstico Financeiro"
+   },
+   {
+    "num": "1.10.4.2.2",
+    "nivel": 4,
+    "titulo": "Análise das Necessidades e Objetivos"
+   },
+   {
+    "num": "1.10.4.2.3",
+    "nivel": 4,
+    "titulo": "Elaboração do Plano Unificado"
+   },
+   {
+    "num": "1.10.4.3",
+    "nivel": 3,
+    "titulo": "Alinhamento com os Objetivos do Cliente"
+   },
+   {
+    "num": "1.10.4.3.1",
+    "nivel": 4,
+    "titulo": "Personalização"
+   },
+   {
+    "num": "1.10.4.3.2",
+    "nivel": 4,
+    "titulo": "Revisão e Ajustes"
+   },
+   {
+    "num": "1.10.4.3.3",
+    "nivel": 4,
+    "titulo": "Desenvolvimento do Plano Integrado"
+   }
+  ]
+ },
+ {
+  "modulo": 2,
+  "titulo": "Gestão Financeira",
+  "peso_pct": 14,
+  "itens": [
+   {
+    "num": "2.1",
+    "nivel": 1,
+    "titulo": "Princípios de gestão financeira"
+   },
+   {
+    "num": "2.1.1",
+    "nivel": 2,
+    "titulo": "Aplicação de cálculos financeiros no processo de gestão financeira"
+   },
+   {
+    "num": "2.1.2",
+    "nivel": 2,
+    "titulo": "O ponto econômico ótimo (O ponto, na criação de riqueza, em que o dinheiro não traz mais felicidade a uma pessoa)"
+   },
+   {
+    "num": "2.1.3",
+    "nivel": 2,
+    "titulo": "As demonstrações financeiras básicas"
+   },
+   {
+    "num": "2.1.3.1",
+    "nivel": 3,
+    "titulo": "Balanço patrimonial (demonstração de patrimônio líquido)"
+   },
+   {
+    "num": "2.1.3.2",
+    "nivel": 3,
+    "titulo": "Fluxo de caixa"
+   },
+   {
+    "num": "2.1.3.3",
+    "nivel": 3,
+    "titulo": "Orçamento"
+   },
+   {
+    "num": "2.2",
+    "nivel": 1,
+    "titulo": "Objetivos de gestão financeira"
+   },
+   {
+    "num": "2.2.1",
+    "nivel": 2,
+    "titulo": "Fluxo de caixa e orçamento"
+   },
+   {
+    "num": "2.2.1.1",
+    "nivel": 3,
+    "titulo": "Como elaborar um orçamento pessoal"
+   },
+   {
+    "num": "2.2.1.1.1",
+    "nivel": 4,
+    "titulo": "Analisar as receitas"
+   },
+   {
+    "num": "2.2.1.1.2",
+    "nivel": 4,
+    "titulo": "Analisar os gastos"
+   },
+   {
+    "num": "2.2.2",
+    "nivel": 2,
+    "titulo": "Compromissos financeiros significativos"
+   },
+   {
+    "num": "2.3",
+    "nivel": 1,
+    "titulo": "Balanço patrimonial pessoal"
+   },
+   {
+    "num": "2.3.1",
+    "nivel": 2,
+    "titulo": "Ativos, passivos e patrimônio líquido"
+   },
+   {
+    "num": "2.3.2",
+    "nivel": 2,
+    "titulo": "Análise"
+   },
+   {
+    "num": "2.3.2.1",
+    "nivel": 3,
+    "titulo": "Análise de Liquidez"
+   },
+   {
+    "num": "2.3.2.2",
+    "nivel": 3,
+    "titulo": "Análise de Alavancagem"
+   },
+   {
+    "num": "2.3.2.3",
+    "nivel": 3,
+    "titulo": "Análise de Solvência"
+   },
+   {
+    "num": "2.3.2.4",
+    "nivel": 3,
+    "titulo": "Análise da Composição Patrimonial, Exposição a Riscos e Oportunidades de Melhoria"
+   },
+   {
+    "num": "2.4",
+    "nivel": 1,
+    "titulo": "Planejamento e estratégias do fluxo de caixa"
+   },
+   {
+    "num": "2.4.1",
+    "nivel": 2,
+    "titulo": "Receitas e despesas - atuais/futuras"
+   },
+   {
+    "num": "2.4.2",
+    "nivel": 2,
+    "titulo": "Efeitos da inflação"
+   },
+   {
+    "num": "2.4.2.1",
+    "nivel": 3,
+    "titulo": "Causas da Inflação"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Inflação de demanda"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Inflação de custos"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Inflação de custos induzida"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Inflação de custos autônoma"
+   },
+   {
+    "num": "2.4.2.2",
+    "nivel": 3,
+    "titulo": "Deflação"
+   },
+   {
+    "num": "2.4.2.3",
+    "nivel": 3,
+    "titulo": "Índices de inflação"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• IGP-M – Índice Geral de Preços de Mercado"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• IPCA – Índice Nacional de Preços ao Consumidor Amplo"
+   },
+   {
+    "num": "2.4.3",
+    "nivel": 2,
+    "titulo": "Análise"
+   },
+   {
+    "num": "2.5",
+    "nivel": 1,
+    "titulo": "Planejamento e estratégias de orçamento"
+   },
+   {
+    "num": "2.5.1",
+    "nivel": 2,
+    "titulo": "Informações necessárias para elaborar um orçamento"
+   },
+   {
+    "num": "2.5.2",
+    "nivel": 2,
+    "titulo": "Conciliação orçamentária: importância e uso"
+   },
+   {
+    "num": "2.6",
+    "nivel": 1,
+    "titulo": "Análise, estratégias e soluções de poupança"
+   },
+   {
+    "num": "2.6.1",
+    "nivel": 2,
+    "titulo": "Poupar para construir uma reserva de caixa"
+   },
+   {
+    "num": "2.6.2",
+    "nivel": 2,
+    "titulo": "Poupar como parte do orçamento"
+   },
+   {
+    "num": "2.6.3",
+    "nivel": 2,
+    "titulo": "Poupar e fluxo de caixa"
+   },
+   {
+    "num": "2.6.4",
+    "nivel": 2,
+    "titulo": "Definir estratégias de poupança"
+   },
+   {
+    "num": "2.6.5",
+    "nivel": 2,
+    "titulo": "Poupar para objetivos específicos como educação dos filhos e compra de uma casa"
+   },
+   {
+    "num": "2.7",
+    "nivel": 1,
+    "titulo": "Fundo de emergência"
+   },
+   {
+    "num": "2.7.1",
+    "nivel": 2,
+    "titulo": "Importância do fundo de emergência e quanto é suficiente para ele"
+   },
+   {
+    "num": "2.7.2",
+    "nivel": 2,
+    "titulo": "Veículos e estratégias apropriados para a formação do fundo de emergências coordenados com as características do capital humano e os períodos de carência dos produtos"
+   },
+   {
+    "num": "2.7.3",
+    "nivel": 2,
+    "titulo": "Uso de cartões de crédito e crédito rotativo para custear emergências"
+   },
+   {
+    "num": "2.7.4",
+    "nivel": 2,
+    "titulo": "Importância de ter ativos líquidos sempre"
+   },
+   {
+    "num": "2.8",
+    "nivel": 1,
+    "titulo": "Estratégias de gestão de débitos e créditos"
+   },
+   {
+    "num": "2.8.1",
+    "nivel": 2,
+    "titulo": "Tipos de crédito"
+   },
+   {
+    "num": "2.8.1.1",
+    "nivel": 3,
+    "titulo": "Crédito Rotativo"
+   },
+   {
+    "num": "2.8.1.1.1",
+    "nivel": 4,
+    "titulo": "Cheque Especial"
+   },
+   {
+    "num": "2.8.1.1.2",
+    "nivel": 4,
+    "titulo": "Cartão de Crédito"
+   },
+   {
+    "num": "2.8.1.2",
+    "nivel": 3,
+    "titulo": "Crédito consignado"
+   },
+   {
+    "num": "2.8.1.2.1",
+    "nivel": 4,
+    "titulo": "Cartão Consignado"
+   },
+   {
+    "num": "2.8.1.2.2",
+    "nivel": 4,
+    "titulo": "Margem Consignável"
+   },
+   {
+    "num": "2.8.1.3",
+    "nivel": 3,
+    "titulo": "Crédito pessoal"
+   },
+   {
+    "num": "2.8.1.4",
+    "nivel": 3,
+    "titulo": "Crédito Direto ao Consumidor – CDC"
+   },
+   {
+    "num": "2.8.1.5",
+    "nivel": 3,
+    "titulo": "Financiamento Imobiliário"
+   },
+   {
+    "num": "2.8.1.5.1",
+    "nivel": 4,
+    "titulo": "Seguro Habitacional"
+   },
+   {
+    "num": "2.8.1.6",
+    "nivel": 3,
+    "titulo": "Leasing"
+   },
+   {
+    "num": "2.8.1.7",
+    "nivel": 3,
+    "titulo": "Consórcio"
+   },
+   {
+    "num": "2.8.1.8",
+    "nivel": 3,
+    "titulo": "Penhor"
+   },
+   {
+    "num": "2.8.1.9",
+    "nivel": 3,
+    "titulo": "Crédito rural"
+   },
+   {
+    "num": "2.8.1.9.1",
+    "nivel": 4,
+    "titulo": "Objetivos específicos do crédito rural"
+   },
+   {
+    "num": "2.8.1.10",
+    "nivel": 3,
+    "titulo": "Crédito educacional"
+   },
+   {
+    "num": "2.8.1.10.1",
+    "nivel": 4,
+    "titulo": "Fundo de Financiamento Estudantil (FIES) – Modalidade I"
+   },
+   {
+    "num": "2.8.1.10.2",
+    "nivel": 4,
+    "titulo": "Programa de Financiamento Estudantil (P-FIES) – Modalidades II e III"
+   },
+   {
+    "num": "2.8.2",
+    "nivel": 2,
+    "titulo": "Fatores que os credores usam para avaliar potenciais devedores"
+   },
+   {
+    "num": "2.8.2.1",
+    "nivel": 3,
+    "titulo": "Histórico de Crédito"
+   },
+   {
+    "num": "2.8.2.2",
+    "nivel": 3,
+    "titulo": "Renda e Capacidade de Pagamento"
+   },
+   {
+    "num": "2.8.2.3",
+    "nivel": 3,
+    "titulo": "Nível de Endividamento"
+   },
+   {
+    "num": "2.8.2.4",
+    "nivel": 3,
+    "titulo": "Garantias e Colaterais"
+   },
+   {
+    "num": "2.8.2.4.1",
+    "nivel": 4,
+    "titulo": "Garantias reais"
+   },
+   {
+    "num": "2.8.2.4.2",
+    "nivel": 4,
+    "titulo": "Garantias fidejussórias"
+   },
+   {
+    "num": "2.8.3",
+    "nivel": 2,
+    "titulo": "Uso apropriado e inapropriado e níveis de dívida (ou seja, gestão de crédito e dívida)"
+   },
+   {
+    "num": "2.8.4",
+    "nivel": 2,
+    "titulo": "Gestão de caixa para objetivos específicos (por exemplo, compra de imóvel, educação dos filhos etc.)"
+   },
+   {
+    "num": "2.8.5",
+    "nivel": 2,
+    "titulo": "Abordagens para a gestão de dívidas"
+   },
+   {
+    "num": "2.9",
+    "nivel": 1,
+    "titulo": "Análise de coeficientes financeiros"
+   },
+   {
+    "num": "2.9.1",
+    "nivel": 2,
+    "titulo": "Liquidez"
+   },
+   {
+    "num": "2.9.2",
+    "nivel": 2,
+    "titulo": "Poupança"
+   },
+   {
+    "num": "2.9.3",
+    "nivel": 2,
+    "titulo": "Patrimônio líquido pessoal"
+   },
+   {
+    "num": "2.9.4",
+    "nivel": 2,
+    "titulo": "Dívida sobre patrimônio"
+   },
+   {
+    "num": "2.9.5",
+    "nivel": 2,
+    "titulo": "Liquidez corrente"
+   },
+   {
+    "num": "2.9.6",
+    "nivel": 2,
+    "titulo": "Investimento"
+   },
+   {
+    "num": "2.9.7",
+    "nivel": 2,
+    "titulo": "Ativos financeiros sobre total de ativos"
+   },
+   {
+    "num": "2.9.8",
+    "nivel": 2,
+    "titulo": "Renda passiva"
+   },
+   {
+    "num": "2.9.9",
+    "nivel": 2,
+    "titulo": "Custo da dívida"
+   },
+   {
+    "num": "2.9.10",
+    "nivel": 2,
+    "titulo": "Solvência"
+   }
+  ]
+ },
+ {
+  "modulo": 3,
+  "titulo": "Planejamento de Investimentos e Gestão de Ativos",
+  "peso_pct": 17,
+  "itens": [
+   {
+    "num": "3.1",
+    "nivel": 1,
+    "titulo": "Princípios de Planejamento de Investimento"
+   },
+   {
+    "num": "3.1.1",
+    "nivel": 2,
+    "titulo": "Princípios de risco e retorno:"
+   },
+   {
+    "num": "3.1.1.1",
+    "nivel": 3,
+    "titulo": "Conceito de risco"
+   },
+   {
+    "num": "3.1.1.2",
+    "nivel": 3,
+    "titulo": "Conceito de retorno"
+   },
+   {
+    "num": "3.1.1.3",
+    "nivel": 3,
+    "titulo": "Trade-off risco x retorno"
+   },
+   {
+    "num": "3.1.1.4",
+    "nivel": 3,
+    "titulo": "Diversificação"
+   },
+   {
+    "num": "3.1.1.5",
+    "nivel": 3,
+    "titulo": "Alocação de Ativos"
+   },
+   {
+    "num": "3.1.1.6",
+    "nivel": 3,
+    "titulo": "Tipos de Alocação de Ativos"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Alocação Estratégica"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Alocação Tática"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Alocação Dinâmica"
+   },
+   {
+    "num": "3.1.2",
+    "nivel": 2,
+    "titulo": "Critérios qualitativos e pessoais do investidor (por exemplo: investimentos ESG)"
+   },
+   {
+    "num": "3.1.2.1",
+    "nivel": 3,
+    "titulo": "Tolerância ao risco"
+   },
+   {
+    "num": "3.1.2.2",
+    "nivel": 3,
+    "titulo": "Ciclo de vida do investidor"
+   },
+   {
+    "num": "3.1.2.3",
+    "nivel": 3,
+    "titulo": "Liquidez desejada"
+   },
+   {
+    "num": "3.1.2.4",
+    "nivel": 3,
+    "titulo": "No perfil do investidor, valores individuais e investimentos ESG, podem influenciar"
+   },
+   {
+    "num": "3.1.3",
+    "nivel": 2,
+    "titulo": "Horizonte de tempo de investimento"
+   },
+   {
+    "num": "3.1.3.1",
+    "nivel": 3,
+    "titulo": "Curto, médio e longo prazos."
+   },
+   {
+    "num": "3.1.3.2",
+    "nivel": 3,
+    "titulo": "Medições históricas de risco e retorno para várias classes de ativos relacionadas ao período de investimento do cliente."
+   },
+   {
+    "num": "3.2",
+    "nivel": 1,
+    "titulo": "Objetivos, restrições e adequação do planejamento de investimentos"
+   },
+   {
+    "num": "3.2.1",
+    "nivel": 2,
+    "titulo": "Objetivos:"
+   },
+   {
+    "num": "3.2.1.1",
+    "nivel": 3,
+    "titulo": "Rendimento real vs. crescimento do capital"
+   },
+   {
+    "num": "3.2.1.2",
+    "nivel": 3,
+    "titulo": "Preservação do capital"
+   },
+   {
+    "num": "3.2.2",
+    "nivel": 2,
+    "titulo": "Restrições:"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Gerir as restrições entre os objetivos de investimento"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Liquidez"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Tolerância ao risco e capacidade de assumir riscos"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Alocação dos ativos"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Escolhas restritas de investimento"
+   },
+   {
+    "num": "3.2.3",
+    "nivel": 2,
+    "titulo": "Suitability"
+   },
+   {
+    "num": "3.2.3.1",
+    "nivel": 3,
+    "titulo": "Adequação aos investidores de varejo, qualificados e profissionais."
+   },
+   {
+    "num": "3.2.3.2",
+    "nivel": 3,
+    "titulo": "Benefícios Esperados após feito Suitability"
+   },
+   {
+    "num": "3.2.4",
+    "nivel": 2,
+    "titulo": "Risco e rentabilidade (crescimento do capital comparado com preservação)"
+   },
+   {
+    "num": "3.2.4.1",
+    "nivel": 3,
+    "titulo": "Rentabilidade"
+   },
+   {
+    "num": "3.2.4.1.1",
+    "nivel": 4,
+    "titulo": "Rentabilidade Observada"
+   },
+   {
+    "num": "3.2.4.1.2",
+    "nivel": 4,
+    "titulo": "Rentabilidade Esperada"
+   },
+   {
+    "num": "3.2.4.2",
+    "nivel": 3,
+    "titulo": "Riscos"
+   },
+   {
+    "num": "3.2.4.2.1",
+    "nivel": 4,
+    "titulo": "Classificação e Tipos de risco"
+   },
+   {
+    "num": "3.2.4.2.1.1",
+    "nivel": 5,
+    "titulo": "Risco de crédito"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Risco País"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Risco de Inadimplência do Emissor"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Risco de Contraparte"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Risco de Liquidação Financeira"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Risco de Intermediação"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Risco de Atraso"
+   },
+   {
+    "num": "3.2.4.2.1.2",
+    "nivel": 5,
+    "titulo": "Risco de mercado: sistemático e não sistemático"
+   },
+   {
+    "num": "3.2.4.2.1.3",
+    "nivel": 5,
+    "titulo": "Risco de liquidez"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Implicações na precificação do risco de liquidez"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Estratégias de controle do risco de liquidez"
+   },
+   {
+    "num": "3.3",
+    "nivel": 1,
+    "titulo": "Classes de ativos Instrumentos de Renda Fixa"
+   },
+   {
+    "num": "3.3.1",
+    "nivel": 2,
+    "titulo": "Tradicionais: conceito e riscos inerentes"
+   },
+   {
+    "num": "3.3.1.1",
+    "nivel": 3,
+    "titulo": "Equivalentes a caixa (curto prazo, alta liquidez, baixíssimo risco de crédito)"
+   },
+   {
+    "num": "3.3.1.2",
+    "nivel": 3,
+    "titulo": "Títulos representativos de dívida (títulos públicos e privados) Públicos: LFT, LTN, NTN-B, NTN-B Principal, NTN-F A - Títulos Prefixados - Letra do Tesouro Nacional (ou Tesouro Prefixado)"
+   },
+   {
+    "num": "3.3.1.2.2",
+    "nivel": 4,
+    "titulo": "Tesouro Direto: Tesouro Prefixado, Tesouro Selic, Tesouro IPCA+ (com e sem cupom), Tesouro Renda+ e Tesouro Educa+"
+   },
+   {
+    "num": "3.3.1.2.2.1",
+    "nivel": 5,
+    "titulo": "Tesouro Direto: Conceito, características, custos"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Considerações Técnicas e Estratégicas"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Estrutura, formas de negociação e custos para o Investidor"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Custos transacionais"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "◦ Taxa cobrada pela B3"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "◦ Taxa cobrada pela instituição financeira"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Limites de compra e venda"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Horário de Funcionamento"
+   },
+   {
+    "num": "3.3.1.2.3",
+    "nivel": 4,
+    "titulo": "Privados emitidos por instituições financeiras:"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Poupança"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Certificado de Depósito Bancário (CDB"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Recibo de Depósito Bancário (RDB)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Depósito a Prazo com Garantia Especial (DPGE)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Letra de Crédito Imobiliário (LCI)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Letra Imobiliária Garantida (LIG)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Letra de Crédito do Agronegócio (LCA)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Letra de Câmbio (LC)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Letra Financeira (LF)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Operação Compromissada"
+   },
+   {
+    "num": "3.3.1.2.4",
+    "nivel": 4,
+    "titulo": "FGC – Fundo Garantidor de Crédito"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Limites de cobertura"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Limitação da garantia até R$ 1 milhão"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Garantia especial"
+   },
+   {
+    "num": "3.3.1.2.5",
+    "nivel": 4,
+    "titulo": "Privados emitidos por instituições não financeiras:"
+   },
+   {
+    "num": "3.3.1.2.5.1",
+    "nivel": 5,
+    "titulo": "Debêntures simples, debêntures conversíveis, debêntures permutáveis, debêntures de infraestrutura."
+   },
+   {
+    "num": "3.3.1.2.5.1.1",
+    "nivel": 6,
+    "titulo": "Conceito e características"
+   },
+   {
+    "num": "3.3.1.2.5.1.2",
+    "nivel": 6,
+    "titulo": "Características da emissão e dos títulos"
+   },
+   {
+    "num": "3.3.1.2.5.1.3",
+    "nivel": 6,
+    "titulo": "Taxas, Formas de Remuneração e de Negociação"
+   },
+   {
+    "num": "3.3.1.2.5.1.4",
+    "nivel": 6,
+    "titulo": "Cláusulas da escritura das debêntures"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Repactuação"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Vencimento antecipado"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Covenant"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Cross default"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Resgate Antecipado"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Aquisição facultativa"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Opção de compra (call)"
+   },
+   {
+    "num": "3.3.1.2.5.1.5",
+    "nivel": 6,
+    "titulo": "Hierarquia das espécies de debêntures de acordo com as garantias"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Garantia Real"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Garantia Flutuante"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Quirografária"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Subordinada"
+   },
+   {
+    "num": "3.3.1.2.5.1.6",
+    "nivel": 6,
+    "titulo": "Assembleia de debenturistas"
+   },
+   {
+    "num": "3.3.1.2.5.1.7",
+    "nivel": 6,
+    "titulo": "Deveres do Agente Fiduciário"
+   },
+   {
+    "num": "3.3.1.2.5.2",
+    "nivel": 5,
+    "titulo": "Nota promissória"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Prazo de emissão"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Forma de Emissão"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Colocação/Negociação no Mercado"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Registro"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Remuneração"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Resgate"
+   },
+   {
+    "num": "3.3.1.2.5.3",
+    "nivel": 5,
+    "titulo": "Certificado de Recebíveis Imobiliários (CRI)"
+   },
+   {
+    "num": "3.3.1.2.5.4",
+    "nivel": 5,
+    "titulo": "Certificado de Recebíveis do Agronegócio (CRA)"
+   },
+   {
+    "num": "3.3.1.3",
+    "nivel": 3,
+    "titulo": "Títulos representativos de participação acionária (ações):"
+   },
+   {
+    "num": "3.3.1.3.1",
+    "nivel": 4,
+    "titulo": "Ações"
+   },
+   {
+    "num": "3.3.1.3.1.1",
+    "nivel": 5,
+    "titulo": "Conceito"
+   },
+   {
+    "num": "3.3.1.3.1.2",
+    "nivel": 5,
+    "titulo": "Tipos de ações"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Ações Ordinárias (ON)"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Ações Preferenciais (PN)"
+   },
+   {
+    "num": "3.3.1.3.1.3",
+    "nivel": 5,
+    "titulo": "Classes"
+   },
+   {
+    "num": "3.3.1.3.1.4",
+    "nivel": 5,
+    "titulo": "Units"
+   },
+   {
+    "num": "3.3.1.3.2",
+    "nivel": 4,
+    "titulo": "BDR (Brazilian Depositary Receipt): conceito e tipos (patrocinado e não patrocinado)"
+   },
+   {
+    "num": "3.3.1.3.2.1",
+    "nivel": 5,
+    "titulo": "Categorias de BDRs"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Patrocinados (Níveis I, II ou III)"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Não patrocinados (apenas Nível I)"
+   },
+   {
+    "num": "3.3.1.3.3",
+    "nivel": 4,
+    "titulo": "Proventos dos acionistas"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Dividendos"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Juros sobre Capital Próprio"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Subscrição"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Bônus de Subscrição"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Bonificação"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Desdobramento (split)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Grupamento (inplit)"
+   },
+   {
+    "num": "3.3.1.3.4",
+    "nivel": 4,
+    "titulo": "Estratégia de Investimentos em ações"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Compra à vista,"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Compra a termo o Proteger preços o Diversificar riscos o Obter recursos (operação caixa)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Compra com uso de margem"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Venda à vista,"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Venda a termo,"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Venda descoberta,"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Aluguel de ações,"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Long and short"
+   },
+   {
+    "num": "3.3.1.3.5",
+    "nivel": 4,
+    "titulo": "Ambientes de negociação"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Bolsa"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Balcão organizado"
+   },
+   {
+    "num": "3.3.1.3.6",
+    "nivel": 4,
+    "titulo": "Segmentos de listagem da B3"
+   },
+   {
+    "num": "3.3.1.3.6.1",
+    "nivel": 5,
+    "titulo": "Características"
+   },
+   {
+    "num": "3.3.1.3.6.1.1",
+    "nivel": 6,
+    "titulo": "Direito dos acionistas minoritários"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Direito de voto"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Participação nos lucros"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Direito de participação no acervo em caso de liquidação"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Fiscalização"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Preferência de Subscrição"
+   },
+   {
+    "num": null,
+    "nivel": 7,
+    "titulo": "• Direito de recesso"
+   },
+   {
+    "num": "3.3.1.3.6.2",
+    "nivel": 5,
+    "titulo": "Proteção do minoritário no fechamento do capital"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Previsão legal"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Direito ao tag along na alienação do controle"
+   },
+   {
+    "num": "3.3.1.3.6.3",
+    "nivel": 5,
+    "titulo": "Níveis de governança, critérios de adesão e listagem"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Companhia Nível 1"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Companhia Nível 2"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Novo Mercado"
+   },
+   {
+    "num": "3.3.1.4",
+    "nivel": 3,
+    "titulo": "Oferta Pública de Valores Mobiliários (renda fixa e variável)"
+   },
+   {
+    "num": "3.3.1.4.1",
+    "nivel": 4,
+    "titulo": "Mercado primário e secundário: conceito, funções econômicas e formas de negociação"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Oferta Primária (Underwriting)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Oferta Secundária (Block Trade)"
+   },
+   {
+    "num": "3.3.1.4.2",
+    "nivel": 4,
+    "titulo": "Initial Public Offering – IPO. Conceito, características, operacionalidade"
+   },
+   {
+    "num": "3.3.1.4.2.1",
+    "nivel": 5,
+    "titulo": "Papel dos principais agentes no processo da Oferta Pública:"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Comissão de Valores Mobiliários"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Instituições Intermediárias (Pool de Distribuição)"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Banco Coordenador"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Agência de Rating"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Agente Fiduciário ou Agente de Notas"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Banco Escriturador"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Banco Mandatário"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Banco Custodiante"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Formador de Mercado (Market Maker) – Mercado de ações"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Escritório de Advocacia"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• ANBIMA – Associação Brasileira das Entidades dos Mercados Financeiro e de Capitais."
+   },
+   {
+    "num": "3.3.1.4.3",
+    "nivel": 4,
+    "titulo": "Tipos de Subscrição"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Garantia Firme ou Underwriting Firm"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Melhores Esforços ou Best Effort Underwriting"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Residual ou Stand-By Underwriting"
+   },
+   {
+    "num": "3.3.1.4.4",
+    "nivel": 4,
+    "titulo": "Formação de preço nas ofertas"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Preço Fixo"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Bookbuilding"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Leilão em Bolsa"
+   },
+   {
+    "num": "3.3.1.4.5",
+    "nivel": 4,
+    "titulo": "Sobre a Distribuição"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Lote Suplementar (green shoe) até 15%"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Lote Adicional (Hot Issue) até 20%"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Rateio"
+   },
+   {
+    "num": "3.3.1.4.6",
+    "nivel": 4,
+    "titulo": "Não concretização"
+   },
+   {
+    "num": "3.3.1.4.7",
+    "nivel": 4,
+    "titulo": "Follow On"
+   },
+   {
+    "num": "3.3.1.4.8",
+    "nivel": 4,
+    "titulo": "Oferta Pública de Aquisição (OPA): conceito, características, operacionalidade"
+   },
+   {
+    "num": "3.3.1.5",
+    "nivel": 3,
+    "titulo": "Fundos de Investimento"
+   },
+   {
+    "num": "3.3.1.5.1",
+    "nivel": 4,
+    "titulo": "Definições gerais"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Condomínio"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Patrimônio líquido"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Cota e cotista"
+   },
+   {
+    "num": "3.3.1.5.2",
+    "nivel": 4,
+    "titulo": "Responsabilidades dos prestadores de serviços"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Administrador"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Gestor"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Distribuidor"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Custodiante"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Auditor Independente"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Consultoria de Investimentos"
+   },
+   {
+    "num": "3.3.1.5.3",
+    "nivel": 4,
+    "titulo": "Direitos e deveres dos cotistas"
+   },
+   {
+    "num": "3.3.1.5.4",
+    "nivel": 4,
+    "titulo": "Fundos de investimento (Fl) e Fundos de Investimento em Cotas (FIC)"
+   },
+   {
+    "num": "3.3.1.5.5",
+    "nivel": 4,
+    "titulo": "Tipos de fundos"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Fundos Abertos"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Fundos Fechados"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Fundos Abertos com carência"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Fundos Abertos sem carência"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Fundo de Investimento com Único Investidor"
+   },
+   {
+    "num": "3.3.1.5.6",
+    "nivel": 4,
+    "titulo": "Dinâmica de aplicação e resgate"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Regras de conversão das cotas (aplicação e resgate)"
+   },
+   {
+    "num": "3.3.1.5.7",
+    "nivel": 4,
+    "titulo": "Cotas de abertura e cota de fechamento"
+   },
+   {
+    "num": "3.3.1.5.8",
+    "nivel": 4,
+    "titulo": "Fechamento do Fundo para novas aplicações"
+   },
+   {
+    "num": "3.3.1.5.9",
+    "nivel": 4,
+    "titulo": "Fechamento do fundo para resgates"
+   },
+   {
+    "num": "3.3.1.5.10",
+    "nivel": 4,
+    "titulo": "Objetivo e política de investimento do fundo"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Limites por emissor"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Limites por modalidade de ativo financeiro"
+   },
+   {
+    "num": "3.3.1.5.11",
+    "nivel": 4,
+    "titulo": "Informações comerciais na distribuição de fundos"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Regulamento"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Termo de adesão e de ciência de risco"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Lâmina (de informações básicas)"
+   },
+   {
+    "num": "3.3.1.5.12",
+    "nivel": 4,
+    "titulo": "Prestação de contas aos cotistas - Divulgação de cotas e rentabilidade"
+   },
+   {
+    "num": "3.3.1.5.13",
+    "nivel": 4,
+    "titulo": "Assembleia Geral"
+   },
+   {
+    "num": "3.3.1.5.14",
+    "nivel": 4,
+    "titulo": "Disclaimers e avisos obrigatórios"
+   },
+   {
+    "num": "3.3.1.5.15",
+    "nivel": 4,
+    "titulo": "Classificação dos fundos quanto ao prazo médio da carteira"
+   },
+   {
+    "num": "3.3.1.5.16",
+    "nivel": 4,
+    "titulo": "Tipos de fundos quanto à estratégia de gestão das carteiras"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Renda Fixa - Gestão Passiva"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Renda Variável - Gestão Passiva"
+   },
+   {
+    "num": "3.3.1.5.16.1",
+    "nivel": 5,
+    "titulo": "Estratégias para manter aderência aos índices de referência e as respectivas limitações"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Renda Fixa - Gestão Passiva"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Renda Variável - Gestão Passiva"
+   },
+   {
+    "num": "3.3.1.5.16.2",
+    "nivel": 5,
+    "titulo": "Estratégias de gestão: posicionamento, hedge e alavancagem."
+   },
+   {
+    "num": "3.3.1.5.17",
+    "nivel": 4,
+    "titulo": "Instrução CVM 175"
+   },
+   {
+    "num": "3.3.1.5.17.1",
+    "nivel": 5,
+    "titulo": "Classes dos fundos segundo classificação da CVM."
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Fundos Renda Fixa"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Fundos Ações"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Fundos Cambial"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Fundo de Renda Fixa – Curto Prazo"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Fundo Renda Fixa – Referenciado"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Fundo Renda Fixa – Simples"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Fundo Renda Fixa – Dívida Externa"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Fundo de Crédito Privado"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Fundo de Ações – Mercado de Acesso"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Fundos de Investimento Multimercado"
+   },
+   {
+    "num": "3.3.1.5.18",
+    "nivel": 4,
+    "titulo": "Outros fundos"
+   },
+   {
+    "num": "3.3.1.5.18.1",
+    "nivel": 5,
+    "titulo": "Fundo de Investimento Imobiliário (FII)"
+   },
+   {
+    "num": "3.3.1.5.18.2",
+    "nivel": 5,
+    "titulo": "Fundo de Investimento com Único Investidor (ou de Classes Exclusivas)"
+   },
+   {
+    "num": "3.3.1.5.18.3",
+    "nivel": 5,
+    "titulo": "Fundo destinado a investidor qualificado e profissional"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Investidores profissionais – Definição"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Investidores qualificados – Definição"
+   },
+   {
+    "num": "3.3.1.5.18.4",
+    "nivel": 5,
+    "titulo": "Fundos de Índice e ETF - Exchange Traded Funds"
+   },
+   {
+    "num": "3.3.1.5.19",
+    "nivel": 4,
+    "titulo": "Custos do cotista"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Taxa de administração: finalidade, base de cálculo e forma de cobrança"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Taxa de performance: finalidade, base de cálculo e conceito de linha d’águaTaxa de Ingresso"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Taxa de Saída"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Regras de alteração"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Outras despesas autorizadas"
+   },
+   {
+    "num": "3.3.1.5.20",
+    "nivel": 4,
+    "titulo": "Fatores que afetam o valor da cota"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Marcação a Mercado dos ativos da carteira"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "◦ Efeitos da não marcação a mercado no carregamento de ativos até o vencimento"
+   },
+   {
+    "num": "3.3.1.5.20.2",
+    "nivel": 5,
+    "titulo": "Taxa de administração, taxa de performance e outras despesas"
+   },
+   {
+    "num": "3.3.1.5.21",
+    "nivel": 4,
+    "titulo": "Clube de investimento"
+   },
+   {
+    "num": "3.3.1.5.22",
+    "nivel": 4,
+    "titulo": "Carteira administrada: conceito e principais características"
+   },
+   {
+    "num": "3.3.1.5.23",
+    "nivel": 4,
+    "titulo": "Ativos imobiliários"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Tipos: imóveis residenciais, comerciais e terras"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Riscos: liquidez, vacância, lei do Inquilinato, contrato de aluguel ou arrendamento, proteção da inflação"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Custos: Manutenção, condomínio, IPTU e ITR"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Estratégias: geração de renda, ganho de capital"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Índices do mercado imobiliário: IFIX, FIPE ZAP, IVAR"
+   },
+   {
+    "num": "3.3.2",
+    "nivel": 2,
+    "titulo": "Não Tradicionais/Alternativos: conceito e riscos inerentes"
+   },
+   {
+    "num": "3.3.2.1",
+    "nivel": 3,
+    "titulo": "Fundos multimercado Subclassificações"
+   },
+   {
+    "num": "3.3.2.2",
+    "nivel": 3,
+    "titulo": "Private Equity"
+   },
+   {
+    "num": "3.3.2.3",
+    "nivel": 3,
+    "titulo": "Criptoativos (bitcoin e ethereum) e blockchain"
+   },
+   {
+    "num": "3.3.2.4",
+    "nivel": 3,
+    "titulo": "Investimentos no Exterior"
+   },
+   {
+    "num": "3.3.2.4.1",
+    "nivel": 4,
+    "titulo": "Títulos públicos norte-americanos:"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Treasury /K Bills (ou T-bills)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Treasury Notes (T-Notes)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Treasury Bonds (T-Bonds)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• TIPS - Treasury Inflation-Protected Securities"
+   },
+   {
+    "num": "3.3.2.4.2",
+    "nivel": 4,
+    "titulo": "Títulos privados"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Certificates of Deposit (CD)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Commercial Papers (CP)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Eurobonds High Yield Bonds"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• High Yield Bonds"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "◦ Bonds com opção de call (Callable Bonds)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "◦ Bonds com opção de put (Putable Bonds)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Repo – Repurchase Agreements"
+   },
+   {
+    "num": "3.3.2.4.3",
+    "nivel": 4,
+    "titulo": "Ações: preferred e commom"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Preferred Stock (Ações Preferenciais)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Common Stock (Ações Ordinárias)ADRS - American Depositary Receipts"
+   },
+   {
+    "num": "3.3.2.4.4",
+    "nivel": 4,
+    "titulo": "Fundos de Investimento: Principais classes"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Money Market Funds"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Bond Funds (Fixed Income Funds)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Equity Funds (Stocks)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Peculiaridade: classes e tipos de cotas"
+   },
+   {
+    "num": "3.3.2.4.5",
+    "nivel": 4,
+    "titulo": "Investimentos Alternativos: Hedge Funds"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Real Estate Investment Trusts (REIT)"
+   },
+   {
+    "num": "3.3.2.4.6",
+    "nivel": 4,
+    "titulo": "Indicadores e índices de referência:"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• LIBOR (London Interbank Offered Rate)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• HFR15 (Hedge Fund Research Index)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Event Driven"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• DJIA (Dow Jones)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• NASDAQ"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• S&P500"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• VIX (Chicago Board Options Exchange Market Volatility Index)"
+   },
+   {
+    "num": "3.3.2.4.7",
+    "nivel": 4,
+    "titulo": "ETF – Exchange Traded Funds"
+   },
+   {
+    "num": "3.3.2.5",
+    "nivel": 3,
+    "titulo": "Fundos Estruturados"
+   },
+   {
+    "num": "3.3.2.6",
+    "nivel": 3,
+    "titulo": "Fundos de Investimento em Participações (FIP)"
+   },
+   {
+    "num": "3.3.2.7",
+    "nivel": 3,
+    "titulo": "FIDC – Fundo de Investimento em Direitos Creditórios"
+   },
+   {
+    "num": "3.3.2.8",
+    "nivel": 3,
+    "titulo": "COE – Certificado de Operações Estruturadas"
+   },
+   {
+    "num": "3.3.3",
+    "nivel": 2,
+    "titulo": "Instrumentos e estratégias de proteção e alavancagem"
+   },
+   {
+    "num": "3.3.3.1",
+    "nivel": 3,
+    "titulo": "Instrumentos de Derivativos"
+   },
+   {
+    "num": "3.3.3.1.1",
+    "nivel": 4,
+    "titulo": "Conceito e ambientes de negociação. B3 e Balcão"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Principais características das negociações em Bolsa"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Vantagens e Problemas"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Ajuste Diário"
+   },
+   {
+    "num": "3.3.3.1.1.2",
+    "nivel": 5,
+    "titulo": "Principais características do mercado de Balcão"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Vantagens e Problemas"
+   },
+   {
+    "num": "3.3.3.1.2",
+    "nivel": 4,
+    "titulo": "Modalidades:"
+   },
+   {
+    "num": "3.3.3.1.2.1",
+    "nivel": 5,
+    "titulo": "Termo: ações e dólar Características do termo de ações na B3"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Formação de preço do NDF"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Futuro: DI, cupom cambial, Ibovespa, FRA"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Características operacionais e funcionais"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Margem de garantia e sua função"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Cupom cambial"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Ibovespa futuro"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Forward Rate Agreement de Cupom Cambial (FRA de cupom, FRC)"
+   },
+   {
+    "num": "3.3.3.1.2.3",
+    "nivel": 5,
+    "titulo": "Swap: juros, moeda, índice de preços"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Os swaps mais comuns no mercado brasileiro"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "◦ Swap de taxa de juros"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "◦ Swap de índices de preços IGP-M, IGP-DI, IPCA"
+   },
+   {
+    "num": "3.3.3.1.2.4",
+    "nivel": 5,
+    "titulo": "Opções: compra e venda de call e put, opções com barreira, análise de gráficos, fatores que determinam o preço da call"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Participantes do Mercado de OpçõesCompra e venda de call e put"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Combinando opções: principais estratégias Financiamento (Lançamento Coberto)"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Box de quatro pontas"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Opções com barreira"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Modelo Binomial – Conceito (John Cox e Mark Rubinstein)"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Modelo de Black & Scholes – Conceito"
+   },
+   {
+    "num": "3.3.3.1.2.5",
+    "nivel": 5,
+    "titulo": "Estratégias e riscos potenciais"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Hedge (proteção)"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Especulação"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Alavancagem e Alavancagem Sintética Arbitragem"
+   },
+   {
+    "num": "3.4",
+    "nivel": 1,
+    "titulo": "Técnicas de gestão de portifólio"
+   },
+   {
+    "num": "3.4.1",
+    "nivel": 2,
+    "titulo": "Teoria de carteiras"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Eficiência de mercado fraca, semiforte e forte"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Hipótese de Eficiência dos Mercados (HEM)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Teoria da Utilidade Esperada"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Função utilidade"
+   },
+   {
+    "num": "3.4.2",
+    "nivel": 2,
+    "titulo": "Fronteiras eficientes de Markowitz (Teoria Moderna de Portfólio)"
+   },
+   {
+    "num": "3.4.2.1",
+    "nivel": 3,
+    "titulo": "Fronteira Eficiente"
+   },
+   {
+    "num": "3.4.2.2",
+    "nivel": 3,
+    "titulo": "Diversificação, risco e retorno"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Risco diversificável"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Risco sistemático"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Diversificação"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Ativo livre de risco – Conceito"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Retorno esperado de uma carteira"
+   },
+   {
+    "num": "3.4.2.3",
+    "nivel": 3,
+    "titulo": "Risco e Covariância. Diversificação do Risco e o Modelo de Markowitz."
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• A covariância é indicada por cov (X, Y). Coeficiente de correlação Carteira de variância mínima"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Escolha da carteira ótima"
+   },
+   {
+    "num": "3.4.3",
+    "nivel": 2,
+    "titulo": "Modelo de Precificação de Ativos (CAPM)"
+   },
+   {
+    "num": "3.4.3.1",
+    "nivel": 3,
+    "titulo": "Técnicas de gestão de portfólio"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Beta e a reta característica"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Coeficiente Beta – Risco Sistemático"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Coeficiente Alfa ou Alfa de Jensen"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• A reta do mercado de capitais (Capital Market Line - CML)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Modelos de precificação"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Capital Asset Pricing Model (CAPM)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Arbitrage Pricing Theory (APT)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Modelo de três fatores de Fama-French"
+   },
+   {
+    "num": "3.5",
+    "nivel": 1,
+    "titulo": "Medição de desempenho e risco"
+   },
+   {
+    "num": "3.5.1",
+    "nivel": 2,
+    "titulo": "Questões relativas à avaliação de desempenho e risco"
+   },
+   {
+    "num": "3.5.2",
+    "nivel": 2,
+    "titulo": "Implicações das comissões e encargos"
+   },
+   {
+    "num": "3.5.3",
+    "nivel": 2,
+    "titulo": "Retorno ponderado pelo tempo e moeda (valor)"
+   },
+   {
+    "num": "3.5.4",
+    "nivel": 2,
+    "titulo": "Medição de desempenho ajustado ao risco"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Índice de Sharpe"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Índice de Treynor"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Índice de Sortino"
+   },
+   {
+    "num": "3.5.4.1",
+    "nivel": 3,
+    "titulo": "Gestão e mensuração de retorno"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Índice de Sharpe"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Índice de Treynor"
+   },
+   {
+    "num": "3.5.5",
+    "nivel": 2,
+    "titulo": "Expectativas do mercado de capitais (previsões para diferentes classes de ativos, prêmio de mercado)"
+   },
+   {
+    "num": "3.5.5.1",
+    "nivel": 3,
+    "titulo": "Beta"
+   },
+   {
+    "num": "3.5.5.2",
+    "nivel": 3,
+    "titulo": "Gestão e mensuração de risco"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Value at Risk (VaR)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Stress Test"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Stop loss"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Risco de reinvestimento, risco de resgate antecipado (liquidez)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Duration e Duration Modificada"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Imunização da carteira"
+   },
+   {
+    "num": "3.5.5.3",
+    "nivel": 3,
+    "titulo": "Principais índices de referência"
+   },
+   {
+    "num": "3.5.5.3.1",
+    "nivel": 4,
+    "titulo": "Índices de Renda Fixa"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Prefixados (IRF-M)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Indexados ao IPCA (IMA-B)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Indexados ao IGP-M (IMA-C)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Pós-fixados, que respondem à taxa Selic (IMA-S)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Carteiras Teóricas"
+   },
+   {
+    "num": "3.5.5.3.2",
+    "nivel": 4,
+    "titulo": "Índices de Renda Variável"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Ibovespa"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• IBrX – Índice Brasil"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• IbrX-50 - Índice Brasil 50"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Índice Small Cap – SMLL"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Índice de Dividendos – IDIV"
+   },
+   {
+    "num": "3.6",
+    "nivel": 1,
+    "titulo": "Alocação de ativos e tipos de investimentos"
+   },
+   {
+    "num": "3.6.1",
+    "nivel": 2,
+    "titulo": "Alocação estratégica de ativos"
+   },
+   {
+    "num": "3.6.1.1",
+    "nivel": 3,
+    "titulo": "Seleção de ativos de renda variável"
+   },
+   {
+    "num": "3.6.1.1.1",
+    "nivel": 4,
+    "titulo": "Modelos de precificação de ações"
+   },
+   {
+    "num": "3.6.1.1.1.1",
+    "nivel": 5,
+    "titulo": "Capital Asset Pricing Model – CAPM"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Premissas do CAPM"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Prêmio pelo risco e Aversão ao Risco"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Prêmio pelo risco de ativos particulares"
+   },
+   {
+    "num": "3.6.1.1.1.2",
+    "nivel": 5,
+    "titulo": "Dividend discount model – Modelo de Gordon"
+   },
+   {
+    "num": "3.6.1.1.1.3",
+    "nivel": 5,
+    "titulo": "Free Cash Flow"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Esqueleto de Fluxo de Caixa da Empresa (FCDE) (+) Receitas"
+   },
+   {
+    "num": null,
+    "nivel": 6,
+    "titulo": "• Esqueleto do Fluxo de Caixa do Acionista (+) Receitas"
+   },
+   {
+    "num": "3.6.1.2",
+    "nivel": 3,
+    "titulo": "Múltiplos"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Lucro por ação (LPA)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Preço/Lucro (P/L)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Preço/ Valor Patrimonial (P/ VP)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Dividend Yield"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• EV (Enterprise Value)/ EBITDA (Earnings before interest, taxes, depreciation and amortization)"
+   },
+   {
+    "num": "3.6.2",
+    "nivel": 2,
+    "titulo": "Alocação tática de ativos"
+   },
+   {
+    "num": "3.6.2.1",
+    "nivel": 3,
+    "titulo": "Análise técnica (ou grafista) e fundamentalista: premissas e diferenças"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Premissas da análise fundamentalista"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Premissas da análise técnica"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Principais características da análise técnica"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Suporte e resistência na análise técnica"
+   },
+   {
+    "num": "3.6.3",
+    "nivel": 2,
+    "titulo": "Investimento ativo"
+   },
+   {
+    "num": "3.6.3.1",
+    "nivel": 3,
+    "titulo": "Seleção de ativos de renda fixa"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Rating"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Yield to Maturity (YTM), Current Yield (CY)"
+   },
+   {
+    "num": "3.6.3.2",
+    "nivel": 3,
+    "titulo": "Alocação de ativos"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Alocação Estratégica (fixa)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Alocação Tática (flexível)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Alocação dinâmicaAlocação Estática"
+   },
+   {
+    "num": "3.6.4",
+    "nivel": 2,
+    "titulo": "Investimento passivo"
+   },
+   {
+    "num": "3.6.5",
+    "nivel": 2,
+    "titulo": "Declaração de Política de Investimento"
+   },
+   {
+    "num": "3.6.6",
+    "nivel": 2,
+    "titulo": "Estratégias de rebalanceamento de portfólio"
+   },
+   {
+    "num": "3.6.6.1",
+    "nivel": 3,
+    "titulo": "Rebalanceamento"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Alterações das circunstâncias do investidor"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Desvios da alocação estratégica"
+   },
+   {
+    "num": "3.6.6.2",
+    "nivel": 3,
+    "titulo": "Rebalanceamento regular versus percentual da carteira"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Balanceamento regular (período definido)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Desvio Percentual"
+   },
+   {
+    "num": "3.6.6.3",
+    "nivel": 3,
+    "titulo": "Estratégias dinâmicas de rebalanceamento"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Buy-and-Hold"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Constant Mix"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Constant Proportion Portfolio Insurance – CPPI"
+   }
+  ]
+ },
+ {
+  "modulo": 4,
+  "titulo": "Planejamento de Aposentadoria",
+  "peso_pct": 12,
+  "itens": [
+   {
+    "num": "4.1",
+    "nivel": 1,
+    "titulo": "Princípios do planejamento de aposentadoria"
+   },
+   {
+    "num": "4.1.1",
+    "nivel": 2,
+    "titulo": "A necessidade e a importância de planejar a aposentadoria de forma consistente e antecipada"
+   },
+   {
+    "num": "4.1.2",
+    "nivel": 2,
+    "titulo": "A necessidade de um fluxo de caixa real na aposentadoria"
+   },
+   {
+    "num": "4.1.3",
+    "nivel": 2,
+    "titulo": "A importância de um fluxo de caixa regular e consistente na aposentadoria"
+   },
+   {
+    "num": "4.1.4",
+    "nivel": 2,
+    "titulo": "O poder dos juros compostos e sua aplicação para a renda na aposentadoria"
+   },
+   {
+    "num": "4.1.5",
+    "nivel": 2,
+    "titulo": "Consequências da mudança do sistema de repartição para o sistema de quotização e a consequente transferência de responsabilidades para os clientes"
+   },
+   {
+    "num": "4.1.5.1",
+    "nivel": 3,
+    "titulo": "Risco de longevidade"
+   },
+   {
+    "num": "4.1.5.2",
+    "nivel": 3,
+    "titulo": "Oscilações do mercado financeiro"
+   },
+   {
+    "num": "4.1.5.3",
+    "nivel": 3,
+    "titulo": "Inflação"
+   },
+   {
+    "num": "4.1.5.4",
+    "nivel": 3,
+    "titulo": "Falta de conhecimento sobre investimentos"
+   },
+   {
+    "num": "4.1.6",
+    "nivel": 2,
+    "titulo": "Seleção e gestão de carteiras de investimentos de longo prazo"
+   },
+   {
+    "num": "4.1.7",
+    "nivel": 2,
+    "titulo": "Risco-retorno, atitudes do consumidor, educação financeira e implicações para o planejamento da aposentadoria"
+   },
+   {
+    "num": "4.2",
+    "nivel": 1,
+    "titulo": "Objetivos do planejamento de aposentadoria"
+   },
+   {
+    "num": "4.2.1",
+    "nivel": 2,
+    "titulo": "Objetivos financeiros com base em dinheiro/moeda real:"
+   },
+   {
+    "num": "4.2.1.1",
+    "nivel": 3,
+    "titulo": "Cálculo do capital necessário para a aposentadoria"
+   },
+   {
+    "num": "4.2.1.2",
+    "nivel": 3,
+    "titulo": "Estabelecimento de metas acessíveis"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Específica"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Mensurável"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Atingível"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Atingível"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Prazo"
+   },
+   {
+    "num": "4.2.2",
+    "nivel": 2,
+    "titulo": "Metas de renda em cenários de mudanças políticas e econômicas"
+   },
+   {
+    "num": "4.2.3",
+    "nivel": 2,
+    "titulo": "Objetivos de estilo de vida:"
+   },
+   {
+    "num": "4.2.3.1",
+    "nivel": 3,
+    "titulo": "Atividades na aposentadoria"
+   },
+   {
+    "num": "4.2.3.2",
+    "nivel": 3,
+    "titulo": "Plano de saúde na aposentadoria"
+   },
+   {
+    "num": "4.3",
+    "nivel": 1,
+    "titulo": "Análise e projeções das necessidades na aposentadoria"
+   },
+   {
+    "num": "4.3.1",
+    "nivel": 2,
+    "titulo": "Inflação e o seu impacto na renda necessária na aposentadoria"
+   },
+   {
+    "num": "4.3.2",
+    "nivel": 2,
+    "titulo": "Risco da longevidade"
+   },
+   {
+    "num": "4.3.2.1",
+    "nivel": 3,
+    "titulo": "Tábua Atuarial ou Biométrica"
+   },
+   {
+    "num": "4.3.2.2",
+    "nivel": 3,
+    "titulo": "BR EMS - Experiência do Mercado Segurador Brasileiro"
+   },
+   {
+    "num": "4.3.3",
+    "nivel": 2,
+    "titulo": "Classificação de objetivos"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Fixo e rescindível (ex: empréstimos)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Fixo e permanente (ex: hipoteca)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Variável e rescindível (ex: apoio à família)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Variável e permanente (ex: despesas básicas de subsistência)"
+   },
+   {
+    "num": "4.3.4",
+    "nivel": 2,
+    "titulo": "Prioridade dos objetivos"
+   },
+   {
+    "num": "4.4",
+    "nivel": 1,
+    "titulo": "Potenciais fontes de renda na aposentadoria"
+   },
+   {
+    "num": "4.4.1",
+    "nivel": 2,
+    "titulo": "Tipos de benefícios para empregados"
+   },
+   {
+    "num": "4.4.2",
+    "nivel": 2,
+    "titulo": "Fundos de pensão patrocinados pelo empregador"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Contribuição definida"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Benefício definido"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Contribuição Variável"
+   },
+   {
+    "num": "4.4.2.2",
+    "nivel": 3,
+    "titulo": "Particularidades dos fundos de pensão"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Estatuto"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Regulamento"
+   },
+   {
+    "num": "4.4.2.3",
+    "nivel": 3,
+    "titulo": "Planos de benefícios: patrocinado por empregador e instituído por entidade associativa"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Institutos dos planos de benefícios"
+   },
+   {
+    "num": "4.4.3",
+    "nivel": 2,
+    "titulo": "Planos de Previdência abertos, não patrocinados"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Regulamento"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Plano averbado e plano instituído"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Regras de vesting"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Modalidades de planos"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Benefício Definido (BD)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Contribuição Definida (CD)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Contribuição Variável (CV)"
+   },
+   {
+    "num": "4.4.3.1",
+    "nivel": 3,
+    "titulo": "Planos do tipo PGBL e VGBL"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Períodos dos planos"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Período de acumulação"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Fundo de Investimento Especialmente Constituído (FIE)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Dos Limites de Alocação por Modalidade para cada Segmento (Renda Fixa, Renda Variável, Imóveis, Variação Cambial e outros"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Taxa de carregamento, de administração e de performance"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Período de concessão do benefício"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Modalidades das rendas"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Renda mensal vitalícia, vitalícia reversível (e suas variações) e vitalícia com prazo mínimo"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Renda mensal temporária e mensal por prazo certo (renda financeira)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Tributação: Regime progressivo e regressivo"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Base de cálculo"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• PGBL ou VGBL: qual plano recomendar?"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ PGBL: Benefício fiscal - A quem recomendar - Diferimento fiscal"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ VGBL: Benefício Fiscal - A quem recomendar"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Planos com cobertura de risco: Renda por invalidez - Pensão por morte - Pecúlio por morte - Pecúlio por invalidez"
+   },
+   {
+    "num": "4.4.3.2",
+    "nivel": 3,
+    "titulo": "Portabilidade entre planos de previdência no Brasil"
+   },
+   {
+    "num": "4.4.4",
+    "nivel": 2,
+    "titulo": "Previdência Social - Sistema Previdenciário Brasileiro"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Regime Geral da Previdência Social (RGPS)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Aposentadoria por idade"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Transição por sistema de pontos (soma do tempo de contribuição com a idade)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Transição por tempo de contribuição e idade mínima"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Transição com fator previdenciário − pedágio de 50%"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Transição com idade mínima e pedágio de 100%"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Transição – Aposentadoria por idade"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Auxílio-acidente, auxílio-doença, auxílio reclusão, pensão por morte, pensão especial, Salário- família, Salário-maternidade"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Benefício assistencial à pessoa com deficiência (BPC – LOAS) e Benefício assistencial ao idoso (BPC – LOAS)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Regime Próprio de Previdência Social (RPPS)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Aposentadoria por idade"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Transição por sistema de pontos (soma do tempo de contribuição com a idade) e idade mínima"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Transição com idade mínima e pedágio de 100%"
+   },
+   {
+    "num": "4.4.5",
+    "nivel": 2,
+    "titulo": "Imóveis"
+   },
+   {
+    "num": "4.4.6",
+    "nivel": 2,
+    "titulo": "Ativos mobiliários"
+   },
+   {
+    "num": "4.5",
+    "nivel": 1,
+    "titulo": "Renda de aposentadoria, projeções e estratégias de retiradas"
+   },
+   {
+    "num": "4.5.1",
+    "nivel": 2,
+    "titulo": "Planejamento pré-aposentadoria"
+   },
+   {
+    "num": "4.5.2",
+    "nivel": 2,
+    "titulo": "Estratégias de construção e distribuição de carteira - conversão do crescimento de capital em geração de renda"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Entendendo a Conversão do Crescimento de Capital em Geração de Renda"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Construção e Ajuste da Carteira nas Fases de Acumulação e Distribuição"
+   },
+   {
+    "num": "4.5.3",
+    "nivel": 2,
+    "titulo": "Fontes de fluxo de caixa na aposentadoria:"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Previdência Social"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Planos de aposentadoria fornecidos pelo empregador"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Planos de previdência abertos (fase de benefício de renda)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Economias pessoais para a aposentadoria"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Outras economias e ativos pessoais"
+   },
+   {
+    "num": "4.5.4",
+    "nivel": 2,
+    "titulo": "Instrumentos de rendimento fixo e variável"
+   },
+   {
+    "num": "4.5.5",
+    "nivel": 2,
+    "titulo": "Taxas de distribuição na aposentadoria"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Fatores que influenciam a taxa de distribuição"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Preservação do Capital"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Consumo Total do Capital"
+   },
+   {
+    "num": "4.5.6",
+    "nivel": 2,
+    "titulo": "Estratégias de transição para aposentadoria de proprietários de empresas"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Valuation (Avaliação do Negócio)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Otimização do Negócio para Valorização"
+   },
+   {
+    "num": "4.5.7",
+    "nivel": 2,
+    "titulo": "Impacto dos impostos no fluxo de caixa na aposentadoria"
+   }
+  ]
+ },
+ {
+  "modulo": 5,
+  "titulo": "Planejamento de Seguros e Gestão de Risco",
+  "peso_pct": 12,
+  "itens": [
+   {
+    "num": "5.1",
+    "nivel": 1,
+    "titulo": "Princípios de gestão de risco"
+   },
+   {
+    "num": "5.1.1",
+    "nivel": 2,
+    "titulo": "Gerenciamento de risco não relacionados a investimentos"
+   },
+   {
+    "num": "5.1.2",
+    "nivel": 2,
+    "titulo": "Fundamentos da gestão de risco:"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Tratamento do risco"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Gestão de risco: premissas e transferência"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Percepções e vieses do cliente"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Técnicas básicas de gestão de risco"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Aplicação do processo de gestão de riscos"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Tolerância pessoal ao risco e gestão"
+   },
+   {
+    "num": "5.1.3",
+    "nivel": 2,
+    "titulo": "Princípios de seguro:"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• O significado do risco"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Tipos de risco"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Risco puro e risco especulativo"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Principais tipos de risco puro"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Características do seguro"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro compreensivo"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Importância segurada, capital segurado e limite máximo de indenização"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Franquias, participações obrigatórias do segurado ou coparticipação carência de cobertura"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Tipos de seguro"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Lei dos Grandes Números"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Fraude e Boa fé"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• O contrato de seguro: definições"
+   },
+   {
+    "num": "5.2",
+    "nivel": 1,
+    "titulo": "Objetivos do planejamento de riscos e seguros"
+   },
+   {
+    "num": "5.2.1",
+    "nivel": 2,
+    "titulo": "Seguro e risco"
+   },
+   {
+    "num": "5.2.2",
+    "nivel": 2,
+    "titulo": "Coleta de informações do cliente"
+   },
+   {
+    "num": "5.3",
+    "nivel": 1,
+    "titulo": "Análise e avaliação da exposição a riscos"
+   },
+   {
+    "num": "5.3.1",
+    "nivel": 2,
+    "titulo": "Introdução aos seguros gerais"
+   },
+   {
+    "num": "5.3.2",
+    "nivel": 2,
+    "titulo": "Introdução ao seguro de vida"
+   },
+   {
+    "num": "5.3.3",
+    "nivel": 2,
+    "titulo": "Exposições de risco"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Riscos pessoais"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Riscos patrimoniais"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Riscos de saúde"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Riscos de responsabilidade civil"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Riscos associados a obrigações financeiras"
+   },
+   {
+    "num": "5.4",
+    "nivel": 1,
+    "titulo": "Gestão de risco e estratégias de seguro"
+   },
+   {
+    "num": "5.4.1",
+    "nivel": 2,
+    "titulo": "Introdução às estratégias de gerenciamento de riscos"
+   },
+   {
+    "num": "5.4.2",
+    "nivel": 2,
+    "titulo": "A aplicação dos princípios de gerenciamento de riscos"
+   },
+   {
+    "num": "5.4.3",
+    "nivel": 2,
+    "titulo": "Estudos de caso em gerenciamento de risco e planejamento de seguros"
+   },
+   {
+    "num": "5.5",
+    "nivel": 1,
+    "titulo": "Soluções de gestão de risco e seguro"
+   },
+   {
+    "num": "5.5.1",
+    "nivel": 2,
+    "titulo": "Seguro de pessoas"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro de Vida"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro de Vida Temporário"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro de vida inteira"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguros de vida com cobertura por sobrevivência"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro Resgatável"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• VGBL - Vida Gerador de Benefício Livre"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Acidentes pessoais"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro funeral"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Coberturas"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Assistências"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro Viagem"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Termos e condições"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Exclusões do seguro (falsificação de idade/gênero, fraude, suicídio)"
+   },
+   {
+    "num": "5.5.2",
+    "nivel": 2,
+    "titulo": "Seguro Saúde e as coberturas obrigatórias"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Carência e cobertura parcial temporária"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Coparticipação e franquia"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Garantias do beneficiário"
+   },
+   {
+    "num": "5.5.3",
+    "nivel": 2,
+    "titulo": "Seguro de danos e responsabilidades para pessoas físicas"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro residencial"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro de veículo"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Cobertura de Casco"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Responsabilidade civil facultativa"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Danos materiais"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Danos corporais"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Dano moral"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Acidentes pessoais de passageiros – APP"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Outras coberturas - seguros de automóveis"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Fatores que influenciam o valor do prêmio: classificação tarifária, bônus, franquia e perfil do segurado"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Responsabilidade civil"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Apólice à base de ocorrência e Apólice à base de reclamações com notificações"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro D&O: diretores e gerentes com responsabilidades que afetam seu patrimônio pessoal (empresas listadas, conselho administração, fundos de pensão)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Responsabilidade Civil de Diretores e Administradores (D&O)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Seguro E&O"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Termos e condições"
+   },
+   {
+    "num": "5.5.4",
+    "nivel": 2,
+    "titulo": "Seguro relacionado ao negócio"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro do executivo-chave e de necessidades de pequenos empreendimentos (MEI)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro rural"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro Agrícola, Pecuário, Aquícola, de Florestas, de Benfeitorias e Produtos Agropecuários, de Penhor Rural, Vida do Produtor Rural e da Cédula do Produtor Rural (CPR)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Aspectos Regulatórios Relevantes"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Cobertura para membros do conselho administrativo"
+   },
+   {
+    "num": "5.6",
+    "nivel": 1,
+    "titulo": "Princípios da Lei de Seguros e processo de sinistro"
+   },
+   {
+    "num": "5.6.1",
+    "nivel": 2,
+    "titulo": "Características legais e financeiras das partes envolvidas em um contrato de seguro:"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• O proprietário da apólice"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• O beneficiário"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• O segurado"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• O anuente"
+   },
+   {
+    "num": "5.6.2",
+    "nivel": 2,
+    "titulo": "Conceitos relacionados à Lei de Seguros:"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Indenização de interesse segurável"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Doutrina do dever de boa-fé"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Doutrina da sub-rogação"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Cláusula de rateio"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• A doutrina da contribuição"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• A legislação aplicável ao seguro: Código Civil e Código de Defesa do Consumidor"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Exclusões de cobertura"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Aspectos jurídicos"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Nulidade"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Prescrição"
+   },
+   {
+    "num": "5.6.3",
+    "nivel": 2,
+    "titulo": "Processo de sinistro:"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Notificação de sinistro"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Prova de perda"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Ônus da prova"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Causa imediata"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro de responsabilidade civil"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Exclusões"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Reivindicações fraudulentas"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Perda por ato próprio"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Quantificação da perda"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Risco Absoluto"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Risco Relativo"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Risco Total"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Cláusula de Rateio Parcial"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Valor da perda no caso de Invalidez Permanente"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Subseguro"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro ‘duplo’ ou ‘outro’"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Fraude"
+   },
+   {
+    "num": "5.6.4",
+    "nivel": 2,
+    "titulo": "Regulação e compliance"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Do Sistema Nacional de Seguros Privados"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• CNSP - Conselho Nacional de Seguros Privados"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• SUSEP – Superintendência de Seguros Privados"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguradoras"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Resseguradores"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Corretores"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Do Sistema de Seguro Saúde"
+   },
+   {
+    "num": "5.6.5",
+    "nivel": 2,
+    "titulo": "Taxação de apólices de seguro"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• IOF – Imposto Sobre Operações Financeiras"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Imposto de renda o Isenções o Resgates o Recebimento de Indenização o Pagamento de prêmios"
+   }
+  ]
+ },
+ {
+  "modulo": 6,
+  "titulo": "Planejamento Tributário",
+  "peso_pct": 12,
+  "itens": [
+   {
+    "num": "6.1",
+    "nivel": 1,
+    "titulo": "Princípios de tributação e declaração"
+   },
+   {
+    "num": "6.1.1",
+    "nivel": 2,
+    "titulo": "Imposto global: política, normas e interrelações"
+   },
+   {
+    "num": "6.1.2",
+    "nivel": 2,
+    "titulo": "Sistema tributário e enquadramento"
+   },
+   {
+    "num": "6.1.2.1",
+    "nivel": 3,
+    "titulo": "Sistema tributário"
+   },
+   {
+    "num": "6.1.2.2",
+    "nivel": 3,
+    "titulo": "Princípios constitucionais tributários"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Princípio da Legalidade"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Princípio da Isonomia (ou Igualdade)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Princípio da Irretroatividade"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Princípios da Anterioridade Anual e Nonagesimal"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Princípio da Capacidade Contributiva"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Vedação ao Confisco"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Princípio da competência"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Imunidade"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Isenção"
+   },
+   {
+    "num": "6.1.2.3",
+    "nivel": 3,
+    "titulo": "Conceito de tributo"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Toda prestação pecuniária"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Compulsória"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Em moeda ou cujo valor nela possa se exprimir"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Que não constitua sanção por ato ilícito"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Instituída em lei"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Cobrada mediante atividade administrativa plenamente vinculada"
+   },
+   {
+    "num": "6.1.2.4",
+    "nivel": 3,
+    "titulo": "A obrigação tributária"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Fato gerador"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Base de cálculo"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Alíquota"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Sujeito ativo"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Sujeito passivo"
+   },
+   {
+    "num": "6.1.2.5",
+    "nivel": 3,
+    "titulo": "Tributos relevantes para o planejamento fiscal"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Impostos"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Taxas"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Contribuição de melhorias"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Tributos incidentes sobre a renda"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Tributos incidentes sobre o patrimônio"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Tributos incidentes sobre as transferências patrimoniais"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Outros tributos"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Contribuições Sociais"
+   },
+   {
+    "num": "6.1.2.6",
+    "nivel": 3,
+    "titulo": "Imposto de Renda da Pessoa Física"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Fato gerador"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Base de cálculo"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Alíquota"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Sujeito ativo"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Sujeito passivo"
+   },
+   {
+    "num": "6.1.2.7",
+    "nivel": 3,
+    "titulo": "Fundamentos do Imposto de Renda"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Generalidade"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Universalidade"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Progressividade"
+   },
+   {
+    "num": "6.1.3",
+    "nivel": 2,
+    "titulo": "Sistema de declaração e conformidade"
+   },
+   {
+    "num": "6.1.3.1",
+    "nivel": 3,
+    "titulo": "Formas de recolhimento do imposto: retenção na fonte e recolhimento pelo próprio contribuinte"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Retenção de Imposto de Renda na fonte"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Recolhimento mensal obrigatório"
+   },
+   {
+    "num": "6.1.3.2",
+    "nivel": 3,
+    "titulo": "Classificação dos rendimentos. tributáveis, sujeitos à tributação exclusiva/definitiva e isentos"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Rendimentos tributáveis"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Rendimentos sujeitos à tributação exclusiva ou definitiva"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Rendimentos isentos e não tributáveis"
+   },
+   {
+    "num": "6.1.4",
+    "nivel": 2,
+    "titulo": "Evasão fiscal x elisão fiscal"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Elisão fiscal"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Evasão fiscal"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Propósito negocial"
+   },
+   {
+    "num": "6.2",
+    "nivel": 1,
+    "titulo": "Tributação das Pessoas Físicas e Jurídicas"
+   },
+   {
+    "num": "6.2.1",
+    "nivel": 2,
+    "titulo": "Imposto de renda e imposto de ganho de capital para os indivíduos"
+   },
+   {
+    "num": "6.2.1.1",
+    "nivel": 3,
+    "titulo": "Rendimentos do trabalho: assalariado e autônomo"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Rendimentos do trabalho assalariado"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Rendimentos do trabalho sem vínculo empregatício (autônomo)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Indenizações por rescisão do contrato de trabalho"
+   },
+   {
+    "num": "6.2.1.2",
+    "nivel": 3,
+    "titulo": "Rendimentos de aposentadoria pública e privada"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Rendimentos de Aposentadoria Pública"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Rendimentos de Previdência Privada (PGBL e VGBL)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Tabela Progressiva (Regime Tributável)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Tabela Regressiva (Regime de Tributação Exclusiva/Definitiva)"
+   },
+   {
+    "num": "6.2.1.3",
+    "nivel": 3,
+    "titulo": "Tributação de Aplicações Financeiras"
+   },
+   {
+    "num": "6.2.1.3.1",
+    "nivel": 4,
+    "titulo": "Aplicações de renda fixa"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Aplicações de renda fixa isentas de Imposto de Renda"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Aplicações de renda fixa sujeitas à tributação"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Imposto sobre Operações Financeiras (IOF)"
+   },
+   {
+    "num": "6.2.1.3.2",
+    "nivel": 4,
+    "titulo": "Fundos de Investimento"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Fundos de renda fixa: longo prazo e curto prazo"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Fundos de ações"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Compensação de perdas de fundos de investimento"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Outros fundos de investimento"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "◦ Fundos de Investimento em Índice (ETF)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "◦ FIP, FIF-FIP e FIE"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "◦ FIP-IE e FIP-PD&I"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "◦ Fundos com carteira em debêntures incentivadas"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "◦ Fundos de Investimento Imobiliário (FII) e Fundos do Agronegócio (FIAGRO)"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "◦ Fundos de investimento fechados"
+   },
+   {
+    "num": "6.2.1.3.3",
+    "nivel": 4,
+    "titulo": "Aplicações de renda variável"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Base de cálculo"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Alíquotas"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Isenções"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Compensação de Perdas"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• IOF a) Mercado à Vista b) Mercado a Termo c) Mercado de Opções d) Negociação das opções (sem exercício)"
+   },
+   {
+    "num": "6.2.1.3.4",
+    "nivel": 4,
+    "titulo": "Criptoativos"
+   },
+   {
+    "num": "6.2.1.4",
+    "nivel": 3,
+    "titulo": "Tributação de investimentos em imóveis: aluguel e ganho de capital"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Rendimentos de aluguéis"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Ganho de capital na venda de imóveis"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Venda de único imóvel de até R$ 440 mil"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Reaplicação do valor na aquisição de outro imóvel residencial"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Percentual de redução"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "◦ Venda de bens ou direitos de mesma natureza até R$ 35 mil por mês"
+   },
+   {
+    "num": "6.2.1.5",
+    "nivel": 3,
+    "titulo": "Tributação de rendimentos recebidos no exterior por residentes no Brasil"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Regras Gerais"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Acordos para evitar a dupla tributação"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Rendimentos tributáveis recebidos no exterior"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Ganhos de capital pela alienação de bens e direitos no exterior (exceto aplicações financeiras)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Rendimentos de aplicações financeiras no exterior"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Conceito"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Base de Cálculo"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Compensação de Prejuízos"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Alíquota e Momento de Pagamento"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Compensação de Imposto Pago no Exterior"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Entidades controladas no Exterior (CFC – “Controlled Foreign Companies”)"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Enquadramento no Regime de Tributação Anual dos Lucros"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Apuração e Tributação dos Lucros de Controladas no Exterior"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Regime de Transparência Fiscal"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Tratamento Fiscal dos Trusts"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Outras entidades no exterior"
+   },
+   {
+    "num": "6.2.2",
+    "nivel": 2,
+    "titulo": "Imposto de renda e imposto de ganho de capital para seus negócios"
+   },
+   {
+    "num": "6.2.2.1",
+    "nivel": 3,
+    "titulo": "Pessoa jurídica prestadora de serviços (MEI e SIMPLES)"
+   },
+   {
+    "num": "6.2.2.2",
+    "nivel": 3,
+    "titulo": "Holding"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Receitas de aluguel"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Receitas de alienação de imóveis"
+   },
+   {
+    "num": "6.2.3",
+    "nivel": 2,
+    "titulo": "Doações, heranças e transferência de patrimônio"
+   },
+   {
+    "num": "6.2.3.1",
+    "nivel": 3,
+    "titulo": "ITCMD"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Elementos da Obrigação Tributária"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Competência"
+   },
+   {
+    "num": null,
+    "nivel": 4,
+    "titulo": "• Alterações trazidas pela Reforma Tributária I. Progressividade obrigatória II. Regras para situações internacionais III. Competência do Estado de domicílio do falecido IV. Previdência privada: PGBL, VGBL e a controvérsia com o ITCMD"
+   },
+   {
+    "num": "6.2.3.2",
+    "nivel": 3,
+    "titulo": "IR"
+   },
+   {
+    "num": "6.2.3.3",
+    "nivel": 3,
+    "titulo": "ITBI"
+   },
+   {
+    "num": "6.3",
+    "nivel": 1,
+    "titulo": "Princípios de planejamento tributário"
+   },
+   {
+    "num": "6.3.1",
+    "nivel": 2,
+    "titulo": "Coleta de documentos fiscais (exemplos: declarações de IR, informes de rendimentos etc.)"
+   },
+   {
+    "num": "6.3.2",
+    "nivel": 2,
+    "titulo": "Conformidade fiscal, de declarações e penalidades pela falta de conformidade"
+   },
+   {
+    "num": "6.3.2.1",
+    "nivel": 3,
+    "titulo": "Declaração de Imposto de Renda"
+   },
+   {
+    "num": "6.3.2.1.1",
+    "nivel": 4,
+    "titulo": "Rendimentos"
+   },
+   {
+    "num": "6.3.2.1.2",
+    "nivel": 4,
+    "titulo": "Despesas"
+   },
+   {
+    "num": "6.3.2.1.3",
+    "nivel": 4,
+    "titulo": "Deduções legais (“modo completo”) e desconto simplificado"
+   },
+   {
+    "num": "6.3.2.1.2",
+    "nivel": 4,
+    "titulo": "Declaração de bens, direitos e dívidas"
+   },
+   {
+    "num": "6.3.2.1.3",
+    "nivel": 4,
+    "titulo": "Variação patrimonial e consistência das informações"
+   },
+   {
+    "num": "6.3.2.1.4",
+    "nivel": 4,
+    "titulo": "Modalidades de Declaração: ajuste anual, saída definitiva e espólio"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Declaração de Saída Definitiva do País"
+   },
+   {
+    "num": null,
+    "nivel": 5,
+    "titulo": "• Declaração Final de Espólio"
+   },
+   {
+    "num": "6.3.2.1.5",
+    "nivel": 4,
+    "titulo": "Penalidades pelo descumprimento de obrigações"
+   },
+   {
+    "num": "6.3.2.2",
+    "nivel": 3,
+    "titulo": "Declaração de Capitais Brasileiros no Exterior para o Banco Central: regras gerais, obrigatoriedade, penalidades"
+   },
+   {
+    "num": "6.4",
+    "nivel": 1,
+    "titulo": "Análise tributária e cálculos"
+   },
+   {
+    "num": "6.4.1",
+    "nivel": 2,
+    "titulo": "Avaliar o nível de complexidade fiscal e das declarações do cliente"
+   },
+   {
+    "num": "6.4.2",
+    "nivel": 2,
+    "titulo": "Determinar a necessidade de envolvimento de especialistas em impostos"
+   },
+   {
+    "num": "6.4.3",
+    "nivel": 2,
+    "titulo": "Determinar questões de passivos e de responsabilidades fiscais"
+   },
+   {
+    "num": "6.5",
+    "nivel": 1,
+    "titulo": "Estratégias de planejamento tributário"
+   },
+   {
+    "num": "6.5.1",
+    "nivel": 2,
+    "titulo": "Trabalho: Pessoa Física x Pessoa Jurídica"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Tributação como Pessoa Física"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Tributação na Pessoa Jurídica"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ MEI – Microempreendedor Individua"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Simples Nacional"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "◦ Lucro Presumido o Lucro Real o Tributação do Sócio: Pró-labore e Distribuição de Lucros"
+   },
+   {
+    "num": "6.5.2",
+    "nivel": 2,
+    "titulo": "Previdência Privada: PGBL e VGBL"
+   },
+   {
+    "num": "6.5.3",
+    "nivel": 2,
+    "titulo": "Ativos financeiros (exemplo, isenções fiscais)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Renda Fixa: Títulos Isentos x Títulos Tributados"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Renda Variável: Ações x Fundos de Ações"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Fundos de investimento com come-cotas X Fundos sem come-cotas"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Criptoativos: Comparativo entre Investimento Direto e Fundos"
+   },
+   {
+    "num": "6.5.4",
+    "nivel": 2,
+    "titulo": "Ativos Imobiliários: Pessoa Física x Holding Imobiliária"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Tributação sobre Rendimentos de Aluguel"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Tributação na Venda do Imóvel"
+   },
+   {
+    "num": "6.5.5",
+    "nivel": 2,
+    "titulo": "Fundos de investimento"
+   },
+   {
+    "num": "6.5.5",
+    "nivel": 2,
+    "titulo": "Investimentos no exterior"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Investimento em BDRs (Brazilian Depositary Receipts) no mercado brasileiro x Investimento Direto em Ações no Mercado Estrangeiro"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Investir Diretamente em Criptoativos no Brasil x Criptoativos no Exterior"
+   }
+  ]
+ },
+ {
+  "modulo": 7,
+  "titulo": "Planejamento patrimonial e sucessório",
+  "peso_pct": 12,
+  "itens": [
+   {
+    "num": "7.1",
+    "nivel": 1,
+    "titulo": "Princípios de planejamento patrimonial e sucessório"
+   },
+   {
+    "num": "7.1.1",
+    "nivel": 2,
+    "titulo": "O que constitui o patrimônio? (definição legal)"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Jurisdição domiciliar / várias jurisdições"
+   },
+   {
+    "num": "7.1.2",
+    "nivel": 2,
+    "titulo": "O processo de planejamento patrimonial e a equipe profissional"
+   },
+   {
+    "num": "7.2",
+    "nivel": 1,
+    "titulo": "Objetivos de planejamento patrimonial e sucessório"
+   },
+   {
+    "num": "7.2.1",
+    "nivel": 2,
+    "titulo": "Aspectos a serem considerados ao identificar objetivos:"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Necessidades especiais"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Tutela de familiares incapazes"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Casamento e outros relacionamentos afetivos"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Valores familiares / pessoais"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Necessidades de capital / liquidez"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Proteção de ativos e privacidade"
+   },
+   {
+    "num": "7.2.2",
+    "nivel": 2,
+    "titulo": "Seleção de beneficiários"
+   },
+   {
+    "num": "7.2.3",
+    "nivel": 2,
+    "titulo": "Filantropia"
+   },
+   {
+    "num": "7.2.4",
+    "nivel": 2,
+    "titulo": "Eficiência fiscal"
+   },
+   {
+    "num": "7.2.5",
+    "nivel": 2,
+    "titulo": "Sucessão empresarial"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Controle/propriedade"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Gestão contínua"
+   },
+   {
+    "num": "7.3",
+    "nivel": 1,
+    "titulo": "Aspectos legais"
+   },
+   {
+    "num": "7.3.1",
+    "nivel": 2,
+    "titulo": "Casamento e União Estável"
+   },
+   {
+    "num": "7.3.1.1",
+    "nivel": 3,
+    "titulo": "Regimes de bens"
+   },
+   {
+    "num": "7.3.1.2",
+    "nivel": 3,
+    "titulo": "Relacionamentos não formalizados"
+   },
+   {
+    "num": "7.3.1.3",
+    "nivel": 3,
+    "titulo": "Reflexos patrimoniais no término"
+   },
+   {
+    "num": "7.3.2",
+    "nivel": 2,
+    "titulo": "Sucessão"
+   },
+   {
+    "num": "7.3.2.1",
+    "nivel": 3,
+    "titulo": "Processo de Inventário"
+   },
+   {
+    "num": "7.3.2.2",
+    "nivel": 3,
+    "titulo": "Delimitação da herança: meação x herança"
+   },
+   {
+    "num": "7.3.2.3",
+    "nivel": 3,
+    "titulo": "Ordem de sucessão"
+   },
+   {
+    "num": "7.3.2.3.1",
+    "nivel": 4,
+    "titulo": "Conceito de herdeiro necessário"
+   },
+   {
+    "num": "7.3.2.3.2",
+    "nivel": 4,
+    "titulo": "Descendentes"
+   },
+   {
+    "num": "7.3.2.3.3",
+    "nivel": 4,
+    "titulo": "Descendentes em concorrência com o cônjuge ou companheiro"
+   },
+   {
+    "num": "7.3.2.3.4",
+    "nivel": 4,
+    "titulo": "Ascendentes"
+   },
+   {
+    "num": "7.3.2.3.5",
+    "nivel": 4,
+    "titulo": "Ascendentes em concorrência com o cônjuge ou companheiro"
+   },
+   {
+    "num": "7.3.2.3.6",
+    "nivel": 4,
+    "titulo": "Cônjuge ou companheiro"
+   },
+   {
+    "num": "7.3.2.3.7",
+    "nivel": 4,
+    "titulo": "Colaterais até o quarto grau"
+   },
+   {
+    "num": "7.3.2.3.8",
+    "nivel": 4,
+    "titulo": "Município, Distrito Federal e União (herança jacente e vacante)"
+   },
+   {
+    "num": "7.3.2.4",
+    "nivel": 3,
+    "titulo": "Aceitação, renúncia e excluídos da sucessão"
+   },
+   {
+    "num": "7.4",
+    "nivel": 1,
+    "titulo": "Planejamento patrimonial – aspectos familiares"
+   },
+   {
+    "num": "7.4.1",
+    "nivel": 2,
+    "titulo": "Limites para dispor do patrimônio em vida: conceito de legítima, disponível e herdeiros necessários"
+   },
+   {
+    "num": "7.4.2",
+    "nivel": 2,
+    "titulo": "Divórcio"
+   },
+   {
+    "num": "7.4.2.1",
+    "nivel": 3,
+    "titulo": "Impactos na situação familiar (exemplo, pensão alimentícia)"
+   },
+   {
+    "num": "7.4.2.2",
+    "nivel": 3,
+    "titulo": "Projeção da situação financeira: regime de bens de casamento/união e impactos"
+   },
+   {
+    "num": "7.4.2.3",
+    "nivel": 3,
+    "titulo": "Projeção de custos e burocracia no processo de divórcio"
+   },
+   {
+    "num": "7.4.2.4",
+    "nivel": 3,
+    "titulo": "Desenvolvimento do planejamento patrimonial"
+   },
+   {
+    "num": "7.4.3",
+    "nivel": 2,
+    "titulo": "Sucessão"
+   },
+   {
+    "num": "7.4.3.1",
+    "nivel": 3,
+    "titulo": "Projeção da situação familiar, identificar quem são os herdeiros"
+   },
+   {
+    "num": "7.4.3.2",
+    "nivel": 3,
+    "titulo": "Projeção da situação financeira: ativos, passivos, liquidez"
+   },
+   {
+    "num": "7.4.3.3",
+    "nivel": 3,
+    "titulo": "Projeção de custos e burocracia na sucessão"
+   },
+   {
+    "num": "7.4.3.4",
+    "nivel": 3,
+    "titulo": "Desenvolvimento do planejamento sucessório"
+   },
+   {
+    "num": "7.4.4",
+    "nivel": 2,
+    "titulo": "Incapacidade, tutela, procuração e cuidados de saúde"
+   },
+   {
+    "num": "7.4.4.1",
+    "nivel": 3,
+    "titulo": "Incapacidade"
+   },
+   {
+    "num": "7.4.4.2",
+    "nivel": 3,
+    "titulo": "Tutela"
+   },
+   {
+    "num": "7.4.4.3",
+    "nivel": 3,
+    "titulo": "Procuração"
+   },
+   {
+    "num": "7.4.4.4",
+    "nivel": 3,
+    "titulo": "Diretivas relativas aos cuidados de saúde"
+   },
+   {
+    "num": "7.5",
+    "nivel": 1,
+    "titulo": "Planejamento Patrimonial – Ativos e Passivos (Propriedade, Avaliação, Transferências, Proteção e Privacidade)"
+   },
+   {
+    "num": "7.5.1",
+    "nivel": 2,
+    "titulo": "Propriedade: Titulação de Bens e Designação de Beneficiários"
+   },
+   {
+    "num": "7.5.2",
+    "nivel": 2,
+    "titulo": "Valuation"
+   },
+   {
+    "num": "7.5.3",
+    "nivel": 2,
+    "titulo": "Alterações de Propriedade"
+   },
+   {
+    "num": "7.5.4",
+    "nivel": 2,
+    "titulo": "Ativos Especiais (direitos autorais, marcas comerciais, royalties etc.)"
+   },
+   {
+    "num": "7.5.5",
+    "nivel": 2,
+    "titulo": "Ativos Digitais"
+   },
+   {
+    "num": "7.5.6",
+    "nivel": 2,
+    "titulo": "Proteção de Ativos"
+   },
+   {
+    "num": "7.5.7",
+    "nivel": 2,
+    "titulo": "Sucessão Empresarial"
+   },
+   {
+    "num": "7.5.8",
+    "nivel": 2,
+    "titulo": "Privacidade"
+   },
+   {
+    "num": "7.6",
+    "nivel": 1,
+    "titulo": "Filantropia"
+   },
+   {
+    "num": "7.6.1",
+    "nivel": 2,
+    "titulo": "Estabelecimento de um legado"
+   },
+   {
+    "num": "7.6.2",
+    "nivel": 2,
+    "titulo": "Doações de caridade vitalícias"
+   },
+   {
+    "num": "7.6.3",
+    "nivel": 2,
+    "titulo": "Doações de caridade após a morte"
+   },
+   {
+    "num": "7.7",
+    "nivel": 1,
+    "titulo": "Estratégias de planejamento patrimonial"
+   },
+   {
+    "num": "7.7.1",
+    "nivel": 2,
+    "titulo": "Instrumentos de Planejamento Patrimonial"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Doação"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Testamento"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Seguro de Vida"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Plano de Previdência"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Holding"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Fundo de investimento"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Exterior"
+   },
+   {
+    "num": "7.2.2",
+    "nivel": 2,
+    "titulo": "Ameaças às estratégias de planejamento patrimonial"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Falta de planejamento adequado"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Documentos desatualizados"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Divórcio"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Desarmonia familiar"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Questões legais e financeiras (por exemplo, falência)"
+   }
+  ]
+ },
+ {
+  "modulo": 8,
+  "titulo": "Psicologia no Planejamento Financeiro",
+  "peso_pct": 7,
+  "itens": [
+   {
+    "num": "8.1",
+    "nivel": 1,
+    "titulo": "Finanças comportamentais e a psicologia no planejamento financeiro"
+   },
+   {
+    "num": "8.1.1",
+    "nivel": 2,
+    "titulo": "Introdução às finanças comportamentais"
+   },
+   {
+    "num": "8.1.2",
+    "nivel": 2,
+    "titulo": "Finanças tradicionais versus finanças comportamentais"
+   },
+   {
+    "num": "8.1.3",
+    "nivel": 2,
+    "titulo": "Vieses e heurística"
+   },
+   {
+    "num": "8.1.4",
+    "nivel": 2,
+    "titulo": "Arquitetura de escolha e tomada de financeira"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Abordagem tradicional (racional) para a tomada de decisões"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• A tomada de decisões"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Racionalidade limitada"
+   },
+   {
+    "num": null,
+    "nivel": 3,
+    "titulo": "• Neurofinanças"
+   },
+   {
+    "num": "8.1.5",
+    "nivel": 2,
+    "titulo": "Introdução à psicologia no planejamento financeiro"
+   },
+   {
+    "num": "8.2",
+    "nivel": 1,
+    "titulo": "Atitudes, valores e vieses do cliente e do planejador financeiro"
+   },
+   {
+    "num": "8.2.1",
+    "nivel": 2,
+    "titulo": "Abordagem tradicional (racional) da tomada de decisão"
+   },
+   {
+    "num": "8.2.2",
+    "nivel": 2,
+    "titulo": "Criação de sentido (ou sensibilização)"
+   },
+   {
+    "num": "8.2.3",
+    "nivel": 2,
+    "titulo": "A racionalidade limitada"
+   },
+   {
+    "num": "8.2.4",
+    "nivel": 2,
+    "titulo": "Os elementos psicológicos do planejamento financeiro"
+   },
+   {
+    "num": "8.2.5",
+    "nivel": 2,
+    "titulo": "Perceção do risco e tolerância ao risco"
+   },
+   {
+    "num": "8.2.6",
+    "nivel": 2,
+    "titulo": "Política de investimentos do cliente"
+   },
+   {
+    "num": "8.2.7",
+    "nivel": 2,
+    "titulo": "A psicologia do comportamento de manada"
+   },
+   {
+    "num": "8.3",
+    "nivel": 1,
+    "titulo": "Capacidade cognitiva e educação financeira do cliente"
+   },
+   {
+    "num": "8.3.1",
+    "nivel": 2,
+    "titulo": "Educação financeira e cálculos"
+   },
+   {
+    "num": "8.3.2",
+    "nivel": 2,
+    "titulo": "Avaliar a compreensão do cliente sobre as recomendações do aconselhamento"
+   },
+   {
+    "num": "8.3.3",
+    "nivel": 2,
+    "titulo": "Longevidade e a percepção de declínio cognitivo"
+   },
+   {
+    "num": "8.4",
+    "nivel": 1,
+    "titulo": "Preferências do cliente e classificação dos tipos de clientes"
+   },
+   {
+    "num": "8.4.1",
+    "nivel": 2,
+    "titulo": "Características comportamentais do cliente ao investir"
+   },
+   {
+    "num": "8.4.2",
+    "nivel": 2,
+    "titulo": "Características/ armadilhas comportamentais do cliente consumidor"
+   },
+   {
+    "num": "8.4.3",
+    "nivel": 2,
+    "titulo": "Preferências de aconselhamento do consumidor"
+   },
+   {
+    "num": "8.4.4",
+    "nivel": 2,
+    "titulo": "Vieses cognitivos e emocionais"
+   },
+   {
+    "num": "8.4.5",
+    "nivel": 2,
+    "titulo": "Identificar e gerir comportamentos autodestrutivos"
+   },
+   {
+    "num": "8.5",
+    "nivel": 1,
+    "titulo": "Crenças dos clientes e sua influência na tomada de decisões financeiras"
+   },
+   {
+    "num": "8.5.1",
+    "nivel": 2,
+    "titulo": "Viés de excesso de confiança"
+   },
+   {
+    "num": "8.5.2",
+    "nivel": 2,
+    "titulo": "Viés de status quo"
+   },
+   {
+    "num": "8.5.3",
+    "nivel": 2,
+    "titulo": "Aspectos demográficos e socioeconômicos da tomada de decisão"
+   },
+   {
+    "num": "8.5.4",
+    "nivel": 2,
+    "titulo": "Percepção versus realidade"
+   },
+   {
+    "num": "8.6",
+    "nivel": 1,
+    "titulo": "Abordagens comportamentais para os planejadores financeiros"
+   },
+   {
+    "num": "8.6.1",
+    "nivel": 2,
+    "titulo": "Teoria do incentivo (nudge)"
+   },
+   {
+    "num": "8.6.2",
+    "nivel": 2,
+    "titulo": "Planejamento financeiro baseado em políticas definidas"
+   },
+   {
+    "num": "8.6.3",
+    "nivel": 2,
+    "titulo": "Princípios de aconselhamento e coaching"
+   },
+   {
+    "num": "8.6.4",
+    "nivel": 2,
+    "titulo": "Técnicas de comunicação para reduzir vieses comportamentais"
+   },
+   {
+    "num": "8.7",
+    "nivel": 1,
+    "titulo": "Eventos críticos com graves consequências financeiras"
+   },
+   {
+    "num": "8.7.1",
+    "nivel": 2,
+    "titulo": "Impactos potenciais"
+   },
+   {
+    "num": "8.7.2",
+    "nivel": 2,
+    "titulo": "Soluções"
+   },
+   {
+    "num": "8.7.3",
+    "nivel": 2,
+    "titulo": "Monitorizar os vieses cognitivos"
+   },
+   {
+    "num": "8.7.4",
+    "nivel": 2,
+    "titulo": "Navegar pelas implicações das crises"
+   },
+   {
+    "num": "8.7.5",
+    "nivel": 2,
+    "titulo": "Enquadramento, ancoragem e adaptação"
+   }
+  ]
+ }
+]
