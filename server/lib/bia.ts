@@ -265,7 +265,7 @@ export const OPENING_MESSAGES = [
   { delay_ms: 0, text: 'Oi! 👋 Aqui é a **Bia**, do Bradesco.' },
   {
     delay_ms: 1400,
-    text: `Sou planejadora financeira **CFP®** e vou te ajudar a **organizar seus objetivos de vida** numa conversa rápida (uns 10–15 minutinhos). 🎯
+    text: `Sou a planejadora financeira de IA do Bradesco — sigo o método dos planejadores **CFP®**, e um planejador humano responde por ele — e vou te ajudar a **organizar seus objetivos de vida** numa conversa rápida (uns 10–15 minutinhos). 🎯
 
 Funciona assim: primeiro eu te conheço rapidinho (idade, família, renda...), depois a gente descobre seus objetivos juntos, com educação financeira pelo caminho. No final, monto um resumo pra você levar pra próxima etapa.
 
