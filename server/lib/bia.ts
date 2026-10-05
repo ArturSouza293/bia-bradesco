@@ -181,7 +181,7 @@ export const TOOLS = [
   {
     name: 'consultar_produto',
     description:
-      'USO INTERNO (lente de gerente) — consulta a matriz de produtos do banco (66 produtos × tributação × risco). Use APENAS para fundamentar o racional de register_cross_sell ou enriquecer register_out_of_scope_note. NUNCA cite ao cliente produtos, alíquotas ou regimes tributários: a Etapa 2 não faz recomendação de produto/tributação, e os dados são ilustrativos (pendentes de ratificação pelo Tributário).',
+      'USO INTERNO (lente de gerente) — consulta a matriz de produtos do banco (matriz vigente v1.0: 71 produtos × tributação × risco, e as estratégias de planejamento). Consulte SÓ DEPOIS que o número do plano da pessoa existe na conversa — plano antes do produto. Use APENAS para fundamentar o racional de register_cross_sell ou enriquecer register_out_of_scope_note. NUNCA cite ao cliente produtos, alíquotas ou regimes tributários: a Etapa 2 não faz recomendação de produto/tributação, e os dados são ilustrativos (pendentes de ratificação pelo Tributário).',
     input_schema: {
       type: 'object',
       properties: {

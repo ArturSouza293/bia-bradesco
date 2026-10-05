@@ -7,7 +7,7 @@
 
 import { KB_CHUNKS } from '../kb/kb.generated.js';
 import { MATRIZ } from '../kb/matriz.generated.js';
-import type { KbChunk, MatrizProduto } from './kb-types.js';
+import type { KbChunk, MatrizEstrategia, MatrizProduto } from './kb-types.js';
 
 // ---- tokenização PT-BR -----------------------------------------
 const STOPWORDS = new Set([
@@ -109,6 +109,7 @@ export function consultarProduto(filtro: FiltroProduto): {
   aviso: string;
   total: number;
   produtos: MatrizProduto[];
+  estrategias: MatrizEstrategia[];
 } {
   let rows = MATRIZ.produtos;
   if (filtro.objetivo_3l) {
@@ -129,10 +130,15 @@ export function consultarProduto(filtro: FiltroProduto): {
     const terms = tokenize(filtro.busca);
     if (terms.length > 0) {
       rows = rows.filter((r) => {
-        const hay = norm(`${r.id} ${r.product} ${r.mandate} ${r.cls} ${r.role} ${r.note}`);
+        const hay = norm(`${r.id} ${r.product} ${r.mandate} ${r.cls} ${r.role} ${r.note} ${r.nota_v1 ?? ''}`);
         return terms.some((t) => hay.includes(t));
       });
     }
   }
-  return { aviso: MATRIZ.meta.aviso, total: rows.length, produtos: rows.slice(0, 8) };
+  // estratégias da Camada 3 (matriz v1.0): só quando há busca, e só as que citam algum termo
+  const termos = filtro.busca ? tokenize(filtro.busca) : [];
+  const estrategias = termos.length
+    ? (MATRIZ.estrategias ?? []).filter((e) => termos.some((t) => norm(`${e.id} ${e.texto}`).includes(t))).slice(0, 5)
+    : [];
+  return { aviso: MATRIZ.meta.aviso, total: rows.length, produtos: rows.slice(0, 8), estrategias };
 }

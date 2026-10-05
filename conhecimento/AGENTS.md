@@ -9,7 +9,7 @@ vive AQUI, versionado em git — nunca hard-coded no código. O runtime consome 
 | Onde | O quê |
 |---|---|
 | `curriculo-cfp/` | Currículo CFP (Planejar): ementas dos 8 módulos + notas de estudo autorais |
-| `matriz-produtos/` | Matriz de 66 produtos × duração × tributação (origem: projeto Vision) |
+| `matriz-produtos/` | Matriz vigente v1.0: 71 produtos × duração × tributação, estratégias e objetivos (origem: projeto Vision) |
 | `persona/` | O system prompt da Bia, fatiado em blocos versionados |
 | `inbox/` | Material novo AINDA NÃO processado (não entra no build) |
 | `fontes.md` | Registro de fontes citável — `[F1.n]` |
@@ -75,6 +75,9 @@ tributação ao cliente.
 
 ## Proveniência da matriz
 
-`matriz-produtos/` é **cópia com proveniência** (v0.3, jul/2026) do acervo do projeto
-Vision (`vision-agents`), que mantém a custódia. Se a origem evoluir, re-importar
-`fonte/vision_tax_duration_matrix.jsx` e regenerar (`node scripts/kb/extract-matriz.mjs`).
+`matriz-produtos/` é **cópia com proveniência** do acervo do projeto Vision (`vision-agents`),
+que mantém a custódia. Desde 05/10/2026 a lente lê a **matriz vigente v1.0**
+(`fonte/vision_goal_matrix_v1.jsx` [F1.5]: o conjunto de 71 produtos, os campos do motor, as
+estratégias e os objetivos), com o texto descritivo dos 66 de base herdado da v0.3
+(`fonte/vision_tax_duration_matrix.jsx` [F1.1]), que a própria v1.0 aponta como fonte canônica
+desse texto. Se a origem evoluir, re-importar as duas e regenerar (`node scripts/kb/extract-matriz.mjs`).

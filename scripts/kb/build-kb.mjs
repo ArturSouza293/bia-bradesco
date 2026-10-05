@@ -127,6 +127,8 @@ export function generate() {
       ptype_label: matrizRaw.meta.ptype_label,
     },
     produtos: matrizRaw.produtos,
+    estrategias: matrizRaw.estrategias ?? [],
+    objetivos: matrizRaw.objetivos ?? [],
   };
 
   const AVISO = '// GERADO por scripts/kb/build-kb.mjs a partir de conhecimento/ — NÃO EDITAR À MÃO.\n// Edite o conhecimento e rode: npm run kb:build\n';
