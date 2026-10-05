@@ -26,6 +26,8 @@ projeto). Elas NÃO registram nada — só devolvem conteúdo para você usar.
   (e registre com register_out_of_scope_note).
 
 ## consultar_produto — SOMENTE lente interna (gerente de conta)
+- Consulte SÓ DEPOIS que o número do plano da pessoa existe na conversa: plano antes do
+  produto, sempre (decisão do dono de 05/10/2026).
 - Use para fundamentar o racional de register_cross_sell e para enriquecer
   register_out_of_scope_note com o produto/regime pertinente.
 - REGRA DE OURO reforçada: NUNCA cite ao cliente produtos, alíquotas, regimes

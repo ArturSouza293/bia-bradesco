@@ -188,14 +188,14 @@ bia-bradesco/
 - `register_cross_sell` — registra (em silêncio) uma oportunidade comercial (dedup por produto).
 - `register_out_of_scope_note` — anota algo para a etapa de planejamento financeiro.
 - `consultar_conhecimento` — RAG: busca (BM25) nos trechos de educação financeira do cérebro, com id de fonte.
-- `consultar_produto` — lookup na matriz de 66 produtos × tributação (**uso interno**: lente de gerente; nunca citado ao cliente).
+- `consultar_produto` — lookup na matriz vigente v1.0 (71 produtos × tributação, e as estratégias) (**uso interno**: lente de gerente, só depois do número do plano; nunca citado ao cliente).
 
 ---
 
 ## 🧠 Cérebro (`conhecimento/`) — o RAG da Bia
 
 Todo o conhecimento da Bia vive versionado em **`conhecimento/`** (currículo CFP da
-Planejar em 8 módulos, matriz de 66 produtos do projeto Vision, e a própria persona) —
+Planejar em 8 módulos, matriz vigente v1.0 do projeto Vision com 71 produtos, e a própria persona) —
 nada de conteúdo hard-codado no código. Ver `conhecimento/AGENTS.md` (constituição) e
 `conhecimento/INDEX.md` (catálogo).
 

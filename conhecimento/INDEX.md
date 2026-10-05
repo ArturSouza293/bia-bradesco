@@ -18,10 +18,11 @@
 | [curriculo-cfp/08-psicologia/](curriculo-cfp/08-psicologia/) | currículo | Notas de estudo M8 (7 tópicos): finanças comportamentais, vieses, cognição/educação, tipos de cliente, crenças, abordagens, eventos críticos | 2026-08-06 |
 | [eval/golden.json](eval/golden.json) | eval | Golden set do retrieval (~70 perguntas de cliente → chunk esperado); rodado por `npm run eval:kb` | 2026-08-06 |
 | [curriculo-cfp/fonte-ementa.json](curriculo-cfp/fonte-ementa.json) | currículo | Extração estruturada da ementa (JSON usado para gerar os ementa.md) | 2026-08-06 |
-| [matriz-produtos/matriz.json](matriz-produtos/matriz.json) | matriz | **GERADO** — os 66 produtos tipados (fonte da verdade do runtime) | 2026-08-06 |
-| [matriz-produtos/matriz.md](matriz-produtos/matriz.md) | matriz | **GERADO** — leitura humana da matriz, por objetivo 3L, com notas de planejamento | 2026-08-06 |
+| [matriz-produtos/matriz.json](matriz-produtos/matriz.json) | matriz | **GERADO** — os 71 produtos tipados da matriz v1.0, as estratégias e os objetivos (fonte da verdade do runtime) | 2026-10-05 |
+| [matriz-produtos/matriz.md](matriz-produtos/matriz.md) | matriz | **GERADO** — leitura humana da matriz, por objetivo 3L, com notas de planejamento, o que a v1.0 corrigiu, estratégias e objetivos | 2026-10-05 |
 | [matriz-produtos/fundamentos-legais.md](matriz-produtos/fundamentos-legais.md) | matriz | Âncoras legais da matriz + pendências que a própria fonte declara | 2026-08-06 |
-| [matriz-produtos/fonte/vision_tax_duration_matrix.jsx](matriz-produtos/fonte/vision_tax_duration_matrix.jsx) | matriz | FONTE (cópia com proveniência, v0.3 jul/2026, acervo Vision) — re-importar daqui quando a origem evoluir | 2026-08-06 |
+| [matriz-produtos/fonte/vision_tax_duration_matrix.jsx](matriz-produtos/fonte/vision_tax_duration_matrix.jsx) | matriz | FONTE do texto descritivo dos 66 de base (cópia com proveniência, v0.3 jul/2026, acervo Vision) [F1.1] | 2026-08-06 |
+| [matriz-produtos/fonte/vision_goal_matrix_v1.jsx](matriz-produtos/fonte/vision_goal_matrix_v1.jsx) | matriz | FONTE da lente desde 05/10/2026 (cópia com proveniência, v1.0 jul/2026, a matriz vigente do Vision): conjunto, campos do motor, estratégias e objetivos [F1.5] | 2026-10-05 |
 | [persona/bia-core.md](persona/bia-core.md) | persona | O system prompt da Bia (identidade, jornada, metodologia, conduta) — bloco 1 | 2026-08-06 |
 | [persona/guardrails-conhecimento.md](persona/guardrails-conhecimento.md) | persona | Guardrails de uso do RAG (consultar_conhecimento / consultar_produto) — bloco 2 | 2026-08-06 |
 | [inbox/README.md](inbox/README.md) | inbox | Como usar o inbox (material bruto → curadoria) | 2026-08-06 |

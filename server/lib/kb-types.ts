@@ -17,7 +17,7 @@ export interface KbChunk {
   arquivo: string;
 }
 
-/** Uma linha da matriz de 66 produtos (extraída do JSX v0.3 do Vision). */
+/** Uma linha da matriz de 71 produtos (matriz vigente v1.0 do Vision; texto descritivo herdado da v0.3). */
 export interface MatrizProduto {
   id: string;
   ptype: string;
@@ -41,6 +41,18 @@ export interface MatrizProduto {
   status: string;
   basis: string;
   note: string;
+  /** o comentário da linha na v1.0: a correção da auditoria CFP × personas ou o A CONFIRMAR da linha nova */
+  nota_v1?: string;
+  /** marcas do motor da v1.0 (dm, matchableL, drag, income, wrapper, weak, review) */
+  marcas_motor?: string[];
+  /** de onde vem cada parte: o motor (v1.0) e o texto descritivo (v0.3, ou nenhum na linha nova) */
+  origem?: { motor: string; descricao: string };
+}
+
+/** Uma estratégia candidata da Camada 3 da matriz v1.0. */
+export interface MatrizEstrategia {
+  id: string;
+  texto: string;
 }
 
 export interface MatrizData {
@@ -53,4 +65,7 @@ export interface MatrizData {
     ptype_label: Record<string, string>;
   };
   produtos: MatrizProduto[];
+  estrategias?: MatrizEstrategia[];
+  /** os 20 objetivos da matriz v1.0, como vêm da fonte (sem tipagem fina: a lente só os lê) */
+  objetivos?: Record<string, unknown>[];
 }

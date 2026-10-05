@@ -52,11 +52,13 @@ for (const a of arquivos) {
 
 // ---- 3. matriz íntegra -----------------------------------------
 const matriz = JSON.parse(readFileSync(join(ROOT, 'conhecimento', 'matriz-produtos', 'matriz.json'), 'utf-8'));
-if (matriz.produtos.length !== 66) erros.push(`matriz.json: esperava 66 produtos, tem ${matriz.produtos.length}`);
+if (matriz.produtos.length !== 71) erros.push(`matriz.json: esperava 71 produtos (matriz v1.0), tem ${matriz.produtos.length}`);
+if (!matriz.estrategias?.length) erros.push('matriz.json: sem as estratégias da matriz v1.0');
+if (matriz.objetivos?.length !== 20) erros.push(`matriz.json: esperava 20 objetivos (matriz v1.0), tem ${matriz.objetivos?.length ?? 0}`);
 if (!matriz.meta.aviso?.includes('ILUSTRATIVOS')) erros.push('matriz.json: meta.aviso perdeu a flag de dados ilustrativos');
 for (const r of matriz.produtos) {
   if (typeof r.floor !== 'number') erros.push(`matriz.json: produto "${r.id}" com floor não numérico`);
-  if (!r.note) avisos.push(`matriz.json: produto "${r.id}" sem nota de planejamento`);
+  if (!r.note && !r.nota_v1) avisos.push(`matriz.json: produto "${r.id}" sem nota de planejamento`);
 }
 
 // ---- 4. guardrail: matriz nunca é fase 'cliente' ----------------
@@ -94,5 +96,5 @@ if (erros.length > 0) {
   process.exit(1);
 }
 console.log(
-  `check-kb OK: ${arquivos.length} arquivos curados, ${ids.size} ids, ${chunksCliente} chunks fase=cliente, matriz com 66 produtos, gerados em dia.`,
+  `check-kb OK: ${arquivos.length} arquivos curados, ${ids.size} ids, ${chunksCliente} chunks fase=cliente, matriz v1.0 com ${matriz.produtos.length} produtos e ${matriz.estrategias.length} estratégias, gerados em dia.`,
 );
